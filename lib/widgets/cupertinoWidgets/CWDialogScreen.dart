@@ -104,7 +104,7 @@ class CWDialogScreenState extends State<CWDialogScreen> {
                                   CupertinoDialogAction(
                                     child: Text('Submit'),
                                     onPressed: () {
-                                      toast('Submit');
+                                      toasty(context, 'Submit');
                                       finish(context);
                                     },
                                   )

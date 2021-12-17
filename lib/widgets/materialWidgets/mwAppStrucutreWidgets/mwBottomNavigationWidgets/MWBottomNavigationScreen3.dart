@@ -14,7 +14,7 @@ class MWBottomNavigationScreenState extends State<MWBottomNavigationScreen3> {
   int currentIndex3 = 0;
 
   final example3 = [
-    Text('Example 3', style: TextStyle(color: appStore.textPrimaryColor, fontSize: 24)),
+    Text('Home', style: TextStyle(color: appStore.textPrimaryColor, fontSize: 24)),
     Text('Reels', style: TextStyle(color: appStore.textPrimaryColor, fontSize: 24)),
     Text('New Photo', style: TextStyle(color: appStore.textPrimaryColor, fontSize: 24)),
     Text('Activity', style: TextStyle(color: appStore.textPrimaryColor, fontSize: 24)),

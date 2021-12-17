@@ -53,7 +53,7 @@ class DTChangePasswordScreenState extends State<DTChangePasswordScreen> {
           alignment: Alignment.center,
           child: Form(
             key: formKey,
-            autovalidate: autoValidate,
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,

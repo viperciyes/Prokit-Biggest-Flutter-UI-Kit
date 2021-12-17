@@ -36,7 +36,7 @@ class _MWMaterialButtonScreenState extends State<MWMaterialButtonScreen> {
             children: [
               MaterialButton(
                 onPressed: () {
-                  toast('Default Material button');
+                  toasty(context, 'Default Material button');
                 },
                 child: Text(
                   'Default Material button',
@@ -46,7 +46,7 @@ class _MWMaterialButtonScreenState extends State<MWMaterialButtonScreen> {
               Divider(),
               TextButton.icon(
                   onPressed: () {
-                    toast('Material button with icon');
+                    toasty(context, 'Material button with icon');
                   },
                   icon: Icon(
                     Icons.add,
@@ -78,7 +78,7 @@ class _MWMaterialButtonScreenState extends State<MWMaterialButtonScreen> {
               Divider(),
               MaterialButton(
                 onPressed: () {
-                  toast('Border Material button');
+                  toasty(context, 'Border Material button');
                 },
                 shape: Border.all(color: appStore.iconColor!),
                 child: Text(
@@ -89,7 +89,7 @@ class _MWMaterialButtonScreenState extends State<MWMaterialButtonScreen> {
               Divider(),
               MaterialButton(
                 onPressed: () {
-                  toast('Rounded Material button');
+                  toasty(context, 'Rounded Material button');
                 },
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
@@ -104,7 +104,7 @@ class _MWMaterialButtonScreenState extends State<MWMaterialButtonScreen> {
               Divider(),
               MaterialButton(
                 onPressed: () {
-                  toast('Customize Rounded Material button');
+                  toasty(context, 'Customize Rounded Material button');
                 },
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
@@ -119,7 +119,7 @@ class _MWMaterialButtonScreenState extends State<MWMaterialButtonScreen> {
               Divider(),
               MaterialButton(
                 onPressed: () {
-                  toast('Customize Text Style of label');
+                  toasty(context, 'Customize Text Style of label');
                 },
                 child: Text(
                   'Customize Text Style of label',
@@ -138,7 +138,7 @@ class _MWMaterialButtonScreenState extends State<MWMaterialButtonScreen> {
               Divider(),
               MaterialButton(
                 onPressed: () {
-                  toast('Color Fill Material button');
+                  toasty(context, 'Color Fill Material button');
                 },
                 color: getColorFromHex('#8998FF'),
                 child: Text(
@@ -149,7 +149,7 @@ class _MWMaterialButtonScreenState extends State<MWMaterialButtonScreen> {
               Divider(),
               MaterialButton(
                 onPressed: () {
-                  toast('Rounded color fill Material button');
+                  toasty(context, 'Rounded color fill Material button');
                 },
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
                 color: getColorFromHex('#f2866c'),
@@ -168,7 +168,7 @@ class _MWMaterialButtonScreenState extends State<MWMaterialButtonScreen> {
                 ),
                 child: MaterialButton(
                   onPressed: () {
-                    toast('Gradient Material button');
+                    toasty(context, 'Gradient Material button');
                   },
                   splashColor: Colors.transparent,
                   child: Text(

@@ -50,15 +50,17 @@ class DTAddressScreenState extends State<DTAddressScreen> {
               margin: EdgeInsets.all(8),
               decoration: BoxDecoration(border: Border.all(color: Theme.of(context).dividerColor), borderRadius: BorderRadius.circular(8)),
               child: Text('Add New Address', style: boldTextStyle(color: appColorPrimary)),
-            ).onTap(() async {
-              DTAddressListModel? model = await showInDialog(context, child: AddAddressDialog(), backgroundColor: Colors.transparent, contentPadding: EdgeInsets.all(0));
+            ).onTap(
+              () async {
+                DTAddressListModel? model = await showInDialog(context, child: AddAddressDialog(), backgroundColor: Colors.transparent, contentPadding: EdgeInsets.all(0));
 
-              if (model != null) {
-                list.add(model);
+                if (model != null) {
+                  list.add(model);
 
-                setState(() {});
-              }
-            }),
+                  setState(() {});
+                }
+              },
+            ),
             ListView.builder(
               itemCount: list.length,
               itemBuilder: (_, index) {
@@ -132,7 +134,7 @@ class _AddAddressDialogState extends State<AddAddressDialog> {
   validate() {
     if (formKey.currentState!.validate()) {
       hideKeyboard(context);
-      toast('Adding Successfully');
+      toasty(context, 'Adding Successfully');
       formKey.currentState!.save();
 
       var addressData = DTAddressListModel();
@@ -156,7 +158,7 @@ class _AddAddressDialogState extends State<AddAddressDialog> {
       child: Container(
         padding: EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: appStore.scaffoldBackground,
+          color: context.scaffoldBackgroundColor,
           shape: BoxShape.rectangle,
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
@@ -170,7 +172,7 @@ class _AddAddressDialogState extends State<AddAddressDialog> {
         child: SingleChildScrollView(
           child: Form(
             key: formKey,
-            autovalidate: autoValidate,
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min, // To make the card compact

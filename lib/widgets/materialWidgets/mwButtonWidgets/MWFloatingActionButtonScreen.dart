@@ -44,7 +44,7 @@ class MWFloatingActionButtonScreenState extends State<MWFloatingActionButtonScre
                 heroTag: '1',
                 elevation: 5,
                 onPressed: () {
-                  toast('Default FAB Button');
+                  toasty(context, 'Default FAB Button');
                 },
                 child: Icon(
                   Icons.add,
@@ -66,7 +66,7 @@ class MWFloatingActionButtonScreenState extends State<MWFloatingActionButtonScre
                   ),
                 ),
                 onPressed: () {
-                  toast('Label FAB Button');
+                  toasty(context, 'Label FAB Button');
                 },
               ),
               Divider(),
@@ -83,7 +83,7 @@ class MWFloatingActionButtonScreenState extends State<MWFloatingActionButtonScre
                     color: Colors.white,
                   ),
                   onPressed: () {
-                    toast('Circle Border FAB button');
+                    toasty(context, 'Circle Border FAB button');
                   }),
               Divider(),
               Text(
@@ -101,7 +101,7 @@ class MWFloatingActionButtonScreenState extends State<MWFloatingActionButtonScre
                       color: Colors.white,
                     ),
                     onPressed: () {
-                      toast('Rounded Rectangle Border FAB');
+                      toasty(context, 'Rounded Rectangle Border FAB');
                     }),
               ),
               Divider(),
@@ -127,7 +127,7 @@ class MWFloatingActionButtonScreenState extends State<MWFloatingActionButtonScre
                         color: Colors.white,
                       ),
                       onPressed: () {
-                        toast('Icon with Label Fab');
+                        toasty(context, 'Icon with Label Fab');
                       }),
                   10.width,
                   FloatingActionButton.extended(
@@ -144,7 +144,7 @@ class MWFloatingActionButtonScreenState extends State<MWFloatingActionButtonScre
                         color: Colors.white,
                       ),
                       onPressed: () {
-                        toast('Icon with Label Fab');
+                        toasty(context, 'Icon with Label Fab');
                       }),
                   Divider(),
                 ],

@@ -31,6 +31,7 @@ class Dashboard1State extends State<Dashboard1> {
     mListings1 = getFilterFavourites();
     mListings2 = getPopular();
     mListings3 = getFoodItems();
+    changeStatusColor(db1_colorPrimary);
 
     setState(() {});
   }
@@ -38,8 +39,6 @@ class Dashboard1State extends State<Dashboard1> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-
-    changeStatusColor(db1_colorPrimary);
 
     return Scaffold(
       backgroundColor: db1_colorPrimary,

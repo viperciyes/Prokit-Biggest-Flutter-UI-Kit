@@ -560,12 +560,10 @@ class _RatingBarState extends State<RatingBar> {
       ignoring: widget.ignoreGestures,
       child: GestureDetector(
         onTap: () {
-          if (widget.onRatingUpdate != null) {
-            widget.onRatingUpdate(index + 1.0);
-            setState(() {
-              _rating = index + 1.0;
-            });
-          }
+          widget.onRatingUpdate(index + 1.0);
+          setState(() {
+            _rating = index + 1.0;
+          });
         },
         onHorizontalDragStart: _isHorizontal ? (_) => _glow.value = true : null,
         onHorizontalDragEnd: _isHorizontal
@@ -642,16 +640,14 @@ class _RatingBarState extends State<RatingBar> {
       if (_isRTL && widget.direction == Axis.horizontal) {
         currentRating = widget.itemCount - currentRating;
       }
-      if (widget.onRatingUpdate != null) {
-        if (currentRating < _minRating!) {
-          _rating = _minRating;
-        } else if (currentRating > _maxrating!) {
-          _rating = _maxrating;
-        } else {
-          _rating = currentRating;
-        }
-        setState(() {});
+      if (currentRating < _minRating!) {
+        _rating = _minRating;
+      } else if (currentRating > _maxrating!) {
+        _rating = _maxrating;
+      } else {
+        _rating = currentRating;
       }
+      setState(() {});
     }
   }
 }

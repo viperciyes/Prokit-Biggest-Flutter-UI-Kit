@@ -46,7 +46,7 @@ class _DTForgotPwdScreenState extends State<DTForgotPwdScreen> {
           alignment: Alignment.center,
           child: Form(
             key: formKey,
-            autovalidate: autoValidate,
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

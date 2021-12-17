@@ -4,6 +4,7 @@ import 'package:prokit_flutter/defaultTheme/screen/DTDashboardScreen.dart';
 import 'package:prokit_flutter/defaultTheme/utils/DTDataProvider.dart';
 import 'package:prokit_flutter/main/model/ListModels.dart';
 import 'package:prokit_flutter/main/screens/ProKitLauncher.dart';
+import 'package:prokit_flutter/main/screens/ProKitWebLauncher.dart';
 import 'package:prokit_flutter/main/utils/AppColors.dart';
 import 'package:prokit_flutter/widgets/materialWidgets/mwAppStrucutreWidgets/MWDrawerWidgets/MWDrawerScreen2.dart';
 
@@ -48,7 +49,7 @@ class DTDrawerWidgetState extends State<DTDrawerWidget> {
         clipBehavior: Clip.antiAliasWithSaveLayer,
         child: Drawer(
           child: Container(
-            color: appStore.scaffoldBackground,
+            color: context.scaffoldBackgroundColor,
             child: SingleChildScrollView(
               controller: scrollController,
               child: Column(
@@ -65,6 +66,8 @@ class DTDrawerWidgetState extends State<DTDrawerWidget> {
 
                     if (isMobile) {
                       ProKitLauncher().launch(context, isNewTask: true);
+                    } else if (!isMobile) {
+                      ProKitWebLauncher().launch(context, isNewTask: true);
                     } else {
                       DTDashboardScreen().launch(context, isNewTask: true);
                     }
@@ -75,7 +78,7 @@ class DTDrawerWidgetState extends State<DTDrawerWidget> {
                       return Container(
                         padding: EdgeInsets.all(16),
                         decoration: BoxDecoration(
-                          color: appStore.selectedDrawerItem == index ? appColorPrimary.withOpacity(0.3) : appStore.scaffoldBackground,
+                          color: appStore.selectedDrawerItem == index ? appColorPrimary.withOpacity(0.3) : context.scaffoldBackgroundColor,
                         ),
                         child: Text(
                           drawerItems[index].name!,

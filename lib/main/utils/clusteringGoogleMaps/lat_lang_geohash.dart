@@ -1,6 +1,3 @@
-import 'dart:math';
-
-import 'package:google_maps_flutter/google_maps_flutter.dart' show LatLng;
 
 class LatLngAndGeohash {
   // TODO Without NullSafety Geo hash

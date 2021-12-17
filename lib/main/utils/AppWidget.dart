@@ -56,7 +56,8 @@ Future<List<LatLngAndGeohash>> getListOfLatLngAndGeoHash(BuildContext context) a
     final fakeList = await (loadDataFromJson(context));
     List<LatLngAndGeohash> myPoints = [];
     for (int i = 0; i < fakeList!.length; i++) {
-      final fakePoint = fakeList[i];
+      //TODO Without NullSafety Geo coder
+      //final fakePoint = fakeList[i];
       final p = LatLngAndGeohash(
           //TODO Without NullSafety Geo coder
           // LatLng(fakePoint["LATITUDE"], fakePoint["LONGITUDE"]),
@@ -71,12 +72,6 @@ Future<List<LatLngAndGeohash>> getListOfLatLngAndGeoHash(BuildContext context) a
 
 void changeStatusColor(Color color) async {
   setStatusBarColor(color);
-  /*try {
-    await FlutterStatusbarcolor.setStatusBarColor(color, animate: true);
-    FlutterStatusbarcolor.setStatusBarWhiteForeground(useWhiteForeground(color));
-  } on Exception catch (e) {
-    print(e);
-  }*/
 }
 
 Widget commonCacheImageWidget(String? url, double height, {double? width, BoxFit? fit}) {
@@ -87,16 +82,16 @@ Widget commonCacheImageWidget(String? url, double height, {double? width, BoxFit
         imageUrl: '$url',
         height: height,
         width: width,
-        fit: fit,
+        fit: fit ?? BoxFit.cover,
         errorWidget: (_, __, ___) {
           return SizedBox(height: height, width: width);
         },
       );
     } else {
-      return Image.network(url!, height: height, width: width, fit: fit);
+      return Image.network(url!, height: height, width: width, fit: fit ?? BoxFit.cover);
     }
   } else {
-    return Image.asset(url!, height: height, width: width, fit: fit);
+    return Image.asset(url!, height: height, width: width, fit: fit ?? BoxFit.cover);
   }
 }
 
@@ -149,7 +144,7 @@ AppBar appBar(BuildContext context, String title, {List<Widget>? actions, bool s
             onPressed: () {
               finish(context);
             },
-            icon: Icon(Icons.arrow_back, color: iconColor ?? null),
+            icon: Icon(Icons.arrow_back, color: appStore.isDarkModeOn ? white : black),
           )
         : null,
     title: appBarTitleWidget(context, title, textColor: textColor, color: color),
@@ -174,7 +169,11 @@ class ExampleItemWidget extends StatelessWidget {
       child: ListTile(
         onTap: () => onTap(),
         title: Text(tabBarType.name!, style: boldTextStyle()),
-        trailing: showTrailing ? Icon(Icons.arrow_forward_ios, size: 15, color: appStore.textPrimaryColor) : null,
+        trailing: showTrailing
+            ? Icon(Icons.arrow_forward_ios, size: 15, color: appStore.textPrimaryColor)
+            : tabBarType.isNew.validate()
+                ? Text('New', style: secondaryTextStyle(color: Colors.red))
+                : null,
       ),
     );
   }
@@ -200,7 +199,7 @@ class CustomTheme extends StatelessWidget {
       data: appStore.isDarkModeOn
           ? ThemeData.dark().copyWith(
               accentColor: appColorPrimary,
-              backgroundColor: appStore.scaffoldBackground,
+              backgroundColor: context.scaffoldBackgroundColor,
             )
           : ThemeData.light(),
       child: child!,

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
-
-import '../../main.dart';
+import 'package:nb_utils/nb_utils.dart';
 
 class AMAnimatedCrossFadeScreen extends StatefulWidget {
   static String tag = '/AMAnimatedCrossFadeScreen';
@@ -45,7 +44,7 @@ class AMAnimatedCrossFadeScreenState extends State<AMAnimatedCrossFadeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          backgroundColor: appStore.scaffoldBackground,
+          backgroundColor: context.scaffoldBackgroundColor,
           appBar: appBar(context, 'Animated Cross Fade'),
           body: Center(
             child: AnimatedCrossFade(

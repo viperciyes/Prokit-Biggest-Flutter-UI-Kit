@@ -114,7 +114,7 @@ class _IMDraggableScreen2State extends State<IMDraggableScreen2> with TickerProv
               onAccept: (data) {
                 if (data == 5) {
                   mValue = false;
-                  scaffoldKey.currentState!.showSnackBar(SnackBar(content: Text("Done")));
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Done")));
                   setState(() {
                     _mStatus = true;
                   });

@@ -45,7 +45,7 @@ class CWButtonScreenState extends State<CWButtonScreen> {
               child: CupertinoButton(
                 child: Text('Default Button', style: primaryTextStyle(color: appStore.textPrimaryColor, size: 18)),
                 onPressed: () {
-                  toast('Default Button');
+                  toasty(context, 'Default Button');
                 },
               ).paddingAll(8.0),
             ),
@@ -55,7 +55,7 @@ class CWButtonScreenState extends State<CWButtonScreen> {
               child: CupertinoButton(
                 child: Text('Button with Border', style: primaryTextStyle(color: getColorFromHex('#8998FF'), size: 18)),
                 onPressed: () {
-                  toast('Button with Border');
+                  toasty(context, 'Button with Border');
                 },
               ),
             ).paddingAll(8.0),
@@ -65,7 +65,7 @@ class CWButtonScreenState extends State<CWButtonScreen> {
               child: CupertinoButton(
                 child: Text('Button with Color', style: primaryTextStyle(color: white, size: 18)),
                 onPressed: () {
-                  toast('Button with Color');
+                  toasty(context, 'Button with Color');
                 },
                 color: getColorFromHex('#8998FF'),
               ),
@@ -81,7 +81,7 @@ class CWButtonScreenState extends State<CWButtonScreen> {
               child: CupertinoButton(
                 child: Text('Button with Gradient', style: primaryTextStyle(color: white, size: 18)),
                 onPressed: () {
-                  toast('Button with Gradient');
+                  toasty(context, 'Button with Gradient');
                 },
               ),
             ).paddingAll(8.0),
@@ -92,7 +92,7 @@ class CWButtonScreenState extends State<CWButtonScreen> {
                 borderRadius: BorderRadius.all(Radius.circular(30)),
                 child: Text('Circular Button', style: primaryTextStyle(color: white, size: 18)),
                 onPressed: () {
-                  toast('Circular Button');
+                  toasty(context, 'Circular Button');
                 },
                 color: getColorFromHex('#f2866c'),
               ),
@@ -104,7 +104,7 @@ class CWButtonScreenState extends State<CWButtonScreen> {
                 disabledColor: getColorFromHex('#DB7093'),
                 child: Text('Circular button with custom border color', style: primaryTextStyle(color: white, size: 18)),
                 onPressed: () {
-                  toast('Circular button with custom border color');
+                  toasty(context, 'Circular button with custom border color');
                 },
                 // color: getColorFromHex('#f2866c'),
               ),

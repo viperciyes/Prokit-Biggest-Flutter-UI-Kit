@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
-
-import '../../main.dart';
+import 'package:nb_utils/nb_utils.dart';
 
 class AMScaleTransitionScreen extends StatefulWidget {
   static String tag = '/AMScaleTransitionScreen';
@@ -43,7 +42,7 @@ class AMScaleTransitionScreenState extends State<AMScaleTransitionScreen> with T
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: appStore.scaffoldBackground,
+        backgroundColor: context.scaffoldBackgroundColor,
         appBar: appBar(context, 'ScaleTransition'),
         body: Center(
           child: ScaleTransition(

@@ -41,7 +41,7 @@ class DataList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(left: 16, right: 16, top: 16),
-      decoration: boxDecoration(radius: 10, showShadow: true, bgColor: appStore.scaffoldBackground),
+      decoration: boxDecoration(radius: 10, showShadow: true, bgColor: context.scaffoldBackgroundColor),
       padding: EdgeInsets.fromLTRB(20, 16, 20, 16),
       child: Row(
         children: [

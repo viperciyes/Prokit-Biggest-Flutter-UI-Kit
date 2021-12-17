@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
+List<Color> webColors = [appCat1, appCat2, appCat3];
+
 // Light Theme Colors
-const appColorPrimary = Color(0xFF0A79DF);
-const appColorPrimaryDark = Color(0xFF0A79DF);
+const appColorPrimary = Color(0xFF1157FA);
 const appColorAccent = Color(0xFF03DAC5);
 const appTextColorPrimary = Color(0xFF212121);
 const iconColorPrimary = Color(0xFFFFFFFF);
 const appTextColorSecondary = Color(0xFF5A5C5E);
 const iconColorSecondary = Color(0xFFA8ABAD);
 const appLayout_background = Color(0xFFf8f8f8);
-const appWhite = Color(0xFFFFFFFF);
 const appLight_purple = Color(0xFFdee1ff);
 const appLight_orange = Color(0xFFffddd5);
 const appLight_parrot_green = Color(0xFFb4ef93);
@@ -34,8 +34,8 @@ const appSecondaryBackgroundColor = Color(0xFF131d25);
 const appDividerColor = Color(0xFFDADADA);
 
 // Dark Theme Colors
-const appBackgroundColorDark = Color(0xFF131d25);
-const cardBackgroundBlackDark = Color(0xFF1D2939);
+const appBackgroundColorDark = Color(0xFF121212);
+const cardBackgroundBlackDark = Color(0xFF1F1F1F);
 const color_primary_black = Color(0xFF131d25);
 const appColorPrimaryDarkLight = Color(0xFFF9FAFF);
 const iconColorPrimaryDark = Color(0xFF212121);

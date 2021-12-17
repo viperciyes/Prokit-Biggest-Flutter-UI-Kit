@@ -103,7 +103,7 @@ class DTFAQScreenState extends State<DTFAQScreen> {
                   width: context.width(),
                   height: context.height() - 268,
                   decoration: BoxDecoration(
-                    color: appStore.scaffoldBackground,
+                    color: context.scaffoldBackgroundColor,
                     borderRadius: BorderRadius.only(topLeft: Radius.circular(14), topRight: Radius.circular(14)),
                   ),
                   child: SingleChildScrollView(

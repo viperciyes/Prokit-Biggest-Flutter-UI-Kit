@@ -19,13 +19,6 @@ class RatingBar extends StatefulWidget {
     this.halfFilledColor,
     this.size = 40,
   })  : _readOnly = false,
-        assert(maxRating != null),
-        assert(initialRating != null),
-        assert(filledIcon != null),
-        assert(emptyIcon != null),
-        assert(isHalfAllowed != null),
-        assert(!isHalfAllowed || halfFilledIcon != null),
-        assert(size != null),
         super(key: key);
 
   RatingBar.readOnly({
@@ -42,13 +35,6 @@ class RatingBar extends StatefulWidget {
     this.size = 40,
   })  : _readOnly = true,
         onRatingChanged = null,
-        assert(maxRating != null),
-        assert(initialRating != null),
-        assert(filledIcon != null),
-        assert(emptyIcon != null),
-        assert(isHalfAllowed != null),
-        assert(!isHalfAllowed || halfFilledIcon != null),
-        assert(size != null),
         super(key: key);
 
   final int maxRating;

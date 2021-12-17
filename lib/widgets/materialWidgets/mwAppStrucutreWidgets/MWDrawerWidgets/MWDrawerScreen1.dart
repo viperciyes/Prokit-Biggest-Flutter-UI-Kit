@@ -37,6 +37,7 @@ class _MWDrawerScreen1State extends State<MWDrawerScreen1> {
       child: Scaffold(
         key: scaffoldKey,
         appBar: AppBar(
+          iconTheme: IconThemeData(color: appStore.iconColor),
           title: Text('With Multiple Account Selection', style: TextStyle(color: appStore.textPrimaryColor, fontSize: 22)),
         ),
         drawer: Drawer(
@@ -68,73 +69,72 @@ class _MWDrawerScreen1State extends State<MWDrawerScreen1> {
               ListTile(
                 title: Text(
                   "Home",
-                  style: boldTextStyle(color: black),
+                  style: boldTextStyle(),
                 ),
-                leading: Icon(Icons.home, color: Colors.black.withOpacity(0.7)),
+                leading: Icon(Icons.home, color: appStore.iconColor),
                 onTap: () {
                   scaffoldKey.currentState!.openEndDrawer();
-                  toast('Home');
+                  toasty(context, 'Home');
                 },
               ),
               ListTile(
                 title: Text(
                   "Photos",
-                  style: boldTextStyle(color: black),
+                  style: boldTextStyle(),
                 ),
-                leading: Icon(Icons.photo, color: Colors.black.withOpacity(0.7)),
+                leading: Icon(Icons.photo, color: appStore.iconColor),
                 onTap: () {
                   scaffoldKey.currentState!.openEndDrawer();
-                  toast('Photos');
+                  toasty(context, 'Photos');
                 },
               ),
               ListTile(
                 title: Text(
                   "Movies",
-                  style: boldTextStyle(color: black),
+                  style: boldTextStyle(),
                 ),
-                leading: Icon(Icons.movie, color: Colors.black.withOpacity(0.7)),
+                leading: Icon(Icons.movie, color: appStore.iconColor),
                 onTap: () {
                   scaffoldKey.currentState!.openEndDrawer();
-                  toast('Movies');
+                  toasty(context, 'Movies');
                 },
               ),
               ListTile(
                 title: Text(
                   "Notification",
-                  style: boldTextStyle(color: black),
+                  style: boldTextStyle(),
                 ),
-                leading: Icon(Icons.notifications, color: Colors.black.withOpacity(0.7)),
+                leading: Icon(Icons.notifications, color: appStore.iconColor),
                 onTap: () {
                   scaffoldKey.currentState!.openEndDrawer();
-                  toast('Notification');
+                  toasty(context, 'Notification');
                 },
               ),
               ListTile(
                 title: Text(
                   "Settings",
-                  style: boldTextStyle(color: black),
+                  style: boldTextStyle(),
                 ),
-                leading: Icon(Icons.settings, color: Colors.black.withOpacity(0.7)),
+                leading: Icon(Icons.settings, color: appStore.iconColor),
                 onTap: () {
                   scaffoldKey.currentState!.openEndDrawer();
-                  toast('Settings');
+                  toasty(context, 'Settings');
                 },
               ),
               Divider(),
-              Text('Other').paddingLeft(12.0),
               Text(
                 'About Us',
-                style: boldTextStyle(color: black),
+                style: boldTextStyle(),
               ).paddingAll(12.0).onTap(() {
                 scaffoldKey.currentState!.openEndDrawer();
-                toast('About us');
+                toasty(context, 'About us');
               }),
               Text(
                 'Privacy Policy',
-                style: boldTextStyle(color: black),
+                style: boldTextStyle(),
               ).paddingAll(12.0).onTap(() {
                 scaffoldKey.currentState!.openEndDrawer();
-                toast('Privacy Policy');
+                toasty(context, 'Privacy Policy');
               }),
             ],
           ),

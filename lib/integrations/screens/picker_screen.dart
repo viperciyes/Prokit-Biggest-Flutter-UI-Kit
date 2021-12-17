@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:intl/intl.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/integrations/utils/colors.dart';
@@ -42,7 +41,7 @@ class PickerScreenState extends State<PickerScreen> {
     });
   }
 
-  Future pickColor(BuildContext context) async {
+  /*Future pickColor(BuildContext context) async {
     await showDialog(
       context: context,
       builder: (_) => AlertDialog(
@@ -62,7 +61,7 @@ class PickerScreenState extends State<PickerScreen> {
         ],
       ),
     );
-  }
+  }*/
 
   void changeColor(Color color) {
     setState(() {
@@ -188,7 +187,7 @@ class PickerScreenState extends State<PickerScreen> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          pickColor(context);
+                         // pickColor(context);
                         },
                         child: Container(
                             margin: EdgeInsets.only(left: 16, right: 16),

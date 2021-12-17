@@ -178,6 +178,7 @@ class ButtonScreenState extends State<ButtonScreen> {
             children: <Widget>[
               FlutterReactionButton(
                 onReactionChanged: (reaction, index) {
+                  // ignore: deprecated_member_use
                   print('reaction selected id: ${reaction.id}');
                 },
                 //  Apply the list
@@ -197,37 +198,44 @@ class ButtonScreenState extends State<ButtonScreen> {
                 onReactionChanged: (reaction, index) {
                   //  Handle the respose of the reaction the user select.
                   String message = '';
+                  // ignore: deprecated_member_use
                   print('reaction selected id: ${reaction.id}');
+                  // ignore: deprecated_member_use
                   if (reaction.id == 1) {
                     setState(
                       () {
                         message = "Whatsapp";
                       },
                     );
+                  // ignore: deprecated_member_use
                   } else if (reaction.id == 2) {
                     setState(
                       () {
                         message = "Facebook";
                       },
                     );
+                  // ignore: deprecated_member_use
                   } else if (reaction.id == 3) {
                     setState(
                       () {
                         message = "Wordpress";
                       },
                     );
+                  // ignore: deprecated_member_use
                   } else if (reaction.id == 4) {
                     setState(
                       () {
                         message = "Map";
                       },
                     );
+                  // ignore: deprecated_member_use
                   } else if (reaction.id == 5) {
                     setState(
                       () {
                         message = "Linkedin";
                       },
                     );
+                  // ignore: deprecated_member_use
                   } else if (reaction.id == 6) {
                     setState(
                       () {
@@ -235,7 +243,7 @@ class ButtonScreenState extends State<ButtonScreen> {
                       },
                     );
                   }
-                  toast('You clicked $message share');
+                  toasty(context, 'You clicked $message share');
                 },
                 reactions: reaction2,
                 boxRadius: 10,
@@ -259,10 +267,13 @@ class ButtonScreenState extends State<ButtonScreen> {
             margin: EdgeInsets.all(10),
             height: 50.0,
             width: MediaQuery.of(context).size.width,
-            child: RaisedButton(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-              padding: EdgeInsets.all(0.0),
-              color: Color(0xFF8998FF),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+                padding: EdgeInsets.all(0.0),
+                primary: Color(0xFF8998FF),
+              ),
+
               child: _state != 1
                   ? Text(
                       changeText,
@@ -277,13 +288,13 @@ class ButtonScreenState extends State<ButtonScreen> {
                       ),
                     ),
               onPressed: () {},
-              onHighlightChanged: (isPressed) {
+              /* onHighlightChanged: (isPressed) {
                 setState(() {
                   if (_state == 0) {
                     animateButton();
                   }
                 });
-              },
+              },*/
             ),
           ),
         ],

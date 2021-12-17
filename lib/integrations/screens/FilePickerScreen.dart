@@ -34,6 +34,7 @@ class FilePickerScreenState extends State<FilePickerScreen> {
       file = File(_result.files.single.path!);
       fileName = file!.path.split('/').last;
       filePath = file!.path;
+      setState(() { });
     }
   }
 
@@ -57,8 +58,10 @@ class FilePickerScreenState extends State<FilePickerScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [Text("File Path:", style: boldTextStyle(size: 18)), 8.width, if (file != null) Text("$filePath", style: primaryTextStyle()).expand()],
           ).paddingAll(16),
-          RaisedButton(
-            color: appColorPrimary,
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              primary: appColorPrimary,
+            ),
             onPressed: () async {
               await getFiles();
               setState(() {});

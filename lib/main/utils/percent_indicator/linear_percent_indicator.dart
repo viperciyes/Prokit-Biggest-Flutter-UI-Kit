@@ -103,8 +103,6 @@ class LinearPercentIndicator extends StatefulWidget {
     }
     _progressColor = progressColor ?? Colors.red;
 
-    assert(curve != null);
-
     if (percent! < 0.0 || percent! > 1.0) {
       throw new Exception("Percent value must be a double between 0.0 and 1.0");
     }
@@ -217,7 +215,7 @@ class _LinearPercentIndicatorState extends State<LinearPercentIndicator> with Si
         child: Row(
           mainAxisAlignment: widget.alignment,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: items ,
+          children: items,
         ),
       ),
     );

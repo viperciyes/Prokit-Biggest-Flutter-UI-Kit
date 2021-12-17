@@ -33,7 +33,7 @@ class _TinderHomePageState extends State<TinderHomePage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: appBar(context, 'Tinder Card'),
+      appBar: appBar(context, 'Tinder card'),
       body: isActive == false
           ? Container(
               height: size.height,
@@ -60,9 +60,9 @@ class _TinderHomePageState extends State<TinderHomePage> {
                   //  Get swiping card's alignment.
                   print(details!.localPosition);
                   if (align!.x < 0) {
-                    //  Card is LEFT swiping.
+                    //  card is LEFT swiping.
                   } else if (align.x > 0) {
-                    //  Card is RIGHT swiping
+                    //  card is RIGHT swiping
                   }
                 },
                 swipeCompleteCallback: (CardSwipeOrientation orientation, int index) {
@@ -139,17 +139,45 @@ class _TinderHomePageState extends State<TinderHomePage> {
                   );
                 },
               ))
-          : Container(
-              width: size.width,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisSize: MainAxisSize.max,
-                children: <Widget>[
-                  Lottie.asset('images/Tinder/images/empty.json'),
-                  SizedBox(height: 30),
-                  Text('No Data Found', style: TextStyle(fontSize: 24, color: Color(0xFF757575))),
-                ],
+          : Responsive(
+              mobile: Container(
+                width: size.width,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.max,
+                  children: <Widget>[
+                    Lottie.asset('images/Tinder/images/empty.json'),
+                    SizedBox(height: 30),
+                    Text('No Data Found', style: TextStyle(fontSize: 24, color: Color(0xFF757575))),
+                  ],
+                ),
+              ),
+              web: Container(
+                width: size.width,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.max,
+                  children: <Widget>[
+                    Lottie.asset('images/Tinder/images/empty.json',height: context.height()*0.8),
+                    SizedBox(height: 30),
+                    Text('No Data Found', style: TextStyle(fontSize: 24, color: Color(0xFF757575))),
+                  ],
+                ),
+              ),
+              tablet: Container(
+                width: size.width,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.max,
+                  children: <Widget>[
+                    Lottie.asset('images/Tinder/images/empty.json'),
+                    SizedBox(height: 30),
+                    Text('No Data Found', style: TextStyle(fontSize: 24, color: Color(0xFF757575))),
+                  ],
+                ),
               ),
             ),
       floatingActionButton: isActive == true

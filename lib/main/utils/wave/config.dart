@@ -53,12 +53,14 @@ class CustomConfig extends Config {
           return true;
         }()),
         assert(() {
+          // ignore: unnecessary_null_comparison
           if (durations == null) {
             throw 'durations';
           }
           return true;
         }()),
         assert(() {
+          // ignore: unnecessary_null_comparison
           if (heightPercentages == null) {
             throw 'heightPercentages';
           }

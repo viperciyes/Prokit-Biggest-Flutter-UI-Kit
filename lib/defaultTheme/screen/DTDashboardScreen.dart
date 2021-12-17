@@ -35,6 +35,7 @@ class DTDashboardScreenState extends State<DTDashboardScreen> {
       child: Observer(
         builder: (context) => Scaffold(
           appBar: AppBar(
+            iconTheme: IconThemeData(color: appStore.iconColor),
             backgroundColor: appStore.appBarColor,
             title: appBarTitleWidget(context, 'Dashboard'),
           ),

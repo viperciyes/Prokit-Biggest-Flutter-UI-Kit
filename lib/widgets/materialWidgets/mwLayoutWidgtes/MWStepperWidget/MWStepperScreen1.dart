@@ -99,7 +99,7 @@ class _MWStepperScreen1State extends State<MWStepperScreen1> {
 
     return SafeArea(
       child: Scaffold(
-        backgroundColor: appStore.scaffoldBackground,
+        backgroundColor: context.scaffoldBackgroundColor,
         appBar: appBar(context, 'Stepper'),
         body: CustomTheme(
           child: Stepper(
@@ -122,7 +122,7 @@ class _MWStepperScreen1State extends State<MWStepperScreen1> {
                     child: Text('CANCEL', style: secondaryTextStyle()),
                   ),
                 ],
-              );
+              ).paddingOnly(top: 20);
             },
             onStepContinue: () {
               setState(() {

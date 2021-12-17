@@ -2,7 +2,6 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:prokit_flutter/main.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
 
 class AMAnimatedBuilderScreen extends StatefulWidget {
@@ -57,7 +56,7 @@ class AMAnimatedBuilderScreenState extends State<AMAnimatedBuilderScreen> with T
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: appStore.scaffoldBackground,
+        backgroundColor: context.scaffoldBackgroundColor,
         appBar: appBar(context, 'Animated Builder'),
         body: Container(
           margin: EdgeInsets.all(16),

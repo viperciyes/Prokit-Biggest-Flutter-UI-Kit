@@ -32,14 +32,7 @@ class LikeButton extends StatefulWidget {
       this.countPostion = CountPostion.right,
       this.padding,
       this.countDecoration})
-      : assert(size != null),
-        assert(animationDuration != null),
-        assert(circleColor != null),
-        assert(bubblesColor != null),
-        //assert(isLiked != null),
-        assert(mainAxisAlignment != null),
-        assert(crossAxisAlignment != null),
-        bubblesSize = bubblesSize ?? size * 2.0,
+      : bubblesSize = bubblesSize ?? size * 2.0,
         circleSize = circleSize ?? size * 0.8,
         super(key: key);
 
@@ -164,12 +157,10 @@ class LikeButtonState extends State<LikeButton> with TickerProviderStateMixin {
     if (widget.countDecoration != null) {
       likeCountWidget = widget.countDecoration!(likeCountWidget, _likeCount);
     }
-    if (widget.likeCountPadding != null) {
-      likeCountWidget = Padding(
-        padding: widget.likeCountPadding,
-        child: likeCountWidget,
-      );
-    }
+    likeCountWidget = Padding(
+      padding: widget.likeCountPadding,
+      child: likeCountWidget,
+    );
 
     List<Widget> children = <Widget>[
       AnimatedBuilder(

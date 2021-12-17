@@ -47,7 +47,7 @@ class _MWDropDownButtonScreenState extends State<MWDropDownButtonScreen> {
                     underline: 0.height,
                     onChanged: (dynamic newValue) {
                       setState(() {
-                        toast(newValue);
+                        toasty(context, newValue);
                         selectedIndexCategory = newValue;
                       });
                     },
@@ -75,7 +75,7 @@ class _MWDropDownButtonScreenState extends State<MWDropDownButtonScreen> {
                 ).paddingLeft(10),
                 onChanged: (String? newValue) {
                   setState(() {
-                    toast(newValue);
+                    toasty(context, newValue);
                     dropdownNames = newValue;
                   });
                 },
@@ -98,7 +98,7 @@ class _MWDropDownButtonScreenState extends State<MWDropDownButtonScreen> {
                   color: appStore.iconColor,
                 ).paddingLeft(10),
                 onChanged: (String? newValue) {
-                  toast(newValue);
+                  toasty(context, newValue);
                   setState(() {
                     dropdownScrollable = newValue;
                   });

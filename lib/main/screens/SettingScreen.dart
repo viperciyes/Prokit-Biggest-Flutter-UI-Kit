@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:package_info/package_info.dart';
@@ -75,7 +76,8 @@ class SettingScreenState extends State<SettingScreen> {
     return Observer(
       builder: (_) => Scaffold(
         appBar: AppBar(
-          title: Text('Settings', style: boldTextStyle(size: 22)),
+          title: Text(language!.lblSettings, style: boldTextStyle(size: 22)),
+          elevation: 0,
           backgroundColor: appStore.appBarColor,
           leading: BackButton(
             color: appStore.textPrimaryColor,
@@ -95,21 +97,37 @@ class SettingScreenState extends State<SettingScreen> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   SettingItemWidget(
+                    padding: EdgeInsets.only(top: 8, bottom: 8, left: 12, right: 12),
+                    leading: Icon(MaterialCommunityIcons.google_translate, color: appColorPrimary),
+                    title: language!.lblLanguage,
+                    trailing: LanguageListWidget(
+                      widgetType: WidgetType.DROPDOWN,
+                      onLanguageChange: (v) {
+                        appStore.setLanguage(v.languageCode!, context: context);
+
+                        setState(() {});
+                      },
+                    ),
+                    subTitle: language!.lblSupportLanguage,
+                  ),
+                  SettingItemWidget(
                     leading: Image.asset('images/app/ic_documentation.png', height: 24, width: 24, color: appColorPrimary),
-                    title: 'Documentation',
+                    title: language!.lblDocumentation,
                     onTap: () {
                       launch(DocumentationUrl, forceWebView: true, enableJavaScript: true);
                     },
                   ),
+                  Divider(height: 0),
                   SettingItemWidget(
-                    title: "Change Logs",
+                    title: language!.lblChangeLog,
                     onTap: () async {
                       launch(ChangeLogsUrl, forceWebView: true, enableJavaScript: true);
                     },
                     leading: Image.asset('images/app/ic_change_log.png', height: 24, width: 24, color: appColorPrimary),
                   ),
+                  Divider(height: 0),
                   SettingItemWidget(
-                    title: "Share App",
+                    title: language!.lblShareApp,
                     onTap: () async {
                       PackageInfo.fromPlatform().then((value) async {
                         String package = value.packageName;
@@ -118,8 +136,9 @@ class SettingScreenState extends State<SettingScreen> {
                     },
                     leading: Image.asset('images/app/ic_share.png', height: 24, width: 24, color: appColorPrimary),
                   ),
+                  Divider(height: 0),
                   SettingItemWidget(
-                    title: "Rate us",
+                    title: language!.lblRateUs,
                     onTap: () {
                       PackageInfo.fromPlatform().then((value) async {
                         String package = value.packageName;
@@ -128,8 +147,9 @@ class SettingScreenState extends State<SettingScreen> {
                     },
                     leading: Image.asset('images/app/ic_rate_app.png', height: 24, width: 24, color: appColorPrimary),
                   ),
+                  Divider(height: 0),
                   SettingItemWidget(
-                    title: "Dark Mode",
+                    title: language!.lblDarkMode,
                     onTap: () {
                       appStore.toggleDarkMode();
                     },
@@ -141,6 +161,7 @@ class SettingScreenState extends State<SettingScreen> {
                       },
                     ).withHeight(24),
                   ),
+                  Divider(height: 0),
                 ],
               ),
             ),

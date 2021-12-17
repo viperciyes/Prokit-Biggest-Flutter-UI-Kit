@@ -48,6 +48,9 @@ class ProKitScreenListingState extends State<ProKitScreenListing> {
 
       myBanner!.load();
     }
+    afterBuildCreated(() {
+      changeStatusColor(appStore.scaffoldBackground!);
+    });
   }
 
   @override
@@ -63,7 +66,7 @@ class ProKitScreenListingState extends State<ProKitScreenListing> {
       builder: (_) => Scaffold(
         appBar: appBar(
           context,
-          widget.proTheme!.title_name ?? widget.proTheme!.name!,
+          widget.proTheme!.name ?? widget.proTheme!.name!,
           iconColor: Theme.of(context).iconTheme.color,
           actions: [
             Tooltip(

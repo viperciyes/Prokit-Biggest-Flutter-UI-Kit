@@ -112,7 +112,7 @@ class _IMDismissibleScreen2State extends State<IMDismissibleScreen2> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: appStore.scaffoldBackground,
+        backgroundColor: context.scaffoldBackgroundColor,
         appBar: appBar(context, 'Dismissible with One Side'),
         body: generateItemsList(),
       ),

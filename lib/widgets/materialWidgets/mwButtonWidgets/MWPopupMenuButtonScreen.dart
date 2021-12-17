@@ -51,25 +51,25 @@ class MWPopupMenuButtonScreenState extends State<MWPopupMenuButtonScreen> {
                         color: appStore.textPrimaryColor,
                       ),
                       onSelected: (dynamic value) {
-                        toast(value);
+                        toasty(context, value);
                       },
                       itemBuilder: (context) {
                         List<PopupMenuEntry<Object>> list = [];
                         list.add(
                           PopupMenuItem(
-                            child: Text("Mark as read"),
+                            child: Text("Mark as read",style: primaryTextStyle()),
                             value: 'Mark as read',
                           ),
                         );
                         list.add(
                           PopupMenuItem(
-                            child: Text("Mute Notification"),
+                            child: Text("Mute Notification",style: primaryTextStyle()),
                             value: ' Mute Notification',
                           ),
                         );
                         list.add(
                           PopupMenuItem(
-                            child: Text("Settings"),
+                            child: Text("Settings",style: primaryTextStyle()),
                             value: 'Settings',
                           ),
                         );
@@ -90,14 +90,14 @@ class MWPopupMenuButtonScreenState extends State<MWPopupMenuButtonScreen> {
                         color: appStore.textPrimaryColor,
                       ),
                       onSelected: (dynamic value) {
-                        toast(value);
+                        toasty(context, value);
                       },
                       offset: Offset(0, 100),
                       itemBuilder: (context) {
                         List<PopupMenuEntry<Object>>  list = [];
                         list.add(
                           PopupMenuItem(
-                            child: Text("Select Language"),
+                            child: Text("Select Language",style: primaryTextStyle()),
                             value: 'Select Language',
                           ),
                         );
@@ -106,31 +106,31 @@ class MWPopupMenuButtonScreenState extends State<MWPopupMenuButtonScreen> {
                         ));
                         list.add(
                           PopupMenuItem(
-                            child: Text("English"),
+                            child: Text("English",style: primaryTextStyle()),
                             value: 'English',
                           ),
                         );
                         list.add(
                           PopupMenuItem(
-                            child: Text("Spanish"),
+                            child: Text("Spanish",style: primaryTextStyle()),
                             value: 'Spanish',
                           ),
                         );
                         list.add(
                           PopupMenuItem(
-                            child: Text("Arabic"),
+                            child: Text("Arabic",style: primaryTextStyle()),
                             value: 'Arabic',
                           ),
                         );
                         list.add(
                           PopupMenuItem(
-                            child: Text("Hindi"),
+                            child: Text("Hindi",style: primaryTextStyle()),
                             value: 'Hindi',
                           ),
                         );
                         list.add(
                           PopupMenuItem(
-                            child: Text("Gujarati"),
+                            child: Text("Gujarati",style: primaryTextStyle()),
                             value: 'Gujarati',
                           ),
                         );
@@ -152,7 +152,7 @@ class MWPopupMenuButtonScreenState extends State<MWPopupMenuButtonScreen> {
                         color: appStore.textPrimaryColor,
                       ),
                       onSelected: (dynamic value) {
-                        toast(value);
+                        toasty(context, value);
                       },
                       offset: Offset(0, 100),
                       itemBuilder: (context) {
@@ -162,9 +162,9 @@ class MWPopupMenuButtonScreenState extends State<MWPopupMenuButtonScreen> {
                             child: ListTile(
                               leading: Icon(
                                 Icons.file_upload,
-                                color: Colors.black,
+                                color: appStore.iconColor,
                               ),
-                              title: Text('Upload'),
+                              title: Text('Upload',style: primaryTextStyle()),
                             ),
                             value: 'Upload',
                           ),
@@ -174,9 +174,9 @@ class MWPopupMenuButtonScreenState extends State<MWPopupMenuButtonScreen> {
                             child: ListTile(
                               leading: Icon(
                                 Icons.bookmark,
-                                color: Colors.black,
+                                color: appStore.iconColor,
                               ),
-                              title: Text('Bookmark'),
+                              title: Text('Bookmark',style: primaryTextStyle()),
                             ),
                             value: 'Bookmark',
                           ),
@@ -186,9 +186,9 @@ class MWPopupMenuButtonScreenState extends State<MWPopupMenuButtonScreen> {
                             child: ListTile(
                               leading: Icon(
                                 Icons.share,
-                                color: Colors.black,
+                                color: appStore.iconColor,
                               ),
-                              title: Text('Share'),
+                              title: Text('Share',style: primaryTextStyle()),
                             ),
                             value: 'Share',
                           ),

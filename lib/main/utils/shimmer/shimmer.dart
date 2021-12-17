@@ -201,7 +201,6 @@ class _ShimmerFilter extends RenderProxyBox {
   bool get alwaysNeedsCompositing => child != null;
 
   set percent(double newValue) {
-    assert(newValue != null);
     if (newValue == _percent) {
       return;
     }
@@ -210,7 +209,6 @@ class _ShimmerFilter extends RenderProxyBox {
   }
 
   set gradient(Gradient newValue) {
-    assert(newValue != null);
     if (newValue == _gradient) {
       return;
     }

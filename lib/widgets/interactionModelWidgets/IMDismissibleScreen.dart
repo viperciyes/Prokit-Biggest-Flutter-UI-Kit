@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prokit_flutter/main/utils/Lipsum.dart' as lipsum;
 import 'package:nb_utils/nb_utils.dart';
-import 'package:prokit_flutter/main.dart';
 import 'package:prokit_flutter/main/model/ListModels.dart';
 import 'package:prokit_flutter/main/utils/AppColors.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
@@ -38,10 +37,10 @@ class _IMDismissibleScreenState extends State<IMDismissibleScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          backgroundColor: appStore.scaffoldBackground,
+          backgroundColor: context.scaffoldBackgroundColor,
           appBar: appBar(context, 'Dismissible'),
           body: ListView.builder(
-              itemCount:  example.length,
+              itemCount: example.length,
               itemBuilder: (BuildContext context, index) {
                 return ExampleItemWidget(example[index], onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => example[index].widget!));

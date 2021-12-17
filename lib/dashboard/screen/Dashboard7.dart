@@ -164,6 +164,7 @@ class Dashboard7State extends State<Dashboard7> {
   }
 }
 
+// ignore: must_be_immutable
 class Topic extends StatelessWidget {
   late DB7Topic model;
 

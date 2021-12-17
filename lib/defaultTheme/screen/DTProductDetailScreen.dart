@@ -13,11 +13,11 @@ import 'package:prokit_flutter/main/utils/AppColors.dart';
 import 'package:prokit_flutter/main/utils/AppConstant.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
 
-import '../../main.dart';
 import 'DTAddressScreen.dart';
 import 'DTDrawerWidget.dart';
 import 'ReviewWidget.dart';
 
+// ignore: must_be_immutable
 class DTProductDetailScreen extends StatefulWidget {
   static String tag = '/DTProductDetailScreen';
   DTProductModel? productModel;
@@ -66,10 +66,10 @@ class DTProductDetailScreenState extends State<DTProductDetailScreen> {
         width: context.width() / 2,
         padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
         alignment: Alignment.center,
-        decoration: BoxDecoration(color: appStore.scaffoldBackground, boxShadow: defaultBoxShadow(spreadRadius: 3.0)),
+        decoration: BoxDecoration(color: context.scaffoldBackgroundColor, boxShadow: defaultBoxShadow(spreadRadius: 3.0)),
         child: Text('Add to Cart', style: boldTextStyle()),
       ).onTap(() {
-        toast('Added to cart');
+        toasty(context, 'Added to cart');
         // Do your logic
       });
     }
@@ -164,7 +164,7 @@ class DTProductDetailScreenState extends State<DTProductDetailScreen> {
                     if (res is DTAddressListModel) {
                       mSelectedAddress = res;
 
-                      toast('Address Updated');
+                      toasty(context, 'Address Updated');
                     }
 
                     setState(() {});
@@ -250,7 +250,7 @@ class DTProductDetailScreenState extends State<DTProductDetailScreen> {
               ).expand(flex: 40),
               VerticalDivider(width: 0),
               Container(
-                decoration: boxDecoration(bgColor: appStore.scaffoldBackground),
+                decoration: boxDecoration(bgColor: context.scaffoldBackgroundColor),
                 child: SingleChildScrollView(
                   child: productDetail(),
                 ),
@@ -279,7 +279,7 @@ class DTProductDetailScreenState extends State<DTProductDetailScreen> {
 void mMoreOfferBottomSheet(BuildContext aContext) {
   showModalBottomSheet(
     context: aContext,
-    backgroundColor: appStore.scaffoldBackground,
+    backgroundColor: aContext.scaffoldBackgroundColor,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.vertical(top: Radius.circular(25.0)),
     ),

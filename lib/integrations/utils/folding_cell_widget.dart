@@ -17,15 +17,7 @@ class SimpleFoldingCell extends StatefulWidget {
       this.borderRadius = 0.0,
       this.onOpen,
       this.onClose})
-      : assert(frontWidget != null),
-        assert(innerTopWidget != null),
-        assert(innerBottomWidget != null),
-        assert(cellSize != null),
-        assert(unfoldCell != null),
-        assert(skipAnimation != null),
-        assert(padding != null),
-        assert(animationDuration != null),
-        assert(borderRadius != null && borderRadius >= 0.0),
+      : assert(borderRadius >= 0.0),
         innerWidget = null,
         super(key: key);
 
@@ -41,14 +33,7 @@ class SimpleFoldingCell extends StatefulWidget {
       this.borderRadius = 0.0,
       this.onOpen,
       this.onClose})
-      : assert(frontWidget != null),
-        assert(innerWidget != null),
-        assert(cellSize != null),
-        assert(unfoldCell != null),
-        assert(skipAnimation != null),
-        assert(padding != null),
-        assert(animationDuration != null),
-        assert(borderRadius != null && borderRadius >= 0.0),
+      : assert(borderRadius >= 0.0),
         innerTopWidget = null,
         innerBottomWidget = null,
         super(key: key);

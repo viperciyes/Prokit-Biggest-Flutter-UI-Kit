@@ -36,7 +36,7 @@ class CWSlidingSegmentedControlScreenState extends State<CWSlidingSegmentedContr
   Widget build(BuildContext context) {
     Widget mPage(var value) {
       return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
             value,

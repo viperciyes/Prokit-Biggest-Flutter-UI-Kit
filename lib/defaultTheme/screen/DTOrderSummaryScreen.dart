@@ -16,6 +16,7 @@ import '../../main.dart';
 import 'CartListView.dart';
 import 'DTDrawerWidget.dart';
 
+// ignore: must_be_immutable
 class DTOrderSummaryScreen extends StatefulWidget {
   static String tag = '/DTOrderSummaryScreen';
   List<DTProductModel> data;

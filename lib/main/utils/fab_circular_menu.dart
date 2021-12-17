@@ -43,7 +43,6 @@ class FabCircularMenu extends StatefulWidget {
       this.onDisplayChange,
       required this.children})
       : assert(alignment != Alignment.center),
-        assert(children != null),
         assert(children.length >= 2),
         super(key: key);
 

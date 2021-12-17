@@ -224,7 +224,7 @@ class _SVCHomePageState extends State<SVCHomePage> {
                         height: 250,
                         child: ListView.builder(
                             scrollDirection: Axis.horizontal,
-                            itemCount: cards == null ? 0 : cards.length,
+                            itemCount: cards.length,
                             itemBuilder: (BuildContext context, int index) {
                               return InkWell(
                                 child: Container(

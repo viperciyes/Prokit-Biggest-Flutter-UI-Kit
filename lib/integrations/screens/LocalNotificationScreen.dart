@@ -46,29 +46,37 @@ class LocalNotificationScreenState extends State<LocalNotificationScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            RaisedButton(
-              color: appColorPrimary,
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: appColorPrimary,
+              ),
               onPressed: () {
                 buildSingleNotification();
               },
               child: Text("Simple notification", style: boldTextStyle(color: Colors.white, size: 16)),
             ).paddingAll(16),
-            RaisedButton(
-              color: appColorPrimary,
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: appColorPrimary,
+              ),
               onPressed: () {
                 buildMultipleNotification();
               },
               child: Text("Multiple notification", style: boldTextStyle(color: Colors.white, size: 16)),
             ).paddingAll(8),
-            RaisedButton(
-              color: appColorPrimary,
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: appColorPrimary,
+              ),
               onPressed: () {
                 buildBigPictureNotification();
               },
               child: Text("Big Picture notification", style: boldTextStyle(color: Colors.white, size: 16)),
             ).paddingAll(16),
-            RaisedButton(
-              color: appColorPrimary,
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: appColorPrimary,
+              ),
               onPressed: () {
                 buildInboxStyleNotification();
               },

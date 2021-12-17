@@ -48,7 +48,7 @@ class CWNavigationBarScreenState extends State<CWNavigationBarScreen> {
                   child: CupertinoNavigationBarBackButton(
                     color: appStore.iconColor,
                     onPressed: () {
-                      toast("Back button");
+                      toasty(context, "Back button");
                     },
                   ),
                 ),
@@ -64,7 +64,7 @@ class CWNavigationBarScreenState extends State<CWNavigationBarScreen> {
                   color: appStore.iconColor,
                   previousPageTitle: 'With Back Icon',
                   onPressed: () {
-                    toast("Back button");
+                    toasty(context, "Back button");
                   },
                 ),
               ),
@@ -78,7 +78,7 @@ class CWNavigationBarScreenState extends State<CWNavigationBarScreen> {
                   children: <Widget>[
                     GestureDetector(
                       onTap: () {
-                        toast("Back button");
+                        toasty(context, "Back button");
                       },
                       child: Icon(
                         Icons.arrow_back,
@@ -95,7 +95,7 @@ class CWNavigationBarScreenState extends State<CWNavigationBarScreen> {
                   padding: EdgeInsets.zero,
                   child: GestureDetector(
                     onTap: () {
-                      toast("Settings");
+                      toasty(context, "Settings");
                     },
                     child: Icon(
                       Icons.settings,
@@ -113,7 +113,7 @@ class CWNavigationBarScreenState extends State<CWNavigationBarScreen> {
                   children: <Widget>[
                     GestureDetector(
                       onTap: () {
-                        toast("Drawer");
+                        toasty(context, "Drawer");
                       },
                       child: Icon(Icons.menu, color: appStore.iconColor, size: 25),
                     ),
@@ -126,14 +126,14 @@ class CWNavigationBarScreenState extends State<CWNavigationBarScreen> {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        toast("Search");
+                        toasty(context, "Search");
                       },
                       child: Icon(Icons.search, color: appStore.iconColor, size: 25),
                     ),
                     16.width,
                     GestureDetector(
                       onTap: () {
-                        toast("Menu");
+                        toasty(context, "Menu");
                       },
                       child: Icon(Icons.more_vert, color: appStore.iconColor, size: 25),
                     ),
@@ -147,14 +147,14 @@ class CWNavigationBarScreenState extends State<CWNavigationBarScreen> {
                   previousPageTitle: 'With Single Action',
                   color: appStore.iconColor,
                   onPressed: () {
-                    toast("Back button");
+                    toasty(context, "Back button");
                   },
                 ),
                 trailing: CupertinoButton(
                   padding: EdgeInsets.all(4),
                   child: GestureDetector(
                     onTap: () {
-                      toast("Profile");
+                      toasty(context, "Profile");
                     },
                     child: CircleAvatar(
                       backgroundImage: CachedNetworkImageProvider('https://www.attractivepartners.co.uk/wp-content/uploads/2017/06/profile.jpg'),

@@ -34,7 +34,7 @@ class _MWDrawerScreen2State extends State<MWDrawerScreen2> {
         title: Text('With Custom Shape', style: TextStyle(color: appStore.textPrimaryColor, fontSize: 22)),
         automaticallyImplyLeading: false,
         leading: IconButton(
-          icon: Icon(Icons.menu),
+          icon: Icon(Icons.menu,color: appStore.iconColor),
           onPressed: () {
             scaffoldKey.currentState!.openDrawer();
           },
@@ -56,6 +56,7 @@ class _MWDrawerScreen2State extends State<MWDrawerScreen2> {
                   children: <Widget>[
                     Container(
                       alignment: Alignment.centerRight,
+                      padding: EdgeInsets.all(8),
                       child: IconButton(
                         icon: Icon(
                           Icons.power_settings_new,
@@ -131,7 +132,7 @@ class _MWDrawerScreen2State extends State<MWDrawerScreen2> {
       ],
     ).onTap(() {
       scaffoldKey.currentState!.openEndDrawer();
-      toast(title);
+      toasty(context, title);
     });
   }
 }

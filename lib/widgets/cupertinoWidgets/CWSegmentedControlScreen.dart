@@ -20,7 +20,7 @@ class CWSegmentedControlScreenState extends State<CWSegmentedControlScreen> {
 
   static Widget giveCenter(String yourText) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         12.height,
         Text("$yourText", style: boldTextStyle()).paddingOnly(left: 16, right: 16),
@@ -65,27 +65,27 @@ class CWSegmentedControlScreenState extends State<CWSegmentedControlScreen> {
       appBar: appBar(context, 'Cupertino segment control'),
       body: SafeArea(
           child: Column(
-        children: [
-          16.height,
-          Container(
-            color: appStore.appBarColor,
-            width: context.width(),
-            child: CupertinoSegmentedControl(
-              borderColor: appColorPrimary,
-              selectedColor: appColorPrimary,
-              groupValue: selectedValue,
-              onValueChanged: (dynamic val) {
-                setState(() {
-                  selectedValue = val;
-                });
-              },
-              children: sWidget,
-            ),
-          ),
-          8.height,
-          view[selectedValue]
-        ],
-      )),
+            children: [
+              16.height,
+              Container(
+                color: appStore.appBarColor,
+                width: context.width(),
+                child: CupertinoSegmentedControl(
+                  borderColor: appColorPrimary,
+                  selectedColor: appColorPrimary,
+                  groupValue: selectedValue,
+                  onValueChanged: (dynamic val) {
+                    setState(() {
+                      selectedValue = val;
+                    });
+                  },
+                  children: sWidget,
+                ),
+              ),
+              8.height,
+              view[selectedValue]
+            ],
+          )),
     );
   }
 }

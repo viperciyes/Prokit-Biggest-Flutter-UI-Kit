@@ -113,7 +113,6 @@ class CircularPercentIndicator extends StatefulWidget {
     _progressColor = progressColor ?? Colors.red;
 
     assert(startAngle >= 0.0);
-    assert(curve != null);
     if (percent! < 0.0 || percent! > 1.0) {
       throw Exception("Percent value must be a double between 0.0 and 1.0");
     }

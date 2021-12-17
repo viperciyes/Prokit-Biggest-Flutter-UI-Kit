@@ -36,6 +36,7 @@ class _MWTabBarScreen3State extends State<MWTabBarScreen3> with SingleTickerProv
         child: Scaffold(
       appBar: AppBar(
         backgroundColor: appStore.appBarColor,
+        iconTheme: IconThemeData(color: context.iconColor),
         title: Text(
           'TabBar with Icon',
           style: boldTextStyle(color: appStore.textPrimaryColor, size: 20),

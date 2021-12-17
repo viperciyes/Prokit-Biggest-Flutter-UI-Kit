@@ -109,58 +109,37 @@ class Marquee extends StatefulWidget {
     Curve accelerationCurve = Curves.decelerate,
     this.decelerationDuration = Duration.zero,
     Curve decelerationCurve = Curves.decelerate,
-  })  : assert(
-            text != null,
-            "The text cannot be null. If you don't want to display something, "
-            "consider passing an empty string instead."),
-        assert(scrollAxis != null),
-        assert(crossAxisAlignment != null),
-        assert(
-            blankSpace != null,
-            "The blankSpace cannot be null. If you don't want any blank space, "
-            "consider setting it to zero instead."),
-        assert(!blankSpace.isNaN),
+  })  : assert(!blankSpace.isNaN),
         assert(blankSpace >= 0, "The blankSpace needs to be positive or zero."),
         assert(blankSpace.isFinite),
-        assert(velocity != null),
         assert(!velocity.isNaN),
         assert(velocity != 0.0, "The velocity cannot be zero."),
         assert(velocity.isFinite),
-        assert(
-            pauseAfterRound != null,
-            "The pauseAfterRound cannot be null. If you don't want to pause, "
-            "consider setting it to Duration.zero instead."),
         assert(
             pauseAfterRound >= Duration.zero,
             "The pauseAfterRound cannot be negative as time travel isn't "
             "invented yet."),
         assert(fadingEdgeStartFraction >= 0 && fadingEdgeStartFraction <= 1, "The fadingEdgeGradientFractionOnStart value should be between 0 and 1, inclusive"),
         assert(fadingEdgeEndFraction >= 0 && fadingEdgeEndFraction <= 1, "The fadingEdgeGradientFractionOnEnd value should be between 0 and 1, inclusive"),
-        assert(
-            startPadding != null,
-            "The start padding cannot be null. If you don't want any "
-            "startPadding, consider setting it to zero."),
         assert(numberOfRounds == null || numberOfRounds > 0),
-        assert(accelerationDuration != null),
         assert(
             accelerationDuration >= Duration.zero,
             "The accelerationDuration cannot be negative as time travel isn't "
             "invented yet."),
         assert(
+            // ignore: unnecessary_null_comparison
             accelerationCurve != null || accelerationDuration != Duration.zero,
             "Even if the accelerationDuration is zero, you still need to "
             "provide an accelerationCurve. Sorry about that."),
-        assert(accelerationCurve != null),
-        assert(decelerationDuration != null),
         assert(
             decelerationDuration >= Duration.zero,
             "The decelerationDuration must be positive or zero as time travel "
             "isn't invented yet."),
         assert(
+            // ignore: unnecessary_null_comparison
             decelerationCurve != null || decelerationDuration != Duration.zero,
             "Even if the decelerationDuration is zero, you still need to "
             "provide an decelerationCurve. Sorry about that."),
-        assert(decelerationCurve != null),
         this.accelerationCurve = _IntegralCurve(accelerationCurve),
         this.decelerationCurve = _IntegralCurve(decelerationCurve),
         super(key: key);

@@ -44,7 +44,7 @@ class MWSimpleDialogScreenState extends State<MWSimpleDialogScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: appStore.scaffoldBackground,
+      backgroundColor: context.scaffoldBackgroundColor,
       appBar: appBar(context, 'Dialog'),
       body: ListView.builder(
         itemCount: example.length,
@@ -103,8 +103,8 @@ class CustomDialogExample extends StatelessWidget {
       elevation: 0.0,
       backgroundColor: Colors.transparent,
       child: Container(
-        decoration: new BoxDecoration(
-          color: appStore.scaffoldBackground,
+        decoration:  BoxDecoration(
+          color: context.cardColor,
           shape: BoxShape.rectangle,
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
@@ -141,7 +141,7 @@ class SimpleDialogExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SimpleDialog(
-      backgroundColor: appStore.scaffoldBackground,
+      backgroundColor: context.cardColor,
       titlePadding: EdgeInsets.symmetric(horizontal: 30, vertical: 16),
       contentPadding: EdgeInsets.symmetric(horizontal: 30, vertical: 16),
       title: Text('Message', style: boldTextStyle(size: 20)),
@@ -164,7 +164,7 @@ class FormDialogExample extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(16),
         decoration: new BoxDecoration(
-          color: appStore.scaffoldBackground,
+          color: context.cardColor,
           shape: BoxShape.rectangle,
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
@@ -230,7 +230,7 @@ class CustomWarning extends StatelessWidget {
       backgroundColor: Colors.transparent,
       child: Container(
         decoration: new BoxDecoration(
-          color: appStore.scaffoldBackground,
+          color: context.cardColor,
           shape: BoxShape.rectangle,
           borderRadius: BorderRadius.circular(0),
           boxShadow: [
@@ -280,7 +280,7 @@ class CustomImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Dialog(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: radius(8),
       ),
       elevation: 0.0,
       backgroundColor: Colors.transparent,
@@ -289,7 +289,7 @@ class CustomImage extends StatelessWidget {
         child: Stack(
           alignment: Alignment.topRight,
           children: <Widget>[
-            ClipRRect(child: Image.asset('images/widgets/materialWidgets/mwDialogAlertPanelWidgets/widget_food.jpg', fit: BoxFit.cover, height: 250), borderRadius: BorderRadius.circular(8)),
+            ClipRRect(child: Image.asset('images/widgets/materialWidgets/mwDialogAlertPanelWidgets/widget_food.jpg', fit: BoxFit.cover, height: 250), borderRadius: radius(8)),
             GestureDetector(
               onTap: () {
                 finish(context);
@@ -308,15 +308,15 @@ class CustomDelete extends StatelessWidget {
   Widget build(BuildContext context) {
     return Dialog(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: radius(8),
       ),
       elevation: 0.0,
       backgroundColor: Colors.transparent,
       child: Container(
         decoration: new BoxDecoration(
-          color: appStore.scaffoldBackground,
+          color: context.cardColor,
           shape: BoxShape.rectangle,
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: radius(8),
           boxShadow: [
             BoxShadow(color: Colors.black26, blurRadius: 10.0, offset: const Offset(0.0, 10.0)),
           ],
@@ -344,7 +344,7 @@ class CustomDelete extends StatelessWidget {
                   Expanded(
                     child: Container(
                       padding: EdgeInsets.all(8),
-                      decoration: boxDecoration(color: Colors.blueAccent, radius: 8, bgColor: appStore.scaffoldBackground),
+                      decoration: boxDecoration(color: Colors.blueAccent, radius: 8, bgColor: context.scaffoldBackgroundColor),
                       child: Center(
                         child: RichText(
                           text: TextSpan(
@@ -375,7 +375,7 @@ class CustomDelete extends StatelessWidget {
                         ),
                       ),
                     ).onTap(() {
-                      toast("Successfully Deleted");
+                      toasty(context, "Successfully Deleted");
                       finish(context);
                     }),
                   )
@@ -394,15 +394,15 @@ class CustomAccount extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+      shape: RoundedRectangleBorder(borderRadius: radius(8)),
       elevation: 0.0,
       backgroundColor: Colors.transparent,
       child: Container(
         padding: EdgeInsets.all(16.0),
-        decoration: new BoxDecoration(
-          color: appStore.scaffoldBackground,
+        decoration: BoxDecoration(
+          color: context.cardColor,
           shape: BoxShape.rectangle,
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: radius(8),
           boxShadow: [
             BoxShadow(
               color: Colors.black26,
@@ -448,7 +448,7 @@ class CustomAccount extends StatelessWidget {
             20.height,
             Center(
               child: Container(
-                decoration: boxDecoration(radius: 20, color: Theme.of(context).dividerColor, bgColor: appStore.scaffoldBackground),
+                decoration: boxDecoration(radius: 20, color: Theme.of(context).dividerColor, bgColor: context.scaffoldBackgroundColor),
                 padding: EdgeInsets.fromLTRB(16, 4, 16, 4),
                 child: Text("Manage your account", style: primaryTextStyle(color: appStore.textPrimaryColor, size: 20)),
               ),

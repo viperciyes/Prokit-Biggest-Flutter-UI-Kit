@@ -39,7 +39,7 @@ class MWFlatButtonScreenState extends State<MWFlatButtonScreen> {
             children: [
               TextButton(
                 onPressed: () {
-                  toast('Default Flat button');
+                  toasty(context, 'Default Flat button');
                 },
                 child: Text(
                   'Default Flat button',
@@ -49,7 +49,7 @@ class MWFlatButtonScreenState extends State<MWFlatButtonScreen> {
               Divider(),
               TextButton.icon(
                   onPressed: () {
-                    toast('Flat button with icon');
+                    toasty(context, 'Flat button with icon');
                   },
                   icon: Icon(
                     Icons.add,
@@ -81,7 +81,7 @@ class MWFlatButtonScreenState extends State<MWFlatButtonScreen> {
               Divider(),
               TextButton(
                 onPressed: () {
-                  toast('Border Flat button');
+                  toasty(context, 'Border Flat button');
                 },
                 style: TextButton.styleFrom(
                     //shape: Border.all(color: appStore.iconColor!),
@@ -94,7 +94,7 @@ class MWFlatButtonScreenState extends State<MWFlatButtonScreen> {
               Divider(),
               TextButton(
                 onPressed: () {
-                  toast('Rounded Flat button');
+                  toasty(context, 'Rounded Flat button');
                 },
                 style: TextButton.styleFrom(
                   shape: RoundedRectangleBorder(
@@ -112,7 +112,7 @@ class MWFlatButtonScreenState extends State<MWFlatButtonScreen> {
               Divider(),
               TextButton(
                 onPressed: () {
-                  toast('Customize Rounded Flat button');
+                  toasty(context, 'Customize Rounded Flat button');
                 },
                 style: TextButton.styleFrom(
                   shape: RoundedRectangleBorder(
@@ -130,7 +130,7 @@ class MWFlatButtonScreenState extends State<MWFlatButtonScreen> {
               Divider(),
               TextButton(
                 onPressed: () {
-                  toast('Customize Text Style of label');
+                  toasty(context, 'Customize Text Style of label');
                 },
                 child: Text(
                   'Customize Text Style of label',
@@ -152,7 +152,7 @@ class MWFlatButtonScreenState extends State<MWFlatButtonScreen> {
               Divider(),
               TextButton(
                 onPressed: () {
-                  toast('Color Fill Flat button');
+                  toasty(context, 'Color Fill Flat button');
                 },
                 style: TextButton.styleFrom(
                   backgroundColor:getColorFromHex('#8998FF'),
@@ -165,7 +165,7 @@ class MWFlatButtonScreenState extends State<MWFlatButtonScreen> {
               Divider(),
               TextButton(
                 onPressed: () {
-                  toast('Rounded color fill flat button');
+                  toasty(context, 'Rounded color fill flat button');
                 },
                 style: TextButton.styleFrom(
                   backgroundColor:getColorFromHex('#f2866c'),
@@ -187,7 +187,7 @@ class MWFlatButtonScreenState extends State<MWFlatButtonScreen> {
                 ),
                 child: TextButton(
                   onPressed: () {
-                    toast('Gradient Flat button');
+                    toasty(context, 'Gradient Flat button');
                   },
                   style: TextButton.styleFrom(
                     primary: Colors.transparent

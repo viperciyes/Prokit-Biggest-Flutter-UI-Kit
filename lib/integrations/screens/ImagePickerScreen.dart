@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:nb_utils/nb_utils.dart';
@@ -62,10 +63,12 @@ class ImagePickerScreenState extends State<ImagePickerScreen> {
                 Container(
                   width: context.width() * 0.9,
                   height: 500,
-                  child: Image.file(File(pickImage!.path), fit: BoxFit.cover),
+                  child: kIsWeb ? Image.network(pickImage!.path,fit: BoxFit.cover,): Image.file(File(pickImage!.path), fit: BoxFit.cover),
                 ).center(),
-              RaisedButton(
-                color: appColorPrimary,
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: appColorPrimary,
+                ),
                 onPressed: () async {
                   await getImage();
                 },

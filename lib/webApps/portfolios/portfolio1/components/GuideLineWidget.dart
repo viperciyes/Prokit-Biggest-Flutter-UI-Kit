@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:prokit_flutter/fullApps/dating/utils/DAWidgets.dart';
 import 'package:prokit_flutter/webApps/portfolios/utils/DataGenerator.dart';
 
 import '../../../../main.dart';
@@ -43,13 +45,13 @@ class GuideLineWidgetState extends State<GuideLineWidget> {
               return Container(
                 width: context.width() * 0.20,
                 decoration: boxDecorationRoundedWithShadow(8, backgroundColor: appStore.appBarColor!),
-                padding: EdgeInsets.all(16),
                 margin: EdgeInsets.only(right: 16),
+                padding: EdgeInsets.all(16),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     16.height,
-                    Image.network(e.img!, height: 60, width: 60, fit: BoxFit.cover).cornerRadiusWithClipRRect(30),
+                    commonCachedNetworkImage(e.img!, height: 60, width: 60, fit: BoxFit.cover).cornerRadiusWithClipRRect(30),
                     16.height,
                     Text(e.name!, style: primaryTextStyle(color: Colors.green, size: 20)),
                     16.height,
@@ -75,7 +77,7 @@ class GuideLineWidgetState extends State<GuideLineWidget> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     16.height,
-                    Image.network(e.img!, height: 60, width: 60, fit: BoxFit.cover).cornerRadiusWithClipRRect(30),
+                    commonCachedNetworkImage(e.img!, height: 60, width: 60, fit: BoxFit.cover).cornerRadiusWithClipRRect(30),
                     16.height,
                     Text(e.name!, style: primaryTextStyle(color: Colors.green, size: 20)),
                     16.height,
@@ -112,7 +114,28 @@ class GuideLineWidgetState extends State<GuideLineWidget> {
             width: context.width(),
             child: PageView(
               controller: controller,
-              children: getPages(),
+              children: context.isPhone()
+                  ? getGuideLineDetail1().map((e) {
+                      return Container(
+                        width: context.width() * 0.15,
+                        decoration: boxDecorationRoundedWithShadow(8, backgroundColor: appStore.appBarColor!),
+                        margin: EdgeInsets.only(right: 16,left: 16),
+                        padding: EdgeInsets.all(16),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            16.height,
+                            commonCachedNetworkImage(e.img!, height: 60, width: 60, fit: BoxFit.cover).cornerRadiusWithClipRRect(30),
+                            16.height,
+                            Text(e.name!, style: primaryTextStyle(color: Colors.green, size: 20)),
+                            16.height,
+                            Text(e.detail!, style: secondaryTextStyle(size: 14)).expand(),
+                            16.height,
+                          ],
+                        ),
+                      );
+                    }).toList()
+                  : getPages(),
               onPageChanged: (index) {
                 selectedIndex = index;
                 setState(() {});
@@ -123,7 +146,7 @@ class GuideLineWidgetState extends State<GuideLineWidget> {
           AnimatedContainer(
             duration: Duration(seconds: 1),
             child: DotIndicator(
-              pages: pages,
+              pages: context.isPhone()?getGuideLineDetail1():pages,
               pageController: controller,
               indicatorColor: Colors.green,
               onDotTap: (i) {

@@ -67,21 +67,21 @@ class _MWUserAccountDrawerHeaderScreen4State extends State<MWUserAccountDrawerHe
                 title: Text('My Account', style: primaryTextStyle()),
                 onTap: () {
                   scaffoldKey.currentState!.openEndDrawer();
-                  toast("My Account");
+                  toasty(context, "My Account");
                 },
               ),
               ListTile(
                 title: Text('Setting', style: primaryTextStyle()),
                 onTap: () {
                   scaffoldKey.currentState!.openEndDrawer();
-                  toast("Setting");
+                  toasty(context, "Setting");
                 },
               ),
               ListTile(
                 title: Text('Logout', style: primaryTextStyle()),
                 onTap: () {
                   scaffoldKey.currentState!.openEndDrawer();
-                  toast("Logout");
+                  toasty(context, "Logout");
                 },
               )
             ],

@@ -49,7 +49,7 @@ class MWIconButtonScreenState extends State<MWIconButtonScreen> {
                   ),
                   iconSize: 30,
                   onPressed: () {
-                    toast("upload");
+                    toasty(context, "upload");
                   },
                 ),
               ),
@@ -68,7 +68,7 @@ class MWIconButtonScreenState extends State<MWIconButtonScreen> {
                   ],
                 ),
                 onPressed: () {
-                  toast('download');
+                  toasty(context, 'download');
                 },
               ),
               10.height,
@@ -84,7 +84,7 @@ class MWIconButtonScreenState extends State<MWIconButtonScreen> {
                   ),
                   iconSize: 30,
                   onPressed: () {
-                    toast("Share");
+                    toasty(context, "Share");
                   },
                 ),
               ),
@@ -96,7 +96,7 @@ class MWIconButtonScreenState extends State<MWIconButtonScreen> {
                 ),
                 iconSize: 30,
                 onPressed: () {
-                  toast("Message");
+                  toasty(context, "Message");
                 },
               ),
             ],

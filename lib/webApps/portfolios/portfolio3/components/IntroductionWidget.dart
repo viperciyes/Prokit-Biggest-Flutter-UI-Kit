@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:prokit_flutter/fullApps/dating/utils/DAWidgets.dart';
 import 'package:prokit_flutter/webApps/portfolios/utils/Images.dart';
 
-import '../../../../main.dart';
 import '../Colors.dart';
 
 class IntroductionWidget extends StatefulWidget {
@@ -39,7 +39,7 @@ class IntroductionWidgetState extends State<IntroductionWidget> {
           Container(
             height: 75,
             width: context.width(),
-            decoration: boxDecorationWithShadow(backgroundColor: appStore.scaffoldBackground!),
+            decoration: boxDecorationWithShadow(backgroundColor: context.scaffoldBackgroundColor),
             alignment: Alignment.center,
             padding: EdgeInsets.only(top: 8, bottom: 8),
             child: Row(
@@ -67,7 +67,7 @@ class IntroductionWidgetState extends State<IntroductionWidget> {
             width: context.width(),
             child: Stack(
               children: [
-                Image.network(
+                commonCachedNetworkImage(
                   p3IntoImg,
                   height: context.height() - 75,
                   width: context.width(),

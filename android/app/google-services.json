@@ -32,10 +32,10 @@
               "client_type": 3
             },
             {
-              "client_id": "390414775798-gj1jsguquocjfs1ete8c6n59ka0rkph7.apps.googleusercontent.com",
+              "client_id": "390414775798-3r3pnimk1j59ihshvfhgppf72tfs79e0.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.iqonic.prokit-flutter"
+                "bundle_id": "com.iqonic.prokitflutter1"
               }
             }
           ]

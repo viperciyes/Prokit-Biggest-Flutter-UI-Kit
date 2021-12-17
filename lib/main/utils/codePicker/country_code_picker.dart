@@ -1,10 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:collection/collection.dart' show IterableExtension;
 import 'package:flutter/material.dart';
-import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/main/utils/codePicker/selection_dialog.dart';
-import 'package:prokit_flutter/theme12/utils/t12_colors.dart';
 
 import '../../../main.dart';
 import 'country_code.dart';
@@ -112,7 +110,7 @@ class _CountryCodePickerState extends State<CountryCodePicker> {
                     flex: widget.alignLeft ? 0 : 1,
                     fit: widget.alignLeft ? FlexFit.tight : FlexFit.loose,
                     child: Padding(
-                      padding: widget.alignLeft ? const EdgeInsets.only(right: 8.0, left: 8.0) : const EdgeInsets.only(right: 8.0),
+                      padding: widget.alignLeft ? EdgeInsets.only(right: 8.0, left: 8.0) : EdgeInsets.only(right: 8.0),
                       child: CachedNetworkImage(
                         imageUrl: selectedItem!.flagUri!,
                         width: 25.0,

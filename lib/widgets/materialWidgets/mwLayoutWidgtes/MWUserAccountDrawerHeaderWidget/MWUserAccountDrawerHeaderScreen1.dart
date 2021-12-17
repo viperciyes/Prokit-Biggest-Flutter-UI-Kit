@@ -75,7 +75,7 @@ class _MWUserAccountDrawerHeaderScreen1State extends State<MWUserAccountDrawerHe
                 title: Text('My Account', style: primaryTextStyle()),
                 onTap: () {
                   scaffoldKey.currentState!.openEndDrawer();
-                  toast("My Account");
+                  toasty(context, "My Account");
                 },
                 trailing: Container(
                   padding: EdgeInsets.only(right: 4),
@@ -87,7 +87,7 @@ class _MWUserAccountDrawerHeaderScreen1State extends State<MWUserAccountDrawerHe
                 title: Text('Setting', style: primaryTextStyle()),
                 onTap: () {
                   scaffoldKey.currentState!.openEndDrawer();
-                  toast("Setting");
+                  toasty(context, "Setting");
                 },
                 trailing: Container(
                   padding: EdgeInsets.only(right: 4),

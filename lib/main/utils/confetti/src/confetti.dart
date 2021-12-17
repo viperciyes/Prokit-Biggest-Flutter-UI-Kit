@@ -25,9 +25,7 @@ class ConfettiWidget extends StatefulWidget {
     this.particleDrag = 0.05,
     this.canvas,
     this.child,
-  })  : assert(confettiController != null,
-            emissionFrequency != null && numberOfParticles != null && maxBlastForce != null && minBlastForce != null && blastDirectionality != null && blastDirection != null),
-        assert(emissionFrequency >= 0 && emissionFrequency <= 1 && numberOfParticles > 0 && maxBlastForce > 0 && minBlastForce > 0 && maxBlastForce > minBlastForce),
+  })  : assert(emissionFrequency >= 0 && emissionFrequency <= 1 && numberOfParticles > 0 && maxBlastForce > 0 && minBlastForce > 0 && maxBlastForce > minBlastForce),
         assert(gravity >= 0 && gravity <= 1),
         super(key: key);
 
@@ -292,9 +290,6 @@ class ParticlePainter extends CustomPainter {
     if (_paintEmitterTarget) {
       _paintEmitter(canvas);
     }
-    if (particles == null) {
-      return;
-    }
     _paintParticles(canvas);
   }
 
@@ -331,7 +326,7 @@ class ParticlePainter extends CustomPainter {
 }
 
 class ConfettiController extends ChangeNotifier {
-  ConfettiController({this.duration = const Duration(seconds: 30)}) : assert(duration != null && !duration.isNegative && duration.inMicroseconds > 0);
+  ConfettiController({this.duration = const Duration(seconds: 30)}) : assert(!duration.isNegative && duration.inMicroseconds > 0);
 
   Duration duration;
 

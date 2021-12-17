@@ -195,7 +195,7 @@ class MWDataTableScreenState extends State<MWDataTableScreen> {
                           selected: selectedList.contains(data),
                           onSelectChanged: (b) {
                             onSelectedRow(b, data);
-                            toast(data.name);
+                            toasty(context, data.name);
                           },
                           cells: [
                             DataCell(Text(data.rank!, style: secondaryTextStyle())),

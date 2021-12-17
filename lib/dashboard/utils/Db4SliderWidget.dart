@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class Db4CarouselSlider extends StatefulWidget {
@@ -253,8 +252,9 @@ class _Db4CarouselSliderState extends State<Db4CarouselSlider> with TickerProvid
       }).toList(),
     ));
   }
+
   /// TODO This Problem slowed me
-  /*Widget build(BuildContext context) {
+/*Widget build(BuildContext context) {
     return getWrapper(PageView.builder(
       physics: widget.scrollPhysics,
       scrollDirection: widget.scrollDirection,

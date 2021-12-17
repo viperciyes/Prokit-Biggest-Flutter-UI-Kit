@@ -119,7 +119,7 @@ class _StepperBodyState extends State<StepperBody> {
                   child: Text('CANCEL', style: secondaryTextStyle()),
                 ),
               ],
-            );
+            ).paddingOnly(top: 20);
           },
           onStepContinue: () {
             setState(() {

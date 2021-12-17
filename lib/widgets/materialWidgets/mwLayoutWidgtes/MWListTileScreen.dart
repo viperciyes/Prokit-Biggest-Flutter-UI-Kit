@@ -42,7 +42,7 @@ class MWListTileScreenState extends State<MWListTileScreen> {
               elevation: 2,
               child: ListTile(
                 onTap: () {
-                  toast(userList[index].name);
+                  toasty(context, userList[index].name);
                 },
                 leading: CircleAvatar(radius: 20, backgroundImage: Image.asset(userList[index].images!).image),
                 title: Text(

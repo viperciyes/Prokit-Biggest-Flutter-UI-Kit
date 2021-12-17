@@ -31,7 +31,7 @@ class _IMLongPressDraggableScreen1State extends State<IMLongPressDraggableScreen
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: appStore.scaffoldBackground,
+        backgroundColor: context.scaffoldBackgroundColor,
         appBar: appBar(context, 'Simple Long Press Draggable'),
         body: SingleChildScrollView(
           padding: EdgeInsets.all(16),

@@ -38,7 +38,7 @@ class AMHeroScreenState extends State<AMHeroScreen> {
     double cardHeight = context.height() / 4;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: appStore.scaffoldBackground,
+        backgroundColor: context.scaffoldBackgroundColor,
         appBar: appBar(context, 'Hero'),
         body: GridView.builder(
           scrollDirection: Axis.vertical,

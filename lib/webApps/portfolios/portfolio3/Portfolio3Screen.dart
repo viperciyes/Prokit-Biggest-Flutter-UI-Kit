@@ -15,8 +15,6 @@ import 'components/LatestBlogWidget.dart';
 import 'components/knowledgeWidget.dart';
 
 class Portfolio3Screen extends StatefulWidget {
-  static String tag = '/Portfolio3Screen';
-
   @override
   Portfolio3ScreenState createState() => Portfolio3ScreenState();
 }
@@ -40,7 +38,7 @@ class Portfolio3ScreenState extends State<Portfolio3Screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar(context, ''),
+      appBar: appBar(context, 'Portfolio 3'),
       body: Container(
         child: Scrollbar(
           child: SingleChildScrollView(

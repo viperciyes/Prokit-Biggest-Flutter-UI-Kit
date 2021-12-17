@@ -24,7 +24,38 @@ mixin _$AppStore on AppStoreBase, Store {
     });
   }
 
-  final _$scaffoldBackgroundAtom = Atom(name: 'AppStoreBase.scaffoldBackground');
+  final _$isHoverAtom = Atom(name: 'AppStoreBase.isHover');
+
+  @override
+  bool get isHover {
+    _$isHoverAtom.reportRead();
+    return super.isHover;
+  }
+
+  @override
+  set isHover(bool value) {
+    _$isHoverAtom.reportWrite(value, super.isHover, () {
+      super.isHover = value;
+    });
+  }
+
+  final _$webListingListAtom = Atom(name: 'AppStoreBase.webListingList');
+
+  @override
+  List<ProTheme> get webListingList {
+    _$webListingListAtom.reportRead();
+    return super.webListingList;
+  }
+
+  @override
+  set webListingList(List<ProTheme> value) {
+    _$webListingListAtom.reportWrite(value, super.webListingList, () {
+      super.webListingList = value;
+    });
+  }
+
+  final _$scaffoldBackgroundAtom =
+      Atom(name: 'AppStoreBase.scaffoldBackground');
 
   @override
   Color? get scaffoldBackground {
@@ -54,7 +85,8 @@ mixin _$AppStore on AppStoreBase, Store {
     });
   }
 
-  final _$backgroundSecondaryColorAtom = Atom(name: 'AppStoreBase.backgroundSecondaryColor');
+  final _$backgroundSecondaryColorAtom =
+      Atom(name: 'AppStoreBase.backgroundSecondaryColor');
 
   @override
   Color? get backgroundSecondaryColor {
@@ -64,7 +96,8 @@ mixin _$AppStore on AppStoreBase, Store {
 
   @override
   set backgroundSecondaryColor(Color? value) {
-    _$backgroundSecondaryColorAtom.reportWrite(value, super.backgroundSecondaryColor, () {
+    _$backgroundSecondaryColorAtom
+        .reportWrite(value, super.backgroundSecondaryColor, () {
       super.backgroundSecondaryColor = value;
     });
   }
@@ -84,7 +117,8 @@ mixin _$AppStore on AppStoreBase, Store {
     });
   }
 
-  final _$appColorPrimaryLightColorAtom = Atom(name: 'AppStoreBase.appColorPrimaryLightColor');
+  final _$appColorPrimaryLightColorAtom =
+      Atom(name: 'AppStoreBase.appColorPrimaryLightColor');
 
   @override
   Color? get appColorPrimaryLightColor {
@@ -94,12 +128,14 @@ mixin _$AppStore on AppStoreBase, Store {
 
   @override
   set appColorPrimaryLightColor(Color? value) {
-    _$appColorPrimaryLightColorAtom.reportWrite(value, super.appColorPrimaryLightColor, () {
+    _$appColorPrimaryLightColorAtom
+        .reportWrite(value, super.appColorPrimaryLightColor, () {
       super.appColorPrimaryLightColor = value;
     });
   }
 
-  final _$textSecondaryColorAtom = Atom(name: 'AppStoreBase.textSecondaryColor');
+  final _$textSecondaryColorAtom =
+      Atom(name: 'AppStoreBase.textSecondaryColor');
 
   @override
   Color? get textSecondaryColor {
@@ -144,7 +180,8 @@ mixin _$AppStore on AppStoreBase, Store {
     });
   }
 
-  final _$iconSecondaryColorAtom = Atom(name: 'AppStoreBase.iconSecondaryColor');
+  final _$iconSecondaryColorAtom =
+      Atom(name: 'AppStoreBase.iconSecondaryColor');
 
   @override
   Color? get iconSecondaryColor {
@@ -159,22 +196,25 @@ mixin _$AppStore on AppStoreBase, Store {
     });
   }
 
-  final _$selectedLanguageAtom = Atom(name: 'AppStoreBase.selectedLanguage');
+  final _$selectedLanguageCodeAtom =
+      Atom(name: 'AppStoreBase.selectedLanguageCode');
 
   @override
-  String get selectedLanguage {
-    _$selectedLanguageAtom.reportRead();
-    return super.selectedLanguage;
+  String get selectedLanguageCode {
+    _$selectedLanguageCodeAtom.reportRead();
+    return super.selectedLanguageCode;
   }
 
   @override
-  set selectedLanguage(String value) {
-    _$selectedLanguageAtom.reportWrite(value, super.selectedLanguage, () {
-      super.selectedLanguage = value;
+  set selectedLanguageCode(String value) {
+    _$selectedLanguageCodeAtom.reportWrite(value, super.selectedLanguageCode,
+        () {
+      super.selectedLanguageCode = value;
     });
   }
 
-  final _$selectedDrawerItemAtom = Atom(name: 'AppStoreBase.selectedDrawerItem');
+  final _$selectedDrawerItemAtom =
+      Atom(name: 'AppStoreBase.selectedDrawerItem');
 
   @override
   int get selectedDrawerItem {
@@ -189,20 +229,46 @@ mixin _$AppStore on AppStoreBase, Store {
     });
   }
 
-  final _$toggleDarkModeAsyncAction = AsyncAction('AppStoreBase.toggleDarkMode');
+  final _$toggleDarkModeAsyncAction =
+      AsyncAction('AppStoreBase.toggleDarkMode');
 
   @override
   Future<void> toggleDarkMode({bool? value}) {
-    return _$toggleDarkModeAsyncAction.run(() => super.toggleDarkMode(value: value));
+    return _$toggleDarkModeAsyncAction
+        .run(() => super.toggleDarkMode(value: value));
+  }
+
+  final _$setLanguageAsyncAction = AsyncAction('AppStoreBase.setLanguage');
+
+  @override
+  Future<void> setLanguage(String val, {BuildContext? context}) {
+    return _$setLanguageAsyncAction
+        .run(() => super.setLanguage(val, context: context));
+  }
+
+  final _$setWebListingAsyncAction = AsyncAction('AppStoreBase.setWebListing');
+
+  @override
+  Future<dynamic> setWebListing(List<ProTheme> data) {
+    return _$setWebListingAsyncAction.run(() => super.setWebListing(data));
+  }
+
+  final _$clearWebListingAsyncAction =
+      AsyncAction('AppStoreBase.clearWebListing');
+
+  @override
+  Future<dynamic> clearWebListing() {
+    return _$clearWebListingAsyncAction.run(() => super.clearWebListing());
   }
 
   final _$AppStoreBaseActionController = ActionController(name: 'AppStoreBase');
 
   @override
-  void setLanguage(String aLanguage) {
-    final _$actionInfo = _$AppStoreBaseActionController.startAction(name: 'AppStoreBase.setLanguage');
+  void toggleHover({bool value = false}) {
+    final _$actionInfo = _$AppStoreBaseActionController.startAction(
+        name: 'AppStoreBase.toggleHover');
     try {
-      return super.setLanguage(aLanguage);
+      return super.toggleHover(value: value);
     } finally {
       _$AppStoreBaseActionController.endAction(_$actionInfo);
     }
@@ -210,7 +276,8 @@ mixin _$AppStore on AppStoreBase, Store {
 
   @override
   void setDrawerItemIndex(int aIndex) {
-    final _$actionInfo = _$AppStoreBaseActionController.startAction(name: 'AppStoreBase.setDrawerItemIndex');
+    final _$actionInfo = _$AppStoreBaseActionController.startAction(
+        name: 'AppStoreBase.setDrawerItemIndex');
     try {
       return super.setDrawerItemIndex(aIndex);
     } finally {
@@ -222,6 +289,8 @@ mixin _$AppStore on AppStoreBase, Store {
   String toString() {
     return '''
 isDarkModeOn: ${isDarkModeOn},
+isHover: ${isHover},
+webListingList: ${webListingList},
 scaffoldBackground: ${scaffoldBackground},
 backgroundColor: ${backgroundColor},
 backgroundSecondaryColor: ${backgroundSecondaryColor},
@@ -231,7 +300,7 @@ textSecondaryColor: ${textSecondaryColor},
 appBarColor: ${appBarColor},
 iconColor: ${iconColor},
 iconSecondaryColor: ${iconSecondaryColor},
-selectedLanguage: ${selectedLanguage},
+selectedLanguageCode: ${selectedLanguageCode},
 selectedDrawerItem: ${selectedDrawerItem}
     ''';
   }

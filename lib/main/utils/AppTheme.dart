@@ -10,22 +10,22 @@ class AppThemeData {
   AppThemeData._();
 
   static final ThemeData lightTheme = ThemeData(
-    scaffoldBackgroundColor: whiteColor,
+    scaffoldBackgroundColor: scaffoldLightColor,
     primaryColor: appColorPrimary,
     primaryColorDark: appColorPrimary,
     errorColor: Colors.red,
     hoverColor: Colors.white54,
     dividerColor: viewLineColor,
-    cursorColor: Colors.black,
-    fontFamily: GoogleFonts.nunito().fontFamily,
+    fontFamily: GoogleFonts.openSans().fontFamily,
     appBarTheme: AppBarTheme(
       color: appLayout_background,
       iconTheme: IconThemeData(color: textPrimaryColor),
-      brightness: Brightness.light,
       systemOverlayStyle: SystemUiOverlayStyle(statusBarIconBrightness: Brightness.dark),
     ),
+    textSelectionTheme: TextSelectionThemeData(cursorColor: Colors.black),
     colorScheme: ColorScheme.light(primary: appColorPrimary, primaryVariant: appColorPrimary),
     cardTheme: CardTheme(color: Colors.white),
+    cardColor: Colors.white,
     iconTheme: IconThemeData(color: textPrimaryColor),
     bottomSheetTheme: BottomSheetThemeData(backgroundColor: whiteColor),
     textTheme: TextTheme(
@@ -36,10 +36,10 @@ class AppThemeData {
     visualDensity: VisualDensity.adaptivePlatformDensity,
   ).copyWith(
     pageTransitionsTheme: PageTransitionsTheme(builders: <TargetPlatform, PageTransitionsBuilder>{
-      TargetPlatform.android: ZoomPageTransitionsBuilder(),
+      TargetPlatform.android: OpenUpwardsPageTransitionsBuilder(),
       TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
-      TargetPlatform.linux: ZoomPageTransitionsBuilder(),
-      TargetPlatform.macOS: ZoomPageTransitionsBuilder(),
+      TargetPlatform.linux: OpenUpwardsPageTransitionsBuilder(),
+      TargetPlatform.macOS: OpenUpwardsPageTransitionsBuilder(),
     }),
   );
 
@@ -50,20 +50,18 @@ class AppThemeData {
     appBarTheme: AppBarTheme(
       color: appBackgroundColorDark,
       iconTheme: IconThemeData(color: blackColor),
-      brightness: Brightness.dark,
-      systemOverlayStyle: SystemUiOverlayStyle(statusBarIconBrightness: Brightness.dark),
+      systemOverlayStyle: SystemUiOverlayStyle(statusBarIconBrightness: Brightness.light),
     ),
     primaryColor: color_primary_black,
-    accentColor: whiteColor,
     dividerColor: Color(0xFFDADADA).withOpacity(0.3),
     primaryColorDark: color_primary_black,
-    cursorColor: Colors.white,
+    textSelectionTheme: TextSelectionThemeData(cursorColor: Colors.white),
     hoverColor: Colors.black12,
-    fontFamily: GoogleFonts.nunito().fontFamily,
+    fontFamily: GoogleFonts.openSans().fontFamily,
     bottomSheetTheme: BottomSheetThemeData(backgroundColor: appBackgroundColorDark),
     primaryTextTheme: TextTheme(headline6: primaryTextStyle(color: Colors.white), overline: primaryTextStyle(color: Colors.white)),
-    colorScheme: ColorScheme.dark(primary: appBackgroundColorDark, onPrimary: cardBackgroundBlackDark, primaryVariant: color_primary_black),
     cardTheme: CardTheme(color: cardBackgroundBlackDark),
+    cardColor: appSecondaryBackgroundColor,
     iconTheme: IconThemeData(color: whiteColor),
     textTheme: TextTheme(
       button: TextStyle(color: color_primary_black),
@@ -71,12 +69,13 @@ class AppThemeData {
       subtitle2: TextStyle(color: Colors.white54),
     ),
     visualDensity: VisualDensity.adaptivePlatformDensity,
+    colorScheme: ColorScheme.dark(primary: appBackgroundColorDark, onPrimary: cardBackgroundBlackDark, primaryVariant: color_primary_black).copyWith(secondary: whiteColor),
   ).copyWith(
     pageTransitionsTheme: PageTransitionsTheme(builders: <TargetPlatform, PageTransitionsBuilder>{
-      TargetPlatform.android: ZoomPageTransitionsBuilder(),
+      TargetPlatform.android: OpenUpwardsPageTransitionsBuilder(),
       TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
-      TargetPlatform.linux: ZoomPageTransitionsBuilder(),
-      TargetPlatform.macOS: ZoomPageTransitionsBuilder(),
+      TargetPlatform.linux: OpenUpwardsPageTransitionsBuilder(),
+      TargetPlatform.macOS: OpenUpwardsPageTransitionsBuilder(),
     }),
   );
 }

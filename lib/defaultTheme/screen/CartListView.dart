@@ -10,6 +10,7 @@ import '../../main.dart';
 import 'DTOrderSummaryScreen.dart';
 import 'DTProductDetailScreen.dart';
 
+// ignore: must_be_immutable
 class CartListView extends StatefulWidget {
   static String tag = '/CartListView';
 
@@ -98,7 +99,7 @@ class CartListViewState extends State<CartListView> {
                 Container(
                   decoration: boxDecorationWithRoundedCorners(
                     borderRadius: BorderRadius.circular(4),
-                    backgroundColor: appColorPrimaryDark,
+                    backgroundColor: appColorPrimary,
                   ),
                   padding: EdgeInsets.all(4),
                   child: Row(
@@ -165,7 +166,7 @@ class CartListViewState extends State<CartListView> {
           Container(
             margin: EdgeInsets.all(16),
             padding: EdgeInsets.all(8),
-            decoration: boxDecoration(showShadow: true, bgColor: appStore.scaffoldBackground),
+            decoration: boxDecoration(showShadow: true, bgColor: context.scaffoldBackgroundColor),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [

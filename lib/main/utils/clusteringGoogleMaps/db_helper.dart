@@ -1,9 +1,6 @@
 import 'package:google_maps_flutter/google_maps_flutter.dart' show LatLngBounds;
-import 'package:meta/meta.dart';
 import 'package:sqflite/sqflite.dart';
-
 import 'aggregated_points.dart';
-import 'lat_lang_geohash.dart';
 
 class DBHelper {
   static Future<List<AggregatedPoints>> getAggregatedPoints({
@@ -21,6 +18,7 @@ class DBHelper {
       return true;
     }());
     try {
+      // ignore: unnecessary_null_comparison
       if (database == null) {
         throw Exception("Database must not be null");
       }
@@ -66,15 +64,14 @@ class DBHelper {
       return <AggregatedPoints>[];
     }
   }
-
-  static Future<List<LatLngAndGeohash>> getPoints({required Database database, required String dbTable, required String dbLatColumn, required String dbLongColumn, String whereClause = ""}) async {
+  // TODO Without NullSafety Geo coder
+ /* static Future<List<LatLngAndGeohash>> getPoints({required Database database, required String dbTable, required String dbLatColumn, required String dbLongColumn, String whereClause = ""}) async {
     try {
       var result = await database.rawQuery('SELECT $dbLatColumn as lat, $dbLongColumn as long '
           'FROM $dbTable $whereClause;');
       List<LatLngAndGeohash> points = [];
       for (Map<String, dynamic> item in result) {
-       // TODO Without NullSafety Geo coder
-       // var p = new LatLngAndGeohash.fromMap(item);
+       var p = new LatLngAndGeohash.fromMap(item);
        // points.add(p);
       }
       assert(() {
@@ -91,7 +88,7 @@ class DBHelper {
       return <LatLngAndGeohash>[];
     }
   }
-
+*/
   static String buildBoundingBoxClause(LatLngBounds latLngBounds, String dbTable, String dbLat, String dbLong) {
     assert(() {
       print(latLngBounds.toString());

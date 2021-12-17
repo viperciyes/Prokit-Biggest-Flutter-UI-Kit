@@ -70,18 +70,19 @@ class CWPickerScreenState extends State<CWPickerScreen> {
       appBar: appBar(context, 'Cupertino Picker'),
       body: SafeArea(
         child: ListView.builder(
-            itemCount: example.length,
-            itemBuilder: (BuildContext context, index) {
-              return ExampleItemWidget(example[index], onTap: () {
-                if (index == 0) {
-                  dateBottomSheet(context);
-                } else if (index == 1) {
-                  timeBottomSheet(context);
-                } else if (index == 2) {
-                  pickerBottomSheet(context);
-                }
-              });
-            }),
+          itemCount: example.length,
+          itemBuilder: (BuildContext context, index) {
+            return ExampleItemWidget(example[index], onTap: () {
+              if (index == 0) {
+                dateBottomSheet(context);
+              } else if (index == 1) {
+                timeBottomSheet(context);
+              } else if (index == 2) {
+                pickerBottomSheet(context);
+              }
+            });
+          },
+        ),
       ),
     );
   }
@@ -104,12 +105,12 @@ class CWPickerScreenState extends State<CWPickerScreen> {
                   children: [
                     Text('Cancel', style: primaryTextStyle(size: 18)).onTap(() {
                       finish(context);
-                      toast('Please select time');
+                      toasty(context, 'Please select time');
                       setState(() {});
                     }),
                     Text('Done', style: primaryTextStyle(size: 18)).onTap(() {
                       finish(context, time);
-                      toast(time!.isNotEmpty ? time : 'Please select time');
+                      toasty(context, time!.isNotEmpty ? time : 'Please select time');
                     })
                   ],
                 ).paddingAll(8.0),
@@ -119,7 +120,7 @@ class CWPickerScreenState extends State<CWPickerScreen> {
                 child: CupertinoTheme(
                   data: CupertinoThemeData(textTheme: CupertinoTextThemeData(dateTimePickerTextStyle: primaryTextStyle(size: 20))),
                   child: CupertinoDatePicker(
-                    backgroundColor: appStore.scaffoldBackground,
+                    // backgroundColor: context.scaffoldBackgroundColor,
                     minimumDate: today,
                     minuteInterval: 1,
                     mode: CupertinoDatePickerMode.time,
@@ -169,7 +170,7 @@ class CWPickerScreenState extends State<CWPickerScreen> {
                         style: boldTextStyle(),
                       ).onTap(() {
                         finish(context, date);
-                        toast(date.toString());
+                        toasty(context, date.toString());
                       })
                     ],
                   ).paddingOnly(top: 8, left: 8, right: 8, bottom: 8),
@@ -214,12 +215,12 @@ class CWPickerScreenState extends State<CWPickerScreen> {
                   children: [
                     Text('Cancel', style: primaryTextStyle(size: 18)).onTap(() {
                       finish(context);
-                      toast('Please select value');
+                      toasty(context, 'Please select value');
                       setState(() {});
                     }),
                     Text('Done', style: primaryTextStyle(size: 18)).onTap(() {
                       finish(context);
-                      toast(selectedValue!.isNotEmpty ? selectedValue : 'Please select value');
+                      toasty(context, selectedValue!.isNotEmpty ? selectedValue : 'Please select value');
                     })
                   ],
                 ).paddingAll(8.0),
@@ -233,7 +234,7 @@ class CWPickerScreenState extends State<CWPickerScreen> {
                     ),
                   ),
                   child: CupertinoPicker(
-                    backgroundColor: appStore.scaffoldBackground,
+                   // backgroundColor: context.scaffoldBackgroundColor,
                     itemExtent: 30,
                     children: countryName.map((e) {
                       return Text(e, style: primaryTextStyle(size: 20));

@@ -44,7 +44,7 @@ class _MWStepperScreen4State extends State<MWStepperScreen4> {
                     child: Text('CANCEL', style: secondaryTextStyle()),
                   ),
                 ],
-              );
+              ).paddingTop(16);
             },
             onStepContinue: () {
               setState(() {

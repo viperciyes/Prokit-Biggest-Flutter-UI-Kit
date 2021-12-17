@@ -91,7 +91,7 @@ class _MWUserAccountDrawerHeaderScreen3State extends State<MWUserAccountDrawerHe
                 ),
                 onTap: () {
                   scaffoldKey.currentState!.openEndDrawer();
-                  toast("Account");
+                  toasty(context, "Account");
                 },
               ),
               ListTile(
@@ -105,7 +105,7 @@ class _MWUserAccountDrawerHeaderScreen3State extends State<MWUserAccountDrawerHe
                 ),
                 onTap: () {
                   scaffoldKey.currentState!.openEndDrawer();
-                  toast("Balance");
+                  toasty(context, "Balance");
                 },
               ),
             ],

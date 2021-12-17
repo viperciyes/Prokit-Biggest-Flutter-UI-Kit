@@ -45,7 +45,7 @@ class CWActionSheetScreenState extends State<CWActionSheetScreen> {
         actions: [
           CupertinoActionSheetAction(
               onPressed: () {
-                toast('OK');
+                toasty(context, 'OK');
                 finish(context);
               },
               child: Text('OK', style: primaryTextStyle(size: 18)))
@@ -67,7 +67,7 @@ class CWActionSheetScreenState extends State<CWActionSheetScreen> {
           CupertinoActionSheetAction(
             onPressed: () {
               finish(context);
-              toast('Male Clicked');
+              toasty(context, 'Male Clicked');
             },
             child: Text(' 💁‍♂️ Male', style: primaryTextStyle(size: 18)),
             isDefaultAction: true,
@@ -75,7 +75,7 @@ class CWActionSheetScreenState extends State<CWActionSheetScreen> {
           CupertinoActionSheetAction(
               onPressed: () {
                 finish(context);
-                toast('Female Clicked');
+                toasty(context, 'Female Clicked');
               },
               child: Text(' 💁‍♀️ Female', style: primaryTextStyle(size: 18)))
         ],
@@ -95,7 +95,7 @@ class CWActionSheetScreenState extends State<CWActionSheetScreen> {
         actions: [
           CupertinoActionSheetAction(
               onPressed: () {
-                toast('Share App');
+                toasty(context, 'Share App');
                 finish(context);
               },
               child: Row(
@@ -113,7 +113,7 @@ class CWActionSheetScreenState extends State<CWActionSheetScreen> {
               )),
           CupertinoActionSheetAction(
             onPressed: () {
-              toast('More by this Developer');
+              toasty(context, 'More by this Developer');
               finish(context);
             },
             child: Row(

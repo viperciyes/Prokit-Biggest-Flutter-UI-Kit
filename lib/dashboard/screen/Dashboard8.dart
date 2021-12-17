@@ -194,6 +194,7 @@ class Dashboard8State extends State<Dashboard8> {
   }
 }
 
+// ignore: must_be_immutable
 class Rooms extends StatelessWidget {
   late DB8Rooms model;
 

@@ -40,7 +40,7 @@ class DTErrorScreenState extends State<DTErrorScreen> {
         'Something went wrong. Please try again later',
         showRetry: true,
         onRetry: () {
-          toast('Retrying');
+          toasty(context, 'Retrying');
         },
       ),
     );

@@ -37,15 +37,13 @@ class Db5BottomNavigationBar extends StatefulWidget {
     this.unselectedLabelStyle,
     this.showSelectedLabels = true,
     bool? showUnselectedLabels,
-  })  : assert(items != null),
-        assert(items.length >= 2),
+  })  : assert(items.length >= 2),
         assert(0 <= currentIndex && currentIndex < items.length),
-        assert(elevation != null && elevation >= 0.0),
-        assert(iconSize != null && iconSize >= 0.0),
+        assert(elevation >= 0.0),
+        assert(iconSize >= 0.0),
         assert(selectedItemColor == null || fixedColor == null, 'Either selectedItemColor or fixedColor can be specified, but not both'),
-        assert(selectedFontSize != null && selectedFontSize >= 0.0),
-        assert(unselectedFontSize != null && unselectedFontSize >= 0.0),
-        assert(showSelectedLabels != null),
+        assert(selectedFontSize >= 0.0),
+        assert(unselectedFontSize >= 0.0),
         type = _type(type, items),
         selectedItemColor = selectedItemColor ?? fixedColor,
         showUnselectedLabels = showUnselectedLabels ?? _defaultShowUnselected(_type(type, items)),
@@ -176,8 +174,6 @@ class Db5BottomNavigationBar extends StatefulWidget {
       case Db5BottomNavigationBarType.fixed:
         return true;
     }
-    assert(false);
-    return false;
   }
 
   @override
@@ -203,12 +199,7 @@ class _BottomNavigationTile extends StatelessWidget {
     this.showSelectedLabels,
     this.showUnselectedLabels,
     this.indexLabel,
-  })  : assert(type != null),
-        assert(item != null),
-        assert(animation != null),
-        assert(selected != null),
-        assert(selectedLabelStyle != null),
-        assert(unselectedLabelStyle != null);
+  });
 
   final Db5BottomNavigationBarType type;
   final Db5BottomNavigationBarItem item;
@@ -362,9 +353,7 @@ class _TileIcon extends StatelessWidget {
     required this.item,
     required this.selectedIconTheme,
     required this.unselectedIconTheme,
-  })  : assert(selected != null),
-        assert(item != null),
-        super(key: key);
+  }) : super(key: key);
 
   final ColorTween? colorTween;
   final Animation<double> animation;
@@ -376,17 +365,6 @@ class _TileIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color? iconColor = colorTween!.evaluate(animation);
-    final IconThemeData defaultIconTheme = IconThemeData(
-      color: iconColor,
-      size: iconSize,
-    );
-    final IconThemeData iconThemeData = IconThemeData.lerp(
-      defaultIconTheme.merge(unselectedIconTheme),
-      defaultIconTheme.merge(selectedIconTheme),
-      animation.value,
-    );
-
     return Align(
       alignment: Alignment.topCenter,
       heightFactor: 1.0,
@@ -407,14 +385,7 @@ class _Label extends StatelessWidget {
     required this.unselectedLabelStyle,
     required this.showSelectedLabels,
     required this.showUnselectedLabels,
-  })  : assert(colorTween != null),
-        assert(animation != null),
-        assert(item != null),
-        assert(selectedLabelStyle != null),
-        assert(unselectedLabelStyle != null),
-        assert(showSelectedLabels != null),
-        assert(showUnselectedLabels != null),
-        super(key: key);
+  }) : super(key: key);
 
   final ColorTween colorTween;
   final Animation<double> animation;
@@ -608,7 +579,6 @@ class _Db5BottomNavigationBarState extends State<Db5BottomNavigationBar> with Ti
 
   List<Widget> _createTiles() {
     final MaterialLocalizations localizations = MaterialLocalizations.of(context);
-    assert(localizations != null);
 
     final ThemeData themeData = Theme.of(context);
 
@@ -733,9 +703,7 @@ class _Circle {
     required this.index,
     required this.color,
     required TickerProvider vsync,
-  })  : assert(state != null),
-        assert(index != null),
-        assert(color != null) {
+  }) {
     controller = AnimationController(
       duration: kThemeAnimationDuration,
       vsync: vsync,
@@ -778,8 +746,7 @@ class _RadialPainter extends CustomPainter {
   _RadialPainter({
     required this.circles,
     required this.textDirection,
-  })  : assert(circles != null),
-        assert(textDirection != null);
+  });
 
   final List<_Circle> circles;
   final TextDirection textDirection;
@@ -841,8 +808,7 @@ class Db5BottomNavigationBarItem {
     this.title,
     Widget? activeIcon,
     this.backgroundColor,
-  })  : activeIcon = activeIcon as String? ?? icon,
-        assert(icon != null);
+  }) : activeIcon = activeIcon as String? ?? icon;
 
   /// The icon of the item.
   ///

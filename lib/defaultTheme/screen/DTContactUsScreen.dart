@@ -62,7 +62,7 @@ class DTContactUsScreenState extends State<DTContactUsScreen> {
             Container(
               margin: EdgeInsets.all(16),
               height: 50,
-              decoration: boxDecorationRoundedWithShadow(8, backgroundColor: appStore.scaffoldBackground!),
+              decoration: boxDecorationRoundedWithShadow(8, backgroundColor: context.scaffoldBackgroundColor),
               child: TextFormField(
                 controller: searchCont,
                 style: primaryTextStyle(),
@@ -96,7 +96,7 @@ class DTContactUsScreenState extends State<DTContactUsScreen> {
                       child: Container(
                         margin: EdgeInsets.all(16),
                         height: 180,
-                        decoration: BoxDecoration(color: appStore.scaffoldBackground, borderRadius: BorderRadius.all(Radius.circular(8))),
+                        decoration: BoxDecoration(color: context.scaffoldBackgroundColor, borderRadius: BorderRadius.all(Radius.circular(8))),
                         child: Column(
                           children: [
                             24.height,

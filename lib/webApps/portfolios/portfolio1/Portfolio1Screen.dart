@@ -40,7 +40,7 @@ class Portfolio1ScreenState extends State<Portfolio1Screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar(context, ''),
+      appBar: appBar(context, 'Portfolio 1'),
       body: Container(
         child: Scrollbar(
           child: NotificationListener(

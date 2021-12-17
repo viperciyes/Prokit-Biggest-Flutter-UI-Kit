@@ -40,8 +40,9 @@ class MWAppBarScreenState extends State<MWAppBarScreen> {
   Widget build(BuildContext context) {
     Widget leadingWidget() {
       return BackButton(
+        color: appStore.textPrimaryColor,
         onPressed: () {
-          toast('Back button');
+          toasty(context, 'Back button');
         },
       );
     }
@@ -82,7 +83,7 @@ class MWAppBarScreenState extends State<MWAppBarScreen> {
                     IconButton(
                       icon: Icon(Icons.settings, color: appStore.textPrimaryColor),
                       onPressed: () {
-                        toast('Settings');
+                        toasty(context, 'Settings');
                       },
                     )
                   ],
@@ -131,7 +132,7 @@ class MWAppBarScreenState extends State<MWAppBarScreen> {
                   leading: IconButton(
                     icon: Icon(Icons.menu, color: appStore.textPrimaryColor),
                     onPressed: () {
-                      toast('Drawer');
+                      toasty(context, 'Drawer');
                     },
                   ),
                   title: Text('Page Title', style: boldTextStyle(color: appStore.textPrimaryColor)),
@@ -139,19 +140,19 @@ class MWAppBarScreenState extends State<MWAppBarScreen> {
                     IconButton(
                       icon: Icon(Icons.share, color: appStore.textPrimaryColor),
                       onPressed: () {
-                        toast('Share');
+                        toasty(context, 'Share');
                       },
                     ),
                     IconButton(
                       icon: Icon(Icons.search, color: appStore.textPrimaryColor),
                       onPressed: () {
-                        toast('Search');
+                        toasty(context, 'Search');
                       },
                     ),
                     IconButton(
                       icon: Icon(Icons.more_vert, color: appStore.textPrimaryColor),
                       onPressed: () {
-                        toast('Menu');
+                        toasty(context, 'Menu');
                       },
                     ),
                   ],
@@ -163,7 +164,7 @@ class MWAppBarScreenState extends State<MWAppBarScreen> {
                   actions: [
                     IconButton(
                       onPressed: () {
-                        toast('Profile');
+                        toasty(context, 'Profile');
                       },
                       icon: Image.network('https://tecake.com/wp-content/uploads/2018/07/student-profile-gabriela-mills-college.jpg').cornerRadiusWithClipRRect(20),
                     )

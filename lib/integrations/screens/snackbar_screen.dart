@@ -46,7 +46,7 @@ class SnackBarScreenState extends State<SnackBarScreen> {
                   action: SnackBarAction(
                     label: 'Undo',
                     onPressed: () {
-                      toast('Undo pressed');
+                      toasty(context, 'Undo pressed');
                     },
                   ),
                 ),

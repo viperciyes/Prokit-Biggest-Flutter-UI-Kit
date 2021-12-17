@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
 
-import '../../main.dart';
-
 class AMAnimatedPositionedScreen extends StatefulWidget {
   static String tag = '/AMAnimatedPositionedScreen';
 
@@ -34,7 +32,7 @@ class AMAnimatedPositionedScreenState extends State<AMAnimatedPositionedScreen> 
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: appStore.scaffoldBackground,
+        backgroundColor: context.scaffoldBackgroundColor,
         appBar: appBar(context, 'Animated Positioned'),
         body: Container(
           child: Stack(

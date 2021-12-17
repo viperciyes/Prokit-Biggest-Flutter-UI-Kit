@@ -98,7 +98,7 @@ class DTPaymentScreenState extends State<DTPaymentScreen> {
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text('Card Holder', style: primaryTextStyle(size: 16)),
+                                    Text('card Holder', style: primaryTextStyle(size: 16)),
                                     Text('Expiry', style: primaryTextStyle(size: 16)),
                                   ],
                                 ),
@@ -147,7 +147,7 @@ class DTPaymentScreenState extends State<DTPaymentScreen> {
                     keyboardType: TextInputType.number,
                     style: primaryTextStyle(),
                     decoration: InputDecoration(
-                      labelText: 'Card Number',
+                      labelText: 'card Number',
                       counterText: '',
                       border: OutlineInputBorder(),
                       enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: appStore.textSecondaryColor!)),
@@ -234,7 +234,7 @@ class DTPaymentScreenState extends State<DTPaymentScreen> {
                     focusNode: cardHolderFocus,
                     style: primaryTextStyle(),
                     decoration: InputDecoration(
-                      labelText: 'Card Holder',
+                      labelText: 'card Holder',
                       border: OutlineInputBorder(),
                       enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: appStore.textSecondaryColor!)),
                       focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: appColorPrimary)),

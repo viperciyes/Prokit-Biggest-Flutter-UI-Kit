@@ -36,17 +36,23 @@ class AppTheme {
 
 class ProTheme {
   String? name;
+  // ignore: non_constant_identifier_names
   bool? show_cover;
+  // ignore: non_constant_identifier_names
   List<ProTheme>? sub_kits;
+  // ignore: non_constant_identifier_names
   String? title_name;
   String? type;
   String? icon;
+  // ignore: non_constant_identifier_names
   bool? is_theme;
   String? tag;
   bool? darkThemeSupported;
   Widget? widget;
+  bool? isWebSupported;
 
-  ProTheme({this.name, this.icon, this.is_theme, this.tag, this.type, this.show_cover, this.sub_kits, this.title_name, this.darkThemeSupported, this.widget});
+  // ignore: non_constant_identifier_names
+  ProTheme({this.name, this.icon, this.is_theme, this.tag, this.type, this.show_cover, this.sub_kits, this.title_name, this.darkThemeSupported, this.widget,this.isWebSupported=false});
 
   factory ProTheme.fromJson(Map<String, dynamic> json) {
     return ProTheme(
@@ -60,6 +66,8 @@ class ProTheme {
       title_name: json['title_name'],
       darkThemeSupported: json['darkThemeSupported'],
       widget: json['widget'],
+      isWebSupported:json['isWebSupported']
+
     );
   }
 
@@ -71,6 +79,7 @@ class ProTheme {
     data['type'] = this.type;
     data['tag'] = this.tag;
     data['darkThemeSupported'] = this.darkThemeSupported;
+    data['isWebSupported']=this.isWebSupported;
     data['icon'] = this.icon;
     data['widget'] = this.widget;
     data['is_theme'] = this.is_theme;

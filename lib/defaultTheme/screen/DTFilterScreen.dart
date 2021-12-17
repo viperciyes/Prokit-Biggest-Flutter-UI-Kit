@@ -63,7 +63,7 @@ class DTFilterScreenState extends State<DTFilterScreen> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  toast("Apply");
+                  toasty(context, "Apply");
                 },
                 style: ElevatedButton.styleFrom(
                   primary: appColorPrimary,
@@ -169,6 +169,7 @@ Widget mOption(List<DTFilterOptionModel> mList) {
   );
 }
 
+// ignore: must_be_immutable
 class Option extends StatefulWidget {
   DTFilterOptionModel model;
 

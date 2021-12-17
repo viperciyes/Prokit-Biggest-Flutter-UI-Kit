@@ -28,6 +28,7 @@ class CWActivityIndicatorScreenState extends State<CWActivityIndicatorScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(color: appStore.iconColor),
         title: Text(
           'Cupertino Activity Indicator',
           style: boldTextStyle(color: appStore.textPrimaryColor),

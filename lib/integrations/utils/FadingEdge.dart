@@ -45,11 +45,7 @@ class FadingEdgeScrollView extends StatefulWidget {
     required this.gradientFractionOnStart,
     required this.gradientFractionOnEnd,
     required this.shouldDisposeScrollController,
-  })  : assert(child != null),
-        assert(scrollController != null),
-        assert(reverse != null),
-        assert(scrollDirection != null),
-        assert(gradientFractionOnStart >= 0 && gradientFractionOnStart <= 1),
+  })  : assert(gradientFractionOnStart >= 0 && gradientFractionOnStart <= 1),
         assert(gradientFractionOnEnd >= 0 && gradientFractionOnEnd <= 1),
         super(key: key);
 
@@ -108,8 +104,6 @@ class FadingEdgeScrollView extends StatefulWidget {
     double gradientFractionOnEnd = 0.1,
     bool shouldDisposeScrollController = false,
   }) {
-    assert(child.controller != null, "Child must have controller set");
-
     return FadingEdgeScrollView._internal(
       key: key,
       child: child,

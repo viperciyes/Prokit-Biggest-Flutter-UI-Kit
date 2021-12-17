@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:prokit_flutter/fullApps/dating/utils/DAWidgets.dart';
 import 'package:prokit_flutter/main.dart';
 import 'package:prokit_flutter/main/utils/AppColors.dart';
 import 'package:prokit_flutter/webApps/portfolios/models/Portfolio1SkillModel.dart';
@@ -46,7 +47,7 @@ class GalleryWidgetState extends State<GalleryWidget> {
         child: Column(
           children: [
             32.height,
-            Image.network(
+            commonCachedNetworkImage(
               imgList[selectedIndex].img!,
               height: context.height() * 0.6,
               fit: BoxFit.cover,
@@ -66,7 +67,7 @@ class GalleryWidgetState extends State<GalleryWidget> {
                     },
                     child: Container(
                       margin: EdgeInsets.all(8),
-                      child: Image.network(imgList[index].img!, height: 150, width: 150, fit: BoxFit.cover).cornerRadiusWithClipRRect(10),
+                      child: commonCachedNetworkImage(imgList[index].img!, height: 150, width: 150, fit: BoxFit.cover).cornerRadiusWithClipRRect(10),
                     ),
                   );
                 },

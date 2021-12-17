@@ -56,7 +56,7 @@ class MWRadioScreenState extends State<MWRadioScreen> {
                       onChanged: (dynamic value) {
                         setState(() {
                           gender = value;
-                          toast("$gender Selected");
+                          toasty(context, "$gender Selected");
                         });
                       },
                     ),
@@ -72,7 +72,7 @@ class MWRadioScreenState extends State<MWRadioScreen> {
                       onChanged: (dynamic value) {
                         setState(() {
                           gender = value;
-                          toast("$gender Selected");
+                          toasty(context, "$gender Selected");
                         });
                       },
                     ),
@@ -86,7 +86,7 @@ class MWRadioScreenState extends State<MWRadioScreen> {
                       onChanged: (dynamic value) {
                         setState(() {
                           gender = value;
-                          toast("$gender Selected");
+                          toasty(context, "$gender Selected");
                         });
                       },
                     ),
@@ -122,7 +122,7 @@ class MWRadioScreenState extends State<MWRadioScreen> {
                       onChanged: (dynamic value) {
                         setState(() {
                           gender1 = value;
-                          toast("$gender1 Selected");
+                          toasty(context, "$gender1 Selected");
                         });
                       }),
                 ),
@@ -150,7 +150,7 @@ class MWRadioScreenState extends State<MWRadioScreen> {
                       onChanged: (dynamic value) {
                         setState(() {
                           gender1 = value;
-                          toast("Radio Button on the trailing side");
+                          toasty(context, "Radio Button on the trailing side");
                         });
                       }),
                 ),

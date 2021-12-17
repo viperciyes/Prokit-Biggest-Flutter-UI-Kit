@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:prokit_flutter/fullApps/dating/utils/DAWidgets.dart';
 import 'package:prokit_flutter/webApps/portfolios/utils/Images.dart';
 
 import '../Colors.dart';
@@ -36,7 +37,7 @@ class knowledgeWidgetState extends State<knowledgeWidget> {
       width: context.width(),
       child: Stack(
         children: [
-          Image.network(
+          commonCachedNetworkImage(
             p3knowledge,
             height: context.height(),
             width: context.width(),

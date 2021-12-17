@@ -349,10 +349,11 @@ class _DetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+          iconTheme: IconThemeData(color: appStore.iconColor),
           title: Text(
-        'Details Page Title',
-        style: primaryTextStyle(),
-      )),
+            'Details Page Title',
+            style: primaryTextStyle()
+          )),
       body: ListView(
         children: [
           Image.network(SampleImageUrl, fit: BoxFit.cover),
@@ -362,7 +363,7 @@ class _DetailsPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text('Title', style: primaryTextStyle(size: 30)),
-                const SizedBox(height: 10),
+                10.height,
                 Text(_loremIpsumParagraph, style: secondaryTextStyle(size: 14)),
               ],
             ),

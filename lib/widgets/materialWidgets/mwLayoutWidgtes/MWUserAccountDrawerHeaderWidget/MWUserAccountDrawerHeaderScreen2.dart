@@ -46,7 +46,7 @@ class _MWUserAccountDrawerHeaderScreen2State extends State<MWUserAccountDrawerHe
                 title: Text('Category', style: primaryTextStyle()),
                 onTap: () {
                   scaffoldKey.currentState!.openEndDrawer();
-                  toast("Category");
+                  toasty(context, "Category");
                 },
                 trailing: Container(
                   padding: EdgeInsets.only(right: 4),
@@ -62,7 +62,7 @@ class _MWUserAccountDrawerHeaderScreen2State extends State<MWUserAccountDrawerHe
                 ),
                 onTap: () {
                   scaffoldKey.currentState!.openEndDrawer();
-                  toast("Account");
+                  toasty(context, "Account");
                 },
               ),
               ListTile(
@@ -74,7 +74,7 @@ class _MWUserAccountDrawerHeaderScreen2State extends State<MWUserAccountDrawerHe
                 ),
                 onTap: () {
                   scaffoldKey.currentState!.openEndDrawer();
-                  toast("Balance");
+                  toasty(context, "Balance");
                 },
               ),
             ],

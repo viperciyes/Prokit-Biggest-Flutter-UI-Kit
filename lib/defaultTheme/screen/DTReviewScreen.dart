@@ -319,7 +319,7 @@ class WriteReviewDialog extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: appStore.scaffoldBackground,
+          color: context.scaffoldBackgroundColor,
           shape: BoxShape.rectangle,
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
@@ -398,9 +398,9 @@ class WriteReviewDialog extends StatelessWidget {
                     reviewData.comment = reviewCont.text.validate();
                     reviewData.ratting = ratting;
                     finish(context, reviewData);
-                    toast('Review is submitted');
+                    toasty(context, 'Review is submitted');
                   } else {
-                    toast(errorThisFieldRequired);
+                    toasty(context, errorThisFieldRequired);
                   }
                 },
                 child: Container(

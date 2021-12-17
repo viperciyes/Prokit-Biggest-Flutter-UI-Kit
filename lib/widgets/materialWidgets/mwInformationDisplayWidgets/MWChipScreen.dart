@@ -44,7 +44,7 @@ class MWChipScreenState extends State<MWChipScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: appStore.scaffoldBackground,
+        backgroundColor: context.scaffoldBackgroundColor,
         appBar: appBar(context, 'Chips'),
         body: CustomTheme(
           child: SingleChildScrollView(

@@ -47,7 +47,7 @@ class _MWStepperScreen2State extends State<MWStepperScreen2> {
       child: Scaffold(
         appBar: appBar(context, 'Stepper'),
         body: Theme(
-          data: ThemeData(backgroundColor: appStore.scaffoldBackground),
+          data: ThemeData(backgroundColor: context.scaffoldBackgroundColor),
           child: Stepper(
             steps: steps,
             physics: BouncingScrollPhysics(),

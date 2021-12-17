@@ -39,7 +39,7 @@ class MWRaisedButtonScreenState extends State<MWRaisedButtonScreen> {
             children: [
               ElevatedButton(
                 onPressed: () {
-                  toast('Default Raised button');
+                  toasty(context, 'Default Raised button');
                 },
                 style: ElevatedButton.styleFrom(primary: Color(0xFFDFDFDF)),
                 child: Text(
@@ -51,7 +51,7 @@ class MWRaisedButtonScreenState extends State<MWRaisedButtonScreen> {
               ElevatedButton.icon(
                 style: ElevatedButton.styleFrom(primary:  Color(0xFFDFDFDF)),
                 onPressed: () {
-                  toast('Raised button with icon');
+                  toasty(context, 'Raised button with icon');
                 },
                 icon: Icon(
                   Icons.add,
@@ -90,7 +90,7 @@ class MWRaisedButtonScreenState extends State<MWRaisedButtonScreen> {
                   style: primaryTextStyle(color: black),
                 ),
                 onPressed: () {
-                  toast('Border Raised button');
+                  toasty(context, 'Border Raised button');
                 },
                 style: ElevatedButton.styleFrom(
                   primary: Color(0xFFDFDFDF),
@@ -102,7 +102,7 @@ class MWRaisedButtonScreenState extends State<MWRaisedButtonScreen> {
               Divider(),
               ElevatedButton(
                 onPressed: () {
-                  toast('Rounded Raised button');
+                  toasty(context, 'Rounded Raised button');
                 },
                 style: ElevatedButton.styleFrom(
                   primary: Color(0xFFDFDFDF),
@@ -121,7 +121,7 @@ class MWRaisedButtonScreenState extends State<MWRaisedButtonScreen> {
               Divider(),
               ElevatedButton(
                 onPressed: () {
-                  toast('Customize Rounded Raised button');
+                  toasty(context, 'Customize Rounded Raised button');
                 },
                 style: ElevatedButton.styleFrom(
                   primary: Color(0xFFDFDFDF),
@@ -140,7 +140,7 @@ class MWRaisedButtonScreenState extends State<MWRaisedButtonScreen> {
               Divider(),
               ElevatedButton(
                 onPressed: () {
-                  toast('Customize Text Style of label');
+                  toasty(context, 'Customize Text Style of label');
                 },
                 child: Text(
                   'Customize Text Style of label',
@@ -163,7 +163,7 @@ class MWRaisedButtonScreenState extends State<MWRaisedButtonScreen> {
               Divider(),
               ElevatedButton(
                 onPressed: () {
-                  toast('Color Fill Raised button');
+                  toasty(context, 'Color Fill Raised button');
                 },
                 style: ElevatedButton.styleFrom(
                   primary: getColorFromHex('#8998FF'),
@@ -176,7 +176,7 @@ class MWRaisedButtonScreenState extends State<MWRaisedButtonScreen> {
               Divider(),
               ElevatedButton(
                 onPressed: () {
-                  toast('Rounded color fill Raised button');
+                  toasty(context, 'Rounded color fill Raised button');
                 },
                 style: ElevatedButton.styleFrom(
                   primary: getColorFromHex('#f2866c'),

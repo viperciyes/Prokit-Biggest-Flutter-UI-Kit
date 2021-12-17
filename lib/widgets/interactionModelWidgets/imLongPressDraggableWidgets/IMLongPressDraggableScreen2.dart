@@ -37,7 +37,7 @@ class _IMLongPressDraggableScreen2State extends State<IMLongPressDraggableScreen
     return SafeArea(
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: appStore.scaffoldBackground,
+        backgroundColor: context.scaffoldBackgroundColor,
         appBar: appBar(context, 'Long Press Draggable with Target'),
         body: Center(
           child: Column(
@@ -84,7 +84,7 @@ class _IMLongPressDraggableScreen2State extends State<IMLongPressDraggableScreen
                       },
                       onAccept: (dynamic data) {
                         if (data == 1) {
-                          ScaffoldMessengerState().showSnackBar(SnackBar(content: Text("Correct!")));
+                          //ScaffoldMessengerState().showSnackBar(SnackBar(content: Text("Correct!")));
                           mValue = false;
                           setState(() {
                             _mStatus = true;

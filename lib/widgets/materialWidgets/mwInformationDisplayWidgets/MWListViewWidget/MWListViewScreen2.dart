@@ -15,7 +15,7 @@ class _MWListViewScreen2State extends State<MWListViewScreen2> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: appStore.scaffoldBackground,
+        backgroundColor: context.scaffoldBackgroundColor,
         appBar: appBar(context, 'List Wheel ScrollView'),
         body: ListWheelScrollView.useDelegate(
           physics: FixedExtentScrollPhysics(),

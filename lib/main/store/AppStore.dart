@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:prokit_flutter/locale/Languages.dart';
+import 'package:prokit_flutter/main/model/AppModel.dart';
 import 'package:prokit_flutter/main/utils/AppColors.dart';
 import 'package:prokit_flutter/main/utils/AppConstant.dart';
+
+import '../../main.dart';
 
 part 'AppStore.g.dart';
 
@@ -11,6 +15,12 @@ class AppStore = AppStoreBase with _$AppStore;
 abstract class AppStoreBase with Store {
   @observable
   bool isDarkModeOn = false;
+
+  @observable
+  bool isHover = false;
+
+  @observable
+  List<ProTheme> webListingList = [];
 
   @observable
   Color? scaffoldBackground;
@@ -40,7 +50,7 @@ abstract class AppStoreBase with Store {
   Color? iconSecondaryColor;
 
   @observable
-  String selectedLanguage = 'en';
+  String selectedLanguageCode = defaultLanguage;
 
   @observable
   var selectedDrawerItem = -1;
@@ -66,10 +76,8 @@ abstract class AppStoreBase with Store {
       textPrimaryColorGlobal = whiteColor;
       textSecondaryColorGlobal = Colors.white54;
       shadowColorGlobal = appShadowColorDark;
-
-      setStatusBarColor(Colors.black);
     } else {
-      scaffoldBackground = Colors.white;
+      scaffoldBackground = scaffoldLightColor;
 
       appBarColor = Colors.white;
       backgroundColor = Colors.black;
@@ -85,15 +93,35 @@ abstract class AppStoreBase with Store {
       textPrimaryColorGlobal = appTextColorPrimary;
       textSecondaryColorGlobal = appTextColorSecondary;
       shadowColorGlobal = appShadowColor;
-
-      setStatusBarColor(Colors.white);
     }
+    setStatusBarColor(scaffoldBackground!);
 
     setValue(isDarkModeOnPref, isDarkModeOn);
   }
 
   @action
-  void setLanguage(String aLanguage) => selectedLanguage = aLanguage;
+  void toggleHover({bool value = false}) => isHover = value;
+
+  @action
+  Future<void> setLanguage(String val, {BuildContext? context}) async {
+    selectedLanguageCode = val;
+
+    await setValue(SELECTED_LANGUAGE_CODE, selectedLanguageCode);
+    selectedLanguageDataModel = getSelectedLanguageModel();
+
+    if (context != null) language = BaseLanguage.of(context);
+
+  }
+
+  @action
+  Future setWebListing(List<ProTheme> data) async {
+    webListingList = data;
+  }
+
+  @action
+  Future clearWebListing() async {
+    webListingList.clear();
+  }
 
   @action
   void setDrawerItemIndex(int aIndex) {

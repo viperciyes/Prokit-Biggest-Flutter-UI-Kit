@@ -33,7 +33,7 @@ class _MWRichTextScreenState extends State<MWRichTextScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: appStore.scaffoldBackground,
+        backgroundColor: context.scaffoldBackgroundColor,
         appBar: appBar(context, 'Rich Text'),
         body: SingleChildScrollView(
           padding: EdgeInsets.all(16),
@@ -49,7 +49,7 @@ class _MWRichTextScreenState extends State<MWRichTextScreen> {
                       text: ' Sign Up ',
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
-                          toast("Redirect to sign up");
+                          toasty(context, "Redirect to sign up");
                         },
                       style: primaryTextStyle(color: Colors.blue),
                     ),
@@ -87,7 +87,7 @@ class _MWRichTextScreenState extends State<MWRichTextScreen> {
                       text: 'Click',
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
-                          toast("Click");
+                          toasty(context, "Click");
                         },
                       style: TextStyle(fontWeight: FontWeight.normal, fontSize: 16, decoration: TextDecoration.underline, color: Colors.blue),
                     ),

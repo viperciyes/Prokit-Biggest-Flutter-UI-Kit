@@ -12,6 +12,7 @@ const double _kActiveFontSize = 14.0;
 const double _kBottomMargin = 8.0;
 enum BubbleBottomBarFabLocation { end, center }
 
+// ignore: must_be_immutable
 class BubbleBottomBar extends StatefulWidget {
   BubbleBottomBar(
       {Key? key,
@@ -27,14 +28,12 @@ class BubbleBottomBar extends StatefulWidget {
       this.hasInk = false,
       this.inkColor,
       this.fabLocation})
-      : assert(items != null),
-        assert(items.length >= 2),
+      : assert(items.length >= 2),
         assert(
           items.every((BubbleBottomBarItem item) => item.title != null) == true,
           'Every item must have a non-null title',
         ),
         assert(0 <= currentIndex && currentIndex < items.length),
-        assert(iconSize != null),
         super(key: key);
 
   final List<BubbleBottomBarItem> items;
@@ -55,8 +54,8 @@ class BubbleBottomBar extends StatefulWidget {
 }
 
 class _BottomNavigationTile extends StatelessWidget {
-  const _BottomNavigationTile(this.item, this.opacity, this.animation, this.iconSize, {this.onTap, this.colorTween, this.flex, this.selected = false, this.indexLabel, this.ink = false, this.inkColor})
-      : assert(selected != null);
+  const _BottomNavigationTile(this.item, this.opacity, this.animation, this.iconSize,
+      {this.onTap, this.colorTween, this.flex, this.selected = false, this.indexLabel, this.ink = false, this.inkColor});
 
   final BubbleBottomBarItem item;
   final Animation<double> animation;
@@ -306,7 +305,6 @@ class _BottomNavigationBarState extends State<BubbleBottomBar> with TickerProvid
 
   List<Widget> _createTiles() {
     final MaterialLocalizations localizations = MaterialLocalizations.of(context);
-    assert(localizations != null);
     final List<Widget> children = <Widget>[];
     for (int i = 0; i < widget.items.length; i += 1) {
       children.add(
@@ -401,8 +399,7 @@ class BubbleBottomBarItem {
     this.title,
     Widget? activeIcon,
     this.backgroundColor,
-  })  : activeIcon = activeIcon ?? icon,
-        assert(icon != null);
+  }) : activeIcon = activeIcon ?? icon;
   final Widget icon;
   final Widget activeIcon;
   final Widget? title;
@@ -414,10 +411,7 @@ class _BubbleBottomBarClipper extends CustomClipper<Path> {
     required this.geometry,
     required this.shape,
     required this.notchMargin,
-  })  : assert(geometry != null),
-        assert(shape != null),
-        assert(notchMargin != null),
-        super(reclip: geometry);
+  }) : super(reclip: geometry);
 
   final ValueListenable<ScaffoldGeometry> geometry;
   final NotchedShape shape;

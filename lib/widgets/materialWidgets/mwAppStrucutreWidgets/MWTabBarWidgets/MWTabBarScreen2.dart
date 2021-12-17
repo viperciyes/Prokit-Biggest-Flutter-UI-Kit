@@ -31,6 +31,7 @@ class _MWTabBarScreen2State extends State<MWTabBarScreen2> {
         child: Scaffold(
           appBar: AppBar(
             backgroundColor: appStore.appBarColor,
+            iconTheme: IconThemeData(color: context.iconColor),
             title: Text('TabBar with Title and Icon', style: boldTextStyle(color: appStore.textPrimaryColor, size: 20)),
             bottom: TabBar(
               onTap: (index) {

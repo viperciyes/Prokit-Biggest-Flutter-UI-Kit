@@ -12,7 +12,6 @@ import 'package:flutter/material.dart';
 /// By default, a fluid slider will be as wide as possible, with a height of 60.0. When
 /// given unbounded constraints, it will attempt to make itself 200.0 wide.
 ///
-
 class FluidSlider extends StatefulWidget {
   ///Creates a fluid slider
   ///
@@ -79,8 +78,7 @@ class FluidSlider extends StatefulWidget {
   /// value.
   ///
   /// If null, the slider will be displayed as disabled.
-
-  final ValueChanged<double> onChanged;
+  final ValueChanged<double>? onChanged;
 
   /// Called when the user starts selecting a new value for the slider.
   ///
@@ -128,13 +126,12 @@ class FluidSlider extends StatefulWidget {
   final double? thumbDiameter;
 
   const FluidSlider({
-    Key? key,
     required this.value,
     this.min = 0.0,
     this.max = 1.0,
     this.start,
     this.end,
-    required this.onChanged,
+    @required this.onChanged,
     this.labelsTextStyle,
     this.valueTextStyle,
     this.onChangeStart,
@@ -144,23 +141,18 @@ class FluidSlider extends StatefulWidget {
     this.mapValueToString,
     this.showDecimalValue = false,
     this.thumbDiameter,
-  })  : assert(value != null),
-        assert(min != null),
-        assert(max != null),
-        assert(min <= max),
-        assert(value >= min && value <= max),
-        super(key: key);
-
+  })  : assert(min <= max),
+        assert(value >= min && value <= max);
   @override
   _FluidSliderState createState() => _FluidSliderState();
 }
 
 class _FluidSliderState extends State<FluidSlider> with SingleTickerProviderStateMixin {
-  double? _sliderWidth;
+  late double _sliderWidth;
   double _currX = 0.0;
-  AnimationController? _animationController;
+  late AnimationController _animationController;
   late CurvedAnimation _thumbAnimation;
-  double? thumbDiameter;
+  late double thumbDiameter;
 
   @override
   initState() {
@@ -174,13 +166,13 @@ class _FluidSliderState extends State<FluidSlider> with SingleTickerProviderStat
 
     _thumbAnimation = CurvedAnimation(
       curve: Curves.bounceOut,
-      parent: _animationController!,
+      parent: _animationController,
     );
   }
 
   @override
   dispose() {
-    _animationController!.dispose();
+    _animationController.dispose();
     super.dispose();
   }
 
@@ -191,7 +183,7 @@ class _FluidSliderState extends State<FluidSlider> with SingleTickerProviderStat
 
   void _onHorizontalDragDown(DragDownDetails details) {
     if (_isInteractive) {
-      _animationController!.forward();
+      _animationController.forward();
     }
   }
 
@@ -200,13 +192,13 @@ class _FluidSliderState extends State<FluidSlider> with SingleTickerProviderStat
       if (widget.onChangeStart != null) {
         _handleDragStart(widget.value);
       }
-      _currX = _getGlobalToLocal(details.globalPosition).dx / _sliderWidth!;
+      _currX = _getGlobalToLocal(details.globalPosition).dx / _sliderWidth;
     }
   }
 
   void _onHorizontalDragUpdate(DragUpdateDetails details) {
     if (_isInteractive) {
-      final double valueDelta = details.primaryDelta! / _sliderWidth!;
+      final double valueDelta = details.primaryDelta! / _sliderWidth;
       _currX += valueDelta;
 
       _handleChanged(_clamp(_currX));
@@ -218,7 +210,7 @@ class _FluidSliderState extends State<FluidSlider> with SingleTickerProviderStat
       _handleDragEnd(_clamp(_currX));
     }
     _currX = 0.0;
-    _animationController!.reverse();
+    _animationController.reverse();
   }
 
   void _onHorizontalDragCancel() {
@@ -226,7 +218,7 @@ class _FluidSliderState extends State<FluidSlider> with SingleTickerProviderStat
       _handleDragEnd(_clamp(_currX));
     }
     _currX = 0.0;
-    _animationController!.reverse();
+    _animationController.reverse();
   }
 
   double _clamp(double value) {
@@ -237,7 +229,7 @@ class _FluidSliderState extends State<FluidSlider> with SingleTickerProviderStat
     assert(widget.onChanged != null);
     final double lerpValue = _lerp(value);
     if (lerpValue != widget.value) {
-      widget.onChanged(lerpValue);
+      widget.onChanged!(lerpValue);
     }
   }
 
@@ -285,8 +277,7 @@ class _FluidSliderState extends State<FluidSlider> with SingleTickerProviderStat
   bool get _isInteractive => widget.onChanged != null;
 
   TextStyle _currentValTextStyle(BuildContext context) {
-    final TextStyle defaultStyle =
-        widget.showDecimalValue ? Theme.of(context).textTheme.subhead!.copyWith(fontWeight: FontWeight.bold) : Theme.of(context).textTheme.title!.copyWith(fontWeight: FontWeight.bold);
+    final TextStyle defaultStyle = widget.showDecimalValue ? Theme.of(context).textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold) : Theme.of(context).textTheme.headline1!.copyWith(fontWeight: FontWeight.bold);
 
     return widget.valueTextStyle ?? defaultStyle;
   }
@@ -307,19 +298,19 @@ class _FluidSliderState extends State<FluidSlider> with SingleTickerProviderStat
         _sliderWidth = constraints.hasBoundedWidth ? constraints.maxWidth : 200.0;
 
         //The width remaining for the thumb to be dragged upto.
-        remainingWidth = _sliderWidth! - thumbDiameter! - 2 * thumbPadding;
+        remainingWidth = _sliderWidth - thumbDiameter - 2 * thumbPadding;
 
         //The position of the thumb control of the slider from max value.
-        final double thumbPositionLeft = lerpDouble(thumbPadding, remainingWidth, thumbPosFactor)!;
+        final double? thumbPositionLeft = lerpDouble(thumbPadding, remainingWidth, thumbPosFactor);
 
         //The position of the thumb control of the slider from min value.
-        final double thumbPositionRight = lerpDouble(remainingWidth, thumbPadding, thumbPosFactor)!;
+        final double? thumbPositionRight = lerpDouble(remainingWidth, thumbPadding, thumbPosFactor);
 
         //Start position of slider thumb.
-        final RelativeRect beginRect = RelativeRect.fromLTRB(thumbPositionLeft, 0.00, thumbPositionRight, 0.0);
+        final RelativeRect beginRect = RelativeRect.fromLTRB(thumbPositionLeft!, 0.00, thumbPositionRight!, 0.0);
 
         //Popped up position of slider thumb.
-        final poppedPosition = thumbDiameter! + 5;
+        final poppedPosition = thumbDiameter + 5;
         final RelativeRect endRect = RelativeRect.fromLTRB(thumbPositionLeft, poppedPosition * -1, thumbPositionRight, poppedPosition);
 
         //Describes the position of the thumb slider.
@@ -340,6 +331,7 @@ class _FluidSliderState extends State<FluidSlider> with SingleTickerProviderStat
             ),
           ),
           child: Stack(
+            overflow: Overflow.visible,
             children: <Widget>[
               _MinMaxLabels(
                 textStyle: widget.labelsTextStyle,
@@ -378,8 +370,8 @@ class _FluidSliderState extends State<FluidSlider> with SingleTickerProviderStat
                       ),
                       alignment: Alignment.center,
                       child: Container(
-                        width: 0.75 * thumbDiameter!,
-                        height: 0.75 * thumbDiameter!,
+                        width: 0.75 * thumbDiameter,
+                        height: 0.75 * thumbDiameter,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: _thumbColor,
@@ -409,7 +401,6 @@ class _FluidSliderState extends State<FluidSlider> with SingleTickerProviderStat
 
 class _ThumbSplashPainter extends CustomPainter {
   final Animation? showContact;
-
   //This is passed to calculate and compensate the value
   //of x for drawing the sticky fluid
   final thumbPadding;
@@ -448,14 +439,12 @@ class _MinMaxLabels extends StatelessWidget {
   final EdgeInsets? padding;
 
   const _MinMaxLabels({
-    Key? key,
-    this.alignment,
+    required this.alignment,
     this.textStyle,
     this.child,
     this.value,
     this.padding,
-  }) : super(key: key);
-
+  });
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -465,7 +454,7 @@ class _MinMaxLabels extends StatelessWidget {
         child: child ??
             Text(
               '${value!.toInt()}',
-              style: textStyle ?? Theme.of(context).accentTextTheme.title,
+              style: textStyle,
             ),
       ),
     );

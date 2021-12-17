@@ -27,18 +27,7 @@ class ParticleSystem extends ChangeNotifier {
       required Size maximumsize,
       required double particleDrag,
       required double gravity})
-      : assert(
-          emissionFrequency != null &&
-              numberOfParticles != null &&
-              maxBlastForce != null &&
-              minBlastForce != null &&
-              blastDirection != null &&
-              minimumSize != null &&
-              maximumsize != null &&
-              particleDrag != null &&
-              blastDirectionality != null,
-        ),
-        assert(maxBlastForce > 0 &&
+      : assert(maxBlastForce > 0 &&
             minBlastForce > 0 &&
             emissionFrequency >= 0 &&
             emissionFrequency <= 1 &&
@@ -152,6 +141,7 @@ class ParticleSystem extends ChangeNotifier {
   }
 
   void _updateParticles() {
+    // ignore: unnecessary_null_comparison
     if (particles == null) {
       return;
     }
@@ -161,7 +151,7 @@ class ParticleSystem extends ChangeNotifier {
   }
 
   void _clean() {
-    if (_particleSystemPosition != null && _screenSize != null && particles != null) {
+    if (_particleSystemPosition != null && _screenSize != null) {
       _particles.removeWhere((particle) => _isOutsideOfBorder(particle.location));
     }
   }

@@ -284,7 +284,7 @@ class D6Popular extends StatelessWidget {
                       Text(model.name, style: primaryTextStyle(size: 14)),
                       RichText(
                         text: TextSpan(
-                          style: Theme.of(context).textTheme.body1,
+                          style: Theme.of(context).textTheme.bodyText2,
                           children: [
                             WidgetSpan(
                               child: Padding(

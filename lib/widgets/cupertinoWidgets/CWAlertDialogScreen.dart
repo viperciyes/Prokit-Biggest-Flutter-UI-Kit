@@ -56,7 +56,7 @@ class CWAlertDialogScreenState extends State<CWAlertDialogScreen> {
                         style: primaryTextStyle(color: dodgerBlue, size: 18),
                       ),
                       onPressed: () {
-                        toast('Cancel');
+                        toasty(context, 'Cancel');
                         finish(context);
                       },
                     ),
@@ -66,7 +66,7 @@ class CWAlertDialogScreenState extends State<CWAlertDialogScreen> {
                         style: primaryTextStyle(color: redColor, size: 18),
                       ),
                       onPressed: () {
-                        toast('Logout');
+                        toasty(context, 'Logout');
                         finish(context);
                       },
                     )
@@ -95,7 +95,7 @@ class CWAlertDialogScreenState extends State<CWAlertDialogScreen> {
                         style: primaryTextStyle(color: dodgerBlue, size: 18),
                       ),
                       onPressed: () {
-                        toast('Don\'t Allow');
+                        toasty(context, 'Don\'t Allow');
                         finish(context);
                       },
                     ),
@@ -105,7 +105,7 @@ class CWAlertDialogScreenState extends State<CWAlertDialogScreen> {
                         style: primaryTextStyle(color: dodgerBlue, size: 18),
                       ),
                       onPressed: () {
-                        toast(' Allow');
+                        toasty(context, ' Allow');
                         finish(context);
                       },
                     )
@@ -130,7 +130,7 @@ class CWAlertDialogScreenState extends State<CWAlertDialogScreen> {
                         style: primaryTextStyle(color: dodgerBlue, size: 18),
                       ),
                       onPressed: () {
-                        toast('CheeseCake');
+                        toasty(context, 'CheeseCake');
                         finish(context);
                       },
                     ),
@@ -140,7 +140,7 @@ class CWAlertDialogScreenState extends State<CWAlertDialogScreen> {
                         style: primaryTextStyle(color: dodgerBlue, size: 18),
                       ),
                       onPressed: () {
-                        toast('Chocolate Brownie');
+                        toasty(context, 'Chocolate Brownie');
                         finish(context);
                       },
                     ),
@@ -150,7 +150,7 @@ class CWAlertDialogScreenState extends State<CWAlertDialogScreen> {
                         style: primaryTextStyle(color: dodgerBlue, size: 18),
                       ),
                       onPressed: () {
-                        toast('Hazelnut');
+                        toasty(context, 'Hazelnut');
                         finish(context);
                       },
                     ),
@@ -160,7 +160,7 @@ class CWAlertDialogScreenState extends State<CWAlertDialogScreen> {
                         style: primaryTextStyle(color: dodgerBlue, size: 18),
                       ),
                       onPressed: () {
-                        toast(' Apple Pie');
+                        toasty(context, ' Apple Pie');
                         finish(context);
                       },
                     ),
@@ -170,7 +170,7 @@ class CWAlertDialogScreenState extends State<CWAlertDialogScreen> {
                         style: primaryTextStyle(color: Colors.red, size: 18),
                       ),
                       onPressed: () {
-                        toast('Cancel');
+                        toasty(context, 'Cancel');
                         finish(context);
                       },
                     ),

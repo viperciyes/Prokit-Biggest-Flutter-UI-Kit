@@ -62,7 +62,7 @@ class AMFadeTransitionScreenState extends State<AMFadeTransitionScreen> with Tic
 
     return SafeArea(
       child: Scaffold(
-        backgroundColor: appStore.scaffoldBackground,
+        backgroundColor: context.scaffoldBackgroundColor,
         appBar: appBar(context, 'Fade Transition'),
         body: Padding(
           padding: const EdgeInsets.all(16.0),

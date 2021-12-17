@@ -243,7 +243,7 @@ class _CalendarState extends State<Calendar> {
 
   TextStyle? configureDateStyle(monthStarted, monthEnded) {
     TextStyle? dateStyles;
-    final TextStyle? body1Style = Theme.of(context).textTheme.body1;
+    final TextStyle? body1Style = Theme.of(context).textTheme.bodyText2;
 
     if (isExpanded) {
       final TextStyle body1StyleDisabled = body1Style!.copyWith(

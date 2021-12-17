@@ -56,9 +56,7 @@ class LiquidPullToRefresh extends StatefulWidget {
     this.springAnimationDurationInMilliseconds = 1000,
     this.borderWidth = 2.0,
     this.showChildOpacityTransition = true,
-  })  : assert(child != null),
-        assert(onRefresh != null),
-        assert(animSpeedFactor >= 1.0),
+  })  : assert(animSpeedFactor >= 1.0),
         super(key: key);
 
   /// The widget below this widget in the tree.
@@ -397,8 +395,6 @@ class LiquidPullToRefreshState extends State<LiquidPullToRefresh> with TickerPro
 
     _springController!.animateTo(0.5, duration: Duration(milliseconds: widget.springAnimationDurationInMilliseconds), curve: Curves.elasticOut).then<void>((void value) {
       if (mounted && _mode == _LiquidPullToRefreshMode.snap) {
-        assert(widget.onRefresh != null);
-
         setState(() {
           // Show the indeterminate progress indicator.
           _mode = _LiquidPullToRefreshMode.refresh;
@@ -409,6 +405,7 @@ class LiquidPullToRefreshState extends State<LiquidPullToRefresh> with TickerPro
 
         final Future<void> refreshResult = widget.onRefresh();
         assert(() {
+          // ignore: unnecessary_null_comparison
           if (refreshResult == null) {
             // See https://github.com/flutter/flutter/issues/31962#issuecomment-488882515
             // Delete this code when the new context update reaches stable versions of Flutter.
@@ -427,8 +424,6 @@ class LiquidPullToRefreshState extends State<LiquidPullToRefresh> with TickerPro
           }
           return true;
         }());
-
-        if (refreshResult == null) return;
 
         refreshResult.whenComplete(() {
           if (mounted && _mode == _LiquidPullToRefreshMode.refresh) {

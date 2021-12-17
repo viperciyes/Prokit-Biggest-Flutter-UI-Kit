@@ -88,7 +88,7 @@ class DTDashboardWidgetState extends State<DTDashboardWidget> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
           border: Border.all(color: viewLineColor),
-          color: appStore.scaffoldBackground,
+          color: context.scaffoldBackgroundColor,
         ),
         margin: EdgeInsets.all(8),
         child: Row(
@@ -373,9 +373,6 @@ class DTDashboardWidgetState extends State<DTDashboardWidget> {
     }
 
     Widget webWidget() {
-      double cardWidth = (dynamicWidth(context)) / 2;
-      double cardHeight = context.height() / 5;
-
       return SingleChildScrollView(
         padding: EdgeInsets.only(bottom: 60),
         child: Container(

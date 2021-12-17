@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:prokit_flutter/main.dart';
 import 'package:prokit_flutter/main/model/ListModels.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
+import 'package:nb_utils/nb_utils.dart';
 
 class IMLongPressDraggableScreen extends StatefulWidget {
   static String tag = '/IMLongPressDraggableScreen';
@@ -41,7 +42,7 @@ class _IMLongPressDraggableScreenState extends State<IMLongPressDraggableScreen>
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          backgroundColor: appStore.scaffoldBackground,
+          backgroundColor: context.scaffoldBackgroundColor,
           appBar: appBar(context, 'LongPressDraggable'),
           body: ListView.builder(
               itemCount: example.length,

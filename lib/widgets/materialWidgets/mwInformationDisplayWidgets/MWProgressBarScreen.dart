@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:prokit_flutter/main/utils/AppColors.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
 
 import '../../../main.dart';
@@ -49,7 +50,7 @@ class MWProgressBarScreenState extends State<MWProgressBarScreen> with SingleTic
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            backgroundColor: appStore.scaffoldBackground,
+            backgroundColor: context.scaffoldBackgroundColor,
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10.0))),
             contentPadding: EdgeInsets.all(0.0),
             insetPadding: EdgeInsets.symmetric(horizontal: 100),
@@ -58,7 +59,7 @@ class MWProgressBarScreenState extends State<MWProgressBarScreen> with SingleTic
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  CircularProgressIndicator(),
+                  CircularProgressIndicator(color: appColorPrimary),
                   SizedBox(height: 16),
                   Text("Please wait....", style: primaryTextStyle(color: appStore.textPrimaryColor)),
                 ],
@@ -74,7 +75,7 @@ class MWProgressBarScreenState extends State<MWProgressBarScreen> with SingleTic
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            backgroundColor: appStore.scaffoldBackground,
+            backgroundColor: context.scaffoldBackgroundColor,
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10.0))),
             contentPadding: EdgeInsets.all(0.0),
             content: Padding(

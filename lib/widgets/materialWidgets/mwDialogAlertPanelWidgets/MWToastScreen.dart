@@ -3,8 +3,6 @@ import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/main/model/ListModels.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
 
-import '../../../main.dart';
-
 class MWToastScreen extends StatefulWidget {
   static String tag = '/MWToastScreen';
 
@@ -41,7 +39,7 @@ class MWToastScreenState extends State<MWToastScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: appStore.scaffoldBackground,
+      backgroundColor: context.scaffoldBackgroundColor,
       appBar: appBar(context, 'Toast'),
       key: scaffoldKey,
       body: ListView.builder(
@@ -49,15 +47,15 @@ class MWToastScreenState extends State<MWToastScreen> {
         itemBuilder: (BuildContext context, index) {
           return ExampleItemWidget(example[index], onTap: () {
             if (index == 0) {
-              toast('This is simple Toast');
+              toasty(context, 'This is simple Toast');
             } else if (index == 1) {
-              Fluttertoast.showToast(msg: "This is error Toast", backgroundColor: Colors.redAccent, textColor: whiteColor, gravity: ToastGravity.BOTTOM, toastLength: Toast.LENGTH_SHORT);
+              toasty(context, "This is error Toast", bgColor:  Colors.redAccent, textColor: whiteColor, gravity: ToastGravity.BOTTOM);
             } else if (index == 2) {
-              toast('This is in top Toast', gravity: ToastGravity.TOP);
+              toasty(context, 'This is in top Toast', gravity: ToastGravity.TOP);
             } else if (index == 3) {
-              toast('Hello ,I\'m in center', gravity: ToastGravity.CENTER);
+              toasty(context, 'Hello ,I\'m in center', gravity: ToastGravity.CENTER);
             } else if (index == 4) {
-              toast('This toast will display for long time', length: Toast.LENGTH_LONG);
+              toasty(context, 'This toast will display for long time', length: Toast.LENGTH_LONG);
             }
           });
         },

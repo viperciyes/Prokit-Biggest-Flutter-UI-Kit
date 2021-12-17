@@ -36,12 +36,12 @@ class PostMethodExampleScreenState extends State<PostMethodExampleScreen> {
 
       await createEmployee(req).then((value) {
         isLoading = false;
-        toast(value['message']);
+        toasty(context, value['message']);
 
         finish(context);
       }).catchError((e) {
         isLoading = false;
-        toast(e.toString());
+        toasty(context, e.toString());
       });
     } else {
       isLoading = false;
@@ -67,7 +67,7 @@ class PostMethodExampleScreenState extends State<PostMethodExampleScreen> {
               padding: EdgeInsets.all(8),
               child: Form(
                 key: formKey,
-                autovalidate: autoValidate,
+                autovalidateMode: AutovalidateMode.onUserInteraction,
                 child: Column(
                   children: [
                     16.height,

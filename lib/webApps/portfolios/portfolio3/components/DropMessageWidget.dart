@@ -73,7 +73,7 @@ class DropMessageWidgetState extends State<DropMessageWidget> {
                       decoration: InputDecoration(
                         hintText: 'Name',
                         filled: true,
-                        fillColor: appStore.isDarkModeOn ? cardBackgroundBlackDark : portfolio3BackgroundColor,
+                        fillColor: appStore.isDarkModeOn ? cardBackgroundBlackDark : Colors.grey.shade100,
                         contentPadding: EdgeInsets.all(18),
                         hintStyle: secondaryTextStyle(),
                         border: InputBorder.none,
@@ -95,7 +95,7 @@ class DropMessageWidgetState extends State<DropMessageWidget> {
                         hintStyle: secondaryTextStyle(),
                         border: InputBorder.none,
                         filled: true,
-                        fillColor: appStore.isDarkModeOn ? cardBackgroundBlackDark : portfolio3BackgroundColor,
+                        fillColor: appStore.isDarkModeOn ? cardBackgroundBlackDark : Colors.grey.shade100,
                         focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(8.0), borderSide: BorderSide(color: portfolio3PrimaryColor)),
                       ),
                       keyboardType: TextInputType.emailAddress,
@@ -112,7 +112,7 @@ class DropMessageWidgetState extends State<DropMessageWidget> {
                         hintText: 'Subject',
                         contentPadding: EdgeInsets.all(18),
                         filled: true,
-                        fillColor: appStore.isDarkModeOn ? cardBackgroundBlackDark : portfolio3BackgroundColor,
+                        fillColor: appStore.isDarkModeOn ? cardBackgroundBlackDark : Colors.grey.shade100,
                         hintStyle: secondaryTextStyle(),
                         border: InputBorder.none,
                         focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(8.0), borderSide: BorderSide(color: portfolio3PrimaryColor)),
@@ -131,7 +131,7 @@ class DropMessageWidgetState extends State<DropMessageWidget> {
                         hintText: 'Your Message',
                         alignLabelWithHint: true,
                         filled: true,
-                        fillColor: appStore.isDarkModeOn ? cardBackgroundBlackDark : portfolio3BackgroundColor,
+                        fillColor: appStore.isDarkModeOn ? cardBackgroundBlackDark : Colors.grey.shade100,
                         contentPadding: EdgeInsets.all(18),
                         hintStyle: secondaryTextStyle(),
                         border: InputBorder.none,
@@ -158,31 +158,34 @@ class DropMessageWidgetState extends State<DropMessageWidget> {
               24.width,
               Container(
                 height: context.height() * 0.52,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text('Address:', style: boldTextStyle(size: 18)),
-                    Text('Company Inc,', style: primaryTextStyle(size: 14)),
-                    Text('Las vegas street 201,', style: primaryTextStyle(size: 14)),
-                    Text('Las vegas street 201,', style: primaryTextStyle(size: 14)),
-                    Text('United States of America.', style: primaryTextStyle(size: 14)),
-                    24.height,
-                    Text('Phone:', style: boldTextStyle(size: 18)),
-                    Text('+11-22-55-66-05', style: primaryTextStyle(size: 14)).onTap(() {
-                      launch('tel: +11-22-55-66-05');
-                    }),
-                    Text('+11-22-55-66-06,', style: primaryTextStyle(size: 14)).onTap(() {
-                      launch('tel: +11-22-55-66-06');
-                    }),
-                    24.height,
-                    Text('Email:', style: boldTextStyle(size: 18)),
-                    Text('christopher@mail.com', style: primaryTextStyle(size: 14)).onTap(() {
-                      launch('mailto:christopher@gmail.com');
-                    }),
-                    Text('United States of America.', style: primaryTextStyle(size: 14)),
-                    24.height,
-                  ],
+                child: SingleChildScrollView(
+                  physics: NeverScrollableScrollPhysics(),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text('Address:', style: boldTextStyle(size: 18)),
+                      Text('Company Inc,', style: primaryTextStyle(size: 14)),
+                      Text('Las vegas street 201,', style: primaryTextStyle(size: 14)),
+                      Text('Las vegas street 201,', style: primaryTextStyle(size: 14)),
+                      Text('United States of America.', style: primaryTextStyle(size: 14)),
+                      24.height,
+                      Text('Phone:', style: boldTextStyle(size: 18)),
+                      Text('+11-22-55-66-05', style: primaryTextStyle(size: 14)).onTap(() {
+                        launch('tel: +11-22-55-66-05');
+                      }),
+                      Text('+11-22-55-66-06,', style: primaryTextStyle(size: 14)).onTap(() {
+                        launch('tel: +11-22-55-66-06');
+                      }),
+                      24.height,
+                      Text('Email:', style: boldTextStyle(size: 18)),
+                      Text('christopher@mail.com', style: primaryTextStyle(size: 14)).onTap(() {
+                        launch('mailto:christopher@gmail.com');
+                      }),
+                      Text('United States of America.', style: primaryTextStyle(size: 14)),
+                      24.height,
+                    ],
+                  ),
                 ),
               ).expand(flex: 3)
             ],

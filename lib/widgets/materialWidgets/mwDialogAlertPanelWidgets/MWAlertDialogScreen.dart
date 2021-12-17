@@ -40,7 +40,7 @@ class MWAlertDialogScreenState extends State<MWAlertDialogScreen> {
   @override
   Widget build(BuildContext context) {
     AlertDialog mAlertItem1 = AlertDialog(
-      backgroundColor: appStore.scaffoldBackground,
+      backgroundColor: context.cardColor,
       title: Text(
         "Alert Title",
         style: boldTextStyle(color: appStore.textPrimaryColor),
@@ -53,7 +53,7 @@ class MWAlertDialogScreenState extends State<MWAlertDialogScreen> {
     );
 
     AlertDialog mAlertItem2 = AlertDialog(
-      backgroundColor: appStore.scaffoldBackground,
+      backgroundColor: context.cardColor,
       title: Text("Confirmation", style: boldTextStyle(color: appStore.textPrimaryColor)),
       content: Text(
         "Are you sure you want to logout?",
@@ -79,7 +79,7 @@ class MWAlertDialogScreenState extends State<MWAlertDialogScreen> {
     );
 
     AlertDialog mAlertItem3 = AlertDialog(
-      backgroundColor: appStore.scaffoldBackground,
+      backgroundColor: context.cardColor,
       content: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -111,7 +111,7 @@ class MWAlertDialogScreenState extends State<MWAlertDialogScreen> {
     );
 
     AlertDialog mAlertItem4 = AlertDialog(
-      backgroundColor: appStore.scaffoldBackground,
+      backgroundColor: context.cardColor,
       content: Container(
         width: MediaQuery.of(context).size.width,
         child: Column(
@@ -155,7 +155,7 @@ class MWAlertDialogScreenState extends State<MWAlertDialogScreen> {
     );
 
     return Scaffold(
-        backgroundColor: appStore.scaffoldBackground,
+        backgroundColor: context.scaffoldBackgroundColor,
         appBar: appBar(context, 'Alert Dialog'),
         body: ListView.builder(
             itemCount: example.length,

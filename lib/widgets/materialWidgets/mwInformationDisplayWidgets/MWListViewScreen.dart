@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:prokit_flutter/main/model/ListModels.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
+import 'package:nb_utils/nb_utils.dart';
 
 import '../../../main.dart';
 import 'MWListViewWidget/MWListViewScreen1.dart';
@@ -26,7 +27,7 @@ class _MWListViewScreenState extends State<MWListViewScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: appStore.scaffoldBackground,
+        backgroundColor: context.scaffoldBackgroundColor,
         appBar: appBar(context, 'ListView'),
         body: ListView.builder(
             itemCount: example.length,

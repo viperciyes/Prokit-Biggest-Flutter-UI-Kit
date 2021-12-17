@@ -34,9 +34,6 @@ class DTCategoryDetailScreenState extends State<DTCategoryDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
-    double cardWidth = (dynamicWidth(context)) / 2;
-    double cardHeight = context.height() / 5;
-
     return Scaffold(
       appBar: appBar(context, 'Grid View'),
       drawer: DTDrawerWidget(),

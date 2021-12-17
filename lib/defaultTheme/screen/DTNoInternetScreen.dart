@@ -40,7 +40,7 @@ class DTNoInternetScreenState extends State<DTNoInternetScreen> {
         'There is something wrong with the proxy server or the address is incorrect',
         showRetry: true,
         onRetry: () {
-          toast('Retrying');
+          toasty(context, 'Retrying');
         },
       ),
     );

@@ -84,7 +84,7 @@ class PEOpacityScreenState extends State<PEOpacityScreen> {
             Container(
               height: 200,
               width: context.width(),
-              decoration: BoxDecoration(image: DecorationImage(image: CachedNetworkImageProvider('https://blog.codemagic.io/uploads/CM_Android-dev-Flutter.png'))),
+              decoration: BoxDecoration(image: DecorationImage(image: CachedNetworkImageProvider('https://i.picsum.photos/id/772/200/300.jpg?hmac=jap7uDpPOJZv41ksTZ3pa9FnXwuaBUpnni4hYBjZtfM'))),
               child: Text("Without Opacity", style: boldTextStyle(size: 25, color: Colors.white)).center(),
             ),
             Container(
@@ -93,7 +93,7 @@ class PEOpacityScreenState extends State<PEOpacityScreen> {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   colorFilter: ColorFilter.mode(Colors.white.withOpacity(0.3), BlendMode.dstATop),
-                  image: CachedNetworkImageProvider('https://blog.codemagic.io/uploads/CM_Android-dev-Flutter.png'),
+                  image: CachedNetworkImageProvider('https://i.pinimg.com/originals/a7/3d/6e/a73d6e4ac85c6a822841e449b24c78e1.jpg'),
                 ),
               ),
               child: Text("With Opacity", style: boldTextStyle(size: 25, color: Colors.white)).center(),
@@ -106,7 +106,8 @@ class PEOpacityScreenState extends State<PEOpacityScreen> {
                 Expanded(
                   flex: 1,
                   child: CachedNetworkImage(
-                      placeholder: placeholderWidgetFn() as Widget Function(BuildContext, String)?, imageUrl: 'https://images.unsplash.com/photo-1487035242901-d419a42d17af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'),
+                      placeholder: placeholderWidgetFn() as Widget Function(BuildContext, String)?,
+                      imageUrl: 'https://images.unsplash.com/photo-1487035242901-d419a42d17af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'),
                 ),
                 10.width,
                 Expanded(
@@ -114,7 +115,8 @@ class PEOpacityScreenState extends State<PEOpacityScreen> {
                   child: ColorFiltered(
                     colorFilter: ColorFilter.mode(Colors.black, BlendMode.saturation),
                     child: CachedNetworkImage(
-                        placeholder: placeholderWidgetFn() as Widget Function(BuildContext, String)?, imageUrl: 'https://images.unsplash.com/photo-1487035242901-d419a42d17af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'),
+                        placeholder: placeholderWidgetFn() as Widget Function(BuildContext, String)?,
+                        imageUrl: 'https://images.unsplash.com/photo-1487035242901-d419a42d17af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'),
                   ),
                 ),
               ],

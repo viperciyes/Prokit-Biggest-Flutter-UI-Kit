@@ -26,10 +26,11 @@ class _MWTabBarScreen4State extends State<MWTabBarScreen4> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: DefaultTabController(
-        length: 6,
+        length: 19,
         child: Scaffold(
           appBar: AppBar(
             backgroundColor: appStore.appBarColor,
+            iconTheme: IconThemeData(color: appStore.iconColor),
             title: Text(
               'Scrollable Tab',
               style: boldTextStyle(color: appStore.textPrimaryColor, size: 20),
@@ -41,130 +42,64 @@ class _MWTabBarScreen4State extends State<MWTabBarScreen4> {
               isScrollable: true,
               labelStyle: boldTextStyle(),
               indicatorColor: Colors.blue,
+              unselectedLabelStyle: secondaryTextStyle(size: 16),
               tabs: [
-                Tab(
-                  child: TabList(title: 'Home'),
-                ),
-                Tab(
-                  child: TabList(title: 'MarketPlace'),
-                ),
-                Tab(
-                  child: TabList(title: 'Group'),
-                ),
-                Tab(
-                  child: TabList(title: 'Watch'),
-                ),
-                Tab(
-                  child: TabList(title: 'Notifications'),
-                ),
-                Tab(
-                  child: TabList(title: 'Menu'),
-                ),
+                Tab(child: TabList(title: 'Home')),
+                Tab(child: TabList(title: 'MarketPlace')),
+                Tab(child: TabList(title: 'Group')),
+                Tab(child: TabList(title: 'Watch')),
+                Tab(child: TabList(title: 'Notifications')),
+                Tab(child: TabList(title: 'Menu')),
+                Tab(child: TabList(title: 'Profile')),
+                Tab(child: TabList(title: 'Setting')),
+                Tab(child: TabList(title: 'Message')),
+                Tab(child: TabList(title: 'Call')),
+                Tab(child: TabList(title: 'Library')),
+                Tab(child: TabList(title: 'Category')),
+                Tab(child: TabList(title: 'Cart')),
+                Tab(child: TabList(title: 'Wishlist')),
+                Tab(child: TabList(title: 'Order')),
+                Tab(child: TabList(title: 'Report')),
+                Tab(child: TabList(title: 'Favourite')),
+                Tab(child: TabList(title: 'Wallet')),
+                Tab(child: TabList(title: 'Settings')),
               ],
             ),
           ),
           body: TabBarView(
             children: [
-              Container(
-                padding: EdgeInsets.all(16),
-                alignment: Alignment.center,
-                width: context.width(),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      'Home',
-                      style: TextStyle(color: appStore.textPrimaryColor, fontSize: 24),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.all(16),
-                alignment: Alignment.center,
-                width: context.width(),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      'MarketPlace',
-                      style: TextStyle(color: appStore.textPrimaryColor, fontSize: 24),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.all(16),
-                alignment: Alignment.center,
-                width: context.width(),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      'Group',
-                      style: TextStyle(color: appStore.textPrimaryColor, fontSize: 24),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.all(16),
-                alignment: Alignment.center,
-                width: context.width(),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      'Watch',
-                      style: TextStyle(color: appStore.textPrimaryColor, fontSize: 24),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.all(16),
-                alignment: Alignment.center,
-                width: context.width(),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      'Notifications',
-                      style: TextStyle(color: appStore.textPrimaryColor, fontSize: 24),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.all(16),
-                alignment: Alignment.center,
-                width: context.width(),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      'Menu',
-                      style: TextStyle(color: appStore.textPrimaryColor, fontSize: 24),
-                    ),
-                  ],
-                ),
-              ),
+              mTabContent("Home"),
+              mTabContent("MarketPlace"),
+              mTabContent("Group"),
+              mTabContent("Watch"),
+              mTabContent("Notifications"),
+              mTabContent("Menu"),
+              mTabContent("Profile"),
+              mTabContent("Setting"),
+              mTabContent("Message"),
+              mTabContent("Call"),
+              mTabContent("Library"),
+              mTabContent("Category"),
+              mTabContent("Cart"),
+              mTabContent("Wishlist"),
+              mTabContent("Order"),
+              mTabContent("Report"),
+              mTabContent("Favourite"),
+              mTabContent("Wallet"),
+              mTabContent("Settings"),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Widget mTabContent(String title) {
+    return Container(
+      padding: EdgeInsets.all(16),
+      alignment: Alignment.center,
+      width: context.width(),
+      child: Text(title, style: primaryTextStyle(size: 24)),
     );
   }
 

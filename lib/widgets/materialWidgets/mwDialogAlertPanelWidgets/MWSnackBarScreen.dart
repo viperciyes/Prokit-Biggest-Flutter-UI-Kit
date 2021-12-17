@@ -44,7 +44,7 @@ class MWSnackBarScreenState extends State<MWSnackBarScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: appStore.scaffoldBackground,
+      backgroundColor: context.scaffoldBackgroundColor,
       appBar: appBar(context, 'SnackBar'),
       key: scaffoldKey,
       body: ListView.builder(
@@ -54,12 +54,14 @@ class MWSnackBarScreenState extends State<MWSnackBarScreen> {
             if (index == 0) {
               ScaffoldMessengerState().hideCurrentSnackBar();
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                backgroundColor: appStore.isDarkModeOn ? appStore.appBarColor : cardBackgroundBlackDark,
                 content: Text('This is simple SnackBar', style: primaryTextStyle(color: Colors.white)),
               ));
             } else if (index == 1) {
               ScaffoldMessengerState().hideCurrentSnackBar();
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
+                  backgroundColor: appStore.isDarkModeOn ? appStore.appBarColor : cardBackgroundBlackDark,
                   content: Text('This is SnackBar with Action', style: primaryTextStyle(color: Colors.white)),
                   action: SnackBarAction(
                       label: 'Undo',
@@ -78,6 +80,7 @@ class MWSnackBarScreenState extends State<MWSnackBarScreen> {
             } else if (index == 3) {
               ScaffoldMessengerState().hideCurrentSnackBar();
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                backgroundColor: appStore.isDarkModeOn ? appStore.appBarColor : cardBackgroundBlackDark,
                 content: Text('This is infinite SnackBar with some info', style: primaryTextStyle(color: Colors.white)),
                 duration: Duration(days: 365),
                 action: SnackBarAction(
@@ -89,14 +92,16 @@ class MWSnackBarScreenState extends State<MWSnackBarScreen> {
             } else if (index == 4) {
               ScaffoldMessengerState().hideCurrentSnackBar();
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                backgroundColor: appStore.isDarkModeOn ? appStore.appBarColor : cardBackgroundBlackDark,
                 content: Text('This is Floating SnackBar', style: primaryTextStyle(color: Colors.white)),
                 behavior: SnackBarBehavior.floating,
               ));
             } else if (index == 5) {
               ScaffoldMessengerState().hideCurrentSnackBar();
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                backgroundColor: appStore.isDarkModeOn ? appStore.appBarColor : cardBackgroundBlackDark,
                 content: Text('This is Rounded SnackBar', style: primaryTextStyle(color: Colors.white)),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(30))),
+                shape: RoundedRectangleBorder(borderRadius: radius(30)),
                 behavior: SnackBarBehavior.floating,
               ));
             } else if (index == 6) {

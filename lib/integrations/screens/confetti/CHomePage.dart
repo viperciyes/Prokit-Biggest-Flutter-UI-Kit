@@ -61,14 +61,18 @@ class _CHomePageState extends State<CHomePage> {
           children: <Widget>[
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Container(
+                  alignment: Alignment.center,
+                  height: context.height()*0.8,
                   margin: EdgeInsets.all(4),
                   child: Lottie.asset('images/integrations/img/confitte.json'),
                 ),
                 Container(
                     margin: EdgeInsets.only(top: 10),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         Text('Congratulations !!', style: boldTextStyle(size: 30)),
                       ],

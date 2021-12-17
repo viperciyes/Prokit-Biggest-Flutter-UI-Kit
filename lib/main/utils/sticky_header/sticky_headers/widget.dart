@@ -3,7 +3,6 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
 
 import './render.dart';
 
@@ -62,7 +61,6 @@ class StickyHeader extends MultiChildRenderObjectWidget {
   @override
   RenderStickyHeader createRenderObject(BuildContext context) {
     final scrollPosition = this.controller?.position ?? Scrollable.of(context)!.position;
-    assert(scrollPosition != null);
     return RenderStickyHeader(
       scrollPosition: scrollPosition,
       callback: this.callback,
@@ -73,7 +71,6 @@ class StickyHeader extends MultiChildRenderObjectWidget {
   @override
   void updateRenderObject(BuildContext context, RenderStickyHeader renderObject) {
     final scrollPosition = this.controller?.position ?? Scrollable.of(context)!.position;
-    assert(scrollPosition != null);
     renderObject
       ..scrollPosition = scrollPosition
       ..callback = this.callback

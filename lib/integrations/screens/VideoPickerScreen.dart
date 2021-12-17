@@ -90,8 +90,10 @@ class VideoPickerScreenState extends State<VideoPickerScreen> {
                     aspectRatio: _controller!.value.aspectRatio,
                   ),
                 ).center(),
-              RaisedButton(
-                color: appColorPrimary,
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: appColorPrimary,
+                ),
                 onPressed: () async {
                   await getVideo();
                   setState(() {});

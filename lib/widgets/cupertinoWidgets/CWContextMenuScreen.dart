@@ -59,7 +59,7 @@ class CWContextMenuScreenState extends State<CWContextMenuScreen> {
                 isDefaultAction: true,
                 trailingIcon: Icons.content_copy,
                 onPressed: () {
-                  toast("Copy");
+                  toasty(context, "Copy");
                   finish(context);
                 },
               ),
@@ -67,7 +67,7 @@ class CWContextMenuScreenState extends State<CWContextMenuScreen> {
                 child: Text('Share', style: primaryTextStyle(color: Colors.black)),
                 trailingIcon: Icons.share,
                 onPressed: () {
-                  toast("Share");
+                  toasty(context, "Share");
                   finish(context);
                 },
               ),
@@ -75,7 +75,7 @@ class CWContextMenuScreenState extends State<CWContextMenuScreen> {
                 child: Text('Delete', style: primaryTextStyle(color: Colors.black)),
                 trailingIcon: Icons.delete,
                 onPressed: () {
-                  toast("Delete");
+                  toasty(context, "Delete");
                   finish(context);
                 },
               ),

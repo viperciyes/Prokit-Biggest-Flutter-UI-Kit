@@ -3,23 +3,16 @@ import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/main/utils/AppColors.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
 
-import '../../main.dart';
-
 class AMAnimatedContainerScreen extends StatelessWidget {
-  static String tag = '/AMAnimatedContainerScreen';
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: appStore.scaffoldBackground,
-        appBar: appBar(context, 'Animated Container'),
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: AnimatedContainerDemo(),
-          ),
+    return Scaffold(
+      backgroundColor: context.scaffoldBackgroundColor,
+      appBar: appBar(context, 'Animated Container'),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: AnimatedContainerDemo(),
         ),
       ),
     );

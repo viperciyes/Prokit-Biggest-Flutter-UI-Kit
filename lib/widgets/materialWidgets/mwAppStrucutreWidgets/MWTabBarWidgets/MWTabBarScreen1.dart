@@ -30,6 +30,7 @@ class _MWTabBarScreen1State extends State<MWTabBarScreen1> {
         child: Scaffold(
           appBar: AppBar(
             backgroundColor: appStore.appBarColor,
+            iconTheme: IconThemeData(color: appStore.iconColor),
             title: Text(
               'Simple TabBar',
               style: boldTextStyle(color: appStore.textPrimaryColor, size: 20),

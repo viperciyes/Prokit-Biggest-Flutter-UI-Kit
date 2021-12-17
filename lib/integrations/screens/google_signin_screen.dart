@@ -7,7 +7,6 @@ import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/integrations/utils/colors.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/integrations/utils/constants.dart';
-import 'package:prokit_flutter/integrations/utils/styles.dart';
 import 'package:prokit_flutter/main.dart';
 import 'package:prokit_flutter/main/utils/AppColors.dart';
 
@@ -40,13 +39,13 @@ class GoogleSignInScreenState extends State<GoogleSignInScreen> {
         print('Access Token: ${accessToken.accessToken.toString()}');
       }).catchError((error) {
         isSuccess = false;
-        toast(error.toString());
+        toasty(context, error.toString());
         setState(() {});
         throw (error.toString());
       });
     }).catchError((error) {
       isSuccess = false;
-      toast(error.toString());
+      toasty(context, error.toString());
       setState(() {});
       throw (error.toString());
     });

@@ -361,21 +361,21 @@ List<GuideLinesModel> getClientHappyList() {
   model1.name = 'Elizabeth';
   model1.detail = 'Lorem ipsum dolor sit amet, Ea consequuntur illum facere aperiam sequi '
       'optio consectetur adipisicing elit.Ea consequuntur illum facere.';
-  model1.img = 'images/webApps/portfolio3/p3_user1.jpg';
+  model1.img = p3User1;
   list.add(model1);
 
   GuideLinesModel model2 = GuideLinesModel();
   model2.name = 'Gregory Eric';
   model2.detail = 'Lorem ipsum dolor sit amet, Ea consequuntur illum facere aperiam sequi '
       'optio consectetur adipisicing elit.Ea consequuntur illum facere.';
-  model2.img = 'images/webApps/portfolio3/p3_user3.jpg';
+  model2.img = p3User2;
   list.add(model2);
 
   GuideLinesModel model3 = GuideLinesModel();
   model3.name = 'Kimberly';
   model3.detail = 'Lorem ipsum dolor sit amet, Ea consequuntur illum facere aperiam sequi '
       'optio consectetur adipisicing elit.Ea consequuntur illum facere.';
-  model3.img = 'images/webApps/portfolio3/p3_user2.jpg';
+  model3.img = p3User3;
   list.add(model3);
 
   return list;

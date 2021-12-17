@@ -46,7 +46,7 @@ class _IMGestureDetectorScreenState extends State<IMGestureDetectorScreen> {
     late DragUpdateDetails updateVerticalDragDetails;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: appStore.scaffoldBackground,
+        backgroundColor: context.scaffoldBackgroundColor,
         appBar: appBar(context, 'Gesture Detector'),
         body: SingleChildScrollView(
           padding: EdgeInsets.all(16),
@@ -58,7 +58,7 @@ class _IMGestureDetectorScreenState extends State<IMGestureDetectorScreen> {
               ),
               GestureDetector(
                 onTap: () {
-                  toast("Simple Tap");
+                  toasty(context, "Simple Tap");
                 },
                 child: mImg(),
               ).center(),
@@ -68,7 +68,7 @@ class _IMGestureDetectorScreenState extends State<IMGestureDetectorScreen> {
               ),
               GestureDetector(
                 onDoubleTap: () {
-                  toast("Double Tap");
+                  toasty(context, "Double Tap");
                 },
                 child: mImg(),
               ).center(),
@@ -78,7 +78,7 @@ class _IMGestureDetectorScreenState extends State<IMGestureDetectorScreen> {
               ),
               GestureDetector(
                 onLongPress: () {
-                  toast("Long press");
+                  toasty(context, "Long press");
                 },
                 child: mImg(),
               ).center(),
@@ -88,10 +88,10 @@ class _IMGestureDetectorScreenState extends State<IMGestureDetectorScreen> {
               ),
               GestureDetector(
                 onPanStart: (details) {
-                  toast("onPan started");
+                  toasty(context, "onPan started");
                 },
                 onPanEnd: (details) {
-                  toast("onPan ended");
+                  toasty(context, "onPan ended");
                 },
                 child: mImg(),
               ).center(),
@@ -116,9 +116,9 @@ class _IMGestureDetectorScreenState extends State<IMGestureDetectorScreen> {
                         if (dy < 0) dy = -dy;
 
                         if (velocity < 0) {
-                          toast(" Swipe Up");
+                          toasty(context, " Swipe Up");
                         } else {
-                          toast(" Swipe Down ");
+                          toasty(context, " Swipe Down ");
                         }
                       },
                       child: mImg())

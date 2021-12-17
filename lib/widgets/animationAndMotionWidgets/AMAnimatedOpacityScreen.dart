@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
 
-import '../../main.dart';
-
 class AMAnimatedOpacityScreen extends StatefulWidget {
   static String tag = '/AMAnimatedOpacityScreen';
 
@@ -42,7 +40,7 @@ class AMAnimatedOpacityScreenState extends State<AMAnimatedOpacityScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: appStore.scaffoldBackground,
+        backgroundColor: context.scaffoldBackgroundColor,
         appBar: appBar(context, 'Animated Opacity'),
         body: Center(
           child: Column(

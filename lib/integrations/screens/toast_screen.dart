@@ -33,13 +33,13 @@ class ToastScreenState extends State<ToastScreen> {
         children: <Widget>[
           GestureDetector(
             onTap: () {
-              toast('This is simple Toast');
+              toasty(context, 'This is simple Toast');
             },
             child: simpleCard("Simple Toast"),
           ),
           GestureDetector(
             onTap: () {
-              toast('This is custom Toast');
+              toasty(context, 'This is custom Toast');
             },
             child: simpleCard("Custom Toast"),
           ),
@@ -51,19 +51,19 @@ class ToastScreenState extends State<ToastScreen> {
           ),
           GestureDetector(
             onTap: () {
-              toast('This is in top Toast', gravity: ToastGravity.TOP);
+              toasty(context, 'This is in top Toast', gravity: ToastGravity.TOP);
             },
             child: simpleCard("Top\nGravity"),
           ),
           GestureDetector(
             onTap: () {
-              toast('Hello ,I\'m in center', gravity: ToastGravity.CENTER);
+              toasty(context, 'Hello ,I\'m in center', gravity: ToastGravity.CENTER);
             },
             child: simpleCard("Center Gravity"),
           ),
           GestureDetector(
             onTap: () {
-              toast('This toast will display for long time', length: Toast.LENGTH_LONG);
+              toasty(context, 'This toast will display for long time', length: Toast.LENGTH_LONG);
             },
             child: simpleCard("Long\nToast"),
           )
