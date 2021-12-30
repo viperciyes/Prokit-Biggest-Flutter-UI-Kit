@@ -591,7 +591,7 @@ class _T7BottomNavigationBarState extends State<T7BottomNavigationBar> with Tick
         themeColor = themeData.primaryColor;
         break;
       case Brightness.dark:
-        themeColor = themeData.accentColor;
+        themeColor = themeData.colorScheme.secondary;
         break;
     }
 

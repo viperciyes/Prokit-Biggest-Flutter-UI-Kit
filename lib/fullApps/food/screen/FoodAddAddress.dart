@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/fullApps/food/utils/FoodColors.dart';
@@ -33,7 +32,8 @@ class FoodAddAddressState extends State<FoodAddAddress> {
                       SizedBox(height: 16),
                       Row(
                         children: <Widget>[
-                          Expanded(child: foodEditTextStyle(food_hint_pin_code)),
+                          Expanded(
+                              child: foodEditTextStyle(food_hint_pin_code)),
                           SizedBox(width: 16),
                           Expanded(child: foodEditTextStyle(food_hint_city)),
                         ],
@@ -51,15 +51,20 @@ class FoodAddAddressState extends State<FoodAddAddress> {
                                     color: food_view_color,
                                     width: 1,
                                   ),
-                                  borderRadius: BorderRadius.all(Radius.circular(40))),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(40))),
                               width: MediaQuery.of(context).size.width,
                               child: DropdownButtonHideUnderline(
                                   child: DropdownButton<String>(
                                 value: _selectedLocation,
-                                items: <String>['Home', 'Work'].map((String value) {
+                                items: <String>['Home', 'Work']
+                                    .map((String value) {
                                   return new DropdownMenuItem<String>(
                                     value: value,
-                                    child: Text(value, style: primaryTextStyle(size: 16, color: food_textColorSecondary)),
+                                    child: Text(value,
+                                        style: primaryTextStyle(
+                                            size: 16,
+                                            color: food_textColorSecondary)),
                                   );
                                 }).toList(),
                                 onChanged: (newValue) {
@@ -80,8 +85,13 @@ class FoodAddAddressState extends State<FoodAddAddress> {
                       Container(
                         width: MediaQuery.of(context).size.width,
                         padding: EdgeInsets.only(top: 10, bottom: 10),
-                        decoration: BoxDecoration(color: food_colorPrimary, borderRadius: BorderRadius.circular(50), boxShadow: defaultBoxShadow()),
-                        child: Text(food_lbl_add_address, style: primaryTextStyle(color: food_white)).center(),
+                        decoration: BoxDecoration(
+                            color: food_colorPrimary,
+                            borderRadius: BorderRadius.circular(50),
+                            boxShadow: defaultBoxShadow()),
+                        child: Text(food_lbl_add_address,
+                                style: primaryTextStyle(color: food_white))
+                            .center(),
                       )
                     ],
                   ),

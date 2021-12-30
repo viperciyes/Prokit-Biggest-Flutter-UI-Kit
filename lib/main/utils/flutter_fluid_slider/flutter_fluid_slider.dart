@@ -331,8 +331,7 @@ class _FluidSliderState extends State<FluidSlider> with SingleTickerProviderStat
             ),
           ),
           child: Stack(
-            overflow: Overflow.visible,
-            children: <Widget>[
+            clipBehavior: Clip.none, children: <Widget>[
               _MinMaxLabels(
                 textStyle: widget.labelsTextStyle,
                 alignment: Alignment.centerLeft,

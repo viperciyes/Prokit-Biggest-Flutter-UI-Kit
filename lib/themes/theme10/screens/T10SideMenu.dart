@@ -1,12 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/themes/theme10/utils/T10Colors.dart';
 import 'package:prokit_flutter/themes/theme10/utils/T10Constant.dart';
 import 'package:prokit_flutter/themes/theme10/utils/T10Images.dart';
 import 'package:prokit_flutter/themes/theme10/utils/T10Strings.dart';
-import 'package:nb_utils/nb_utils.dart';
 
 import '../../../main.dart';
 
@@ -22,7 +22,8 @@ class T10SideMenuState extends State<T10SideMenu> {
   Widget build(BuildContext context) {
     changeStatusColor(appStore.appBarColor!);
 
-    final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+    final GlobalKey<ScaffoldState> _scaffoldKey =
+        new GlobalKey<ScaffoldState>();
 
     return Scaffold(
       backgroundColor: context.scaffoldBackgroundColor,
@@ -73,11 +74,13 @@ class T10DrawerState extends State<T10Drawer> {
                     child: Column(
                       children: <Widget>[
                         CircleAvatar(
-                          backgroundImage: CachedNetworkImageProvider(t10_profile),
+                          backgroundImage:
+                              CachedNetworkImageProvider(t10_profile),
                           radius: MediaQuery.of(context).size.width * 0.15,
                         ),
                         SizedBox(height: 10),
-                        text(theme10_user_name, fontFamily: fontBold, textColor: t10_colorPrimary),
+                        text(theme10_user_name,
+                            fontFamily: fontBold, textColor: t10_colorPrimary),
                         text(theme10_user_email, textColor: t10_colorPrimary),
                       ],
                     ),
@@ -114,17 +117,26 @@ class T10DrawerState extends State<T10Drawer> {
       },
       child: Container(
           width: MediaQuery.of(context).size.width,
-          color: selectedItem == pos ? t10_colorPrimary_light : context.scaffoldBackgroundColor,
+          color: selectedItem == pos
+              ? t10_colorPrimary_light
+              : context.scaffoldBackgroundColor,
           child: Row(
             children: <Widget>[
               Container(
                 width: 4,
                 height: MediaQuery.of(context).size.width * 0.13,
-                color: selectedItem == pos ? t10_colorPrimary : context.scaffoldBackgroundColor,
+                color: selectedItem == pos
+                    ? t10_colorPrimary
+                    : context.scaffoldBackgroundColor,
               ),
               Padding(
                 padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
-                child: text(name, textColor: selectedItem == pos ? appStore.textPrimaryColor : t10_textColorSecondary, fontSize: textSizeLargeMedium, fontFamily: fontMedium),
+                child: text(name,
+                    textColor: selectedItem == pos
+                        ? appStore.textPrimaryColor
+                        : t10_textColorSecondary,
+                    fontSize: textSizeLargeMedium,
+                    fontFamily: fontMedium),
               )
             ],
           )),

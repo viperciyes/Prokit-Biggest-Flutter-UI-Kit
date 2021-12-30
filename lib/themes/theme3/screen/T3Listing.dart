@@ -11,8 +11,6 @@ import 'package:prokit_flutter/themes/theme3/utils/T3widgets.dart';
 import 'package:prokit_flutter/themes/theme3/utils/colors.dart';
 import 'package:prokit_flutter/themes/theme3/utils/strings.dart';
 
-import '../../../main.dart';
-
 class T3Listing extends StatefulWidget {
   static var tag = "/T3Listing";
 
@@ -40,8 +38,11 @@ class T3ListingState extends State<T3Listing> {
             Container(
               height: (MediaQuery.of(context).size.height) / 3.5,
               decoration: BoxDecoration(
-                gradient: LinearGradient(colors: <Color>[t3_colorPrimary, t3_colorPrimaryDark]),
-                borderRadius: BorderRadius.only(bottomRight: Radius.circular(20.0), bottomLeft: Radius.circular(20.0)),
+                gradient: LinearGradient(
+                    colors: <Color>[t3_colorPrimary, t3_colorPrimaryDark]),
+                borderRadius: BorderRadius.only(
+                    bottomRight: Radius.circular(20.0),
+                    bottomLeft: Radius.circular(20.0)),
               ),
             ),
             Column(
@@ -77,7 +78,10 @@ class T3List extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(left: 16, right: 16, bottom: 16),
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), boxShadow: defaultBoxShadow(), color: context.scaffoldBackgroundColor),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: defaultBoxShadow(),
+          color: context.scaffoldBackgroundColor),
       child: Stack(
         children: <Widget>[
           Column(
@@ -98,7 +102,11 @@ class T3List extends StatelessWidget {
                     Row(
                       children: <Widget>[
                         Container(
-                          child: Text(model.dishName, style: boldTextStyle(size: 18),maxLines: 2,).expand(),
+                          child: Text(
+                            model.dishName,
+                            style: boldTextStyle(size: 18),
+                            maxLines: 2,
+                          ).expand(),
                         ),
                       ],
                     ),
@@ -108,13 +116,21 @@ class T3List extends StatelessWidget {
                     Row(
                       children: <Widget>[
                         SvgPicture.asset(t3_ic_wp, height: 20, width: 20),
-                        Container(margin: EdgeInsets.only(left: 10, right: 10), child: Image.asset(t3_ic_facebook, height: 20, width: 20)),
-                        SvgPicture.asset(t3_ic_instagram, height: 20, width: 20),
-                        Container(margin: EdgeInsets.only(left: 10, right: 10), child: Image.asset(t3_ic_linkedin, height: 20, width: 20)),
+                        Container(
+                            margin: EdgeInsets.only(left: 10, right: 10),
+                            child: Image.asset(t3_ic_facebook,
+                                height: 20, width: 20)),
+                        SvgPicture.asset(t3_ic_instagram,
+                            height: 20, width: 20),
+                        Container(
+                            margin: EdgeInsets.only(left: 10, right: 10),
+                            child: Image.asset(t3_ic_linkedin,
+                                height: 20, width: 20)),
                       ],
                     ),
                     SizedBox(height: 8),
-                    Text(model.description, style: secondaryTextStyle(size: 16), maxLines: 2),
+                    Text(model.description,
+                        style: secondaryTextStyle(size: 16), maxLines: 2),
                   ],
                 ),
               ),
@@ -122,13 +138,19 @@ class T3List extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   primary: t3_white,
                   elevation: 4,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10.0), bottomRight: Radius.circular(10.0))),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(10.0),
+                          bottomRight: Radius.circular(10.0))),
                   padding: EdgeInsets.all(0.0),
                 ),
                 child: Container(
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: <Color>[t3_colorPrimary, t3_colorPrimaryDark]),
-                    borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10.0), bottomRight: Radius.circular(10.0)),
+                    gradient: LinearGradient(
+                        colors: <Color>[t3_colorPrimary, t3_colorPrimaryDark]),
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(10.0),
+                        bottomRight: Radius.circular(10.0)),
                   ),
                   child: Center(
                     child: Padding(

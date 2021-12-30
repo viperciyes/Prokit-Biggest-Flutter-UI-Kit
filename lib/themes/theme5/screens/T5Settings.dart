@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/themes/theme5/utils/T5Colors.dart';
 import 'package:prokit_flutter/themes/theme5/utils/T5Constant.dart';
@@ -7,7 +8,6 @@ import 'package:prokit_flutter/themes/theme5/utils/T5Images.dart';
 import 'package:prokit_flutter/themes/theme5/utils/T5Strings.dart';
 import 'package:prokit_flutter/themes/theme5/utils/T5Widget.dart';
 import 'package:prokit_flutter/themes/theme5/utils/widgets/T5Expandable.dart';
-import 'package:nb_utils/nb_utils.dart';
 
 import '../../../main.dart';
 
@@ -46,10 +46,18 @@ class T5SettingsState extends State<T5Settings> {
               width: width / 7.5,
               height: width / 7.5,
               padding: EdgeInsets.all(width / 30),
-              decoration: icon.isNotEmpty ? boxDecoration(radius: 4, bgColor: context.scaffoldBackgroundColor, showShadow: true) : null,
+              decoration: icon.isNotEmpty
+                  ? boxDecoration(
+                      radius: 4,
+                      bgColor: context.scaffoldBackgroundColor,
+                      showShadow: true)
+                  : null,
               child: icon.isNotEmpty ? SvgPicture.asset(icon) : SizedBox(),
             ),
-            text(name, textColor: appStore.textPrimaryColor, fontFamily: fontMedium, fontSize: textSizeLargeMedium)
+            text(name,
+                textColor: appStore.textPrimaryColor,
+                fontFamily: fontMedium,
+                fontSize: textSizeLargeMedium)
           ],
         ),
       ),
@@ -72,7 +80,10 @@ class T5SettingsState extends State<T5Settings> {
             TopBar(),
             Padding(
               padding: EdgeInsets.only(left: 20.0, top: 10),
-              child: text(t5_settings, textColor: appStore.textPrimaryColor, fontFamily: fontBold, fontSize: textSizeXLarge),
+              child: text(t5_settings,
+                  textColor: appStore.textPrimaryColor,
+                  fontFamily: fontBold,
+                  fontSize: textSizeXLarge),
             ),
             Expanded(
               child: SingleChildScrollView(
@@ -85,7 +96,8 @@ class T5SettingsState extends State<T5Settings> {
                         hasIcon: false,
                         header: Row(
                           children: <Widget>[
-                            settingItem(t5_notification, icon: t5_img_notification),
+                            settingItem(t5_notification,
+                                icon: t5_img_notification),
                             Switch(
                               value: notification,
                               onChanged: (value) {
@@ -155,7 +167,8 @@ class T5SettingsState extends State<T5Settings> {
                       divider(),
                       Row(
                         children: <Widget>[
-                          settingItem(t5_fingerprint, icon: t5_img_fingerprint_2),
+                          settingItem(t5_fingerprint,
+                              icon: t5_img_fingerprint_2),
                           IconButton(
                             icon: Icon(
                               Icons.keyboard_arrow_right,
@@ -171,13 +184,17 @@ class T5SettingsState extends State<T5Settings> {
                           settingItem(t5_language, icon: t5_translate),
                           CustomTheme(
                             child: DropdownButton<String>(
-                              icon: Icon(Icons.keyboard_arrow_right, color: t5TextColorSecondary),
+                              icon: Icon(Icons.keyboard_arrow_right,
+                                  color: t5TextColorSecondary),
                               underline: SizedBox(),
                               value: _selectedLocation,
-                              items: <String>['English', 'French', 'German'].map((String value) {
+                              items: <String>['English', 'French', 'German']
+                                  .map((String value) {
                                 return DropdownMenuItem<String>(
                                   value: value,
-                                  child: text(value, fontSize: textSizeLargeMedium, textColor: appStore.textPrimaryColor),
+                                  child: text(value,
+                                      fontSize: textSizeLargeMedium,
+                                      textColor: appStore.textPrimaryColor),
                                 );
                               }).toList(),
                               onChanged: (newValue) {

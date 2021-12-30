@@ -1,9 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/themes/theme7/utils/T7Colors.dart';
 import 'package:prokit_flutter/themes/theme7/utils/T7Constant.dart';
-import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/themes/theme7/utils/T7Images.dart';
 import 'package:prokit_flutter/themes/theme7/utils/T7Strings.dart';
 import 'package:prokit_flutter/themes/theme7/utils/T7Widget.dart';
@@ -66,14 +66,20 @@ class WalkThrough extends StatelessWidget {
   final String title;
   final String info;
 
-  WalkThrough({Key? key, required this.textContent, required this.title, required this.info}) : super(key: key);
+  WalkThrough(
+      {Key? key,
+      required this.textContent,
+      required this.title,
+      required this.info})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
         CachedNetworkImage(
-          placeholder: placeholderWidgetFn() as Widget Function(BuildContext, String)?,
+          placeholder:
+              placeholderWidgetFn() as Widget Function(BuildContext, String)?,
           imageUrl: textContent,
           fit: BoxFit.cover,
           width: (MediaQuery.of(context).size.width),
@@ -85,14 +91,19 @@ class WalkThrough extends StatelessWidget {
               margin: EdgeInsets.only(top: 80),
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(16, 10, 16, 10),
-                child: text(t7_trip_go, textColor: t7white, fontSize: textSizeXLarge),
+                child: text(t7_trip_go,
+                    textColor: t7white, fontSize: textSizeXLarge),
               ),
               decoration: boxDecoration(radius: 12, bgColor: t7_black_trans)),
         ),
         Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            decoration: BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(30), topRight: Radius.circular(30)), color: t7_black_trans),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30)),
+                color: t7_black_trans),
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
@@ -104,7 +115,10 @@ class WalkThrough extends StatelessWidget {
                   SizedBox(
                     height: 16,
                   ),
-                  Container(margin: EdgeInsets.only(left: 20, right: 20), child: text(info, textColor: t7textColorSecondary, isLongText: true)),
+                  Container(
+                      margin: EdgeInsets.only(left: 20, right: 20),
+                      child: text(info,
+                          textColor: t7textColorSecondary, isLongText: true)),
                   SizedBox(
                     height: 20,
                   ),

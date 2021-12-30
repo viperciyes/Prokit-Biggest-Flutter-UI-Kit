@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/themes/theme5/model/T5Models.dart';
 import 'package:prokit_flutter/themes/theme5/utils/T5Colors.dart';
@@ -7,7 +8,6 @@ import 'package:prokit_flutter/themes/theme5/utils/T5DataGenerator.dart';
 import 'package:prokit_flutter/themes/theme5/utils/T5Strings.dart';
 import 'package:prokit_flutter/themes/theme5/utils/T5Widget.dart';
 import 'package:prokit_flutter/themes/theme5/utils/widgets/T5GridListing.dart';
-import 'package:nb_utils/nb_utils.dart';
 
 import '../../../main.dart';
 
@@ -38,18 +38,24 @@ class T5BottomSheetState extends State<T5BottomSheet> {
               initialChildSize: 0.65,
               maxChildSize: 1,
               minChildSize: 0.5,
-              builder: (BuildContext context, ScrollController scrollController) {
+              builder:
+                  (BuildContext context, ScrollController scrollController) {
                 return Container(
                   padding: EdgeInsets.only(top: 24),
                   alignment: Alignment.topLeft,
-                  decoration: BoxDecoration(color: context.scaffoldBackgroundColor, borderRadius: BorderRadius.only(topLeft: Radius.circular(24), topRight: Radius.circular(24))),
+                  decoration: BoxDecoration(
+                      color: context.scaffoldBackgroundColor,
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(24),
+                          topRight: Radius.circular(24))),
                   child: Column(
                     children: <Widget>[
                       Container(color: t5ViewColor, width: 50, height: 3),
                       SizedBox(height: 20),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 20, right: 20, top: 16),
+                          padding:
+                              EdgeInsets.only(left: 20, right: 20, top: 16),
                           child: T5GridListing(mFavouriteList, true),
                         ),
                       )

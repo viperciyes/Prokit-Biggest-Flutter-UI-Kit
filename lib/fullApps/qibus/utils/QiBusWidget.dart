@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/fullApps/qibus/screen/QIBusNotification.dart';
+import 'package:prokit_flutter/main/utils/AppWidget.dart';
 
 import 'QiBusColors.dart';
 import 'QiBusConstant.dart';
@@ -35,7 +35,10 @@ Padding editTextStyle(var hintText, {var line = 1}) {
 Container homeEditTextStyle(var hintText, {var line = 1}) {
   return Container(
     child: TextField(
-      style: TextStyle(fontSize: textSizeMedium, fontFamily: fontRegular, color: qIBus_textChild),
+      style: TextStyle(
+          fontSize: textSizeMedium,
+          fontFamily: fontRegular,
+          color: qIBus_textChild),
       decoration: InputDecoration(
         contentPadding: EdgeInsets.fromLTRB(16, 8, 16, 8),
         isDense: true,
@@ -64,14 +67,16 @@ class QIBusAppButtonState extends State<QIBusAppButton> {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        elevation: 2,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
-        padding: const EdgeInsets.all(0.0),
-        textStyle: TextStyle(color: qIBus_white)
-      ),
+          elevation: 2,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
+          padding: const EdgeInsets.all(0.0),
+          textStyle: TextStyle(color: qIBus_white)),
       onPressed: widget.onPressed,
       child: Container(
-        decoration: const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(8.0)), color: qIBus_colorPrimary),
+        decoration: const BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(8.0)),
+            color: qIBus_colorPrimary),
         child: Center(
           child: Padding(
             padding: const EdgeInsets.all(16.0),
@@ -125,20 +130,29 @@ class TopBarState extends State<TopBar> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
                               IconButton(
-                                icon: Icon(Icons.arrow_back, color: qIBus_white),
+                                icon:
+                                    Icon(Icons.arrow_back, color: qIBus_white),
                                 onPressed: () {
                                   finish(context);
                                 },
                               ),
                               Padding(
-                                padding: EdgeInsets.fromLTRB(spacing_standard, 0, 0, 0),
-                                child: text(widget.titleName, textColor: qIBus_white, fontSize: textSizeNormal, fontFamily: fontBold),
+                                padding: EdgeInsets.fromLTRB(
+                                    spacing_standard, 0, 0, 0),
+                                child: text(widget.titleName,
+                                    textColor: qIBus_white,
+                                    fontSize: textSizeNormal,
+                                    fontFamily: fontBold),
                               ),
                             ],
                           )
                         : Padding(
-                            padding: EdgeInsets.fromLTRB(spacing_standard_new, spacing_standard, 0, 0),
-                            child: text(widget.titleName, textColor: qIBus_white, fontSize: textSizeNormal, fontFamily: fontBold),
+                            padding: EdgeInsets.fromLTRB(
+                                spacing_standard_new, spacing_standard, 0, 0),
+                            child: text(widget.titleName,
+                                textColor: qIBus_white,
+                                fontSize: textSizeNormal,
+                                fontFamily: fontBold),
                           ),
                     widget.isVisible!
                         ? GestureDetector(
@@ -178,8 +192,13 @@ class TopBarState extends State<TopBar> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.only(top: MediaQuery.of(context).size.width * 0.05),
-                decoration: BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)), color: qIBus_app_background),
+                padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.width * 0.05),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        topRight: Radius.circular(20)),
+                    color: qIBus_app_background),
               ),
             ],
           )
@@ -217,7 +236,10 @@ Widget title(var title, BuildContext context) {
                     ),
                     Padding(
                       padding: EdgeInsets.fromLTRB(spacing_standard, 0, 0, 0),
-                      child: text(title, textColor: qIBus_white, fontSize: textSizeNormal, fontFamily: fontBold),
+                      child: text(title,
+                          textColor: qIBus_white,
+                          fontSize: textSizeNormal,
+                          fontFamily: fontBold),
                     ),
                   ],
                 )
@@ -225,8 +247,13 @@ Widget title(var title, BuildContext context) {
             ),
           ),
           Container(
-            padding: EdgeInsets.only(top: MediaQuery.of(context).size.width * 0.05),
-            decoration: BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)), color: qIBus_app_background),
+            padding:
+                EdgeInsets.only(top: MediaQuery.of(context).size.width * 0.05),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20)),
+                color: qIBus_app_background),
           ),
         ],
       )
@@ -243,7 +270,15 @@ class PinEntryTextField extends StatefulWidget {
   final isTextObscure;
   final showFieldAsBox;
 
-  PinEntryTextField({this.lastPin, this.fields: 4, this.onSubmit, this.fieldWidth: 40.0, this.fontSize: 16.0, this.isTextObscure: false, this.showFieldAsBox: false}) : assert(fields > 0);
+  PinEntryTextField(
+      {this.lastPin,
+      this.fields: 4,
+      this.onSubmit,
+      this.fieldWidth: 40.0,
+      this.fontSize: 16.0,
+      this.isTextObscure: false,
+      this.showFieldAsBox: false})
+      : assert(fields > 0);
 
   @override
   State createState() {
@@ -263,7 +298,8 @@ class PinEntryTextFieldState extends State<PinEntryTextField> {
     super.initState();
     _pin = List<String?>.filled(widget.fields, null, growable: false);
     _focusNodes = List<FocusNode?>.filled(widget.fields, null, growable: false);
-    _textControllers = List<TextEditingController?>.filled(widget.fields, null, growable: false);
+    _textControllers = List<TextEditingController?>.filled(widget.fields, null,
+        growable: false);
     WidgetsBinding.instance!.addPostFrameCallback((_) {
       setState(() {
         if (widget.lastPin != null) {
@@ -291,11 +327,15 @@ class PinEntryTextFieldState extends State<PinEntryTextField> {
       FocusScope.of(context).requestFocus(_focusNodes[0]);
     }
 
-    return Row(mainAxisAlignment: MainAxisAlignment.center, verticalDirection: VerticalDirection.down, children: textFields);
+    return Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        verticalDirection: VerticalDirection.down,
+        children: textFields);
   }
 
   void clearTextFields() {
-    _textControllers.forEach((TextEditingController? tEditController) => tEditController!.clear());
+    _textControllers.forEach(
+        (TextEditingController? tEditController) => tEditController!.clear());
     _pin.clear();
   }
 
@@ -322,10 +362,18 @@ class PinEntryTextFieldState extends State<PinEntryTextField> {
         keyboardType: TextInputType.number,
         textAlign: TextAlign.center,
         maxLength: 1,
-        style: TextStyle(color: Colors.black, fontFamily: fontMedium, fontSize: widget.fontSize),
+        style: TextStyle(
+            color: Colors.black,
+            fontFamily: fontMedium,
+            fontSize: widget.fontSize),
         focusNode: _focusNodes[i],
         obscureText: widget.isTextObscure,
-        decoration: InputDecoration(focusColor: qIBus_colorPrimary, counterText: "", border: widget.showFieldAsBox ? OutlineInputBorder(borderSide: BorderSide(width: 2.0)) : null),
+        decoration: InputDecoration(
+            focusColor: qIBus_colorPrimary,
+            counterText: "",
+            border: widget.showFieldAsBox
+                ? OutlineInputBorder(borderSide: BorderSide(width: 2.0))
+                : null),
         onChanged: (String str) {
           setState(() {
             _pin[i] = str;

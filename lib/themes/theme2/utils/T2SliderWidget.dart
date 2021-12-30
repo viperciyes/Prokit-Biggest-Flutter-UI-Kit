@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -21,12 +22,15 @@ class T2CarouselSlider extends StatefulWidget {
       this.onPageChanged,
       this.scrollPhysics,
       this.scrollDirection: Axis.horizontal})
-      : this.realPage = enableInfiniteScroll ? realPage + initialPage : initialPage,
+      : this.realPage =
+            enableInfiniteScroll ? realPage + initialPage : initialPage,
         this.itemCount = items.length,
         this.itemBuilder = null,
         this.pageController = PageController(
           viewportFraction: viewportFraction as double,
-          initialPage: enableInfiniteScroll ? realPage + (initialPage as int) : initialPage as int,
+          initialPage: enableInfiniteScroll
+              ? realPage + (initialPage as int)
+              : initialPage as int,
         );
 
   /// The on demand item builder constructor
@@ -49,11 +53,14 @@ class T2CarouselSlider extends StatefulWidget {
       this.onPageChanged,
       this.scrollPhysics,
       this.scrollDirection: Axis.horizontal})
-      : this.realPage = enableInfiniteScroll ? realPage + initialPage : initialPage,
+      : this.realPage =
+            enableInfiniteScroll ? realPage + initialPage : initialPage,
         this.items = null,
         this.pageController = PageController(
           viewportFraction: viewportFraction as double,
-          initialPage: enableInfiniteScroll ? realPage + (initialPage as int) : initialPage as int,
+          initialPage: enableInfiniteScroll
+              ? realPage + (initialPage as int)
+              : initialPage as int,
         );
 
   /// The widgets to be shown in the carousel of default constructor
@@ -169,7 +176,8 @@ class T2CarouselSlider extends StatefulWidget {
   ///
   /// The animation lasts for the given duration and follows the given curve.
   /// The returned [Future] resolves when the animation completes.
-  Future<void> previousPage({required Duration duration, required Curve curve}) {
+  Future<void> previousPage(
+      {required Duration duration, required Curve curve}) {
     return pageController.previousPage(duration: duration, curve: curve);
   }
 
@@ -178,24 +186,32 @@ class T2CarouselSlider extends StatefulWidget {
   /// Jumps the page position from its current value to the given value,
   /// without animation, and without checking if the new value is in range.
   void jumpToPage(int page) {
-    final index = _getRealIndex(pageController.page!.toInt(), realPage - initialPage as int, itemCount);
-    return pageController.jumpToPage(pageController.page!.toInt() + page - index);
+    final index = _getRealIndex(
+        pageController.page!.toInt(), realPage - initialPage as int, itemCount);
+    return pageController
+        .jumpToPage(pageController.page!.toInt() + page - index);
   }
 
   /// Animates the controlled [T2CarouselSlider] from the current page to the given page.
   ///
   /// The animation lasts for the given duration and follows the given curve.
   /// The returned [Future] resolves when the animation completes.
-  Future<void> animateToPage(int page, {required Duration duration, required Curve curve}) {
-    final index = _getRealIndex(pageController.page!.toInt(), realPage - initialPage as int, itemCount);
-    return pageController.animateToPage(pageController.page!.toInt() + page - index, duration: duration, curve: curve);
+  Future<void> animateToPage(int page,
+      {required Duration duration, required Curve curve}) {
+    final index = _getRealIndex(
+        pageController.page!.toInt(), realPage - initialPage as int, itemCount);
+    return pageController.animateToPage(
+        pageController.page!.toInt() + page - index,
+        duration: duration,
+        curve: curve);
   }
 
   @override
   _T2CarouselSliderState createState() => _T2CarouselSliderState();
 }
 
-class _T2CarouselSliderState extends State<T2CarouselSlider> with TickerProviderStateMixin {
+class _T2CarouselSliderState extends State<T2CarouselSlider>
+    with TickerProviderStateMixin {
   Timer? timer;
 
   @override
@@ -207,7 +223,9 @@ class _T2CarouselSliderState extends State<T2CarouselSlider> with TickerProvider
   Timer? getTimer() {
     return widget.autoPlay
         ? Timer.periodic(widget.autoPlayInterval, (_) {
-            widget.pageController.nextPage(duration: widget.autoPlayAnimationDuration, curve: widget.autoPlayCurve);
+            widget.pageController.nextPage(
+                duration: widget.autoPlayAnimationDuration,
+                curve: widget.autoPlayCurve);
           })
         : null;
   }
@@ -222,14 +240,20 @@ class _T2CarouselSliderState extends State<T2CarouselSlider> with TickerProvider
   Widget getWrapper(Widget child) {
     if (widget.height != null) {
       final Widget wrapper = Container(height: widget.height, child: child);
-      return widget.autoPlay && widget.pauseAutoPlayOnTouch != null ? addGestureDetection(wrapper) : wrapper;
+      return widget.autoPlay && widget.pauseAutoPlayOnTouch != null
+          ? addGestureDetection(wrapper)
+          : wrapper;
     } else {
-      final Widget wrapper = AspectRatio(aspectRatio: widget.aspectRatio, child: child);
-      return widget.autoPlay && widget.pauseAutoPlayOnTouch != null ? addGestureDetection(wrapper) : wrapper;
+      final Widget wrapper =
+          AspectRatio(aspectRatio: widget.aspectRatio, child: child);
+      return widget.autoPlay && widget.pauseAutoPlayOnTouch != null
+          ? addGestureDetection(wrapper)
+          : wrapper;
     }
   }
 
-  Widget addGestureDetection(Widget child) => GestureDetector(onPanDown: (_) => pauseOnTouch(), child: child);
+  Widget addGestureDetection(Widget child) =>
+      GestureDetector(onPanDown: (_) => pauseOnTouch(), child: child);
 
   @override
   void dispose() {

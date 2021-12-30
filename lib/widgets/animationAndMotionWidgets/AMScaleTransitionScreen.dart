@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:prokit_flutter/main/utils/AppWidget.dart';
 
 class AMScaleTransitionScreen extends StatefulWidget {
   static String tag = '/AMScaleTransitionScreen';
@@ -9,7 +9,8 @@ class AMScaleTransitionScreen extends StatefulWidget {
   AMScaleTransitionScreenState createState() => AMScaleTransitionScreenState();
 }
 
-class AMScaleTransitionScreenState extends State<AMScaleTransitionScreen> with TickerProviderStateMixin {
+class AMScaleTransitionScreenState extends State<AMScaleTransitionScreen>
+    with TickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
 
@@ -20,9 +21,11 @@ class AMScaleTransitionScreenState extends State<AMScaleTransitionScreen> with T
   }
 
   init() async {
-    _controller = AnimationController(duration: const Duration(milliseconds: 2000), vsync: this, value: 0.1);
+    _controller = AnimationController(
+        duration: const Duration(milliseconds: 2000), vsync: this, value: 0.1);
 
-    _animation = CurvedAnimation(parent: _controller, curve: Curves.bounceInOut);
+    _animation =
+        CurvedAnimation(parent: _controller, curve: Curves.bounceInOut);
 
     _controller.forward();
   }

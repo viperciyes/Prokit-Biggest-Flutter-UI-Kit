@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'colors.dart';
 
 class CurvedNavigationBar extends StatefulWidget {
@@ -29,7 +30,8 @@ class CurvedNavigationBar extends StatefulWidget {
   _CurvedNavigationBarState createState() => _CurvedNavigationBarState();
 }
 
-class _CurvedNavigationBarState extends State<CurvedNavigationBar> with SingleTickerProviderStateMixin {
+class _CurvedNavigationBarState extends State<CurvedNavigationBar>
+    with SingleTickerProviderStateMixin {
   double? _startingPos;
   int _endingIndex = 0;
   double? _pos;
@@ -54,7 +56,8 @@ class _CurvedNavigationBarState extends State<CurvedNavigationBar> with SingleTi
         if ((endingPos - _pos!).abs() < (_startingPos! - _pos!).abs()) {
           _icon = widget.items[_endingIndex];
         }
-        _buttonHide = (1 - ((middle - _pos!) / (_startingPos! - middle)).abs()).abs();
+        _buttonHide =
+            (1 - ((middle - _pos!) / (_startingPos! - middle)).abs()).abs();
       });
     });
   }
@@ -128,7 +131,8 @@ class _CurvedNavigationBarState extends State<CurvedNavigationBar> with SingleTi
     setState(() {
       _startingPos = _pos;
       _endingIndex = index;
-      _animationController.animateTo(newPosition, duration: widget.animationDuration, curve: widget.animationCurve);
+      _animationController.animateTo(newPosition,
+          duration: widget.animationDuration, curve: widget.animationCurve);
     });
   }
 }
@@ -156,8 +160,11 @@ class NavButton extends StatelessWidget {
         child: Container(
             height: 75.0,
             child: Transform.translate(
-              offset: Offset(0, difference < 1.0 / length! ? verticalAlignment * 40 : 0),
-              child: Opacity(opacity: difference < 1.0 / length! * 0.99 ? opacity : 1.0, child: child),
+              offset: Offset(
+                  0, difference < 1.0 / length! ? verticalAlignment * 40 : 0),
+              child: Opacity(
+                  opacity: difference < 1.0 / length! * 0.99 ? opacity : 1.0,
+                  child: child),
             )),
       ),
     );

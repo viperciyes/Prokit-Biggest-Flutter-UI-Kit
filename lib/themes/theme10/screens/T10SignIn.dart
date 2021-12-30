@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/themes/theme10/utils/T10Colors.dart';
 import 'package:prokit_flutter/themes/theme10/utils/T10Constant.dart';
 import 'package:prokit_flutter/themes/theme10/utils/T10Strings.dart';
 import 'package:prokit_flutter/themes/theme10/utils/T10Widget.dart';
-import 'package:nb_utils/nb_utils.dart';
 
 import '../../../main.dart';
 
@@ -31,7 +31,10 @@ class T10SignInState extends State<T10SignIn> {
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
             children: <Widget>[
-              text(theme10_lbl_welcome, textColor: appStore.textPrimaryColor, fontFamily: fontBold, fontSize: textSizeXLarge),
+              text(theme10_lbl_welcome,
+                  textColor: appStore.textPrimaryColor,
+                  fontFamily: fontBold,
+                  fontSize: textSizeXLarge),
               SizedBox(height: spacing_large),
               EditText(
                 text: theme10_username,
@@ -48,11 +51,14 @@ class T10SignInState extends State<T10SignIn> {
                 textContent: theme10_lbl_sign_in,
               ),
               SizedBox(height: spacing_large),
-              text(theme10_lbl_forget_pswd, textColor: t10_textColorSecondary, fontFamily: fontMedium),
+              text(theme10_lbl_forget_pswd,
+                  textColor: t10_textColorSecondary, fontFamily: fontMedium),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  text(theme10_lbl_dont_have_account, textColor: t10_textColorSecondary, fontFamily: fontMedium),
+                  text(theme10_lbl_dont_have_account,
+                      textColor: t10_textColorSecondary,
+                      fontFamily: fontMedium),
                   SizedBox(
                     width: spacing_control,
                   ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/themes/theme5/model/T5Models.dart';
-import 'package:nb_utils/nb_utils.dart';
 
 import '../../../../main.dart';
 import '../T5Colors.dart';
@@ -20,15 +20,20 @@ class T5GridListing extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
     return GridView.builder(
         scrollDirection: Axis.vertical,
-        physics: isScrollable ? ScrollPhysics() : NeverScrollableScrollPhysics(),
+        physics:
+            isScrollable ? ScrollPhysics() : NeverScrollableScrollPhysics(),
         itemCount: mFavouriteList!.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3, crossAxisSpacing: 16, mainAxisSpacing: 16),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3, crossAxisSpacing: 16, mainAxisSpacing: 16),
         itemBuilder: (BuildContext context, int index) {
           return GestureDetector(
             onTap: () {},
             child: Container(
               alignment: Alignment.center,
-              decoration: boxDecoration(radius: 10, showShadow: true, bgColor: context.scaffoldBackgroundColor),
+              decoration: boxDecoration(
+                  radius: 10,
+                  showShadow: true,
+                  bgColor: context.scaffoldBackgroundColor),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -37,13 +42,16 @@ class T5GridListing extends StatelessWidget {
                     width: width / 7.5,
                     margin: EdgeInsets.only(bottom: 4, top: 8),
                     padding: EdgeInsets.all(width / 30),
-                    decoration: boxDecoration(bgColor: mFavouriteList![index].color, radius: 10),
+                    decoration: boxDecoration(
+                        bgColor: mFavouriteList![index].color, radius: 10),
                     child: SvgPicture.asset(
                       mFavouriteList![index].icon,
                       color: t5White,
                     ),
                   ),
-                  text(mFavouriteList![index].name, textColor: appStore.textSecondaryColor, fontSize: textSizeMedium)
+                  text(mFavouriteList![index].name,
+                      textColor: appStore.textSecondaryColor,
+                      fontSize: textSizeMedium)
                 ],
               ),
             ),

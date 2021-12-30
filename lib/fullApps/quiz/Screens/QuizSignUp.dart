@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/fullApps/quiz/Screens/QuizCreatePassword.dart';
 import 'package:prokit_flutter/fullApps/quiz/utils/QuizColors.dart';
 import 'package:prokit_flutter/fullApps/quiz/utils/QuizConstant.dart';
 import 'package:prokit_flutter/fullApps/quiz/utils/QuizStrings.dart';
 import 'package:prokit_flutter/fullApps/quiz/utils/QuizWidget.dart';
+import 'package:prokit_flutter/main/utils/AppWidget.dart';
 
 class QuizSignUp extends StatefulWidget {
   static String tag = '/QuizSignUp';
@@ -21,7 +21,8 @@ class _QuizSignUpState extends State<QuizSignUp> {
 
     return Scaffold(
       appBar: AppBar(
-        title: text(quiz_lbl_create_account, fontSize: textSizeLargeMedium, fontFamily: fontMedium),
+        title: text(quiz_lbl_create_account,
+            fontSize: textSizeLargeMedium, fontFamily: fontMedium),
         leading: Icon(
           Icons.arrow_back,
           color: quiz_colorPrimary,
@@ -41,18 +42,28 @@ class _QuizSignUpState extends State<QuizSignUp> {
             child: Column(
               children: <Widget>[
                 SizedBox(height: 20),
-                text(quiz_info_sign_up, textColor: quiz_textColorSecondary, isLongText: true, isCentered: true).center(),
+                text(quiz_info_sign_up,
+                        textColor: quiz_textColorSecondary,
+                        isLongText: true,
+                        isCentered: true)
+                    .center(),
                 Container(
                   margin: EdgeInsets.all(24.0),
-                  decoration: boxDecoration(bgColor: quiz_white, color: quiz_white, showShadow: true, radius: 10),
-                  child: quizEditTextStyle(quiz_hint_your_email, isPassword: false),
+                  decoration: boxDecoration(
+                      bgColor: quiz_white,
+                      color: quiz_white,
+                      showShadow: true,
+                      radius: 10),
+                  child: quizEditTextStyle(quiz_hint_your_email,
+                      isPassword: false),
                 ),
                 SizedBox(height: 20),
                 Container(
                   child: Column(
                     children: <Widget>[
                       text(quiz_lbl_already_have_an_account),
-                      text(quiz_lbl_sign_in, textColor: quiz_colorPrimary, textAllCaps: true),
+                      text(quiz_lbl_sign_in,
+                          textColor: quiz_colorPrimary, textAllCaps: true),
                     ],
                   ),
                 ).onTap(() {

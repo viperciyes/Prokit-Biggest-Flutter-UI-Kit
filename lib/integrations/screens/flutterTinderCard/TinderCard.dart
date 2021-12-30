@@ -199,14 +199,10 @@ class _TinderSwapCardState extends State<TinderSwapCard>
                           .width,
                   0);
 
-              if (widget.swipeUpdateCallback != null) {
-                widget.swipeUpdateCallback(details, frontCardAlign);
-              }
-            }
-
-            if (widget.swipeUpdateCallback != null) {
               widget.swipeUpdateCallback(details, frontCardAlign);
             }
+
+            widget.swipeUpdateCallback(details, frontCardAlign);
           });
         },
         onPanEnd: (DragEndDetails details) {
@@ -278,8 +274,7 @@ class _TinderSwapCardState extends State<TinderSwapCard>
           frontCardAlign = _cardAligns[widget._stackNum - 1];
           orientation = CardSwipeOrientation.RECOVER;
         }
-        if (widget.swipeCompleteCallback != null)
-          widget.swipeCompleteCallback(orientation, widget._currentIndex);
+        widget.swipeCompleteCallback(orientation, widget._currentIndex);
         if (orientation != CardSwipeOrientation.RECOVER) changeCardOrder();
       }
     });
@@ -393,27 +388,19 @@ class CardController {
   late TriggerListener _listener;
 
   void triggerLeft() {
-    if (_listener != null) {
-      _listener(TriggerDirection.left);
-    }
+    _listener(TriggerDirection.left);
   }
 
   void triggerRight() {
-    if (_listener != null) {
-      _listener(TriggerDirection.right);
-    }
+    _listener(TriggerDirection.right);
   }
 
   void triggerUp() {
-    if (_listener != null) {
-      _listener(TriggerDirection.up);
-    }
+    _listener(TriggerDirection.up);
   }
 
   void triggerDown() {
-    if (_listener != null) {
-      _listener(TriggerDirection.down);
-    }
+    _listener(TriggerDirection.down);
   }
 
   void addListener(listener) {

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/fullApps/muvi/models/flix_response.dart';
 import 'package:prokit_flutter/fullApps/muvi/screens/flix_movie_detail_screen_2.dart';
 import 'package:prokit_flutter/fullApps/muvi/screens/flix_series_detail_screen.dart';
@@ -9,7 +10,6 @@ import 'package:prokit_flutter/fullApps/muvi/utils/flix_data_generator.dart';
 import 'package:prokit_flutter/fullApps/muvi/utils/flix_slider_widget.dart';
 import 'package:prokit_flutter/fullApps/muvi/utils/resources/flix_colors.dart';
 import 'package:prokit_flutter/fullApps/muvi/utils/resources/flix_size.dart';
-import 'package:nb_utils/nb_utils.dart';
 
 // ignore: must_be_immutable
 class HomeCategoryFragment extends StatefulWidget {
@@ -56,8 +56,11 @@ class HomeCategoryFragmentState extends State<HomeCategoryFragment> {
 
   @override
   Widget build(BuildContext context) {
-    var slider = mSliderList.isNotEmpty ? HomeSliderWidget(mSliderList) : Container();
-    var madeForYouSlider = mMadeForYouList.isNotEmpty ? VerticalSliderWidget(mMadeForYouList) : Container();
+    var slider =
+        mSliderList.isNotEmpty ? HomeSliderWidget(mSliderList) : Container();
+    var madeForYouSlider = mMadeForYouList.isNotEmpty
+        ? VerticalSliderWidget(mMadeForYouList)
+        : Container();
     var popularMovieList = mMovieList.isNotEmpty
         ? ItemHorizontalList(
             mMovieList,
@@ -89,24 +92,45 @@ class HomeCategoryFragmentState extends State<HomeCategoryFragment> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                headingText(context, "Trending this week").paddingAll(spacing_standard_new),
+                headingText(context, "Trending this week")
+                    .paddingAll(spacing_standard_new),
                 slider,
-                headingText(context, "Continue Watching").paddingOnly(left: spacing_standard_new, right: spacing_standard_new, top: 12, bottom: spacing_standard_new),
+                headingText(context, "Continue Watching").paddingOnly(
+                    left: spacing_standard_new,
+                    right: spacing_standard_new,
+                    top: 12,
+                    bottom: spacing_standard_new),
                 continueWatchingList,
                 headingWidViewAll(context, "Popular Movies", () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => ViewAllMovieScreen(title: "Popular Movies")));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              ViewAllMovieScreen(title: "Popular Movies")));
                 }).paddingAll(spacing_standard_new),
                 popularMovieList,
                 headingWidViewAll(context, "New on Cinemas", () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => ViewAllMovieScreen(title: "New on Cinemas")));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              ViewAllMovieScreen(title: "New on Cinemas")));
                 }).paddingAll(spacing_standard_new),
                 newCinemaList,
                 headingText(context, "Made For You").onTap(() {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => ViewAllMovieScreen(title: "New on Cinemas")));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              ViewAllMovieScreen(title: "New on Cinemas")));
                 }).paddingAll(spacing_standard_new),
                 madeForYouSlider,
                 headingWidViewAll(context, "Tending on Muvi", () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => ViewAllMovieScreen(title: "New on Cinemas")));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              ViewAllMovieScreen(title: "New on Cinemas")));
                 }).paddingAll(spacing_standard_new),
                 trendingMovieList.paddingBottom(spacing_standard_new)
               ],
@@ -140,23 +164,34 @@ class HomeSliderWidget extends StatelessWidget {
             return Stack(
               alignment: Alignment.bottomLeft,
               children: <Widget>[
-                networkImage(slider.slideImage, aWidth: cardSize.width, aHeight: cardSize.height, fit: BoxFit.cover).cornerRadiusWithClipRRect(8),
+                networkImage(slider.slideImage,
+                        aWidth: cardSize.width,
+                        aHeight: cardSize.height,
+                        fit: BoxFit.cover)
+                    .cornerRadiusWithClipRRect(8),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Row(
                       children: <Widget>[
-                        hdWidget(context).paddingRight(spacing_standard).visible(slider.isHD!),
+                        hdWidget(context)
+                            .paddingRight(spacing_standard)
+                            .visible(slider.isHD!),
                         itemSubTitle(context, "2018"),
-                        itemSubTitle(context, "17+").paddingLeft(spacing_standard)
+                        itemSubTitle(context, "17+")
+                            .paddingLeft(spacing_standard)
                       ],
                     ).paddingTop(spacing_control_half)
                   ],
-                ).paddingOnly(left: spacing_standard, bottom: spacing_standard_new)
+                ).paddingOnly(
+                    left: spacing_standard, bottom: spacing_standard_new)
               ],
             ).paddingBottom(spacing_control).onTap(() {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => SeriesDetailScreen()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => SeriesDetailScreen()));
             });
           },
         );
@@ -190,11 +225,19 @@ class VerticalSliderWidget extends StatelessWidget {
               child: Stack(
                 alignment: Alignment.bottomLeft,
                 children: <Widget>[
-                  networkImage(slider.slideImage, aWidth: double.infinity, aHeight: double.infinity, fit: BoxFit.cover).cornerRadiusWithClipRRect(8),
+                  networkImage(slider.slideImage,
+                          aWidth: double.infinity,
+                          aHeight: double.infinity,
+                          fit: BoxFit.cover)
+                      .cornerRadiusWithClipRRect(8),
                 ],
               ).paddingBottom(spacing_control),
             ).onTap(() {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => MovieDetail2Screen(title: "Action")));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          MovieDetail2Screen(title: "Action")));
             });
           },
         );

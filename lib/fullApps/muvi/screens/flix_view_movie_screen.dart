@@ -2,11 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/fullApps/muvi/utils/flix_app_widgets.dart';
 import 'package:prokit_flutter/fullApps/muvi/utils/flix_duration_formatter.dart';
 import 'package:prokit_flutter/fullApps/muvi/utils/resources/flix_colors.dart';
 import 'package:prokit_flutter/fullApps/muvi/utils/resources/flix_size.dart';
+import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:video_player/video_player.dart';
 
 class MovieScreen extends StatefulWidget {
@@ -29,7 +29,9 @@ class MovieScreenState extends State<MovieScreen> with WidgetsBindingObserver {
   void didChangeAppLifecycleState(AppLifecycleState state) {
     super.didChangeAppLifecycleState(state);
     // These are the callbacks
-    if (state == AppLifecycleState.inactive || state == AppLifecycleState.paused || state == AppLifecycleState.detached) {
+    if (state == AppLifecycleState.inactive ||
+        state == AppLifecycleState.paused ||
+        state == AppLifecycleState.detached) {
       setState(() {
         _controller.pause();
       });
@@ -46,7 +48,8 @@ class MovieScreenState extends State<MovieScreen> with WidgetsBindingObserver {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    _controller = VideoPlayerController.network('http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4');
+    _controller = VideoPlayerController.network(
+        'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4');
     _attachListenerToController();
     _controller.setLooping(false);
     _controller.initialize().then((_) => setState(() {
@@ -65,7 +68,9 @@ class MovieScreenState extends State<MovieScreen> with WidgetsBindingObserver {
         }
         if (mounted) {
           setState(() {
-            _currentPosition = _controller.value.duration.inMilliseconds == 0 ? 0 : _controller.value.position.inMilliseconds;
+            _currentPosition = _controller.value.duration.inMilliseconds == 0
+                ? 0
+                : _controller.value.position.inMilliseconds;
             _duration = _controller.value.duration.inMilliseconds;
           });
         }
@@ -114,25 +119,39 @@ class MovieScreenState extends State<MovieScreen> with WidgetsBindingObserver {
                               mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
                                 Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: <Widget>[
-                                    text(durationFormatter(_currentPosition) + " / " + durationFormatter(_duration), textColor: muvi_textColorPrimary).paddingLeft(spacing_standard),
+                                    text(
+                                            durationFormatter(
+                                                    _currentPosition) +
+                                                " / " +
+                                                durationFormatter(_duration),
+                                            textColor: muvi_textColorPrimary)
+                                        .paddingLeft(spacing_standard),
                                     IconButton(
                                       icon: Icon(
-                                        isFullScreen ? Icons.fullscreen_exit : Icons.fullscreen,
+                                        isFullScreen
+                                            ? Icons.fullscreen_exit
+                                            : Icons.fullscreen,
                                         color: muvi_textColorPrimary,
                                       ),
                                       onPressed: () {
                                         setState(() {
                                           !isFullScreen
-                                              ? SystemChrome.setPreferredOrientations([
-                                                  DeviceOrientation.landscapeRight,
-                                                  DeviceOrientation.landscapeLeft,
+                                              ? SystemChrome
+                                                  .setPreferredOrientations([
+                                                  DeviceOrientation
+                                                      .landscapeRight,
+                                                  DeviceOrientation
+                                                      .landscapeLeft,
                                                 ])
-                                              : SystemChrome.setPreferredOrientations([
+                                              : SystemChrome
+                                                  .setPreferredOrientations([
                                                   DeviceOrientation.portraitUp,
-                                                  DeviceOrientation.portraitDown,
+                                                  DeviceOrientation
+                                                      .portraitDown,
                                                 ]);
                                           isFullScreen = !isFullScreen;
                                         });
@@ -140,20 +159,27 @@ class MovieScreenState extends State<MovieScreen> with WidgetsBindingObserver {
                                     ).visible(!isBuffering)
                                   ],
                                 ),
-                                VideoProgressIndicator(_controller, allowScrubbing: true),
+                                VideoProgressIndicator(_controller,
+                                    allowScrubbing: true),
                               ],
                             ),
                             Center(
                               child: IconButton(
                                 icon: Icon(
-                                  _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
+                                  _controller.value.isPlaying
+                                      ? Icons.pause
+                                      : Icons.play_arrow,
                                   color: Colors.white,
                                   size: 56.0,
                                 ),
                                 onPressed: () {
                                   setState(() {
-                                    _controller.value.isPlaying ? _controller.pause() : _controller.play();
-                                    showOverLay = _controller.value.isPlaying ? false : true;
+                                    _controller.value.isPlaying
+                                        ? _controller.pause()
+                                        : _controller.play();
+                                    showOverLay = _controller.value.isPlaying
+                                        ? false
+                                        : true;
                                   });
                                 },
                               ),
@@ -243,7 +269,9 @@ class PlayPauseOverlay extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            controller!.value.isPlaying ? controller!.pause() : controller!.play();
+            controller!.value.isPlaying
+                ? controller!.pause()
+                : controller!.play();
           },
         ),
       ],

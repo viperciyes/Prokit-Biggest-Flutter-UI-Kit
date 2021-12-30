@@ -23,8 +23,7 @@ class _EAProfileTopComponentState extends State<EAProfileTopComponent> {
       children: [
         commonCachedNetworkImage(event_ic_london, fit: BoxFit.cover, width: context.width(), height: 300),
         Stack(
-          overflow: Overflow.visible,
-          alignment: Alignment.center,
+          clipBehavior: Clip.none, alignment: Alignment.center,
           children: [
             Container(
               margin: EdgeInsets.only(right: 16, left: 16, top: 200),
@@ -47,8 +46,7 @@ class _EAProfileTopComponentState extends State<EAProfileTopComponent> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Stack(
-                        overflow: Overflow.visible,
-                        children: [
+                        clipBehavior: Clip.none, children: [
                           Container(
                             padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                             decoration: boxDecorationWithRoundedCorners(borderRadius: BorderRadius.circular(24), border: Border.all(color: primaryColor1)),

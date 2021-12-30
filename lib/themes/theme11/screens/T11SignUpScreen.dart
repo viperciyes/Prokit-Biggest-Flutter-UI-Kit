@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/main/utils/AppColors.dart';
+import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/themes/theme11/utils/T11Images.dart';
 import 'package:prokit_flutter/themes/theme11/utils/T11Strings.dart';
 import 'package:prokit_flutter/themes/theme11/utils/T11Widget.dart';
@@ -19,7 +19,8 @@ class T11SignUpScreen extends StatefulWidget {
 class T11SignUpScreenState extends State<T11SignUpScreen> {
   @override
   void initState() {
-    setStatusBarColor(appStore.appBarColor!, statusBarIconBrightness: Brightness.dark);
+    setStatusBarColor(appStore.appBarColor!,
+        statusBarIconBrightness: Brightness.dark);
     super.initState();
   }
 
@@ -40,7 +41,8 @@ class T11SignUpScreenState extends State<T11SignUpScreen> {
             t11EditTextStyle(t11_hint_confirm_password, TextFieldType.PASSWORD),
             16.height,
             Container(
-              decoration: boxDecorationRoundedWithShadow(24, backgroundColor: appColorPrimary),
+              decoration: boxDecorationRoundedWithShadow(24,
+                  backgroundColor: appColorPrimary),
               width: context.width(),
               padding: EdgeInsets.all(12),
               alignment: Alignment.center,
@@ -51,7 +53,9 @@ class T11SignUpScreenState extends State<T11SignUpScreen> {
             16.height,
             createRichText(
               list: <TextSpan>[
-                TextSpan(text: t11_lbl_already_member + ' ', style: secondaryTextStyle()),
+                TextSpan(
+                    text: t11_lbl_already_member + ' ',
+                    style: secondaryTextStyle()),
                 TextSpan(
                   text: t11_lbl_login,
                   style: secondaryTextStyle(color: Colors.blue),

@@ -62,11 +62,18 @@ class BHBookAppointmentScreenState extends State<BHBookAppointmentScreen> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   color: whiteColor,
-                  boxShadow: [BoxShadow(color: BHGreyColor.withOpacity(0.3), offset: Offset(0.0, 1.0), blurRadius: 2.0)],
+                  boxShadow: [
+                    BoxShadow(
+                        color: BHGreyColor.withOpacity(0.3),
+                        offset: Offset(0.0, 1.0),
+                        blurRadius: 2.0)
+                  ],
                 ),
                 child: ListTile(
-                  title: Text('Date : ${date.day}/ ${date.month}/ ${date.year}', style: TextStyle(color: BHAppTextColorSecondary)),
-                  trailing: Icon(Icons.keyboard_arrow_down, color: BHAppTextColorSecondary),
+                  title: Text('Date : ${date.day}/ ${date.month}/ ${date.year}',
+                      style: TextStyle(color: BHAppTextColorSecondary)),
+                  trailing: Icon(Icons.keyboard_arrow_down,
+                      color: BHAppTextColorSecondary),
                   onTap: () => _pickDate(),
                 ),
               ),
@@ -81,8 +88,16 @@ class BHBookAppointmentScreenState extends State<BHBookAppointmentScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(BHTxtChooseSpecialList, style: TextStyle(fontSize: 14, color: BHAppTextColorPrimary, fontWeight: FontWeight.bold)),
-                        Text(BHTxtHairStylists, style: TextStyle(color: BHColorPrimary, fontSize: 14, fontWeight: FontWeight.bold)),
+                        Text(BHTxtChooseSpecialList,
+                            style: TextStyle(
+                                fontSize: 14,
+                                color: BHAppTextColorPrimary,
+                                fontWeight: FontWeight.bold)),
+                        Text(BHTxtHairStylists,
+                            style: TextStyle(
+                                color: BHColorPrimary,
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold)),
                       ],
                     ),
                     8.height,
@@ -93,18 +108,28 @@ class BHBookAppointmentScreenState extends State<BHBookAppointmentScreen> {
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (BuildContext context, int index) {
                           return Card(
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10)),
                             shadowColor: Colors.grey.withOpacity(0.3),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 ClipRRect(
-                                  borderRadius: BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
-                                  child: Image.asset(BHDashedBoardImage6, height: 110, width: 120, fit: BoxFit.cover),
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(10),
+                                      topRight: Radius.circular(10)),
+                                  child: Image.asset(BHDashedBoardImage6,
+                                      height: 110,
+                                      width: 120,
+                                      fit: BoxFit.cover),
                                 ),
                                 Padding(
                                   padding: EdgeInsets.all(8),
-                                  child: Text('Joseph Drake', style: TextStyle(fontSize: 14, color: BHAppTextColorSecondary, fontWeight: FontWeight.bold)),
+                                  child: Text('Joseph Drake',
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          color: BHAppTextColorSecondary,
+                                          fontWeight: FontWeight.bold)),
                                 ),
                               ],
                             ),
@@ -123,7 +148,11 @@ class BHBookAppointmentScreenState extends State<BHBookAppointmentScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(BHTxtAvailableSlot, style: TextStyle(fontSize: 14, color: BHAppTextColorPrimary, fontWeight: FontWeight.bold)),
+                    Text(BHTxtAvailableSlot,
+                        style: TextStyle(
+                            fontSize: 14,
+                            color: BHAppTextColorPrimary,
+                            fontWeight: FontWeight.bold)),
                     8.height,
                     Wrap(
                       spacing: 16.0,
@@ -153,7 +182,10 @@ class BHBookAppointmentScreenState extends State<BHBookAppointmentScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text('Services', style: TextStyle(color: BHAppTextColorPrimary, fontWeight: FontWeight.bold)),
+              Text('Services',
+                  style: TextStyle(
+                      color: BHAppTextColorPrimary,
+                      fontWeight: FontWeight.bold)),
               Container(
                 margin: EdgeInsets.only(top: 8),
                 color: whiteColor,
@@ -167,18 +199,32 @@ class BHBookAppointmentScreenState extends State<BHBookAppointmentScreen> {
                         children: [
                           ClipRRect(
                             borderRadius: BorderRadius.all(Radius.circular(10)),
-                            child: CachedNetworkImage(placeholder: placeholderWidgetFn() as Widget Function(BuildContext, String)?, imageUrl: BHDashedBoardImage4, height: 70, width: 120, fit: BoxFit.cover),
+                            child: CachedNetworkImage(
+                                placeholder: placeholderWidgetFn() as Widget
+                                    Function(BuildContext, String)?,
+                                imageUrl: BHDashedBoardImage4,
+                                height: 70,
+                                width: 120,
+                                fit: BoxFit.cover),
                           ),
                           8.width,
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('Conado Hair Studio', style: TextStyle(fontSize: 14, color: BHAppTextColorPrimary, fontWeight: FontWeight.bold)),
+                              Text('Conado Hair Studio',
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      color: BHAppTextColorPrimary,
+                                      fontWeight: FontWeight.bold)),
                               8.height,
                               Row(
                                 children: [
-                                  Icon(Icons.location_on, size: 12, color: BHAppTextColorSecondary),
-                                  Text('301 Dorthy ,chicago', style: TextStyle(fontSize: 12, color: BHAppTextColorSecondary))
+                                  Icon(Icons.location_on,
+                                      size: 12, color: BHAppTextColorSecondary),
+                                  Text('301 Dorthy ,chicago',
+                                      style: TextStyle(
+                                          fontSize: 12,
+                                          color: BHAppTextColorSecondary))
                                 ],
                               ),
                             ],
@@ -189,17 +235,27 @@ class BHBookAppointmentScreenState extends State<BHBookAppointmentScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text('Makeup Marguerite', style: TextStyle(fontSize: 14, color: BHAppTextColorPrimary, fontWeight: FontWeight.bold)),
-                          Text('1:30 - 2:30 PM', style: TextStyle(color: BHColorPrimary, fontSize: 14)),
+                          Text('Makeup Marguerite',
+                              style: TextStyle(
+                                  fontSize: 14,
+                                  color: BHAppTextColorPrimary,
+                                  fontWeight: FontWeight.bold)),
+                          Text('1:30 - 2:30 PM',
+                              style: TextStyle(
+                                  color: BHColorPrimary, fontSize: 14)),
                         ],
                       ),
                       16.height,
                       Row(
                         children: [
-                          Icon(Icons.person, size: 14, color: BHAppTextColorSecondary),
+                          Icon(Icons.person,
+                              size: 14, color: BHAppTextColorSecondary),
                           Padding(
                             padding: EdgeInsets.only(left: 5),
-                            child: Text('Lettie Neal', style: TextStyle(color: BHAppTextColorSecondary, fontSize: 14)),
+                            child: Text('Lettie Neal',
+                                style: TextStyle(
+                                    color: BHAppTextColorSecondary,
+                                    fontSize: 14)),
                           ),
                         ],
                       ),
@@ -208,21 +264,41 @@ class BHBookAppointmentScreenState extends State<BHBookAppointmentScreen> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('1:30-2:30 PM', style: TextStyle(fontSize: 14, color: BHAppTextColorPrimary)),
-                            Text('June 15,2020', style: TextStyle(fontSize: 14, color: BHAppTextColorPrimary)),
-                            Padding(padding: EdgeInsets.only(left: 45), child: Text('\$25', style: TextStyle(fontSize: 14))),
+                            Text('1:30-2:30 PM',
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    color: BHAppTextColorPrimary)),
+                            Text('June 15,2020',
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    color: BHAppTextColorPrimary)),
+                            Padding(
+                                padding: EdgeInsets.only(left: 45),
+                                child: Text('\$25',
+                                    style: TextStyle(fontSize: 14))),
                           ],
                         ),
                       ),
                       8.height,
-                      Container(height: 1, width: MediaQuery.of(context).size.width, color: BHGreyColor.withOpacity(0.3)),
+                      Container(
+                          height: 1,
+                          width: MediaQuery.of(context).size.width,
+                          color: BHGreyColor.withOpacity(0.3)),
                       Container(
                         margin: EdgeInsets.only(top: 8),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('Total Pay', style: TextStyle(fontSize: 14, color: BHAppTextColorPrimary, fontWeight: FontWeight.bold)),
-                            Text('\$25', style: TextStyle(fontSize: 14, color: BHColorPrimary, fontWeight: FontWeight.bold)),
+                            Text('Total Pay',
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    color: BHAppTextColorPrimary,
+                                    fontWeight: FontWeight.bold)),
+                            Text('\$25',
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    color: BHColorPrimary,
+                                    fontWeight: FontWeight.bold)),
                           ],
                         ),
                       ),
@@ -234,8 +310,16 @@ class BHBookAppointmentScreenState extends State<BHBookAppointmentScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(BHTxtPaymentMethods, style: TextStyle(fontSize: 14, color: BHAppTextColorPrimary, fontWeight: FontWeight.bold)),
-                  Text(BHTxtAddMethod, style: TextStyle(fontSize: 14, color: BHColorPrimary, fontWeight: FontWeight.bold)),
+                  Text(BHTxtPaymentMethods,
+                      style: TextStyle(
+                          fontSize: 14,
+                          color: BHAppTextColorPrimary,
+                          fontWeight: FontWeight.bold)),
+                  Text(BHTxtAddMethod,
+                      style: TextStyle(
+                          fontSize: 14,
+                          color: BHColorPrimary,
+                          fontWeight: FontWeight.bold)),
                 ],
               ),
               8.height,
@@ -251,10 +335,15 @@ class BHBookAppointmentScreenState extends State<BHBookAppointmentScreen> {
                         children: [
                           Image.asset(BHVisaCardImg, height: 40, width: 40),
                           16.width,
-                          Text('**** **** *123', style: TextStyle(color: BHAppTextColorPrimary)),
+                          Text('**** **** *123',
+                              style: TextStyle(color: BHAppTextColorPrimary)),
                         ],
                       ),
-                      Radio(value: 0, groupValue: _radioValue1, activeColor: BHColorPrimary, onChanged: (dynamic value) => something(value)),
+                      Radio(
+                          value: 0,
+                          groupValue: _radioValue1,
+                          activeColor: BHColorPrimary,
+                          onChanged: (dynamic value) => something(value)),
                     ],
                   ),
                 ),
@@ -271,7 +360,8 @@ class BHBookAppointmentScreenState extends State<BHBookAppointmentScreen> {
                         children: [
                           Image.asset(BHMasterCardImg, height: 40, width: 40),
                           16.width,
-                          Text('**** **** *333', style: TextStyle(color: BHAppTextColorPrimary)),
+                          Text('**** **** *333',
+                              style: TextStyle(color: BHAppTextColorPrimary)),
                         ],
                       ),
                       Radio(
@@ -289,7 +379,10 @@ class BHBookAppointmentScreenState extends State<BHBookAppointmentScreen> {
                 width: MediaQuery.of(context).size.width,
                 margin: EdgeInsets.only(top: 8),
                 color: whiteColor,
-                child: Padding(padding: EdgeInsets.all(16), child: Text('Payment in case', style: TextStyle(color: BHAppTextColorPrimary))),
+                child: Padding(
+                    padding: EdgeInsets.all(16),
+                    child: Text('Payment in case',
+                        style: TextStyle(color: BHAppTextColorPrimary))),
               ),
             ],
           ),
@@ -315,27 +408,50 @@ class BHBookAppointmentScreenState extends State<BHBookAppointmentScreen> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Marguerite Hair Salon', style: TextStyle(fontSize: 14, color: BHAppTextColorPrimary, fontWeight: FontWeight.bold)),
+                        Text('Marguerite Hair Salon',
+                            style: TextStyle(
+                                fontSize: 14,
+                                color: BHAppTextColorPrimary,
+                                fontWeight: FontWeight.bold)),
                         16.height,
                         Row(
                           children: [
-                            Icon(Icons.location_on, size: 14, color: BHAppTextColorSecondary),
+                            Icon(Icons.location_on,
+                                size: 14, color: BHAppTextColorSecondary),
                             8.width,
-                            Text('301 Dorthy walks,chicago,Us.', style: TextStyle(fontSize: 12, color: BHAppTextColorSecondary)),
+                            Text('301 Dorthy walks,chicago,Us.',
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    color: BHAppTextColorSecondary)),
                           ],
                         ),
                         16.height,
-                        Text('146566311684641', style: TextStyle(fontSize: 14, color: BHAppTextColorPrimary, fontWeight: FontWeight.bold)),
+                        Text('146566311684641',
+                            style: TextStyle(
+                                fontSize: 14,
+                                color: BHAppTextColorPrimary,
+                                fontWeight: FontWeight.bold)),
                       ],
                     ),
                     8.height,
-                    Container(height: 1, width: MediaQuery.of(context).size.width, color: BHGreyColor.withOpacity(0.3)),
+                    Container(
+                        height: 1,
+                        width: MediaQuery.of(context).size.width,
+                        color: BHGreyColor.withOpacity(0.3)),
                     8.height,
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('Hair Styling', style: TextStyle(fontSize: 14, color: BHAppTextColorPrimary, fontWeight: FontWeight.bold)),
-                        Text('June 15,2020', style: TextStyle(color: BHColorPrimary, fontSize: 14, fontWeight: FontWeight.bold)),
+                        Text('Hair Styling',
+                            style: TextStyle(
+                                fontSize: 14,
+                                color: BHAppTextColorPrimary,
+                                fontWeight: FontWeight.bold)),
+                        Text('June 15,2020',
+                            style: TextStyle(
+                                color: BHColorPrimary,
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold)),
                       ],
                     ),
                     16.height,
@@ -344,27 +460,40 @@ class BHBookAppointmentScreenState extends State<BHBookAppointmentScreen> {
                       children: [
                         Row(
                           children: [
-                            Icon(Icons.person, size: 14, color: BHAppTextColorSecondary),
+                            Icon(Icons.person,
+                                size: 14, color: BHAppTextColorSecondary),
                             Padding(
                               padding: EdgeInsets.only(left: 8),
-                              child: Text('Lettie Neal', style: TextStyle(color: BHAppTextColorSecondary, fontSize: 14)),
+                              child: Text('Lettie Neal',
+                                  style: TextStyle(
+                                      color: BHAppTextColorSecondary,
+                                      fontSize: 14)),
                             ),
                           ],
                         ),
                         Row(
                           children: [
-                            Text('1:30 - 2:30 PM', style: TextStyle(color: BHColorPrimary, fontSize: 14, fontWeight: FontWeight.bold)),
+                            Text('1:30 - 2:30 PM',
+                                style: TextStyle(
+                                    color: BHColorPrimary,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold)),
                           ],
                         ),
                       ],
                     ),
                     8.height,
-                    Container(height: 1, width: MediaQuery.of(context).size.width, color: BHGreyColor.withOpacity(0.3)),
+                    Container(
+                        height: 1,
+                        width: MediaQuery.of(context).size.width,
+                        color: BHGreyColor.withOpacity(0.3)),
                     8.height,
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('Scan Barcode', style: TextStyle(fontSize: 14, color: BHAppTextColorSecondary)),
+                        Text('Scan Barcode',
+                            style: TextStyle(
+                                fontSize: 14, color: BHAppTextColorSecondary)),
                         Image.asset(BHBarCodeImg, height: 50, width: 120),
                       ],
                     ),
@@ -381,9 +510,14 @@ class BHBookAppointmentScreenState extends State<BHBookAppointmentScreen> {
                       style: ElevatedButton.styleFrom(
                         primary: BHColorPrimary,
                         padding: EdgeInsets.all(12),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0)),
                       ),
-                      child: Text(BHTxtBookMoreAppointment, style: TextStyle(color: whiteColor, fontSize: 15, fontWeight: FontWeight.bold)),
+                      child: Text(BHTxtBookMoreAppointment,
+                          style: TextStyle(
+                              color: whiteColor,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold)),
                     ),
                   ),
                   8.height,
@@ -394,9 +528,15 @@ class BHBookAppointmentScreenState extends State<BHBookAppointmentScreen> {
                       style: ElevatedButton.styleFrom(
                         primary: whiteColor,
                         padding: EdgeInsets.all(12),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0), side: BorderSide(color: BHColorPrimary)),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            side: BorderSide(color: BHColorPrimary)),
                       ),
-                      child: Text(BHTxtGoAppointment, style: TextStyle(color: BHColorPrimary, fontSize: 15, fontWeight: FontWeight.bold)),
+                      child: Text(BHTxtGoAppointment,
+                          style: TextStyle(
+                              color: BHColorPrimary,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold)),
                     ),
                   ),
                 ],
@@ -423,7 +563,11 @@ class BHBookAppointmentScreenState extends State<BHBookAppointmentScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: whiteColor,
-        title: Text('Book Appointment', style: TextStyle(color: BHAppTextColorPrimary, fontSize: 16, fontWeight: FontWeight.bold)),
+        title: Text('Book Appointment',
+            style: TextStyle(
+                color: BHAppTextColorPrimary,
+                fontSize: 16,
+                fontWeight: FontWeight.bold)),
         centerTitle: true,
         leading: GestureDetector(
           onTap: () {
@@ -437,7 +581,8 @@ class BHBookAppointmentScreenState extends State<BHBookAppointmentScreen> {
         child: Stepper(
           type: StepperType.horizontal,
           physics: BouncingScrollPhysics(),
-          controlsBuilder: (context, {onStepCancel, onStepContinue}) => Container(
+          controlsBuilder: (BuildContext context, ControlsDetails controls) =>
+              Container(
             margin: EdgeInsets.only(top: 16),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -457,10 +602,14 @@ class BHBookAppointmentScreenState extends State<BHBookAppointmentScreen> {
                     style: ElevatedButton.styleFrom(
                       primary: BHColorPrimary,
                       padding: EdgeInsets.all(12),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0)),
                     ),
-
-                    child: Text(BHBtnContinue, style: TextStyle(color: whiteColor, fontSize: 15, fontWeight: FontWeight.bold)),
+                    child: Text(BHBtnContinue,
+                        style: TextStyle(
+                            color: whiteColor,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold)),
                   ),
                 ),
                 Container(
@@ -478,10 +627,15 @@ class BHBookAppointmentScreenState extends State<BHBookAppointmentScreen> {
                     },
                     style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.all(12),
-                      primary:BHColorPrimary,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+                      primary: BHColorPrimary,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0)),
                     ),
-                    child: Text(BHBtnCancel, style: TextStyle(color: whiteColor, fontSize: 15, fontWeight: FontWeight.bold)),
+                    child: Text(BHBtnCancel,
+                        style: TextStyle(
+                            color: whiteColor,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold)),
                   ),
                 )
               ],
@@ -489,19 +643,24 @@ class BHBookAppointmentScreenState extends State<BHBookAppointmentScreen> {
           ),
           steps: [
             Step(
-              title: Text(BHStepperBookAppointment, textAlign: TextAlign.center, style: TextStyle(color: BHAppTextColorSecondary)),
+              title: Text(BHStepperBookAppointment,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: BHAppTextColorSecondary)),
               content: Container(child: appointmentStepper()),
               isActive: currentStep >= 0,
               state: currentStep >= 0 ? StepState.complete : StepState.disabled,
             ),
             Step(
-              title: Text(BHStepperPayment, textAlign: TextAlign.center, style: TextStyle(color: BHAppTextColorSecondary)),
+              title: Text(BHStepperPayment,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: BHAppTextColorSecondary)),
               content: paymentStepper(),
               isActive: currentStep >= 0,
               state: currentStep >= 1 ? StepState.complete : StepState.disabled,
             ),
             Step(
-              title: Text(BHStepperFinished, style: TextStyle(color: BHAppTextColorSecondary)),
+              title: Text(BHStepperFinished,
+                  style: TextStyle(color: BHAppTextColorSecondary)),
               content: finishedStepper(),
               isActive: currentStep >= 0,
               state: currentStep >= 2 ? StepState.complete : StepState.disabled,

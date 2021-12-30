@@ -608,7 +608,7 @@ class _LearnerBottomNavigationBarState extends State<LearnerBottomNavigationBar>
         themeColor = themeData.primaryColor;
         break;
       case Brightness.dark:
-        themeColor = themeData.accentColor;
+        themeColor = themeData.colorScheme.secondary;
         break;
     }
 

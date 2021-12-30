@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:prokit_flutter/main.dart';
 import 'package:prokit_flutter/main/utils/AppColors.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
 
@@ -8,10 +7,12 @@ class IMLongPressDraggableScreen2 extends StatefulWidget {
   static String tag = '/IMLongPressDraggableScreen2';
 
   @override
-  _IMLongPressDraggableScreen2State createState() => _IMLongPressDraggableScreen2State();
+  _IMLongPressDraggableScreen2State createState() =>
+      _IMLongPressDraggableScreen2State();
 }
 
-class _IMLongPressDraggableScreen2State extends State<IMLongPressDraggableScreen2> with TickerProviderStateMixin {
+class _IMLongPressDraggableScreen2State
+    extends State<IMLongPressDraggableScreen2> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
@@ -66,7 +67,8 @@ class _IMLongPressDraggableScreen2State extends State<IMLongPressDraggableScreen
                   Expanded(
                     flex: 1,
                     child: DragTarget(
-                      builder: (context, List<int?> candidateData, rejectedData) {
+                      builder:
+                          (context, List<int?> candidateData, rejectedData) {
                         print(candidateData);
                         return Container(
                           height: 200,
@@ -74,7 +76,8 @@ class _IMLongPressDraggableScreen2State extends State<IMLongPressDraggableScreen
                           child: Center(
                             child: Text(
                               mValue ? "Flutter" : "Correct",
-                              style: primaryTextStyle(color: Colors.white, size: 20),
+                              style: primaryTextStyle(
+                                  color: Colors.white, size: 20),
                             ),
                           ),
                         );
@@ -97,14 +100,16 @@ class _IMLongPressDraggableScreen2State extends State<IMLongPressDraggableScreen
                   Expanded(
                     flex: 1,
                     child: DragTarget(
-                      builder: (context, List<int?> candidateData, rejectedData) {
+                      builder:
+                          (context, List<int?> candidateData, rejectedData) {
                         return Container(
                           height: 200,
                           color: mValue1 ? appColorPrimary : Colors.red,
                           child: Center(
                               child: Text(
                             mValue1 ? "IOS" : "Incorrect",
-                            style: primaryTextStyle(color: Colors.white, size: 20),
+                            style:
+                                primaryTextStyle(color: Colors.white, size: 20),
                           )),
                         );
                       },

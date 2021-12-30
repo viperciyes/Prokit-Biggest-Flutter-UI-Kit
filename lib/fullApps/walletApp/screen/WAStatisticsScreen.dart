@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/fullApps/walletApp/component/WAStatisticsChartComponent.dart';
 import 'package:prokit_flutter/fullApps/walletApp/component/WAStatisticsComponent.dart';
@@ -42,8 +43,7 @@ class WAStatisticScreenState extends State<WAStatisticScreen> {
           title: Text('Statistics', style: boldTextStyle(color: Colors.black, size: 20)),
           centerTitle: true,
           automaticallyImplyLeading: false,
-          elevation: 0.0,
-          brightness: Brightness.dark,
+          elevation: 0.0, systemOverlayStyle: SystemUiOverlayStyle.light,
         ),
         body: Container(
           height: context.height(),

@@ -591,7 +591,7 @@ class _Db6BottomNavigationBarState extends State<Db6BottomNavigationBar> with Ti
         themeColor = themeData.primaryColor;
         break;
       case Brightness.dark:
-        themeColor = themeData.accentColor;
+        themeColor = themeData.colorScheme.secondary;
         break;
     }
 

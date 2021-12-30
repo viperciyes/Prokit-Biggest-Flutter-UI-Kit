@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:intl/intl.dart';
@@ -31,7 +30,18 @@ class FoodBookDetailState extends State<FoodBookDetail> {
     super.initState();
     mPeopleList = ["1", "2", "3", "4", "5+"];
     mFoodList = ["Veg", "Non Veg"];
-    mTimeList = ["07:00", "07:30", "08:00", "08:30", "09:00", "09:15", "09:30", "10:00", "10:30", "11:00"];
+    mTimeList = [
+      "07:00",
+      "07:30",
+      "08:00",
+      "08:30",
+      "09:00",
+      "09:15",
+      "09:30",
+      "10:00",
+      "10:30",
+      "11:00"
+    ];
     formatted = formatter.format(now);
   }
 
@@ -174,7 +184,8 @@ class FoodBookDetailState extends State<FoodBookDetail> {
                     children: <Widget>[
                       Align(
                         alignment: Alignment.topCenter,
-                        child: SvgPicture.asset(food_dinner_table, height: width * 0.4, width: width * 0.4),
+                        child: SvgPicture.asset(food_dinner_table,
+                            height: width * 0.4, width: width * 0.4),
                       ),
                       SizedBox(height: 16),
                       Text(food_lbl_how_many_people, style: boldTextStyle()),
@@ -189,7 +200,8 @@ class FoodBookDetailState extends State<FoodBookDetail> {
                       SizedBox(height: 4),
                       mTimeInfo,
                       SizedBox(height: 16),
-                      Text(food_lbl_any_food_preference, style: boldTextStyle()),
+                      Text(food_lbl_any_food_preference,
+                          style: boldTextStyle()),
                       SizedBox(height: 4),
                       mFoodInfo,
                       SizedBox(height: 24),
@@ -201,7 +213,9 @@ class FoodBookDetailState extends State<FoodBookDetail> {
                           borderRadius: BorderRadius.circular(50),
                           boxShadow: defaultBoxShadow(),
                         ),
-                        child: Text(food_lbl_book_table, style: primaryTextStyle(color: white)).center(),
+                        child: Text(food_lbl_book_table,
+                                style: primaryTextStyle(color: white))
+                            .center(),
                       ),
                       SizedBox(height: 16),
                     ],

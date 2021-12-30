@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/fullApps/quiz/Screens/QuizResult.dart';
 import 'package:prokit_flutter/fullApps/quiz/utils/QuizCard.dart';
 import 'package:prokit_flutter/fullApps/quiz/utils/QuizColors.dart';
 import 'package:prokit_flutter/fullApps/quiz/utils/QuizConstant.dart';
+import 'package:prokit_flutter/main/utils/AppWidget.dart';
 
 class QuizCards extends StatefulWidget {
   static String tag = '/QuizCards';
@@ -72,16 +72,21 @@ class _QuizCardsState extends State<QuizCards> {
   List<Widget> _generateCards() {
     List<Quiz> planetCard = [];
     planetCard.add(
-      Quiz("How many basic steps are there in scientific method?", "Eight Steps", "Ten Steps", "Two Steps", "One Steps", 70.0),
+      Quiz("How many basic steps are there in scientific method?",
+          "Eight Steps", "Ten Steps", "Two Steps", "One Steps", 70.0),
     );
     planetCard.add(
-      Quiz("Which blood vessels have the smallest diameter? ", "Capillaries", "Arterioles", "Venules", "Lymphatic", 80.0),
+      Quiz("Which blood vessels have the smallest diameter? ", "Capillaries",
+          "Arterioles", "Venules", "Lymphatic", 80.0),
     );
-    planetCard.add(Quiz("The substrate of photo-respiration is", "Phruvic acid", "Glucose", "Fructose", "Glycolate", 90.0));
+    planetCard.add(Quiz("The substrate of photo-respiration is", "Phruvic acid",
+        "Glucose", "Fructose", "Glycolate", 90.0));
 
-    planetCard.add(Quiz("Which one of these animal is jawless?", "Shark", "Myxine", "Trygon", "Sphyrna", 100.0));
+    planetCard.add(Quiz("Which one of these animal is jawless?", "Shark",
+        "Myxine", "Trygon", "Sphyrna", 100.0));
     planetCard.add(
-      Quiz("How many basic steps are there in scientific method?", "Eight Steps", "Ten Steps", "One Steps", "Three Steps", 110.0),
+      Quiz("How many basic steps are there in scientific method?",
+          "Eight Steps", "Ten Steps", "One Steps", "Three Steps", 110.0),
     );
     List<Widget> cardList = [];
 
@@ -102,7 +107,8 @@ class _QuizCardsState extends State<QuizCards> {
               feedback: Material(
                 child: GestureDetector(
                   child: Container(
-                    decoration: boxDecoration(radius: 20, bgColor: quiz_white, showShadow: true),
+                    decoration: boxDecoration(
+                        radius: 20, bgColor: quiz_white, showShadow: true),
                     child: Column(
                       children: <Widget>[
                         Container(
@@ -111,23 +117,30 @@ class _QuizCardsState extends State<QuizCards> {
                           child: Container(
                             margin: EdgeInsets.only(top: 50),
                             padding: EdgeInsets.fromLTRB(20, 16, 20, 16),
-                            child: text(planetCard[x].cardImage, fontSize: textSizeLarge, fontFamily: fontBold, isLongText: true),
+                            child: text(planetCard[x].cardImage,
+                                fontSize: textSizeLarge,
+                                fontFamily: fontBold,
+                                isLongText: true),
                           ),
                         ),
                         Container(
                             padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
                             child: Column(
                               children: <Widget>[
-                                quizCardSelection("A.", planetCard[x].option1, () {
+                                quizCardSelection("A.", planetCard[x].option1,
+                                    () {
                                   removeCards(x);
                                 }),
-                                quizCardSelection("B.", planetCard[x].option2, () {
+                                quizCardSelection("B.", planetCard[x].option2,
+                                    () {
                                   removeCards(x);
                                 }),
-                                quizCardSelection("C.", planetCard[x].option3, () {
+                                quizCardSelection("C.", planetCard[x].option3,
+                                    () {
                                   removeCards(x);
                                 }),
-                                quizCardSelection("D.", planetCard[x].option4, () {
+                                quizCardSelection("D.", planetCard[x].option4,
+                                    () {
                                   removeCards(x);
                                 }),
                               ],
@@ -139,7 +152,8 @@ class _QuizCardsState extends State<QuizCards> {
               ),
               child: GestureDetector(
                 child: Container(
-                    decoration: boxDecoration(radius: 20, bgColor: quiz_white, showShadow: true),
+                    decoration: boxDecoration(
+                        radius: 20, bgColor: quiz_white, showShadow: true),
                     child: Column(
                       children: <Widget>[
                         Container(
@@ -148,22 +162,29 @@ class _QuizCardsState extends State<QuizCards> {
                             child: Container(
                               margin: EdgeInsets.only(top: 50),
                               padding: EdgeInsets.fromLTRB(20, 16, 20, 16),
-                              child: text(planetCard[x].cardImage, fontSize: textSizeLarge, fontFamily: fontBold, isLongText: true),
+                              child: text(planetCard[x].cardImage,
+                                  fontSize: textSizeLarge,
+                                  fontFamily: fontBold,
+                                  isLongText: true),
                             )),
                         Container(
                             padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
                             child: Column(
                               children: <Widget>[
-                                quizCardSelection("A.", planetCard[x].option1, () {
+                                quizCardSelection("A.", planetCard[x].option1,
+                                    () {
                                   removeCards(x);
                                 }),
-                                quizCardSelection("B.", planetCard[x].option2, () {
+                                quizCardSelection("B.", planetCard[x].option2,
+                                    () {
                                   removeCards(x);
                                 }),
-                                quizCardSelection("C.", planetCard[x].option3, () {
+                                quizCardSelection("C.", planetCard[x].option3,
+                                    () {
                                   removeCards(x);
                                 }),
-                                quizCardSelection("D.", planetCard[x].option4, () {
+                                quizCardSelection("D.", planetCard[x].option4,
+                                    () {
                                   removeCards(x);
                                 }),
                               ],
@@ -185,7 +206,11 @@ Widget quizCardSelection(var option, var option1, onPressed) {
     },
     child: Container(
       margin: EdgeInsets.fromLTRB(16, 0, 16, 16),
-      decoration: boxDecoration(showShadow: false, bgColor: quiz_edit_background, radius: 10, color: quiz_view_color),
+      decoration: boxDecoration(
+          showShadow: false,
+          bgColor: quiz_edit_background,
+          radius: 10,
+          color: quiz_view_color),
       padding: EdgeInsets.fromLTRB(16, 10, 16, 10),
       width: 320,
       child: Stack(

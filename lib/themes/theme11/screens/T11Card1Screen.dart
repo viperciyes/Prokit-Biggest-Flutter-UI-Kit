@@ -3,16 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/main.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/themes/theme11/model/T11Model.dart';
 import 'package:prokit_flutter/themes/theme11/utils/T11DataGenerator.dart';
 import 'package:prokit_flutter/themes/theme11/utils/T11Images.dart';
-import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/themes/theme11/utils/T11Strings.dart';
 
 class T11Card1Screen extends StatefulWidget {
-
   @override
   T11Card1ScreenState createState() => T11Card1ScreenState();
 }
@@ -23,7 +22,8 @@ class T11Card1ScreenState extends State<T11Card1Screen> {
   @override
   void initState() {
     super.initState();
-    setStatusBarColor(appStore.appBarColor!, statusBarIconBrightness: Brightness.dark);
+    setStatusBarColor(appStore.appBarColor!,
+        statusBarIconBrightness: Brightness.dark);
     musicList = generateAlbumMusic();
   }
 
@@ -40,7 +40,8 @@ class T11Card1ScreenState extends State<T11Card1Screen> {
                   Stack(
                     alignment: Alignment.center,
                     children: [
-                      commonCacheImageWidget(t11_ic_cover_image, 200, width: context.width(), fit: BoxFit.cover),
+                      commonCacheImageWidget(t11_ic_cover_image, 200,
+                          width: context.width(), fit: BoxFit.cover),
                       Icon(AntDesign.play, size: 32, color: white),
                       Positioned(
                         top: 16,
@@ -49,7 +50,8 @@ class T11Card1ScreenState extends State<T11Card1Screen> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Icon(Icons.cancel_outlined, size: 24, color: white).onTap(() {
+                            Icon(Icons.cancel_outlined, size: 24, color: white)
+                                .onTap(() {
                               finish(context);
                             }),
                             Icon(Icons.favorite_border, size: 24, color: white),
@@ -59,7 +61,8 @@ class T11Card1ScreenState extends State<T11Card1Screen> {
                       Positioned(
                         bottom: 16,
                         right: 16,
-                        child: Icon(Icons.settings_overscan, size: 24, color: white),
+                        child: Icon(Icons.settings_overscan,
+                            size: 24, color: white),
                       ),
                     ],
                   ),
@@ -74,12 +77,17 @@ class T11Card1ScreenState extends State<T11Card1Screen> {
                     style: secondaryTextStyle(),
                   ),
                   Theme(
-                    data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
+                    data: Theme.of(context)
+                        .copyWith(dividerColor: Colors.transparent),
                     child: ExpansionTile(
                       tilePadding: EdgeInsets.all(0),
-                      title: Text(t11_lbl_simple_text, style: primaryTextStyle(color: grey), textAlign: TextAlign.justify),
+                      title: Text(t11_lbl_simple_text,
+                          style: primaryTextStyle(color: grey),
+                          textAlign: TextAlign.justify),
                       children: [
-                        Text(t11_lbl_sample_long, style: primaryTextStyle(color: grey), textAlign: TextAlign.justify),
+                        Text(t11_lbl_sample_long,
+                            style: primaryTextStyle(color: grey),
+                            textAlign: TextAlign.justify),
                       ],
                     ).paddingSymmetric(horizontal: 16, vertical: 8),
                   ),
@@ -93,7 +101,9 @@ class T11Card1ScreenState extends State<T11Card1Screen> {
                       Stack(
                         alignment: Alignment.bottomCenter,
                         children: [
-                          commonCacheImageWidget(data.image, 150, width: context.width(), fit: BoxFit.cover).cornerRadiusWithClipRRect(12),
+                          commonCacheImageWidget(data.image, 150,
+                                  width: context.width(), fit: BoxFit.cover)
+                              .cornerRadiusWithClipRRect(12),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.end,
@@ -102,10 +112,13 @@ class T11Card1ScreenState extends State<T11Card1Screen> {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
-                                  Text(data.title, style: boldTextStyle(color: Colors.pink, size: 18)),
+                                  Text(data.title,
+                                      style: boldTextStyle(
+                                          color: Colors.pink, size: 18)),
                                   Text(
                                     data.subtitle,
-                                    style: boldTextStyle(color: white, size: 18),
+                                    style:
+                                        boldTextStyle(color: white, size: 18),
                                   ),
                                   Text(
                                     '1,354,589 Views',
@@ -119,7 +132,7 @@ class T11Card1ScreenState extends State<T11Card1Screen> {
                       ),
                       8.height
                     ],
-                  ).paddingOnly(right: 16,left: 16,bottom: 8);
+                  ).paddingOnly(right: 16, left: 16, bottom: 8);
                 }).toList(),
               ),
               8.height,

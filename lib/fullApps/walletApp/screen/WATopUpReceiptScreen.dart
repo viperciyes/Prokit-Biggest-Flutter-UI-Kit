@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/fullApps/walletApp/component/WASendViaComponent.dart';
 import 'package:prokit_flutter/fullApps/walletApp/model/WalletAppModel.dart';
@@ -51,8 +52,7 @@ class WATopUpReceiptScreenState extends State<WATopUpReceiptScreen> {
           title: Text('Top Up Receipt', style: boldTextStyle(color: appStore.isDarkModeOn ? white : Colors.black, size: 20)),
           centerTitle: true,
           elevation: 0.0,
-          brightness: Brightness.dark,
-          automaticallyImplyLeading: false,
+          automaticallyImplyLeading: false, systemOverlayStyle: SystemUiOverlayStyle.light,
         ),
         body: Container(
           height: context.height(),

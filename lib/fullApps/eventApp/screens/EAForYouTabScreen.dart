@@ -58,8 +58,7 @@ class EAForYouTabScreenState extends State<EAForYouTabScreen> {
                 return Column(
                   children: [
                     Stack(
-                      overflow: Overflow.visible,
-                      alignment: Alignment.bottomCenter,
+                      clipBehavior: Clip.none, alignment: Alignment.bottomCenter,
                       children: [
                         Image.asset(forYouList[i].image!, height: 230, width: context.width(), fit: BoxFit.cover),
                         Positioned(

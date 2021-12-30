@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/fullApps/muvi/screens/flix_account_settings_screen.dart';
 import 'package:prokit_flutter/fullApps/muvi/screens/flix_edit_profile_screen.dart';
 import 'package:prokit_flutter/fullApps/muvi/screens/flix_help_screen.dart';
@@ -11,6 +10,7 @@ import 'package:prokit_flutter/fullApps/muvi/utils/flix_constants.dart';
 import 'package:prokit_flutter/fullApps/muvi/utils/resources/flix_colors.dart';
 import 'package:prokit_flutter/fullApps/muvi/utils/resources/flix_images.dart';
 import 'package:prokit_flutter/fullApps/muvi/utils/resources/flix_size.dart';
+import 'package:prokit_flutter/main/utils/AppWidget.dart';
 
 class MoreFragment extends StatefulWidget {
   static String tag = '/MoreFragment';
@@ -46,7 +46,11 @@ class MoreFragmentState extends State<MoreFragment> {
         children: <Widget>[
           Container(
             color: muvi_navigationBackground,
-            padding: EdgeInsets.only(left: spacing_standard_new, top: spacing_standard_new, right: 12, bottom: spacing_standard_new),
+            padding: EdgeInsets.only(
+                left: spacing_standard_new,
+                top: spacing_standard_new,
+                right: 12,
+                bottom: spacing_standard_new),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
@@ -58,8 +62,14 @@ class MoreFragmentState extends State<MoreFragment> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      text(userName, fontSize: ts_extra_normal, fontFamily: font_bold, textColor: muvi_textColorPrimary),
-                      text(userEmail, fontSize: ts_normal, fontFamily: font_medium, textColor: muvi_textColorSecondary)
+                      text(userName,
+                          fontSize: ts_extra_normal,
+                          fontFamily: font_bold,
+                          textColor: muvi_textColorPrimary),
+                      text(userEmail,
+                          fontSize: ts_normal,
+                          fontFamily: font_medium,
+                          textColor: muvi_textColorSecondary)
                     ],
                   ),
                 ),
@@ -79,7 +89,12 @@ class MoreFragmentState extends State<MoreFragment> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  itemSubTitle(context, "General Settings", colorThird: false).paddingOnly(left: spacing_standard_new, right: spacing_standard_new, top: 12, bottom: 12),
+                  itemSubTitle(context, "General Settings", colorThird: false)
+                      .paddingOnly(
+                          left: spacing_standard_new,
+                          right: spacing_standard_new,
+                          top: 12,
+                          bottom: 12),
                   subType(context, "Account Settings", () {
                     AccountSettingsScreen().launch(context);
                   }, ic_settings),
@@ -108,7 +123,13 @@ class MoreFragmentState extends State<MoreFragment> {
                         ),
                       )
                     ],
-                  ).paddingOnly(left: spacing_standard_new, right: spacing_control, top: spacing_control, bottom: spacing_control).onTap(() {
+                  )
+                      .paddingOnly(
+                          left: spacing_standard_new,
+                          right: spacing_control,
+                          top: spacing_control,
+                          bottom: spacing_control)
+                      .onTap(() {
                     setState(() {
                       isDarkMode = !isDarkMode!;
                     });
@@ -117,7 +138,11 @@ class MoreFragmentState extends State<MoreFragment> {
                   subType(context, "Help", () {
                     HelpScreen().launch(context);
                   }, ic_help),
-                  itemSubTitle(context, "Terms").paddingOnly(left: spacing_standard_new, right: 12, top: spacing_standard_new, bottom: spacing_control),
+                  itemSubTitle(context, "Terms").paddingOnly(
+                      left: spacing_standard_new,
+                      right: 12,
+                      top: spacing_standard_new,
+                      bottom: spacing_control),
                   subType(context, "Terms & Conditions", () {
                     TermsConditionsScreen().launch(context);
                   }, null),

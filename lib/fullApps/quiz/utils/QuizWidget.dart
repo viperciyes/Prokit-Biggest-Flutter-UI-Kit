@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/fullApps/quiz/utils/QuizColors.dart';
+import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/themes/theme8/utils/T8Colors.dart';
 
 import 'QuizConstant.dart';
@@ -59,12 +59,16 @@ class quizButtonState extends State<quizButton> {
             alignment: Alignment.center,
             children: <Widget>[
               Center(
-                child: text(widget.textContent, textColor: t8_white, fontFamily: fontMedium, textAllCaps: false),
+                child: text(widget.textContent,
+                    textColor: t8_white,
+                    fontFamily: fontMedium,
+                    textAllCaps: false),
               ),
               Align(
                 alignment: Alignment.topRight,
                 child: Container(
-                  decoration: BoxDecoration(shape: BoxShape.circle, color: quiz_colorPrimaryDark),
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle, color: quiz_colorPrimaryDark),
                   width: 35,
                   height: 35,
                   child: Padding(
@@ -116,7 +120,10 @@ class quizTopBarState extends State<quizTopBar> {
               child: Text(
                 widget.titleName,
                 maxLines: 2,
-                style: TextStyle(fontFamily: fontBold, fontSize: 22, color: t8_textColorPrimary),
+                style: TextStyle(
+                    fontFamily: fontBold,
+                    fontSize: 22,
+                    color: t8_textColorPrimary),
               ).center(),
             )
           ],
@@ -132,7 +139,8 @@ Container quizHeaderText(var text) {
     child: Text(
       text,
       maxLines: 2,
-      style: TextStyle(fontFamily: fontBold, fontSize: 22, color: t8_textColorPrimary),
+      style: TextStyle(
+          fontFamily: fontBold, fontSize: 22, color: t8_textColorPrimary),
     ),
   );
 }
@@ -146,7 +154,15 @@ class PinEntryTextField extends StatefulWidget {
   final isTextObscure;
   final showFieldAsBox;
 
-  PinEntryTextField({this.lastPin, this.fields: 4, this.onSubmit, this.fieldWidth: 40.0, this.fontSize: 16.0, this.isTextObscure: false, this.showFieldAsBox: false}) : assert(fields > 0);
+  PinEntryTextField(
+      {this.lastPin,
+      this.fields: 4,
+      this.onSubmit,
+      this.fieldWidth: 40.0,
+      this.fontSize: 16.0,
+      this.isTextObscure: false,
+      this.showFieldAsBox: false})
+      : assert(fields > 0);
 
   @override
   State createState() {
@@ -166,7 +182,8 @@ class PinEntryTextFieldState extends State<PinEntryTextField> {
     super.initState();
     _pin = List<String?>.filled(widget.fields, null, growable: false);
     _focusNodes = List<FocusNode?>.filled(widget.fields, null, growable: false);
-    _textControllers = List<TextEditingController?>.filled(widget.fields, null, growable: false);
+    _textControllers = List<TextEditingController?>.filled(widget.fields, null,
+        growable: false);
     WidgetsBinding.instance!.addPostFrameCallback((_) {
       setState(() {
         if (widget.lastPin != null) {
@@ -194,11 +211,15 @@ class PinEntryTextFieldState extends State<PinEntryTextField> {
       FocusScope.of(context).requestFocus(_focusNodes[0]);
     }
 
-    return Row(mainAxisAlignment: MainAxisAlignment.center, verticalDirection: VerticalDirection.down, children: textFields);
+    return Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        verticalDirection: VerticalDirection.down,
+        children: textFields);
   }
 
   void clearTextFields() {
-    _textControllers.forEach((TextEditingController? tEditController) => tEditController!.clear());
+    _textControllers.forEach(
+        (TextEditingController? tEditController) => tEditController!.clear());
     _pin.clear();
   }
 
@@ -225,10 +246,17 @@ class PinEntryTextFieldState extends State<PinEntryTextField> {
         keyboardType: TextInputType.number,
         textAlign: TextAlign.center,
         maxLength: 1,
-        style: TextStyle(color: Colors.black, fontFamily: fontMedium, fontSize: widget.fontSize),
+        style: TextStyle(
+            color: Colors.black,
+            fontFamily: fontMedium,
+            fontSize: widget.fontSize),
         focusNode: _focusNodes[i],
         obscureText: widget.isTextObscure,
-        decoration: InputDecoration(counterText: "", border: widget.showFieldAsBox ? OutlineInputBorder(borderSide: BorderSide(width: 2.0)) : null),
+        decoration: InputDecoration(
+            counterText: "",
+            border: widget.showFieldAsBox
+                ? OutlineInputBorder(borderSide: BorderSide(width: 2.0))
+                : null),
         onChanged: (String str) {
           setState(() {
             _pin[i] = str;
@@ -266,5 +294,11 @@ class PinEntryTextFieldState extends State<PinEntryTextField> {
 }
 
 showToast(String caption) {
-  Fluttertoast.showToast(msg: caption, toastLength: Toast.LENGTH_LONG, gravity: ToastGravity.BOTTOM, backgroundColor: getColorFromHex("5362FB"), textColor: quiz_white, fontSize: 16.0);
+  Fluttertoast.showToast(
+      msg: caption,
+      toastLength: Toast.LENGTH_LONG,
+      gravity: ToastGravity.BOTTOM,
+      backgroundColor: getColorFromHex("5362FB"),
+      textColor: quiz_white,
+      fontSize: 16.0);
 }

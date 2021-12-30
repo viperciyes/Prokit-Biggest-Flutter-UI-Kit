@@ -7,19 +7,26 @@ import 'package:prokit_flutter/themes/theme12/models/T12Models.dart';
 import 'package:prokit_flutter/themes/theme12/utils/t12_colors.dart';
 import 'package:prokit_flutter/themes/theme12/utils/t12_corousel_widget.dart';
 import 'package:prokit_flutter/themes/theme12/utils/t12_images.dart';
-import 'package:nb_utils/nb_utils.dart';
 
 import '../../../main.dart';
 import 't12_constant.dart';
 
 Widget toolBarTitle(var title, {textColor = t12_text_color_primary}) {
-  return text(title, fontSize: textSizeNormal, fontFamily: fontBold, textColor: textColor);
+  return text(title,
+      fontSize: textSizeNormal, fontFamily: fontBold, textColor: textColor);
 }
 
 Widget themeLogo() {
   return Row(
     mainAxisAlignment: MainAxisAlignment.center,
-    children: <Widget>[Image.asset(t12_ic_logo, width: 30, height: 30), text("Werolla", fontSize: textSizeLarge, fontFamily: fontBold, textColor: appStore.textPrimaryColor).paddingLeft(spacing_standard_new)],
+    children: <Widget>[
+      Image.asset(t12_ic_logo, width: 30, height: 30),
+      text("Werolla",
+              fontSize: textSizeLarge,
+              fontFamily: fontBold,
+              textColor: appStore.textPrimaryColor)
+          .paddingLeft(spacing_standard_new)
+    ],
   );
 }
 
@@ -55,8 +62,12 @@ Widget formField(context, hint,
       }
     },
     decoration: InputDecoration(
-      focusedBorder: UnderlineInputBorder(borderRadius: BorderRadius.circular(spacing_standard), borderSide: BorderSide(color: Colors.transparent)),
-      enabledBorder: UnderlineInputBorder(borderRadius: BorderRadius.circular(spacing_standard), borderSide: BorderSide(color: Colors.transparent)),
+      focusedBorder: UnderlineInputBorder(
+          borderRadius: BorderRadius.circular(spacing_standard),
+          borderSide: BorderSide(color: Colors.transparent)),
+      enabledBorder: UnderlineInputBorder(
+          borderRadius: BorderRadius.circular(spacing_standard),
+          borderSide: BorderSide(color: Colors.transparent)),
       filled: true,
       fillColor: t12_edittext_background,
       hintText: hint,
@@ -81,7 +92,10 @@ Widget formField(context, hint,
               size: 20,
             ),
     ),
-    style: TextStyle(fontSize: textSizeNormal, color: isDummy ? Colors.transparent : t12_text_color_primary, fontFamily: fontRegular),
+    style: TextStyle(
+        fontSize: textSizeNormal,
+        color: isDummy ? Colors.transparent : t12_text_color_primary,
+        fontFamily: fontRegular),
   );
 }
 
@@ -112,7 +126,13 @@ class T12SliderWidget extends StatelessWidget {
           child: Stack(
             children: <Widget>[
               Container(
-                decoration: BoxDecoration(gradient: LinearGradient(colors: t12_gradient_colors[index % t12_gradient_colors.length], begin: Alignment.topRight), borderRadius: BorderRadius.all(Radius.circular(spacing_standard))),
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        colors: t12_gradient_colors[
+                            index % t12_gradient_colors.length],
+                        begin: Alignment.topRight),
+                    borderRadius:
+                        BorderRadius.all(Radius.circular(spacing_standard))),
                 width: MediaQuery.of(context).size.width,
                 height: cardSize.height,
               ),
@@ -122,7 +142,9 @@ class T12SliderWidget extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      text("Shopping Card", textColor: Colors.white.withOpacity(0.7), fontSize: textSizeMedium),
+                      text("Shopping Card",
+                          textColor: Colors.white.withOpacity(0.7),
+                          fontSize: textSizeMedium),
                       Image.asset(
                         "images/theme12/mastercard.png",
                         width: 40,
@@ -130,30 +152,50 @@ class T12SliderWidget extends StatelessWidget {
                       )
                     ],
                   ),
-                  Expanded(child: text("**** **** **** 3960", textColor: Colors.white, fontFamily: fontBold, fontSize: textSizeNormal).paddingTop(spacing_standard)),
+                  Expanded(
+                      child: text("**** **** **** 3960",
+                              textColor: Colors.white,
+                              fontFamily: fontBold,
+                              fontSize: textSizeNormal)
+                          .paddingTop(spacing_standard)),
                   Row(
                     children: <Widget>[
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            text("CARD HOLDER", textColor: Colors.white.withOpacity(0.7), fontSize: textSizeMedium),
-                            text("JAMES DENNIS", textColor: Colors.white, fontSize: textSizeMedium, fontFamily: fontMedium),
+                            text("CARD HOLDER",
+                                textColor: Colors.white.withOpacity(0.7),
+                                fontSize: textSizeMedium),
+                            text("JAMES DENNIS",
+                                textColor: Colors.white,
+                                fontSize: textSizeMedium,
+                                fontFamily: fontMedium),
                           ],
                         ),
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          text("EXPIRES", textColor: Colors.white.withOpacity(0.7), fontSize: textSizeMedium),
-                          text("10/22", textColor: Colors.white, fontSize: textSizeMedium, fontFamily: fontMedium),
+                          text("EXPIRES",
+                              textColor: Colors.white.withOpacity(0.7),
+                              fontSize: textSizeMedium),
+                          text("10/22",
+                              textColor: Colors.white,
+                              fontSize: textSizeMedium,
+                              fontFamily: fontMedium),
                         ],
                       ).paddingRight(spacing_standard_new),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          text("CVV", textColor: Colors.white.withOpacity(0.7), fontSize: textSizeMedium),
-                          text("***", textColor: Colors.white, fontSize: textSizeMedium, fontFamily: fontMedium),
+                          text("CVV",
+                              textColor: Colors.white.withOpacity(0.7),
+                              fontSize: textSizeMedium),
+                          text("***",
+                              textColor: Colors.white,
+                              fontSize: textSizeMedium,
+                              fontFamily: fontMedium),
                         ],
                       )
                     ],
@@ -169,12 +211,18 @@ class T12SliderWidget extends StatelessWidget {
 }
 
 Widget headingText(String content) {
-  return text(content, textColor: appStore.textPrimaryColor, fontFamily: fontBold, fontSize: textSizeNormal);
+  return text(content,
+      textColor: appStore.textPrimaryColor,
+      fontFamily: fontBold,
+      fontSize: textSizeNormal);
 }
 
 Widget transactionWidget(T12Transactions transaction, var categoryWidth) {
   return Container(
-    decoration: boxDecoration(bgColor: appStore.scaffoldBackground, showShadow: true, radius: spacing_standard),
+    decoration: boxDecoration(
+        bgColor: appStore.scaffoldBackground,
+        showShadow: true,
+        radius: spacing_standard),
     padding: EdgeInsets.all(spacing_standard),
     margin: EdgeInsets.only(bottom: spacing_standard),
     child: Row(
@@ -183,22 +231,40 @@ Widget transactionWidget(T12Transactions transaction, var categoryWidth) {
           transaction.img,
           width: categoryWidth * 0.75,
           height: categoryWidth * 0.75,
-        ).cornerRadiusWithClipRRect(spacing_standard).paddingRight(spacing_standard),
+        )
+            .cornerRadiusWithClipRRect(spacing_standard)
+            .paddingRight(spacing_standard),
         Expanded(
           child: Column(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              text(transaction.type, fontSize: textSizeMedium, textColor: appStore.textPrimaryColor, fontFamily: fontMedium),
-              text(transaction.subType, fontSize: textSizeMedium, textColor: appStore.textSecondaryColor).paddingTop(spacing_control_half),
+              text(transaction.type,
+                  fontSize: textSizeMedium,
+                  textColor: appStore.textPrimaryColor,
+                  fontFamily: fontMedium),
+              text(transaction.subType,
+                      fontSize: textSizeMedium,
+                      textColor: appStore.textSecondaryColor)
+                  .paddingTop(spacing_control_half),
             ],
           ),
         ),
         Column(
           children: <Widget>[
-            text(transaction.transactionType == "credited" ? "+ \$" + transaction.amount.toString() : "- \$" + transaction.amount.toString(),
-                fontSize: textSizeMedium, textColor: transaction.transactionType == "credited" ? t12_success : t12_error, fontFamily: fontBold),
-            text(transaction.time, fontSize: textSizeMedium, textColor: appStore.textSecondaryColor).paddingTop(spacing_control)
+            text(
+                transaction.transactionType == "credited"
+                    ? "+ \$" + transaction.amount.toString()
+                    : "- \$" + transaction.amount.toString(),
+                fontSize: textSizeMedium,
+                textColor: transaction.transactionType == "credited"
+                    ? t12_success
+                    : t12_error,
+                fontFamily: fontBold),
+            text(transaction.time,
+                    fontSize: textSizeMedium,
+                    textColor: appStore.textSecondaryColor)
+                .paddingTop(spacing_control)
           ],
         )
       ],

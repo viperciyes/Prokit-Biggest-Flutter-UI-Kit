@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/fullApps/walletApp/component/WAOperationComponent.dart';
 import 'package:prokit_flutter/fullApps/walletApp/model/WalletAppModel.dart';
@@ -53,8 +54,7 @@ class WAOperatorsScreenState extends State<WAOperatorsScreen> {
           finish(context);
         }),
         centerTitle: true,
-        elevation: 0.0,
-        brightness: Brightness.dark,
+        elevation: 0.0, systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
       body: Container(
         height: context.height(),

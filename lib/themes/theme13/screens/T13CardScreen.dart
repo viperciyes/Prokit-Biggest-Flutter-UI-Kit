@@ -1,15 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:nb_utils/nb_utils.dart';
+import 'package:prokit_flutter/main/utils/AppWidget.dart';
+import 'package:prokit_flutter/themes/theme13/model/T13Model.dart';
 import 'package:prokit_flutter/themes/theme13/utils/T13Colors.dart';
+import 'package:prokit_flutter/themes/theme13/utils/T13Constant.dart';
+import 'package:prokit_flutter/themes/theme13/utils/T13DataGenerator.dart';
 import 'package:prokit_flutter/themes/theme13/utils/T13Images.dart';
 import 'package:prokit_flutter/themes/theme13/utils/T13Strings.dart';
 import 'package:prokit_flutter/themes/theme13/utils/T13Widget.dart';
-import 'package:prokit_flutter/themes/theme13/utils/T13Constant.dart';
-import 'package:prokit_flutter/themes/theme13/model/T13Model.dart';
-import 'package:prokit_flutter/themes/theme13/utils/T13DataGenerator.dart';
-import 'package:prokit_flutter/main/utils/AppWidget.dart';
-import 'package:nb_utils/nb_utils.dart';
 
 import '../../../main.dart';
 
@@ -36,7 +36,10 @@ class T13CardScreenState extends State<T13CardScreen> {
     changeStatusColor(appStore.appBarColor!);
     var width = MediaQuery.of(context).size.width;
     var mTop = Container(
-      margin: EdgeInsets.only(left: spacing_large, right: spacing_large, bottom: spacing_standard_new),
+      margin: EdgeInsets.only(
+          left: spacing_large,
+          right: spacing_large,
+          bottom: spacing_standard_new),
       child: Row(
         children: <Widget>[
           Expanded(
@@ -49,7 +52,12 @@ class T13CardScreenState extends State<T13CardScreen> {
               child: Container(
                 padding: EdgeInsets.all(8.0),
                 decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: <Color>[selectedPos == 1 ? t13_colorPrimary : Colors.transparent, selectedPos == 1 ? t13_color_gradient1 : Colors.transparent]),
+                    gradient: LinearGradient(colors: <Color>[
+                      selectedPos == 1 ? t13_colorPrimary : Colors.transparent,
+                      selectedPos == 1
+                          ? t13_color_gradient1
+                          : Colors.transparent
+                    ]),
                     borderRadius: BorderRadius.all(Radius.circular(80.0)),
                     border: Border.all(color: t13_colorPrimary)),
                 child: text(
@@ -73,7 +81,14 @@ class T13CardScreenState extends State<T13CardScreen> {
                   padding: EdgeInsets.all(8.0),
                   width: width,
                   decoration: BoxDecoration(
-                      gradient: LinearGradient(colors: <Color>[selectedPos == 2 ? t13_colorPrimary : Colors.transparent, selectedPos == 2 ? t13_color_gradient1 : Colors.transparent]),
+                      gradient: LinearGradient(colors: <Color>[
+                        selectedPos == 2
+                            ? t13_colorPrimary
+                            : Colors.transparent,
+                        selectedPos == 2
+                            ? t13_color_gradient1
+                            : Colors.transparent
+                      ]),
                       borderRadius: BorderRadius.all(Radius.circular(80.0)),
                       border: Border.all(color: t13_colorPrimary)),
                   child: text(
@@ -124,16 +139,23 @@ class Properties extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
     return Container(
       width: width * 0.7,
-      decoration: boxDecoration(showShadow: true, bgColor: appStore.appBarColor, radius: 10.0),
-      margin: EdgeInsets.only(left: spacing_standard_new, bottom: spacing_standard_new, right: spacing_standard_new),
+      decoration: boxDecoration(
+          showShadow: true, bgColor: appStore.appBarColor, radius: 10.0),
+      margin: EdgeInsets.only(
+          left: spacing_standard_new,
+          bottom: spacing_standard_new,
+          right: spacing_standard_new),
       child: Column(
         children: <Widget>[
           ClipRRect(
-            borderRadius: BorderRadius.only(topLeft: Radius.circular(spacing_middle), topRight: Radius.circular(spacing_middle)),
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(spacing_middle),
+                topRight: Radius.circular(spacing_middle)),
             child: Stack(
               alignment: Alignment.bottomLeft,
               children: <Widget>[
-                commonCacheImageWidget(model.image, width * 0.4, fit: BoxFit.cover, width: width),
+                commonCacheImageWidget(model.image, width * 0.4,
+                    fit: BoxFit.cover, width: width),
                 mSale(context),
               ],
             ),
@@ -145,7 +167,9 @@ class Properties extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    text(model.name, textColor: appStore.textPrimaryColor, fontFamily: fontMedium),
+                    text(model.name,
+                        textColor: appStore.textPrimaryColor,
+                        fontFamily: fontMedium),
                     text(model.price, textColor: appStore.textSecondaryColor),
                   ],
                 ),
@@ -158,10 +182,17 @@ class Properties extends StatelessWidget {
                           WidgetSpan(
                             child: Padding(
                               padding: EdgeInsets.only(right: spacing_control),
-                              child: SvgPicture.asset(t13_ic_map, color: t13_textColorSecondary, width: 18, height: 18),
+                              child: SvgPicture.asset(t13_ic_map,
+                                  color: t13_textColorSecondary,
+                                  width: 18,
+                                  height: 18),
                             ),
                           ),
-                          TextSpan(text: model.place, style: TextStyle(fontSize: textSizeMedium, color: t13_textColorSecondary)),
+                          TextSpan(
+                              text: model.place,
+                              style: TextStyle(
+                                  fontSize: textSizeMedium,
+                                  color: t13_textColorSecondary)),
                         ],
                       ),
                     ),
@@ -172,10 +203,17 @@ class Properties extends StatelessWidget {
                           WidgetSpan(
                             child: Padding(
                               padding: EdgeInsets.only(right: spacing_control),
-                              child: SvgPicture.asset(t13_ic_home, color: t13_textColorSecondary, width: 18, height: 18),
+                              child: SvgPicture.asset(t13_ic_home,
+                                  color: t13_textColorSecondary,
+                                  width: 18,
+                                  height: 18),
                             ),
                           ),
-                          TextSpan(text: model.sqm, style: TextStyle(fontSize: textSizeMedium, color: t13_textColorSecondary)),
+                          TextSpan(
+                              text: model.sqm,
+                              style: TextStyle(
+                                  fontSize: textSizeMedium,
+                                  color: t13_textColorSecondary)),
                         ],
                       ),
                     ),

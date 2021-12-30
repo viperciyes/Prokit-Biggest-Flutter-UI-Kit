@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/main.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/themes/theme9/models/T9Models.dart';
@@ -9,7 +10,6 @@ import 'package:prokit_flutter/themes/theme9/utils/T9Constant.dart';
 import 'package:prokit_flutter/themes/theme9/utils/T9DataGenerator.dart';
 import 'package:prokit_flutter/themes/theme9/utils/T9Images.dart';
 import 'package:prokit_flutter/themes/theme9/utils/T9Strings.dart';
-import 'package:nb_utils/nb_utils.dart';
 
 class T9Description extends StatefulWidget {
   static String tag = '/T9Description';
@@ -41,13 +41,19 @@ class T9DescriptionState extends State<T9Description> {
                 Container(
                   height: MediaQuery.of(context).size.height / 1.3,
                   margin: EdgeInsets.fromLTRB(16, 30, 16, 16),
-                  decoration: boxDecoration(showShadow: true, radius: 16, bgColor: context.scaffoldBackgroundColor),
+                  decoration: boxDecoration(
+                      showShadow: true,
+                      radius: 16,
+                      bgColor: context.scaffoldBackgroundColor),
                   child: Column(
                     children: <Widget>[
                       ClipRRect(
-                        borderRadius: BorderRadius.only(topRight: Radius.circular(16), topLeft: Radius.circular(16)),
+                        borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(16),
+                            topLeft: Radius.circular(16)),
                         child: CachedNetworkImage(
-                          placeholder: placeholderWidgetFn() as Widget Function(BuildContext, String)?,
+                          placeholder: placeholderWidgetFn() as Widget Function(
+                              BuildContext, String)?,
                           imageUrl: t9_climb,
                           fit: BoxFit.cover,
                           height: MediaQuery.of(context).size.height * 0.3,
@@ -55,10 +61,14 @@ class T9DescriptionState extends State<T9Description> {
                         ),
                       ),
                       SizedBox(height: 16),
-                      text(t9_lbl_project_management, textColor: appStore.textPrimaryColor, fontSize: textSizeNormal, fontFamily: fontBold),
+                      text(t9_lbl_project_management,
+                          textColor: appStore.textPrimaryColor,
+                          fontSize: textSizeNormal,
+                          fontFamily: fontBold),
                       SizedBox(height: 8),
                       Container(
-                        decoration: boxDecoration(bgColor: t9_green, radius: 8, showShadow: false),
+                        decoration: boxDecoration(
+                            bgColor: t9_green, radius: 8, showShadow: false),
                         padding: EdgeInsets.fromLTRB(16, 4, 16, 4),
                         child: text(t9_lbl_30_80, textColor: t9_white),
                       ),
@@ -83,7 +93,8 @@ class T9DescriptionState extends State<T9Description> {
                         Icons.keyboard_arrow_up,
                         color: t9_textColorSecondary,
                       ),
-                      text(t9_lbl_swipe_up_to_show_course_contents, textColor: t9_textColorSecondary)
+                      text(t9_lbl_swipe_up_to_show_course_contents,
+                          textColor: t9_textColorSecondary)
                     ],
                   ),
                 )
@@ -99,10 +110,14 @@ class T9DescriptionState extends State<T9Description> {
                       color: appStore.iconColor,
                       size: 20,
                     )),
-                text(t9_lbl_project_management, textColor: appStore.textPrimaryColor, fontSize: textSizeNormal, fontFamily: fontMedium),
+                text(t9_lbl_project_management,
+                    textColor: appStore.textPrimaryColor,
+                    fontSize: textSizeNormal,
+                    fontFamily: fontMedium),
                 SizedBox(height: 10),
                 Container(
-                  decoration: boxDecoration(bgColor: t9_green, radius: 8, showShadow: false),
+                  decoration: boxDecoration(
+                      bgColor: t9_green, radius: 8, showShadow: false),
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(10, 4, 10, 4),
                     child: text(t9_lbl_30_80, textColor: t9_white),
@@ -117,7 +132,8 @@ class T9DescriptionState extends State<T9Description> {
                       Row(
                         children: <Widget>[
                           CircleAvatar(
-                            backgroundImage: CachedNetworkImageProvider(t9_ic_profile),
+                            backgroundImage:
+                                CachedNetworkImageProvider(t9_ic_profile),
                             radius: MediaQuery.of(context).size.height * 0.025,
                           ),
                           SizedBox(width: 16),
@@ -138,7 +154,12 @@ class T9DescriptionState extends State<T9Description> {
                                 ),
                               ),
                             ),
-                            TextSpan(text: t9_lbl_5_0, style: TextStyle(fontSize: textSizeMedium, color: t9_yellow, fontFamily: fontMedium)),
+                            TextSpan(
+                                text: t9_lbl_5_0,
+                                style: TextStyle(
+                                    fontSize: textSizeMedium,
+                                    color: t9_yellow,
+                                    fontFamily: fontMedium)),
                           ],
                         ),
                       )
@@ -185,8 +206,16 @@ class T9Question extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                text(model.name, textColor: appStore.textPrimaryColor, fontFamily: fontMedium, fontSize: textSizeLargeMedium, maxLine: 2, isLongText: true),
-                text(model.subtitle, textColor: appStore.textSecondaryColor, isLongText: true, maxLine: 2),
+                text(model.name,
+                    textColor: appStore.textPrimaryColor,
+                    fontFamily: fontMedium,
+                    fontSize: textSizeLargeMedium,
+                    maxLine: 2,
+                    isLongText: true),
+                text(model.subtitle,
+                    textColor: appStore.textSecondaryColor,
+                    isLongText: true,
+                    maxLine: 2),
                 text(model.type, textColor: t9_colorPrimary)
               ],
             ),
@@ -203,9 +232,17 @@ Widget T9OptionDescription(var total, var type) {
     margin: EdgeInsets.only(left: 16, right: 16),
     child: Column(
       children: <Widget>[
-        CachedNetworkImage(placeholder: placeholderWidgetFn() as Widget Function(BuildContext, String)?, imageUrl: t9_ic_cup, height: 20, width: 20),
+        CachedNetworkImage(
+            placeholder:
+                placeholderWidgetFn() as Widget Function(BuildContext, String)?,
+            imageUrl: t9_ic_cup,
+            height: 20,
+            width: 20),
         SizedBox(height: 4),
-        text(total, textColor: appStore.textPrimaryColor, fontFamily: fontMedium, isLongText: true),
+        text(total,
+            textColor: appStore.textPrimaryColor,
+            fontFamily: fontMedium,
+            isLongText: true),
         text(type, textColor: appStore.textSecondaryColor),
       ],
     ),

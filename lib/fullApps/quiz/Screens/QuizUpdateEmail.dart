@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/fullApps/quiz/utils/QuizColors.dart';
 import 'package:prokit_flutter/fullApps/quiz/utils/QuizConstant.dart';
 import 'package:prokit_flutter/fullApps/quiz/utils/QuizStrings.dart';
 import 'package:prokit_flutter/fullApps/quiz/utils/QuizWidget.dart';
+import 'package:prokit_flutter/main/utils/AppWidget.dart';
 
 class QuizUpdateEmail extends StatefulWidget {
   static String tag = '/QuizUpdateEmail';
@@ -18,7 +18,8 @@ class _QuizUpdateEmailState extends State<QuizUpdateEmail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: text(quiz_lbl_Update_email, fontSize: textSizeNormal, fontFamily: fontMedium),
+        title: text(quiz_lbl_Update_email,
+            fontSize: textSizeNormal, fontFamily: fontMedium),
         leading: Icon(
           Icons.arrow_back,
           color: quiz_colorPrimary,
@@ -40,13 +41,22 @@ class _QuizUpdateEmailState extends State<QuizUpdateEmail> {
                 SizedBox(
                   height: 20,
                 ),
-                text(quiz_info_Update_email, textColor: quiz_textColorSecondary, isLongText: true, isCentered: true).center(),
+                text(quiz_info_Update_email,
+                        textColor: quiz_textColorSecondary,
+                        isLongText: true,
+                        isCentered: true)
+                    .center(),
                 Container(
                   margin: EdgeInsets.all(24.0),
-                  decoration: boxDecoration(bgColor: quiz_white, color: quiz_white, showShadow: true, radius: 10),
+                  decoration: boxDecoration(
+                      bgColor: quiz_white,
+                      color: quiz_white,
+                      showShadow: true,
+                      radius: 10),
                   child: Column(
                     children: <Widget>[
-                      quizEditTextStyle(quiz_hint_your_email, isPassword: false),
+                      quizEditTextStyle(quiz_hint_your_email,
+                          isPassword: false),
                     ],
                   ),
                 ),
@@ -56,7 +66,12 @@ class _QuizUpdateEmailState extends State<QuizUpdateEmail> {
                 Container(
                   child: Column(
                     children: <Widget>[
-                      text(quiz_lbl_email_Verify, textColor: quiz_textColorPrimary, fontSize: textSizeMedium, fontFamily: fontRegular, isLongText: true, isCentered: true),
+                      text(quiz_lbl_email_Verify,
+                          textColor: quiz_textColorPrimary,
+                          fontSize: textSizeMedium,
+                          fontFamily: fontRegular,
+                          isLongText: true,
+                          isCentered: true),
                     ],
                   ),
                 ).onTap(() {

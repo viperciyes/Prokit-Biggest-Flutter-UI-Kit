@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:nb_utils/nb_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/main.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/themes/theme1/screen/T1Listing.dart';
@@ -19,7 +19,10 @@ class T1Card extends StatelessWidget {
     return Column(
       children: <Widget>[
         profile(counter),
-        text(counterName, textColor: appStore.textPrimaryColor, fontSize: textSizeMedium, fontFamily: fontMedium),
+        text(counterName,
+            textColor: appStore.textPrimaryColor,
+            fontSize: textSizeMedium,
+            fontFamily: fontMedium),
       ],
     );
   }
@@ -41,14 +44,23 @@ class T1Card extends StatelessWidget {
                   children: <Widget>[
                     Container(
                       margin: EdgeInsets.only(top: 55.0),
-                      decoration: boxDecoration(bgColor: context.scaffoldBackgroundColor, radius: 10, showShadow: true),
+                      decoration: boxDecoration(
+                          bgColor: context.scaffoldBackgroundColor,
+                          radius: 10,
+                          showShadow: true),
                       child: Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Column(
                           children: <Widget>[
                             SizedBox(height: 50),
-                            text(t1_user_name, textColor: appStore.textPrimaryColor, fontSize: textSizeNormal, fontFamily: fontMedium),
-                            text(t1_user_email, textColor: t1_colorPrimary, fontSize: textSizeMedium, fontFamily: fontMedium),
+                            text(t1_user_name,
+                                textColor: appStore.textPrimaryColor,
+                                fontSize: textSizeNormal,
+                                fontFamily: fontMedium),
+                            text(t1_user_email,
+                                textColor: t1_colorPrimary,
+                                fontSize: textSizeMedium,
+                                fontFamily: fontMedium),
                             Padding(
                               padding: EdgeInsets.all(16),
                               child: view(),
@@ -70,7 +82,8 @@ class T1Card extends StatelessWidget {
                         margin: new EdgeInsets.symmetric(horizontal: 16.0),
                         alignment: FractionalOffset.center,
                         child: new CircleAvatar(
-                          backgroundImage: CachedNetworkImageProvider(t1_ic_user1),
+                          backgroundImage:
+                              CachedNetworkImageProvider(t1_ic_user1),
                           radius: 50,
                         ))
                   ],

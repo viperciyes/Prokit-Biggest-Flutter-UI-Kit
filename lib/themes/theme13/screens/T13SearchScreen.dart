@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/themes/theme13/model/T13Model.dart';
 import 'package:prokit_flutter/themes/theme13/utils/T13Colors.dart';
@@ -9,7 +10,6 @@ import 'package:prokit_flutter/themes/theme13/utils/T13DataGenerator.dart';
 import 'package:prokit_flutter/themes/theme13/utils/T13Images.dart';
 import 'package:prokit_flutter/themes/theme13/utils/T13Strings.dart';
 import 'package:prokit_flutter/themes/theme13/utils/T13Widget.dart';
-import 'package:nb_utils/nb_utils.dart';
 
 import '../../../main.dart';
 
@@ -52,15 +52,24 @@ class T13SearchScreenState extends State<T13SearchScreen> {
                           WidgetSpan(
                             child: Padding(
                               padding: EdgeInsets.only(right: spacing_control),
-                              child: SvgPicture.asset(t13_ic_send, color: t13_colorPrimary, width: 18, height: 18),
+                              child: SvgPicture.asset(t13_ic_send,
+                                  color: t13_colorPrimary,
+                                  width: 18,
+                                  height: 18),
                             ),
                           ),
-                          TextSpan(text: t13_lbl_search_nearest_properties, style: TextStyle(fontSize: textSizeMedium, color: t13_colorPrimary)),
+                          TextSpan(
+                              text: t13_lbl_search_nearest_properties,
+                              style: TextStyle(
+                                  fontSize: textSizeMedium,
+                                  color: t13_colorPrimary)),
                         ],
                       ),
                     ),
                     SizedBox(height: 16),
-                    text(t13_lbl_last_search.toUpperCase(), textColor: appStore.textPrimaryColor, fontFamily: fontMedium),
+                    text(t13_lbl_last_search.toUpperCase(),
+                        textColor: appStore.textPrimaryColor,
+                        fontFamily: fontMedium),
                     SizedBox(height: spacing_standard),
                     Row(
                       children: <Widget>[
@@ -70,14 +79,20 @@ class T13SearchScreenState extends State<T13SearchScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             text(t13_lbl_bali),
-                            text(t13_lbl_3_bedroom, textColor: t13_textColorSecondary, fontSize: 14.0),
-                            text(t13_lbl_3_bathroom, textColor: t13_textColorSecondary, fontSize: 14.0),
+                            text(t13_lbl_3_bedroom,
+                                textColor: t13_textColorSecondary,
+                                fontSize: 14.0),
+                            text(t13_lbl_3_bathroom,
+                                textColor: t13_textColorSecondary,
+                                fontSize: 14.0),
                           ],
                         )
                       ],
                     ),
                     SizedBox(height: spacing_standard_new),
-                    text(t13_lbl_popular_cities.toUpperCase(), textColor: appStore.textPrimaryColor, fontFamily: fontMedium),
+                    text(t13_lbl_popular_cities.toUpperCase(),
+                        textColor: appStore.textPrimaryColor,
+                        fontFamily: fontMedium),
                     SizedBox(height: spacing_standard),
                     ListView.builder(
                       scrollDirection: Axis.vertical,
@@ -118,13 +133,15 @@ class PopularCity extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 text(model.name.toString().toUpperCase()),
-                text(model.property, textColor: t13_textColorSecondary, fontSize: 14.0),
+                text(model.property,
+                    textColor: t13_textColorSecondary, fontSize: 14.0),
               ],
             )
           ],
         ),
         Container(
-          margin: EdgeInsets.only(top: spacing_standard_new, bottom: spacing_standard_new),
+          margin: EdgeInsets.only(
+              top: spacing_standard_new, bottom: spacing_standard_new),
           child: Divider(height: 1, color: t13_view_color),
         )
       ],

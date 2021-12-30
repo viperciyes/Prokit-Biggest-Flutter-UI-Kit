@@ -609,7 +609,7 @@ class _BankingBottomNavigationBarState extends State<BankingBottomNavigationBar>
         themeColor = themeData.primaryColor;
         break;
       case Brightness.dark:
-        themeColor = themeData.accentColor;
+        themeColor = themeData.colorScheme.secondary;
         break;
     }
 

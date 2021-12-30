@@ -17,7 +17,6 @@ import 'package:prokit_flutter/dashboard/screen/Dashboard7.dart';
 import 'package:prokit_flutter/dashboard/screen/Dashboard8.dart';
 import 'package:prokit_flutter/fullApps/banking/screen/BankingSplash.dart';
 import 'package:prokit_flutter/fullApps/cloudStorage/screens/CSSplashScreen.dart';
-import 'package:prokit_flutter/fullApps/coinPro/screen/CPSplashScreen.dart';
 import 'package:prokit_flutter/fullApps/dating/screen/DASplashScreen.dart';
 import 'package:prokit_flutter/fullApps/eventApp/screens/EASplashScreen.dart';
 import 'package:prokit_flutter/fullApps/food/screen/FoodWalkThrough.dart';
@@ -470,10 +469,30 @@ import '../../widgets/materialWidgets/mwAppStrucutreWidgets/MWAppBarScreen.dart'
 
 List<LanguageDataModel> languageList() {
   return [
-    LanguageDataModel(id: 1, name: 'English', languageCode: 'en', fullLanguageCode: 'en-US', flag: 'images/flag/ic_us.png'),
-    LanguageDataModel(id: 2, name: 'Hindi', languageCode: 'hi', fullLanguageCode: 'hi-IN', flag: 'images/flag/ic_hi.png'),
-    LanguageDataModel(id: 3, name: 'Arabic', languageCode: 'ar', fullLanguageCode: 'ar-AR', flag: 'images/flag/ic_ar.png'),
-    LanguageDataModel(id: 4, name: 'French', languageCode: 'fr', fullLanguageCode: 'fr-FR', flag: 'images/flag/ic_fr.png'),
+    LanguageDataModel(
+        id: 1,
+        name: 'English',
+        languageCode: 'en',
+        fullLanguageCode: 'en-US',
+        flag: 'images/flag/ic_us.png'),
+    LanguageDataModel(
+        id: 2,
+        name: 'Hindi',
+        languageCode: 'hi',
+        fullLanguageCode: 'hi-IN',
+        flag: 'images/flag/ic_hi.png'),
+    LanguageDataModel(
+        id: 3,
+        name: 'Arabic',
+        languageCode: 'ar',
+        fullLanguageCode: 'ar-AR',
+        flag: 'images/flag/ic_ar.png'),
+    LanguageDataModel(
+        id: 4,
+        name: 'French',
+        languageCode: 'fr',
+        fullLanguageCode: 'fr-FR',
+        flag: 'images/flag/ic_fr.png'),
   ];
 }
 
@@ -495,20 +514,105 @@ Future<AppTheme> getAllAppsAndThemes() async {
 List<ProTheme> getThemes() {
   List<ProTheme> list = [];
 
-  list.add(ProTheme(name: 'Diamond Kit', title_name: 'Theme 14 Screens', tag: 'New', show_cover: true, sub_kits: getDiamondKit(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Real State', title_name: 'Theme 13 Screens', type: '', show_cover: true, sub_kits: getRealState(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Digital Wallet', title_name: 'Theme 12 Screens', type: '', show_cover: true, sub_kits: getDigitalWallet(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Music Streaming', title_name: 'Theme 11 Screens', tag: 'Updated', type: '', show_cover: true, sub_kits: getMusicStreaming(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'E-commerce', title_name: 'Theme 10 Screens', type: '', show_cover: true, sub_kits: getECommerce(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Learner', title_name: 'Theme 9 Screens', type: '', show_cover: true, sub_kits: getLearner(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Quiz', title_name: 'Theme 8 Screens', type: '', show_cover: true, sub_kits: getQuiz(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Hotel Booking', title_name: 'Theme 7 Screens', type: '', show_cover: true, sub_kits: getHotelBooking(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Gym', title_name: 'Theme 6 Screens', type: '', show_cover: true, sub_kits: getGymApp(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'e-wallet', title_name: 'Theme 5 Screens', type: '', show_cover: true, sub_kits: getEWallet(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Feed App', title_name: 'Theme 4 Screens', type: '', show_cover: true, sub_kits: getFeedApp(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Food Recipe', title_name: 'Theme 3 Screens', type: '', show_cover: true, sub_kits: getFoodRecipe(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Exercise Tips', title_name: 'Theme 2 Screens', type: '', show_cover: true, sub_kits: getExerciseTips(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'File Manager', title_name: 'Theme 1 Screens', type: '', show_cover: true, sub_kits: getFileManageScreens(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Diamond Kit',
+      title_name: 'Theme 14 Screens',
+      tag: 'New',
+      show_cover: true,
+      sub_kits: getDiamondKit(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Real State',
+      title_name: 'Theme 13 Screens',
+      type: '',
+      show_cover: true,
+      sub_kits: getRealState(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Digital Wallet',
+      title_name: 'Theme 12 Screens',
+      type: '',
+      show_cover: true,
+      sub_kits: getDigitalWallet(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Music Streaming',
+      title_name: 'Theme 11 Screens',
+      tag: 'Updated',
+      type: '',
+      show_cover: true,
+      sub_kits: getMusicStreaming(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'E-commerce',
+      title_name: 'Theme 10 Screens',
+      type: '',
+      show_cover: true,
+      sub_kits: getECommerce(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Learner',
+      title_name: 'Theme 9 Screens',
+      type: '',
+      show_cover: true,
+      sub_kits: getLearner(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Quiz',
+      title_name: 'Theme 8 Screens',
+      type: '',
+      show_cover: true,
+      sub_kits: getQuiz(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Hotel Booking',
+      title_name: 'Theme 7 Screens',
+      type: '',
+      show_cover: true,
+      sub_kits: getHotelBooking(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Gym',
+      title_name: 'Theme 6 Screens',
+      type: '',
+      show_cover: true,
+      sub_kits: getGymApp(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'e-wallet',
+      title_name: 'Theme 5 Screens',
+      type: '',
+      show_cover: true,
+      sub_kits: getEWallet(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Feed App',
+      title_name: 'Theme 4 Screens',
+      type: '',
+      show_cover: true,
+      sub_kits: getFeedApp(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Food Recipe',
+      title_name: 'Theme 3 Screens',
+      type: '',
+      show_cover: true,
+      sub_kits: getFoodRecipe(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Exercise Tips',
+      title_name: 'Theme 2 Screens',
+      type: '',
+      show_cover: true,
+      sub_kits: getExerciseTips(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'File Manager',
+      title_name: 'Theme 1 Screens',
+      type: '',
+      show_cover: true,
+      sub_kits: getFileManageScreens(),
+      darkThemeSupported: true));
 
   return list;
 }
@@ -517,16 +621,66 @@ List<ProTheme> getThemes() {
 List<ProTheme> getDigitalWallet() {
   List<ProTheme> list = [];
 
-  list.add(ProTheme(name: 'WalkThrough', is_theme: true, type: '', widget: T12WalkThrough(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign In', is_theme: true, type: '', widget: T12SignIn(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign Up', is_theme: true, type: '', widget: T12SignUp(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Profile', is_theme: true, type: '', widget: T12Profile(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dashboard', is_theme: true, type: '', widget: T12Dashboard(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Search', is_theme: true, type: '', widget: T12SearchScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Listing', is_theme: true, type: '', widget: T12TransactionList(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Cards', is_theme: true, type: '', widget: T12Cards(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dialog', is_theme: true, type: '', widget: T12Dialog(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'BottomSheet', is_theme: true, type: '', widget: T12BottomSheet(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'WalkThrough',
+      is_theme: true,
+      type: '',
+      widget: T12WalkThrough(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign In',
+      is_theme: true,
+      type: '',
+      widget: T12SignIn(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign Up',
+      is_theme: true,
+      type: '',
+      widget: T12SignUp(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Profile',
+      is_theme: true,
+      type: '',
+      widget: T12Profile(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dashboard',
+      is_theme: true,
+      type: '',
+      widget: T12Dashboard(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Search',
+      is_theme: true,
+      type: '',
+      widget: T12SearchScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Listing',
+      is_theme: true,
+      type: '',
+      widget: T12TransactionList(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Cards',
+      is_theme: true,
+      type: '',
+      widget: T12Cards(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dialog',
+      is_theme: true,
+      type: '',
+      widget: T12Dialog(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'BottomSheet',
+      is_theme: true,
+      type: '',
+      widget: T12BottomSheet(),
+      darkThemeSupported: true));
 
   return list;
 }
@@ -534,19 +688,84 @@ List<ProTheme> getDigitalWallet() {
 List<ProTheme> getRealState() {
   List<ProTheme> list = [];
 
-  list.add(ProTheme(name: 'WalkThrough', is_theme: true, type: '', widget: T13WalkThroughScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign In', is_theme: true, type: '', widget: T13SignInScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign Up', is_theme: true, type: '', widget: T13SignUpScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Profile', is_theme: true, type: '', widget: T13ProfileScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dashboard', is_theme: true, type: '', widget: T13DashboardScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Search', is_theme: true, type: '', widget: T13SearchScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Description', is_theme: true, type: '', widget: T13DescriptionScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Listing', is_theme: true, type: '', widget: T13ListingScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Setting', is_theme: true, type: '', widget: T13SettingScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Bottom Navigation', is_theme: true, type: '', widget: T13BottomNavigationScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Cards', is_theme: true, type: '', widget: T13CardScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dialog', is_theme: true, type: '', widget: T13DialogScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Filter', is_theme: true, type: '', widget: T13FilterScreen(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'WalkThrough',
+      is_theme: true,
+      type: '',
+      widget: T13WalkThroughScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign In',
+      is_theme: true,
+      type: '',
+      widget: T13SignInScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign Up',
+      is_theme: true,
+      type: '',
+      widget: T13SignUpScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Profile',
+      is_theme: true,
+      type: '',
+      widget: T13ProfileScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dashboard',
+      is_theme: true,
+      type: '',
+      widget: T13DashboardScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Search',
+      is_theme: true,
+      type: '',
+      widget: T13SearchScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Description',
+      is_theme: true,
+      type: '',
+      widget: T13DescriptionScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Listing',
+      is_theme: true,
+      type: '',
+      widget: T13ListingScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Setting',
+      is_theme: true,
+      type: '',
+      widget: T13SettingScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Bottom Navigation',
+      is_theme: true,
+      type: '',
+      widget: T13BottomNavigationScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Cards',
+      is_theme: true,
+      type: '',
+      widget: T13CardScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dialog',
+      is_theme: true,
+      type: '',
+      widget: T13DialogScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Filter',
+      is_theme: true,
+      type: '',
+      widget: T13FilterScreen(),
+      darkThemeSupported: true));
 
   return list;
 }
@@ -554,44 +773,234 @@ List<ProTheme> getRealState() {
 List<ProTheme> getDiamondKit() {
   List<ProTheme> list = [];
 
-  list.add(ProTheme(name: 'WalkThrough 1', is_theme: true, type: '', widget: T14WalkThroughScreen1(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'WalkThrough 2', is_theme: true, type: '', widget: T14WalkThroughScreen2(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'WalkThrough 3', is_theme: true, type: '', widget: T14WalkThroughScreen3(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'WalkThrough 4', is_theme: true, type: '', widget: T14WalkThroughScreen4(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'WalkThrough 5', is_theme: true, type: '', widget: T14WalkThroughScreen5(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'WalkThrough 6', is_theme: true, type: '', widget: T14WalkThroughScreen6(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'WalkThrough 7', is_theme: true, type: '', widget: T14WalkThroughScreen7(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'WalkThrough 8', is_theme: true, type: '', widget: T14WalkThroughScreen8(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Calender 1', is_theme: true, type: '', widget: T14CalendarScreen1(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Calender 2', is_theme: true, type: '', widget: T14CalendarScreen2(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign In 1', is_theme: true, type: '', widget: T14SignInScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign In 2', is_theme: true, type: '', widget: T14SignInScreen2(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign In 3', is_theme: true, type: '', widget: T14SignInScreen3(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign In 4', is_theme: true, type: '', widget: T14SignInScreen4(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign Up 1', is_theme: true, type: '', widget: T14SignUpScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign Up 2', is_theme: true, type: '', widget: T14SignUpScreen2(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Authorization', is_theme: true, type: '', widget: T14AutorisationScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Profile', is_theme: true, type: '', widget: T14ProfileScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Finance 1', is_theme: true, type: '', widget: T14FinanceScreen1(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Finance 2', is_theme: true, type: '', widget: T14FinanceScreen2(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Finance 3', is_theme: true, type: '', widget: T14FinanceScreen3(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Finance 4', is_theme: true, type: '', widget: T14FinanceScreen4(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Finance 5', is_theme: true, type: '', widget: T14FinanceScreen5(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Travel', is_theme: true, type: '', widget: T14TravelScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Travel Description', is_theme: true, type: '', widget: T14TravelDetailScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Travel 2', is_theme: true, type: '', widget: T14TravelScreen2(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Travel 3', is_theme: true, type: '', widget: T14TravelScreen3(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Travel 4', is_theme: true, type: '', widget: T14TravelScreen4(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'SubScription 1', is_theme: true, type: '', widget: T14SubscriptionScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'SubScription 2', is_theme: true, type: '', widget: T14SubscriptionScreen2(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'SubScription 3', is_theme: true, type: '', widget: T14SubscriptionScreen4(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'SubScription 4', is_theme: true, type: '', widget: T14SubscriptionScreen5(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'SubScription 5', is_theme: true, type: '', widget: T14SubscriptionScreen7(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Success and Fail ', is_theme: true, type: '', widget: T14SuccessAndFailScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Rate the app', is_theme: true, type: '', widget: T14RateScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'AllMessagesList', is_theme: true, type: '', widget: T14AllMessagesListScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Communication 3', is_theme: true, type: '', widget: T14CommunicationScreen3(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Communication 4', is_theme: true, type: '', widget: T14CommunicationScreen4(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'WalkThrough 1',
+      is_theme: true,
+      type: '',
+      widget: T14WalkThroughScreen1(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'WalkThrough 2',
+      is_theme: true,
+      type: '',
+      widget: T14WalkThroughScreen2(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'WalkThrough 3',
+      is_theme: true,
+      type: '',
+      widget: T14WalkThroughScreen3(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'WalkThrough 4',
+      is_theme: true,
+      type: '',
+      widget: T14WalkThroughScreen4(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'WalkThrough 5',
+      is_theme: true,
+      type: '',
+      widget: T14WalkThroughScreen5(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'WalkThrough 6',
+      is_theme: true,
+      type: '',
+      widget: T14WalkThroughScreen6(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'WalkThrough 7',
+      is_theme: true,
+      type: '',
+      widget: T14WalkThroughScreen7(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'WalkThrough 8',
+      is_theme: true,
+      type: '',
+      widget: T14WalkThroughScreen8(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Calender 1',
+      is_theme: true,
+      type: '',
+      widget: T14CalendarScreen1(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Calender 2',
+      is_theme: true,
+      type: '',
+      widget: T14CalendarScreen2(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign In 1',
+      is_theme: true,
+      type: '',
+      widget: T14SignInScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign In 2',
+      is_theme: true,
+      type: '',
+      widget: T14SignInScreen2(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign In 3',
+      is_theme: true,
+      type: '',
+      widget: T14SignInScreen3(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign In 4',
+      is_theme: true,
+      type: '',
+      widget: T14SignInScreen4(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign Up 1',
+      is_theme: true,
+      type: '',
+      widget: T14SignUpScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign Up 2',
+      is_theme: true,
+      type: '',
+      widget: T14SignUpScreen2(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Authorization',
+      is_theme: true,
+      type: '',
+      widget: T14AutorisationScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Profile',
+      is_theme: true,
+      type: '',
+      widget: T14ProfileScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Finance 1',
+      is_theme: true,
+      type: '',
+      widget: T14FinanceScreen1(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Finance 2',
+      is_theme: true,
+      type: '',
+      widget: T14FinanceScreen2(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Finance 3',
+      is_theme: true,
+      type: '',
+      widget: T14FinanceScreen3(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Finance 4',
+      is_theme: true,
+      type: '',
+      widget: T14FinanceScreen4(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Finance 5',
+      is_theme: true,
+      type: '',
+      widget: T14FinanceScreen5(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Travel',
+      is_theme: true,
+      type: '',
+      widget: T14TravelScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Travel Description',
+      is_theme: true,
+      type: '',
+      widget: T14TravelDetailScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Travel 2',
+      is_theme: true,
+      type: '',
+      widget: T14TravelScreen2(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Travel 3',
+      is_theme: true,
+      type: '',
+      widget: T14TravelScreen3(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Travel 4',
+      is_theme: true,
+      type: '',
+      widget: T14TravelScreen4(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'SubScription 1',
+      is_theme: true,
+      type: '',
+      widget: T14SubscriptionScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'SubScription 2',
+      is_theme: true,
+      type: '',
+      widget: T14SubscriptionScreen2(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'SubScription 3',
+      is_theme: true,
+      type: '',
+      widget: T14SubscriptionScreen4(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'SubScription 4',
+      is_theme: true,
+      type: '',
+      widget: T14SubscriptionScreen5(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'SubScription 5',
+      is_theme: true,
+      type: '',
+      widget: T14SubscriptionScreen7(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Success and Fail ',
+      is_theme: true,
+      type: '',
+      widget: T14SuccessAndFailScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Rate the app',
+      is_theme: true,
+      type: '',
+      widget: T14RateScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'AllMessagesList',
+      is_theme: true,
+      type: '',
+      widget: T14AllMessagesListScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Communication 3',
+      is_theme: true,
+      type: '',
+      widget: T14CommunicationScreen3(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Communication 4',
+      is_theme: true,
+      type: '',
+      widget: T14CommunicationScreen4(),
+      darkThemeSupported: true));
 
   return list;
 }
@@ -599,18 +1008,42 @@ List<ProTheme> getDiamondKit() {
 List<ProTheme> getMusicStreaming() {
   List<ProTheme> list = [];
 
-  list.add(ProTheme(name: 'WalkThrough', is_theme: true, type: '', widget: T11WalkThroughScreen()));
-  list.add(ProTheme(name: 'Sign In', is_theme: true, type: '', widget: T11SignInScreen()));
-  list.add(ProTheme(name: 'Sign Up', is_theme: true, type: '', widget: T11SignUpScreen()));
-  list.add(ProTheme(name: 'Profile', is_theme: true, type: '', widget: T11ProfileScreen()));
-  list.add(ProTheme(name: 'Dashboard', is_theme: true, type: '', widget: T11DashboardScreen()));
-  list.add(ProTheme(name: 'Search', is_theme: true, type: '', widget: T11SearchScreen()));
-  list.add(ProTheme(name: 'Listing', is_theme: true, type: '', widget: T11ListingScreen()));
-  list.add(ProTheme(name: 'Description', is_theme: true, type: '', widget: T11DescriptionScreen()));
-  list.add(ProTheme(name: 'Setting', is_theme: true, type: '', widget: T11SettingScreen()));
-  list.add(ProTheme(name: 'Card 1', is_theme: true, type: '', widget: T11Card1Screen()));
-  list.add(ProTheme(name: 'Card 2', is_theme: true, type: '', widget: T11Card2Screen()));
-  list.add(ProTheme(name: 'Bottom Navigation', is_theme: true, type: '', widget: T11BottomNavigationScreen()));
+  list.add(ProTheme(
+      name: 'WalkThrough',
+      is_theme: true,
+      type: '',
+      widget: T11WalkThroughScreen()));
+  list.add(ProTheme(
+      name: 'Sign In', is_theme: true, type: '', widget: T11SignInScreen()));
+  list.add(ProTheme(
+      name: 'Sign Up', is_theme: true, type: '', widget: T11SignUpScreen()));
+  list.add(ProTheme(
+      name: 'Profile', is_theme: true, type: '', widget: T11ProfileScreen()));
+  list.add(ProTheme(
+      name: 'Dashboard',
+      is_theme: true,
+      type: '',
+      widget: T11DashboardScreen()));
+  list.add(ProTheme(
+      name: 'Search', is_theme: true, type: '', widget: T11SearchScreen()));
+  list.add(ProTheme(
+      name: 'Listing', is_theme: true, type: '', widget: T11ListingScreen()));
+  list.add(ProTheme(
+      name: 'Description',
+      is_theme: true,
+      type: '',
+      widget: T11DescriptionScreen()));
+  list.add(ProTheme(
+      name: 'Setting', is_theme: true, type: '', widget: T11SettingScreen()));
+  list.add(ProTheme(
+      name: 'Card 1', is_theme: true, type: '', widget: T11Card1Screen()));
+  list.add(ProTheme(
+      name: 'Card 2', is_theme: true, type: '', widget: T11Card2Screen()));
+  list.add(ProTheme(
+      name: 'Bottom Navigation',
+      is_theme: true,
+      type: '',
+      widget: T11BottomNavigationScreen()));
 
   return list;
 }
@@ -618,30 +1051,120 @@ List<ProTheme> getMusicStreaming() {
 List<ProTheme> getECommerce() {
   List<ProTheme> list = [];
 
-  list.add(ProTheme(name: 'Sign In', is_theme: true, type: '', widget: T10SignIn(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign Up', is_theme: true, type: '', widget: T10SignUp(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Profile', is_theme: true, type: '', widget: T10Profile(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dashboard', is_theme: true, type: '', widget: T10Dashboard(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Side Menu', is_theme: true, type: '', widget: T10SideMenu(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Description', is_theme: true, type: '', widget: T10Description(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Listing', is_theme: true, type: '', widget: T10Listing(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Cards', is_theme: true, type: '', widget: T10Cards(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dialog', is_theme: true, type: '', widget: T10Dialog(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign In',
+      is_theme: true,
+      type: '',
+      widget: T10SignIn(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign Up',
+      is_theme: true,
+      type: '',
+      widget: T10SignUp(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Profile',
+      is_theme: true,
+      type: '',
+      widget: T10Profile(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dashboard',
+      is_theme: true,
+      type: '',
+      widget: T10Dashboard(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Side Menu',
+      is_theme: true,
+      type: '',
+      widget: T10SideMenu(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Description',
+      is_theme: true,
+      type: '',
+      widget: T10Description(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Listing',
+      is_theme: true,
+      type: '',
+      widget: T10Listing(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Cards',
+      is_theme: true,
+      type: '',
+      widget: T10Cards(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dialog',
+      is_theme: true,
+      type: '',
+      widget: T10Dialog(),
+      darkThemeSupported: true));
 
   return list;
 }
 
 List<ProTheme> getLearner() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Sign In', is_theme: true, type: '', widget: T9SignIn(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign Up', is_theme: true, type: '', widget: T9SignUp(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Profile', is_theme: true, type: '', widget: T9Profile(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dashboard', is_theme: true, type: '', widget: T9Dashboard(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Description', is_theme: true, type: '', widget: T9Description(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Bottom Navigation', is_theme: true, type: '', widget: T9BottomNavigation(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Cards', is_theme: true, type: '', widget: T9Cards(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Listing', is_theme: true, type: '', widget: T9List(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Search', is_theme: true, type: '', widget: T9Search(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign In',
+      is_theme: true,
+      type: '',
+      widget: T9SignIn(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign Up',
+      is_theme: true,
+      type: '',
+      widget: T9SignUp(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Profile',
+      is_theme: true,
+      type: '',
+      widget: T9Profile(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dashboard',
+      is_theme: true,
+      type: '',
+      widget: T9Dashboard(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Description',
+      is_theme: true,
+      type: '',
+      widget: T9Description(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Bottom Navigation',
+      is_theme: true,
+      type: '',
+      widget: T9BottomNavigation(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Cards',
+      is_theme: true,
+      type: '',
+      widget: T9Cards(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Listing',
+      is_theme: true,
+      type: '',
+      widget: T9List(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Search',
+      is_theme: true,
+      type: '',
+      widget: T9Search(),
+      darkThemeSupported: true));
 
   return list;
 }
@@ -649,15 +1172,60 @@ List<ProTheme> getLearner() {
 List<ProTheme> getQuiz() {
   List<ProTheme> list = [];
 
-  list.add(ProTheme(name: 'Sign In', is_theme: true, type: '', widget: T8SignIn(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign Up', is_theme: true, type: '', widget: T8SignUp(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dashboard', is_theme: true, type: '', widget: T8Dashboard(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Bottom Navigation', is_theme: true, type: '', widget: T8BottomNavigation(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Cards', is_theme: true, type: '', widget: T8Cards(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Listing', is_theme: true, type: '', widget: T8Listing(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Result', is_theme: true, type: '', widget: T8Result(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Search', is_theme: true, type: '', widget: T8Search(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Setting', is_theme: true, type: '', widget: T8Setting(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign In',
+      is_theme: true,
+      type: '',
+      widget: T8SignIn(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign Up',
+      is_theme: true,
+      type: '',
+      widget: T8SignUp(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dashboard',
+      is_theme: true,
+      type: '',
+      widget: T8Dashboard(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Bottom Navigation',
+      is_theme: true,
+      type: '',
+      widget: T8BottomNavigation(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Cards',
+      is_theme: true,
+      type: '',
+      widget: T8Cards(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Listing',
+      is_theme: true,
+      type: '',
+      widget: T8Listing(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Result',
+      is_theme: true,
+      type: '',
+      widget: T8Result(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Search',
+      is_theme: true,
+      type: '',
+      widget: T8Search(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Setting',
+      is_theme: true,
+      type: '',
+      widget: T8Setting(),
+      darkThemeSupported: true));
 
   return list;
 }
@@ -665,16 +1233,66 @@ List<ProTheme> getQuiz() {
 List<ProTheme> getHotelBooking() {
   List<ProTheme> list = [];
 
-  list.add(ProTheme(name: 'WalkThrough', is_theme: true, type: '', widget: T7WalkThrough(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Social Login', is_theme: true, type: '', widget: T7SocialLogin(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign In', is_theme: true, type: '', widget: T7SignIn(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dashboard', is_theme: true, type: '', widget: T7Dashboard(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Hotel Booking Home', is_theme: true, type: '', widget: T7HotelBooking(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Hotel Detail', is_theme: true, type: '', widget: T7HotelDetail(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Hotel List', is_theme: true, type: '', widget: T7HotelList(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Place Detail', is_theme: true, type: '', widget: T7PlaceDetail(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Search', is_theme: true, type: '', widget: T7Search(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Bottom Sheet', is_theme: true, type: '', widget: T7BottomSheet(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'WalkThrough',
+      is_theme: true,
+      type: '',
+      widget: T7WalkThrough(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Social Login',
+      is_theme: true,
+      type: '',
+      widget: T7SocialLogin(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign In',
+      is_theme: true,
+      type: '',
+      widget: T7SignIn(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dashboard',
+      is_theme: true,
+      type: '',
+      widget: T7Dashboard(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Hotel Booking Home',
+      is_theme: true,
+      type: '',
+      widget: T7HotelBooking(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Hotel Detail',
+      is_theme: true,
+      type: '',
+      widget: T7HotelDetail(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Hotel List',
+      is_theme: true,
+      type: '',
+      widget: T7HotelList(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Place Detail',
+      is_theme: true,
+      type: '',
+      widget: T7PlaceDetail(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Search',
+      is_theme: true,
+      type: '',
+      widget: T7Search(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Bottom Sheet',
+      is_theme: true,
+      type: '',
+      widget: T7BottomSheet(),
+      darkThemeSupported: true));
 
   return list;
 }
@@ -682,16 +1300,66 @@ List<ProTheme> getHotelBooking() {
 List<ProTheme> getGymApp() {
   List<ProTheme> list = [];
 
-  list.add(ProTheme(name: 'WalkThrough', is_theme: true, type: '', widget: T6WalkThrough(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign In', is_theme: true, type: '', widget: T6SignIn(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign Up', is_theme: true, type: '', widget: T6SignUp(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dashboard', is_theme: true, type: '', widget: T6Dashboard(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Bottom Navigation', is_theme: true, type: '', widget: T6BottomNavigation(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Setting', is_theme: true, type: '', widget: T6Setting(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Image Slider', is_theme: true, type: '', widget: T6ImageSlider(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Listing', is_theme: true, type: '', widget: T6List(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Cards', is_theme: true, type: '', widget: T6Cards(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dialog', is_theme: true, type: '', widget: T6Dialog(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'WalkThrough',
+      is_theme: true,
+      type: '',
+      widget: T6WalkThrough(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign In',
+      is_theme: true,
+      type: '',
+      widget: T6SignIn(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign Up',
+      is_theme: true,
+      type: '',
+      widget: T6SignUp(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dashboard',
+      is_theme: true,
+      type: '',
+      widget: T6Dashboard(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Bottom Navigation',
+      is_theme: true,
+      type: '',
+      widget: T6BottomNavigation(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Setting',
+      is_theme: true,
+      type: '',
+      widget: T6Setting(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Image Slider',
+      is_theme: true,
+      type: '',
+      widget: T6ImageSlider(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Listing',
+      is_theme: true,
+      type: '',
+      widget: T6List(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Cards',
+      is_theme: true,
+      type: '',
+      widget: T6Cards(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dialog',
+      is_theme: true,
+      type: '',
+      widget: T6Dialog(),
+      darkThemeSupported: true));
 
   return list;
 }
@@ -699,36 +1367,156 @@ List<ProTheme> getGymApp() {
 List<ProTheme> getEWallet() {
   List<ProTheme> list = [];
 
-  list.add(ProTheme(name: 'WalkThrough', is_theme: true, type: '', widget: T5WalkThrough(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign In', is_theme: true, type: '', widget: T5SignIn(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign Up', is_theme: true, type: '', widget: T5SignUp(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Profile', is_theme: true, type: '', widget: T5Profile(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dashboard', is_theme: true, type: '', widget: T5Dashboard(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Settings', is_theme: true, type: '', widget: T5Settings(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Bottom Navigation', is_theme: true, type: '', widget: T5BottomNavigation(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'BottomSheet', is_theme: true, type: '', widget: T5BottomSheet(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Image Slider', is_theme: true, type: '', widget: T5ImageSlider(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Search', is_theme: true, type: '', widget: T5Search(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Listing', is_theme: true, type: '', widget: T5Listing(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Cards', is_theme: true, type: '', widget: T5Cards(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dialog', is_theme: true, type: '', widget: T5Dialog(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'WalkThrough',
+      is_theme: true,
+      type: '',
+      widget: T5WalkThrough(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign In',
+      is_theme: true,
+      type: '',
+      widget: T5SignIn(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign Up',
+      is_theme: true,
+      type: '',
+      widget: T5SignUp(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Profile',
+      is_theme: true,
+      type: '',
+      widget: T5Profile(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dashboard',
+      is_theme: true,
+      type: '',
+      widget: T5Dashboard(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Settings',
+      is_theme: true,
+      type: '',
+      widget: T5Settings(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Bottom Navigation',
+      is_theme: true,
+      type: '',
+      widget: T5BottomNavigation(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'BottomSheet',
+      is_theme: true,
+      type: '',
+      widget: T5BottomSheet(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Image Slider',
+      is_theme: true,
+      type: '',
+      widget: T5ImageSlider(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Search',
+      is_theme: true,
+      type: '',
+      widget: T5Search(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Listing',
+      is_theme: true,
+      type: '',
+      widget: T5Listing(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Cards',
+      is_theme: true,
+      type: '',
+      widget: T5Cards(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dialog',
+      is_theme: true,
+      type: '',
+      widget: T5Dialog(),
+      darkThemeSupported: true));
   return list;
 }
 
 List<ProTheme> getFeedApp() {
   List<ProTheme> list = [];
 
-  list.add(ProTheme(name: 'WalkThrough', is_theme: true, type: '', widget: T4WalkThrough(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign In', is_theme: true, type: '', widget: T4SignIn(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign Up', is_theme: true, type: '', widget: T4SignUp(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Profile', is_theme: true, type: '', widget: T4Profile(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dashboard', is_theme: true, type: '', widget: T4Dashboard(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Detail', is_theme: true, type: '', widget: T4Detail(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Bottom Navigation', is_theme: true, type: '', widget: T4BottomNavigation(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Image Slider', is_theme: true, type: '', widget: T4ImageSlider(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Listing', is_theme: true, type: '', widget: T4Listing(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Cards', is_theme: true, type: '', widget: T4Cards(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dialog', is_theme: true, type: '', widget: T4Dialog(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'WalkThrough',
+      is_theme: true,
+      type: '',
+      widget: T4WalkThrough(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign In',
+      is_theme: true,
+      type: '',
+      widget: T4SignIn(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign Up',
+      is_theme: true,
+      type: '',
+      widget: T4SignUp(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Profile',
+      is_theme: true,
+      type: '',
+      widget: T4Profile(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dashboard',
+      is_theme: true,
+      type: '',
+      widget: T4Dashboard(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Detail',
+      is_theme: true,
+      type: '',
+      widget: T4Detail(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Bottom Navigation',
+      is_theme: true,
+      type: '',
+      widget: T4BottomNavigation(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Image Slider',
+      is_theme: true,
+      type: '',
+      widget: T4ImageSlider(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Listing',
+      is_theme: true,
+      type: '',
+      widget: T4Listing(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Cards',
+      is_theme: true,
+      type: '',
+      widget: T4Cards(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dialog',
+      is_theme: true,
+      type: '',
+      widget: T4Dialog(),
+      darkThemeSupported: true));
 
   return list;
 }
@@ -736,22 +1524,102 @@ List<ProTheme> getFeedApp() {
 List<ProTheme> getFoodRecipe() {
   List<ProTheme> list = [];
 
-  list.add(ProTheme(name: 'WalkThrough', is_theme: true, type: '', widget: T3WalkThrough(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign In', is_theme: true, type: '', widget: T3SignIn(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign Up', is_theme: true, type: '', widget: T3SignUp(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Profile', is_theme: true, type: '', widget: T3Profile(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dashboard', is_theme: true, type: '', widget: T3Dashboard(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Description', is_theme: true, type: '', widget: T3Description(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Side Menu', is_theme: true, type: '', widget: T3SideMenu(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Bottom Navigation', is_theme: true, type: '', widget: T3BottomNavigation(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'BottomSheet', is_theme: true, type: '', widget: T3BottomSheet(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Image Slider', is_theme: true, type: '', widget: T3ImageSlider(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Search', is_theme: true, type: '', widget: T3Search(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Tabs', is_theme: true, type: '', widget: T3Tab(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Listing', is_theme: true, type: '', widget: T3Listing(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Cards', is_theme: true, type: '', widget: T3Cards(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Settings', is_theme: true, type: '', widget: T3Setting(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dialog', is_theme: true, type: '', widget: T3Dialog(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'WalkThrough',
+      is_theme: true,
+      type: '',
+      widget: T3WalkThrough(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign In',
+      is_theme: true,
+      type: '',
+      widget: T3SignIn(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign Up',
+      is_theme: true,
+      type: '',
+      widget: T3SignUp(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Profile',
+      is_theme: true,
+      type: '',
+      widget: T3Profile(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dashboard',
+      is_theme: true,
+      type: '',
+      widget: T3Dashboard(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Description',
+      is_theme: true,
+      type: '',
+      widget: T3Description(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Side Menu',
+      is_theme: true,
+      type: '',
+      widget: T3SideMenu(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Bottom Navigation',
+      is_theme: true,
+      type: '',
+      widget: T3BottomNavigation(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'BottomSheet',
+      is_theme: true,
+      type: '',
+      widget: T3BottomSheet(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Image Slider',
+      is_theme: true,
+      type: '',
+      widget: T3ImageSlider(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Search',
+      is_theme: true,
+      type: '',
+      widget: T3Search(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Tabs',
+      is_theme: true,
+      type: '',
+      widget: T3Tab(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Listing',
+      is_theme: true,
+      type: '',
+      widget: T3Listing(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Cards',
+      is_theme: true,
+      type: '',
+      widget: T3Cards(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Settings',
+      is_theme: true,
+      type: '',
+      widget: T3Setting(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dialog',
+      is_theme: true,
+      type: '',
+      widget: T3Dialog(),
+      darkThemeSupported: true));
 
   return list;
 }
@@ -759,19 +1627,84 @@ List<ProTheme> getFoodRecipe() {
 List<ProTheme> getExerciseTips() {
   List<ProTheme> list = [];
 
-  list.add(ProTheme(name: 'WalkThrough', is_theme: true, type: '', widget: T2WalkThrough(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign In', is_theme: true, type: '', widget: T2SignIn(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign Up', is_theme: true, type: '', widget: T2SignUp(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Profile', is_theme: true, type: '', widget: T2Profile(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dashboard', is_theme: true, type: '', widget: T2Dashboard(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Side Menu', is_theme: true, type: '', widget: T2SideMenu(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Bottom Navigation', is_theme: true, type: '', widget: T2BottomNavigation(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'BottomSheet', is_theme: true, type: '', widget: T2BottomSheet(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Image Slider', is_theme: true, type: '', widget: T2ImageSlider(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Search', is_theme: true, type: '', widget: T2Search(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Listing', is_theme: true, type: '', widget: T2Listing(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Cards', is_theme: true, type: '', widget: T2Cards(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dialog', is_theme: true, type: '', widget: T2Dialog(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'WalkThrough',
+      is_theme: true,
+      type: '',
+      widget: T2WalkThrough(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign In',
+      is_theme: true,
+      type: '',
+      widget: T2SignIn(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign Up',
+      is_theme: true,
+      type: '',
+      widget: T2SignUp(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Profile',
+      is_theme: true,
+      type: '',
+      widget: T2Profile(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dashboard',
+      is_theme: true,
+      type: '',
+      widget: T2Dashboard(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Side Menu',
+      is_theme: true,
+      type: '',
+      widget: T2SideMenu(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Bottom Navigation',
+      is_theme: true,
+      type: '',
+      widget: T2BottomNavigation(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'BottomSheet',
+      is_theme: true,
+      type: '',
+      widget: T2BottomSheet(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Image Slider',
+      is_theme: true,
+      type: '',
+      widget: T2ImageSlider(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Search',
+      is_theme: true,
+      type: '',
+      widget: T2Search(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Listing',
+      is_theme: true,
+      type: '',
+      widget: T2Listing(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Cards',
+      is_theme: true,
+      type: '',
+      widget: T2Cards(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dialog',
+      is_theme: true,
+      type: '',
+      widget: T2Dialog(),
+      darkThemeSupported: true));
 
   return list;
 }
@@ -779,19 +1712,84 @@ List<ProTheme> getExerciseTips() {
 List<ProTheme> getFileManageScreens() {
   List<ProTheme> list = [];
 
-  list.add(ProTheme(name: 'WalkThrough', is_theme: true, type: '', widget: T1WalkThrough(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign In', is_theme: true, type: '', widget: T1Login(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign Up', is_theme: true, type: '', widget: T1Signup(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Profile', is_theme: true, type: '', widget: T1Profile(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dashboard', is_theme: true, type: '', widget: T1Dashboard(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Side Menu', is_theme: true, type: '', widget: T1SideMenu(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Bottom Navigation', is_theme: true, type: '', widget: T1BottomNavigation(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'BottomSheet', is_theme: true, type: '', widget: T1BottomSheet(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Image Slider', is_theme: true, type: '', widget: T1ImageSlider(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Search', is_theme: true, type: '', widget: T1Search(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Listing', is_theme: true, type: '', widget: T1Listing(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Cards', is_theme: true, type: '', widget: T1Card(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dialog', is_theme: true, type: '', widget: T1Dialog(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'WalkThrough',
+      is_theme: true,
+      type: '',
+      widget: T1WalkThrough(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign In',
+      is_theme: true,
+      type: '',
+      widget: T1Login(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign Up',
+      is_theme: true,
+      type: '',
+      widget: T1Signup(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Profile',
+      is_theme: true,
+      type: '',
+      widget: T1Profile(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dashboard',
+      is_theme: true,
+      type: '',
+      widget: T1Dashboard(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Side Menu',
+      is_theme: true,
+      type: '',
+      widget: T1SideMenu(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Bottom Navigation',
+      is_theme: true,
+      type: '',
+      widget: T1BottomNavigation(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'BottomSheet',
+      is_theme: true,
+      type: '',
+      widget: T1BottomSheet(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Image Slider',
+      is_theme: true,
+      type: '',
+      widget: T1ImageSlider(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Search',
+      is_theme: true,
+      type: '',
+      widget: T1Search(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Listing',
+      is_theme: true,
+      type: '',
+      widget: T1Listing(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Cards',
+      is_theme: true,
+      type: '',
+      widget: T1Card(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dialog',
+      is_theme: true,
+      type: '',
+      widget: T1Dialog(),
+      darkThemeSupported: true));
 
   return list;
 }
@@ -800,111 +1798,558 @@ List<ProTheme> getFileManageScreens() {
 //region ScreenList
 List<ProTheme> getScreenList() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Empty Screens', title_name: 'Empty screens', tag: 'New', show_cover: true, sub_kits: getEmptyScreens(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Error Screens', title_name: 'Error Screens', tag: 'New', show_cover: true, sub_kits: getErrorScreens(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Custom Paint', title_name: 'Custom Paint Screens', tag: 'New', show_cover: true, sub_kits: getCustomPaints(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Pricing Plans', title_name: 'Pricing Plan Screens', tag: '', show_cover: true, sub_kits: getPricingPlans(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'WalkThrough', title_name: 'WalkThrough Screens', type: '', show_cover: true, sub_kits: getWalkThrough(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign In', title_name: 'Sign In Screens', type: '', show_cover: true, sub_kits: getSignIn(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign Up', title_name: 'Sign Up Screens', type: '', show_cover: true, sub_kits: getSignUp(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Profile', title_name: 'Profile Screens', type: '', show_cover: true, sub_kits: getProfile(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dashboard', title_name: 'Dashboard Screens', type: '', show_cover: true, sub_kits: getDashboard(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Side Menu', title_name: 'Side Menu Screens', type: '', show_cover: true, sub_kits: getSideMenu(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Bottom Navigation', title_name: 'Bottom Navigation Screens', type: '', show_cover: true, sub_kits: getBottomNavigation(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Detail Screen', title_name: 'Detail Screen Screens', type: '', show_cover: true, sub_kits: getDetailScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Image Slider', title_name: 'Image Slider Screens', type: '', show_cover: true, sub_kits: getImageSlider(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Bottom Sheet', title_name: 'Bottom Sheet Screens', type: '', show_cover: true, sub_kits: getBottomSheet(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Search', title_name: 'Search Screens', type: '', show_cover: true, sub_kits: getSearch(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Listing', title_name: 'Listing Screens', type: '', show_cover: true, sub_kits: getListing(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Cards', title_name: 'card Screens', type: '', show_cover: true, sub_kits: getCards(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dialog', title_name: 'Dialog Screens', type: '', show_cover: true, sub_kits: getDialog(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Settings', title_name: 'Setting Screens', type: '', show_cover: true, sub_kits: getSettings(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Empty Screens',
+      title_name: 'Empty screens',
+      tag: 'New',
+      show_cover: true,
+      sub_kits: getEmptyScreens(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Error Screens',
+      title_name: 'Error Screens',
+      tag: 'New',
+      show_cover: true,
+      sub_kits: getErrorScreens(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Custom Paint',
+      title_name: 'Custom Paint Screens',
+      tag: 'New',
+      show_cover: true,
+      sub_kits: getCustomPaints(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Pricing Plans',
+      title_name: 'Pricing Plan Screens',
+      tag: '',
+      show_cover: true,
+      sub_kits: getPricingPlans(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'WalkThrough',
+      title_name: 'WalkThrough Screens',
+      type: '',
+      show_cover: true,
+      sub_kits: getWalkThrough(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign In',
+      title_name: 'Sign In Screens',
+      type: '',
+      show_cover: true,
+      sub_kits: getSignIn(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign Up',
+      title_name: 'Sign Up Screens',
+      type: '',
+      show_cover: true,
+      sub_kits: getSignUp(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Profile',
+      title_name: 'Profile Screens',
+      type: '',
+      show_cover: true,
+      sub_kits: getProfile(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dashboard',
+      title_name: 'Dashboard Screens',
+      type: '',
+      show_cover: true,
+      sub_kits: getDashboard(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Side Menu',
+      title_name: 'Side Menu Screens',
+      type: '',
+      show_cover: true,
+      sub_kits: getSideMenu(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Bottom Navigation',
+      title_name: 'Bottom Navigation Screens',
+      type: '',
+      show_cover: true,
+      sub_kits: getBottomNavigation(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Detail Screen',
+      title_name: 'Detail Screen Screens',
+      type: '',
+      show_cover: true,
+      sub_kits: getDetailScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Image Slider',
+      title_name: 'Image Slider Screens',
+      type: '',
+      show_cover: true,
+      sub_kits: getImageSlider(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Bottom Sheet',
+      title_name: 'Bottom Sheet Screens',
+      type: '',
+      show_cover: true,
+      sub_kits: getBottomSheet(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Search',
+      title_name: 'Search Screens',
+      type: '',
+      show_cover: true,
+      sub_kits: getSearch(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Listing',
+      title_name: 'Listing Screens',
+      type: '',
+      show_cover: true,
+      sub_kits: getListing(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Cards',
+      title_name: 'card Screens',
+      type: '',
+      show_cover: true,
+      sub_kits: getCards(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dialog',
+      title_name: 'Dialog Screens',
+      type: '',
+      show_cover: true,
+      sub_kits: getDialog(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Settings',
+      title_name: 'Setting Screens',
+      type: '',
+      show_cover: true,
+      sub_kits: getSettings(),
+      darkThemeSupported: true));
 
   return list;
 }
 
 List<ProTheme> getWalkThrough() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'WalkThrough 1', is_theme: true, type: '', widget: T1WalkThrough(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'WalkThrough 2', is_theme: true, type: '', widget: T2WalkThrough(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'WalkThrough 3', is_theme: true, type: '', widget: T3WalkThrough(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'WalkThrough 4', is_theme: true, type: '', widget: T4WalkThrough(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'WalkThrough 5', is_theme: true, type: '', widget: T5WalkThrough(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'WalkThrough 6', is_theme: true, type: '', widget: T6WalkThrough(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'WalkThrough 7', is_theme: true, type: '', widget: T7WalkThrough(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'WalkThrough 1',
+      is_theme: true,
+      type: '',
+      widget: T1WalkThrough(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'WalkThrough 2',
+      is_theme: true,
+      type: '',
+      widget: T2WalkThrough(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'WalkThrough 3',
+      is_theme: true,
+      type: '',
+      widget: T3WalkThrough(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'WalkThrough 4',
+      is_theme: true,
+      type: '',
+      widget: T4WalkThrough(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'WalkThrough 5',
+      is_theme: true,
+      type: '',
+      widget: T5WalkThrough(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'WalkThrough 6',
+      is_theme: true,
+      type: '',
+      widget: T6WalkThrough(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'WalkThrough 7',
+      is_theme: true,
+      type: '',
+      widget: T7WalkThrough(),
+      darkThemeSupported: true));
   return list;
 }
 
 List<ProTheme> getPricingPlans() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Pricing Plan 1', is_theme: true, tag: 'New', widget: ChoosePlanScreen1(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Pricing Plan 2', is_theme: true, tag: 'New', widget: ChoosePlanScreen2(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Pricing Plan 3', is_theme: true, tag: 'New', widget: ChoosePlanScreen3(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Pricing Plan 4', is_theme: true, tag: 'New', widget: ChoosePlanScreen4(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Pricing Plan 5', is_theme: true, tag: 'New', widget: ChoosePlanScreen5(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Pricing Plan 6', is_theme: true, tag: 'New', widget: ChoosePlanScreen6(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Pricing Plan 7', is_theme: true, tag: 'New', widget: ChoosePlanScreen7(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Pricing Plan 1',
+      is_theme: true,
+      tag: 'New',
+      widget: ChoosePlanScreen1(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Pricing Plan 2',
+      is_theme: true,
+      tag: 'New',
+      widget: ChoosePlanScreen2(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Pricing Plan 3',
+      is_theme: true,
+      tag: 'New',
+      widget: ChoosePlanScreen3(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Pricing Plan 4',
+      is_theme: true,
+      tag: 'New',
+      widget: ChoosePlanScreen4(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Pricing Plan 5',
+      is_theme: true,
+      tag: 'New',
+      widget: ChoosePlanScreen5(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Pricing Plan 6',
+      is_theme: true,
+      tag: 'New',
+      widget: ChoosePlanScreen6(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Pricing Plan 7',
+      is_theme: true,
+      tag: 'New',
+      widget: ChoosePlanScreen7(),
+      darkThemeSupported: true));
   return list;
 }
 
 List<ProTheme> getCustomPaints() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Clock', is_theme: true, tag: 'New', widget: ClockCustomPaintScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Shape', is_theme: true, tag: 'New', widget: ShapeScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Chat Bubble', is_theme: true, tag: 'New', widget: ChatBubbleScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Custom card', is_theme: true, tag: 'New', widget: CustomCardScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Custom Loader', is_theme: true, tag: 'New', widget: CustomLoaderScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Card Paint', is_theme: true, tag: 'New', widget: CardScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Custom Temperature', is_theme: true, tag: 'New', widget: TemperatureWidgetScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Custom Round Bubble', is_theme: true, tag: 'New', widget: CustomRoundBubbleAnimationScreen(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Clock',
+      is_theme: true,
+      tag: 'New',
+      widget: ClockCustomPaintScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Shape',
+      is_theme: true,
+      tag: 'New',
+      widget: ShapeScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Chat Bubble',
+      is_theme: true,
+      tag: 'New',
+      widget: ChatBubbleScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Custom card',
+      is_theme: true,
+      tag: 'New',
+      widget: CustomCardScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Custom Loader',
+      is_theme: true,
+      tag: 'New',
+      widget: CustomLoaderScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Card Paint',
+      is_theme: true,
+      tag: 'New',
+      widget: CardScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Custom Temperature',
+      is_theme: true,
+      tag: 'New',
+      widget: TemperatureWidgetScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Custom Round Bubble',
+      is_theme: true,
+      tag: 'New',
+      widget: CustomRoundBubbleAnimationScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
   return list;
 }
 
 List<ProTheme> getEmptyScreens() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'All Task 1 ', is_theme: true, tag: 'New', widget: AllTaskDoneScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'All Task 2', is_theme: true, tag: 'New', widget: AllTaskDoneScreen2(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Empty Cart 1', is_theme: true, tag: 'New', widget: EmptyCartScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Empty Cart 2', is_theme: true, tag: 'New', widget: EmptyCartScreen2(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Empty Cart 3', is_theme: true, tag: 'New', widget: EmptyCartScreen3(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Empty Cart 4', is_theme: true, tag: 'New', widget: EmptyCartScreen4(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Empty Cart 5', is_theme: true, tag: 'New', widget: EmptyCartScreen5(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Inbox 1', is_theme: true, tag: 'New', widget: InboxScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Inbox 2', is_theme: true, tag: 'New', widget: InboxScreen2(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Balance 1', is_theme: true, tag: 'New', widget: NoBalanceScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Balance 2', is_theme: true, tag: 'New', widget: NoBalanceScreen2(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Balance 3', is_theme: true, tag: 'New', widget: NoBalanceScreen3(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Balance 4', is_theme: true, tag: 'New', widget: NoBalanceScreen4(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Balance 5', is_theme: true, tag: 'New', widget: NoBalanceScreen5(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Chat 1', is_theme: true, tag: 'New', widget: NoChatsScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Chat 2', is_theme: true, tag: 'New', widget: NoChatsScreen2(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Chat 3', is_theme: true, tag: 'New', widget: NoChatsScreen3(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Chat 4', is_theme: true, tag: 'New', widget: NoChatsScreen4(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Chat 5', is_theme: true, tag: 'New', widget: NoChatsScreen5(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Event 1', is_theme: true, tag: 'New', widget: NoEventScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Event 2', is_theme: true, tag: 'New', widget: NoEventScreen2(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Event 3', is_theme: true, tag: 'New', widget: NoEventScreen3(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Event 4', is_theme: true, tag: 'New', widget: NoEventScreen4(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Sent Mail 1', is_theme: true, tag: 'New', widget: NoMailScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Sent Mail 2', is_theme: true, tag: 'New', widget: NoSentMailScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Notification 1', is_theme: true, tag: 'New', widget: NoNotificationScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Notification 2', is_theme: true, tag: 'New', widget: NoNotificationScreen2(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Notification 3', is_theme: true, tag: 'New', widget: NoNotificationScreen3(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Notification 4', is_theme: true, tag: 'New', widget: NoNotificationScreen4(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Notification 5', is_theme: true, tag: 'New', widget: NoNotificationScreen5(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Photos 1', is_theme: true, tag: 'New', widget: NoPhotosScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Photos 2', is_theme: true, tag: 'New', widget: NoPhotosScreen2(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Photos 3', is_theme: true, tag: 'New', widget: NoPhotosScreen3(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Photos 4', is_theme: true, tag: 'New', widget: NoPhotosScreen4(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Photos 5', is_theme: true, tag: 'New', widget: NoPhotosScreen5(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Videos 1', is_theme: true, tag: 'New', widget: NoVideosScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Videos 2', is_theme: true, tag: 'New', widget: NoVideosScreen2(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Videos 3', is_theme: true, tag: 'New', widget: NoVideosScreen3(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Videos 4', is_theme: true, tag: 'New', widget: NoVideosScreen4(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'No Videos 5', is_theme: true, tag: 'New', widget: NoVideosScreen5(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Task Done 1', is_theme: true, tag: 'New', widget: TaskDoneScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Task Done 2', is_theme: true, tag: 'New', widget: TaskDoneScreen2(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Task Done 3', is_theme: true, tag: 'New', widget: TaskDoneScreen3(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'All Task 1 ',
+      is_theme: true,
+      tag: 'New',
+      widget: AllTaskDoneScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'All Task 2',
+      is_theme: true,
+      tag: 'New',
+      widget: AllTaskDoneScreen2(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Empty Cart 1',
+      is_theme: true,
+      tag: 'New',
+      widget: EmptyCartScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Empty Cart 2',
+      is_theme: true,
+      tag: 'New',
+      widget: EmptyCartScreen2(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Empty Cart 3',
+      is_theme: true,
+      tag: 'New',
+      widget: EmptyCartScreen3(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Empty Cart 4',
+      is_theme: true,
+      tag: 'New',
+      widget: EmptyCartScreen4(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Empty Cart 5',
+      is_theme: true,
+      tag: 'New',
+      widget: EmptyCartScreen5(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Inbox 1',
+      is_theme: true,
+      tag: 'New',
+      widget: InboxScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Inbox 2',
+      is_theme: true,
+      tag: 'New',
+      widget: InboxScreen2(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Balance 1',
+      is_theme: true,
+      tag: 'New',
+      widget: NoBalanceScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Balance 2',
+      is_theme: true,
+      tag: 'New',
+      widget: NoBalanceScreen2(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Balance 3',
+      is_theme: true,
+      tag: 'New',
+      widget: NoBalanceScreen3(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Balance 4',
+      is_theme: true,
+      tag: 'New',
+      widget: NoBalanceScreen4(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Balance 5',
+      is_theme: true,
+      tag: 'New',
+      widget: NoBalanceScreen5(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Chat 1',
+      is_theme: true,
+      tag: 'New',
+      widget: NoChatsScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Chat 2',
+      is_theme: true,
+      tag: 'New',
+      widget: NoChatsScreen2(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Chat 3',
+      is_theme: true,
+      tag: 'New',
+      widget: NoChatsScreen3(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Chat 4',
+      is_theme: true,
+      tag: 'New',
+      widget: NoChatsScreen4(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Chat 5',
+      is_theme: true,
+      tag: 'New',
+      widget: NoChatsScreen5(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Event 1',
+      is_theme: true,
+      tag: 'New',
+      widget: NoEventScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Event 2',
+      is_theme: true,
+      tag: 'New',
+      widget: NoEventScreen2(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Event 3',
+      is_theme: true,
+      tag: 'New',
+      widget: NoEventScreen3(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Event 4',
+      is_theme: true,
+      tag: 'New',
+      widget: NoEventScreen4(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Sent Mail 1',
+      is_theme: true,
+      tag: 'New',
+      widget: NoMailScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Sent Mail 2',
+      is_theme: true,
+      tag: 'New',
+      widget: NoSentMailScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Notification 1',
+      is_theme: true,
+      tag: 'New',
+      widget: NoNotificationScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Notification 2',
+      is_theme: true,
+      tag: 'New',
+      widget: NoNotificationScreen2(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Notification 3',
+      is_theme: true,
+      tag: 'New',
+      widget: NoNotificationScreen3(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Notification 4',
+      is_theme: true,
+      tag: 'New',
+      widget: NoNotificationScreen4(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Notification 5',
+      is_theme: true,
+      tag: 'New',
+      widget: NoNotificationScreen5(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Photos 1',
+      is_theme: true,
+      tag: 'New',
+      widget: NoPhotosScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Photos 2',
+      is_theme: true,
+      tag: 'New',
+      widget: NoPhotosScreen2(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Photos 3',
+      is_theme: true,
+      tag: 'New',
+      widget: NoPhotosScreen3(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Photos 4',
+      is_theme: true,
+      tag: 'New',
+      widget: NoPhotosScreen4(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Photos 5',
+      is_theme: true,
+      tag: 'New',
+      widget: NoPhotosScreen5(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Videos 1',
+      is_theme: true,
+      tag: 'New',
+      widget: NoVideosScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Videos 2',
+      is_theme: true,
+      tag: 'New',
+      widget: NoVideosScreen2(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Videos 3',
+      is_theme: true,
+      tag: 'New',
+      widget: NoVideosScreen3(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Videos 4',
+      is_theme: true,
+      tag: 'New',
+      widget: NoVideosScreen4(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'No Videos 5',
+      is_theme: true,
+      tag: 'New',
+      widget: NoVideosScreen5(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Task Done 1',
+      is_theme: true,
+      tag: 'New',
+      widget: TaskDoneScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Task Done 2',
+      is_theme: true,
+      tag: 'New',
+      widget: TaskDoneScreen2(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Task Done 3',
+      is_theme: true,
+      tag: 'New',
+      widget: TaskDoneScreen3(),
+      darkThemeSupported: true));
 
   return list;
 }
@@ -925,7 +2370,12 @@ List<ProTheme> getErrorScreens() {
     widget: DeadEndScreen(),
     darkThemeSupported: true,
   ));
-  list.add(ProTheme(name: 'Error Screen', is_theme: true, tag: 'New', widget: ErrorScreen(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Error Screen',
+      is_theme: true,
+      tag: 'New',
+      widget: ErrorScreen(),
+      darkThemeSupported: true));
   list.add(ProTheme(
     name: 'Hang On Screen',
     is_theme: true,
@@ -989,7 +2439,12 @@ List<ProTheme> getErrorScreens() {
     widget: OhNoScreen(),
     darkThemeSupported: true,
   ));
-  list.add(ProTheme(name: ' Opps Home Screen ', is_theme: true, tag: 'New', widget: OppsHomeScreen(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: ' Opps Home Screen ',
+      is_theme: true,
+      tag: 'New',
+      widget: OppsHomeScreen(),
+      darkThemeSupported: true));
   list.add(ProTheme(
     name: 'Opps Screen',
     is_theme: true,
@@ -1031,186 +2486,726 @@ List<ProTheme> getErrorScreens() {
 
 List<ProTheme> getSignIn() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Sign In 1', is_theme: true, type: '', widget: T1Login(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign In 2', is_theme: true, type: '', widget: T2SignIn(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign In 3', is_theme: true, type: '', widget: T3SignIn(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign In 4', is_theme: true, type: '', widget: T4SignIn(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign In 5', is_theme: true, type: '', widget: T5SignIn(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign In 6', is_theme: true, type: '', widget: T6SignIn(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign In 7', is_theme: true, type: '', widget: T7SignIn(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign In 8', is_theme: true, type: '', widget: T8SignIn(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign In 9', is_theme: true, type: '', widget: T9SignIn(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign In 10', is_theme: true, type: '', widget: T11SignInScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign In 11', is_theme: true, type: '', widget: T10SignIn(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign In 1',
+      is_theme: true,
+      type: '',
+      widget: T1Login(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign In 2',
+      is_theme: true,
+      type: '',
+      widget: T2SignIn(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign In 3',
+      is_theme: true,
+      type: '',
+      widget: T3SignIn(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign In 4',
+      is_theme: true,
+      type: '',
+      widget: T4SignIn(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign In 5',
+      is_theme: true,
+      type: '',
+      widget: T5SignIn(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign In 6',
+      is_theme: true,
+      type: '',
+      widget: T6SignIn(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign In 7',
+      is_theme: true,
+      type: '',
+      widget: T7SignIn(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign In 8',
+      is_theme: true,
+      type: '',
+      widget: T8SignIn(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign In 9',
+      is_theme: true,
+      type: '',
+      widget: T9SignIn(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign In 10',
+      is_theme: true,
+      type: '',
+      widget: T11SignInScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign In 11',
+      is_theme: true,
+      type: '',
+      widget: T10SignIn(),
+      darkThemeSupported: true));
   return list;
 }
 
 List<ProTheme> getSignUp() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Sign Up 1', is_theme: true, type: '', widget: T1Signup(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign Up 2', is_theme: true, type: '', widget: T2SignUp(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign Up 3', is_theme: true, type: '', widget: T3SignUp(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign Up 4', is_theme: true, type: '', widget: T4SignUp(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign Up 5', is_theme: true, type: '', widget: T5SignUp(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign Up 6', is_theme: true, type: '', widget: T6SignUp(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign Up 7', is_theme: true, type: '', widget: T8SignUp(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign Up 8', is_theme: true, type: '', widget: T9SignUp(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign Up 9', is_theme: true, type: '', widget: T11SignUpScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Sign Up 10', is_theme: true, type: '', widget: T10SignUp(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign Up 1',
+      is_theme: true,
+      type: '',
+      widget: T1Signup(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign Up 2',
+      is_theme: true,
+      type: '',
+      widget: T2SignUp(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign Up 3',
+      is_theme: true,
+      type: '',
+      widget: T3SignUp(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign Up 4',
+      is_theme: true,
+      type: '',
+      widget: T4SignUp(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign Up 5',
+      is_theme: true,
+      type: '',
+      widget: T5SignUp(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign Up 6',
+      is_theme: true,
+      type: '',
+      widget: T6SignUp(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign Up 7',
+      is_theme: true,
+      type: '',
+      widget: T8SignUp(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign Up 8',
+      is_theme: true,
+      type: '',
+      widget: T9SignUp(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign Up 9',
+      is_theme: true,
+      type: '',
+      widget: T11SignUpScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Sign Up 10',
+      is_theme: true,
+      type: '',
+      widget: T10SignUp(),
+      darkThemeSupported: true));
   return list;
 }
 
 List<ProTheme> getProfile() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Profile 1', is_theme: true, type: '', widget: T1Profile(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Profile 2', is_theme: true, type: '', widget: T2Profile(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Profile 3', is_theme: true, type: '', widget: T3Profile(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Profile 4', is_theme: true, type: '', widget: T4Profile(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Profile 5', is_theme: true, type: '', widget: T5Profile(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Profile 6', is_theme: true, type: '', widget: T9Profile(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Profile 7', is_theme: true, type: '', widget: T10Profile(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Profile 1',
+      is_theme: true,
+      type: '',
+      widget: T1Profile(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Profile 2',
+      is_theme: true,
+      type: '',
+      widget: T2Profile(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Profile 3',
+      is_theme: true,
+      type: '',
+      widget: T3Profile(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Profile 4',
+      is_theme: true,
+      type: '',
+      widget: T4Profile(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Profile 5',
+      is_theme: true,
+      type: '',
+      widget: T5Profile(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Profile 6',
+      is_theme: true,
+      type: '',
+      widget: T9Profile(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Profile 7',
+      is_theme: true,
+      type: '',
+      widget: T10Profile(),
+      darkThemeSupported: true));
   return list;
 }
 
 List<ProTheme> getDashboard() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Dashboard 1', is_theme: true, type: '', widget: T1Dashboard(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dashboard 2', is_theme: true, type: '', widget: T2Dashboard(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dashboard 3', is_theme: true, type: '', widget: T3Dashboard(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dashboard 4', is_theme: true, type: '', widget: T4Dashboard(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dashboard 5', is_theme: true, type: '', widget: T5Dashboard(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dashboard 6', is_theme: true, type: '', widget: T6Dashboard(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dashboard 7', is_theme: true, type: '', widget: T7Dashboard(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dashboard 8', is_theme: true, type: '', widget: T8Dashboard(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dashboard 9', is_theme: true, type: '', widget: T9Dashboard(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dashboard 10', is_theme: true, type: '', widget: T11DashboardScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dashboard 11', is_theme: true, type: '', widget: T10Dashboard(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dashboard 1',
+      is_theme: true,
+      type: '',
+      widget: T1Dashboard(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dashboard 2',
+      is_theme: true,
+      type: '',
+      widget: T2Dashboard(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dashboard 3',
+      is_theme: true,
+      type: '',
+      widget: T3Dashboard(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dashboard 4',
+      is_theme: true,
+      type: '',
+      widget: T4Dashboard(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dashboard 5',
+      is_theme: true,
+      type: '',
+      widget: T5Dashboard(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dashboard 6',
+      is_theme: true,
+      type: '',
+      widget: T6Dashboard(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dashboard 7',
+      is_theme: true,
+      type: '',
+      widget: T7Dashboard(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dashboard 8',
+      is_theme: true,
+      type: '',
+      widget: T8Dashboard(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dashboard 9',
+      is_theme: true,
+      type: '',
+      widget: T9Dashboard(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dashboard 10',
+      is_theme: true,
+      type: '',
+      widget: T11DashboardScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dashboard 11',
+      is_theme: true,
+      type: '',
+      widget: T10Dashboard(),
+      darkThemeSupported: true));
   return list;
 }
 
 List<ProTheme> getSideMenu() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Side Menu 1', is_theme: true, type: '', widget: T1SideMenu(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Side Menu 2', is_theme: true, type: '', widget: T2SideMenu(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Side Menu 3', is_theme: true, type: '', widget: T3SideMenu(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Side Menu 4', is_theme: true, type: '', widget: T10SideMenu(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Side Menu 1',
+      is_theme: true,
+      type: '',
+      widget: T1SideMenu(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Side Menu 2',
+      is_theme: true,
+      type: '',
+      widget: T2SideMenu(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Side Menu 3',
+      is_theme: true,
+      type: '',
+      widget: T3SideMenu(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Side Menu 4',
+      is_theme: true,
+      type: '',
+      widget: T10SideMenu(),
+      darkThemeSupported: true));
   return list;
 }
 
 List<ProTheme> getBottomNavigation() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Bottom Navigation 1', is_theme: true, type: '', widget: T1BottomNavigation(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Bottom Navigation 2', is_theme: true, type: '', widget: T2BottomNavigation(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Bottom Navigation 3', is_theme: true, type: '', widget: T3BottomNavigation(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Bottom Navigation 4', is_theme: true, type: '', widget: T4BottomNavigation(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Bottom Navigation 5', is_theme: true, type: '', widget: T5BottomNavigation(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Bottom Navigation 6', is_theme: true, type: '', widget: T6BottomNavigation(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Bottom Navigation 7', is_theme: true, type: '', widget: T8BottomNavigation(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Bottom Navigation 8', is_theme: true, type: '', widget: T9BottomNavigation(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Bottom Navigation 1',
+      is_theme: true,
+      type: '',
+      widget: T1BottomNavigation(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Bottom Navigation 2',
+      is_theme: true,
+      type: '',
+      widget: T2BottomNavigation(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Bottom Navigation 3',
+      is_theme: true,
+      type: '',
+      widget: T3BottomNavigation(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Bottom Navigation 4',
+      is_theme: true,
+      type: '',
+      widget: T4BottomNavigation(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Bottom Navigation 5',
+      is_theme: true,
+      type: '',
+      widget: T5BottomNavigation(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Bottom Navigation 6',
+      is_theme: true,
+      type: '',
+      widget: T6BottomNavigation(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Bottom Navigation 7',
+      is_theme: true,
+      type: '',
+      widget: T8BottomNavigation(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Bottom Navigation 8',
+      is_theme: true,
+      type: '',
+      widget: T9BottomNavigation(),
+      darkThemeSupported: true));
   return list;
 }
 
 List<ProTheme> getDetailScreen() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Detail Screen 1', is_theme: true, type: '', widget: T3Description(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Detail Screen 2', is_theme: true, type: '', widget: T4Detail(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Detail Screen 3', is_theme: true, type: '', widget: T7PlaceDetail(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Detail Screen 4', is_theme: true, type: '', widget: T9Description(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Detail Screen 5', is_theme: true, type: '', widget: T11DescriptionScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Detail Screen 6', is_theme: true, type: '', widget: T10Description(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Detail Screen 1',
+      is_theme: true,
+      type: '',
+      widget: T3Description(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Detail Screen 2',
+      is_theme: true,
+      type: '',
+      widget: T4Detail(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Detail Screen 3',
+      is_theme: true,
+      type: '',
+      widget: T7PlaceDetail(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Detail Screen 4',
+      is_theme: true,
+      type: '',
+      widget: T9Description(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Detail Screen 5',
+      is_theme: true,
+      type: '',
+      widget: T11DescriptionScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Detail Screen 6',
+      is_theme: true,
+      type: '',
+      widget: T10Description(),
+      darkThemeSupported: true));
   return list;
 }
 
 List<ProTheme> getImageSlider() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Image Slider 1', is_theme: true, type: '', widget: T1ImageSlider(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Image Slider 2', is_theme: true, type: '', widget: T2ImageSlider(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Image Slider 3', is_theme: true, type: '', widget: T3ImageSlider(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Image Slider 4', is_theme: true, type: '', widget: T4ImageSlider(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Image Slider 5', is_theme: true, type: '', widget: T5ImageSlider(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Image Slider 6', is_theme: true, type: '', widget: T6ImageSlider(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Image Slider 1',
+      is_theme: true,
+      type: '',
+      widget: T1ImageSlider(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Image Slider 2',
+      is_theme: true,
+      type: '',
+      widget: T2ImageSlider(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Image Slider 3',
+      is_theme: true,
+      type: '',
+      widget: T3ImageSlider(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Image Slider 4',
+      is_theme: true,
+      type: '',
+      widget: T4ImageSlider(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Image Slider 5',
+      is_theme: true,
+      type: '',
+      widget: T5ImageSlider(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Image Slider 6',
+      is_theme: true,
+      type: '',
+      widget: T6ImageSlider(),
+      darkThemeSupported: true));
   return list;
 }
 
 List<ProTheme> getBottomSheet() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Bottom Sheet 1', is_theme: true, type: '', widget: T1BottomSheet(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Bottom Sheet 2', is_theme: true, type: '', widget: T2BottomSheet(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Bottom Sheet 3', is_theme: true, type: '', widget: T3BottomSheet(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Bottom Sheet 4', is_theme: true, type: '', widget: T5BottomSheet(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Bottom Sheet 5', is_theme: true, type: '', widget: T7BottomSheet(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Bottom Sheet 1',
+      is_theme: true,
+      type: '',
+      widget: T1BottomSheet(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Bottom Sheet 2',
+      is_theme: true,
+      type: '',
+      widget: T2BottomSheet(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Bottom Sheet 3',
+      is_theme: true,
+      type: '',
+      widget: T3BottomSheet(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Bottom Sheet 4',
+      is_theme: true,
+      type: '',
+      widget: T5BottomSheet(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Bottom Sheet 5',
+      is_theme: true,
+      type: '',
+      widget: T7BottomSheet(),
+      darkThemeSupported: true));
 
   return list;
 }
 
 List<ProTheme> getSearch() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Search 1', is_theme: true, type: '', widget: T1Search(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Search 2', is_theme: true, type: '', widget: T2Search(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Search 3', is_theme: true, type: '', widget: T3Search(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Search 4', is_theme: true, type: '', widget: T5Search(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Search 5', is_theme: true, type: '', widget: T5Search(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Search 6', is_theme: true, type: '', widget: T8Search(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Search 7', is_theme: true, type: '', widget: T9Search(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Search 8', is_theme: true, type: '', widget: T11SearchScreen(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Search 1',
+      is_theme: true,
+      type: '',
+      widget: T1Search(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Search 2',
+      is_theme: true,
+      type: '',
+      widget: T2Search(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Search 3',
+      is_theme: true,
+      type: '',
+      widget: T3Search(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Search 4',
+      is_theme: true,
+      type: '',
+      widget: T5Search(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Search 5',
+      is_theme: true,
+      type: '',
+      widget: T5Search(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Search 6',
+      is_theme: true,
+      type: '',
+      widget: T8Search(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Search 7',
+      is_theme: true,
+      type: '',
+      widget: T9Search(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Search 8',
+      is_theme: true,
+      type: '',
+      widget: T11SearchScreen(),
+      darkThemeSupported: true));
   return list;
 }
 
 List<ProTheme> getListing() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Listing 1', is_theme: true, type: '', widget: T1Listing(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Listing 2', is_theme: true, type: '', widget: T2Listing(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Listing 3', is_theme: true, type: '', widget: T3Listing(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Listing 4', is_theme: true, type: '', widget: T4Listing(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Listing 5', is_theme: true, type: '', widget: T5Listing(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Listing 6', is_theme: true, type: '', widget: T6List(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Listing 7', is_theme: true, type: '', widget: T7HotelList(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Listing 8', is_theme: true, type: '', widget: T8Listing(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Listing 9', is_theme: true, type: '', widget: T9List(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Listing 10', is_theme: true, type: '', widget: T11ListingScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Listing 11', is_theme: true, type: '', widget: T10Dashboard(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Listing 1',
+      is_theme: true,
+      type: '',
+      widget: T1Listing(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Listing 2',
+      is_theme: true,
+      type: '',
+      widget: T2Listing(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Listing 3',
+      is_theme: true,
+      type: '',
+      widget: T3Listing(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Listing 4',
+      is_theme: true,
+      type: '',
+      widget: T4Listing(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Listing 5',
+      is_theme: true,
+      type: '',
+      widget: T5Listing(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Listing 6',
+      is_theme: true,
+      type: '',
+      widget: T6List(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Listing 7',
+      is_theme: true,
+      type: '',
+      widget: T7HotelList(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Listing 8',
+      is_theme: true,
+      type: '',
+      widget: T8Listing(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Listing 9',
+      is_theme: true,
+      type: '',
+      widget: T9List(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Listing 10',
+      is_theme: true,
+      type: '',
+      widget: T11ListingScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Listing 11',
+      is_theme: true,
+      type: '',
+      widget: T10Dashboard(),
+      darkThemeSupported: true));
   return list;
 }
 
 List<ProTheme> getCards() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Cards 1', is_theme: true, type: '', widget: T1Card(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Cards 2', is_theme: true, type: '', widget: T2Cards(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Cards 3', is_theme: true, type: '', widget: T3Cards(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Cards 4', is_theme: true, type: '', widget: T4Cards(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Cards 5', is_theme: true, type: '', widget: T5Cards(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Cards 6', is_theme: true, type: '', widget: T6Cards(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Cards 7', is_theme: true, type: '', widget: T8Cards(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Cards 8', is_theme: true, type: '', widget: T9Cards(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Cards 9', is_theme: true, type: '', widget: T10Cards(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Cards 1',
+      is_theme: true,
+      type: '',
+      widget: T1Card(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Cards 2',
+      is_theme: true,
+      type: '',
+      widget: T2Cards(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Cards 3',
+      is_theme: true,
+      type: '',
+      widget: T3Cards(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Cards 4',
+      is_theme: true,
+      type: '',
+      widget: T4Cards(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Cards 5',
+      is_theme: true,
+      type: '',
+      widget: T5Cards(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Cards 6',
+      is_theme: true,
+      type: '',
+      widget: T6Cards(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Cards 7',
+      is_theme: true,
+      type: '',
+      widget: T8Cards(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Cards 8',
+      is_theme: true,
+      type: '',
+      widget: T9Cards(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Cards 9',
+      is_theme: true,
+      type: '',
+      widget: T10Cards(),
+      darkThemeSupported: true));
   return list;
 }
 
 List<ProTheme> getDialog() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Dialog 1', is_theme: true, type: '', widget: T1Dialog(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dialog 2', is_theme: true, type: '', widget: T2Dialog(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dialog 3', is_theme: true, type: '', widget: T3Dialog(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dialog 4', is_theme: true, type: '', widget: T4Dialog(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dialog 5', is_theme: true, type: '', widget: T5Dialog(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dialog 6', is_theme: true, type: '', widget: T6Dialog(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dialog 7', is_theme: true, type: '', widget: T10Dialog(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dialog 1',
+      is_theme: true,
+      type: '',
+      widget: T1Dialog(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dialog 2',
+      is_theme: true,
+      type: '',
+      widget: T2Dialog(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dialog 3',
+      is_theme: true,
+      type: '',
+      widget: T3Dialog(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dialog 4',
+      is_theme: true,
+      type: '',
+      widget: T4Dialog(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dialog 5',
+      is_theme: true,
+      type: '',
+      widget: T5Dialog(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dialog 6',
+      is_theme: true,
+      type: '',
+      widget: T6Dialog(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dialog 7',
+      is_theme: true,
+      type: '',
+      widget: T10Dialog(),
+      darkThemeSupported: true));
   return list;
 }
 
 List<ProTheme> getSettings() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Dialog 1', is_theme: true, type: '', widget: T3Setting(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dialog 2', is_theme: true, type: '', widget: T5Settings(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dialog 3', is_theme: true, type: '', widget: T6Setting(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Dialog 4', is_theme: true, type: '', widget: T8Setting(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dialog 1',
+      is_theme: true,
+      type: '',
+      widget: T3Setting(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dialog 2',
+      is_theme: true,
+      type: '',
+      widget: T5Settings(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dialog 3',
+      is_theme: true,
+      type: '',
+      widget: T6Setting(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dialog 4',
+      is_theme: true,
+      type: '',
+      widget: T8Setting(),
+      darkThemeSupported: true));
   return list;
 }
 //endregion
 
 //region Dashboard
 ProTheme getDashboards() {
-  ProTheme theme = ProTheme(sub_kits: [], name: 'Dashboard', title_name: 'Dashboard Screens', show_cover: true, type: '');
+  ProTheme theme = ProTheme(
+      sub_kits: [],
+      name: 'Dashboard',
+      title_name: 'Dashboard Screens',
+      show_cover: true,
+      type: '');
   List<ProTheme> list = [];
   list.add(ProTheme(name: 'Food', type: '', widget: Dashboard1()));
   list.add(ProTheme(name: 'E-Commerce', type: '', widget: Dashboard2()));
@@ -1229,19 +3224,48 @@ ProTheme getDashboards() {
 
 //region FullApps
 ProTheme getFullApps() {
-  ProTheme theme = ProTheme(name: "Full Apps", tag: 'New', show_cover: true, sub_kits: []);
+  ProTheme theme =
+      ProTheme(name: "Full Apps", tag: 'New', show_cover: true, sub_kits: []);
 
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Sneaker Shopping App', tag: 'New', widget: SSSplashScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Smart Home', tag: 'New', widget: SHSplashScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Wallet App', tag: 'New', widget: WASplashScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Event App', tag: 'New', widget: EASplashScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Smart Home', tag: 'New', widget: SHSplashScreen(), isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Sneaker Shopping App',
+      tag: 'New',
+      widget: SSSplashScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Smart Home',
+      tag: 'New',
+      widget: SHSplashScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Wallet App',
+      tag: 'New',
+      widget: WASplashScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Event App',
+      tag: 'New',
+      widget: EASplashScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Smart Home',
+      tag: 'New',
+      widget: SHSplashScreen(),
+      isWebSupported: true));
   list.add(ProTheme(name: 'Wallet App', tag: 'New', widget: WASplashScreen()));
   list.add(ProTheme(name: 'Event App', tag: 'New', widget: EASplashScreen()));
   list.add(ProTheme(name: 'MediLab', tag: 'New', widget: MLSplashScreen()));
-  list.add(ProTheme(name: 'Dating App', tag: 'New', widget: DASplashScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Medium', type: '', widget: MSplashScreen(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Dating App',
+      tag: 'New',
+      widget: DASplashScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Medium',
+      type: '',
+      widget: MSplashScreen(),
+      darkThemeSupported: true));
   list.add(ProTheme(name: 'Cloud Storage', type: '', widget: CSSplashScreen()));
   list.add(ProTheme(name: 'NewsBlog', type: '', widget: NBSplashScreen()));
   list.add(ProTheme(name: 'Smart Deck', type: '', widget: SDSplashScreen()));
@@ -1251,11 +3275,19 @@ ProTheme getFullApps() {
   list.add(ProTheme(name: 'Learner', type: '', widget: LearnerWalkThrough()));
   list.add(ProTheme(name: 'Online Quiz', type: '', widget: QuizSignIn()));
   list.add(ProTheme(name: 'Shop hop', type: '', widget: ShSplashScreen()));
-  list.add(ProTheme(name: 'Food App', type: '', widget: FoodWalkThrough(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Food App',
+      type: '',
+      widget: FoodWalkThrough(),
+      darkThemeSupported: true));
   list.add(ProTheme(name: 'Grocery', type: '', widget: GrocerySplashScreen()));
   list.add(ProTheme(name: 'Orapay', type: '', widget: OPSplashScreen()));
   list.add(ProTheme(name: 'Flix App', type: '', widget: MuviSplashScreen()));
-  list.add(ProTheme(name: 'Social', type: '', widget: SocialWalkThrough(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Social',
+      type: '',
+      widget: SocialWalkThrough(),
+      darkThemeSupported: true));
   list.add(ProTheme(name: 'QiBus', type: '', widget: QIBusSplash()));
 
   theme.sub_kits!.addAll(list);
@@ -1268,26 +3300,107 @@ ProTheme getFullApps() {
 ProTheme getWidgets() {
   List<ProTheme> list = [];
 
-  list.add(ProTheme(name: 'Material Widgets', tag: 'New', show_cover: false, sub_kits: getMaterialWidgets(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Cupertino Widgets', type: '', show_cover: false, sub_kits: getCupertinoWidgets(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Painting and effect Widgets', type: '', show_cover: false, sub_kits: getPaintingAndEffectWidgets(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Animation and motion Widgets', type: '', show_cover: false, sub_kits: getAnimationAndMotionWidgets(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Interaction Model Widgets', type: '', show_cover: false, sub_kits: getInteractionModelWidgets(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Other Widgets', type: '', show_cover: false, sub_kits: getOtherWidgets(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Material Widgets',
+      tag: 'New',
+      show_cover: false,
+      sub_kits: getMaterialWidgets(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Cupertino Widgets',
+      type: '',
+      show_cover: false,
+      sub_kits: getCupertinoWidgets(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Painting and effect Widgets',
+      type: '',
+      show_cover: false,
+      sub_kits: getPaintingAndEffectWidgets(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Animation and motion Widgets',
+      type: '',
+      show_cover: false,
+      sub_kits: getAnimationAndMotionWidgets(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Interaction Model Widgets',
+      type: '',
+      show_cover: false,
+      sub_kits: getInteractionModelWidgets(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Other Widgets',
+      type: '',
+      show_cover: false,
+      sub_kits: getOtherWidgets(),
+      darkThemeSupported: true,
+      isWebSupported: true));
 
-  return ProTheme(name: 'Widgets', title_name: 'Widgets', tag: 'New', type: '', show_cover: false, sub_kits: list);
+  return ProTheme(
+      name: 'Widgets',
+      title_name: 'Widgets',
+      tag: 'New',
+      type: '',
+      show_cover: false,
+      sub_kits: list);
 }
 
 //region Material
 
 List<ProTheme> getMaterialWidgets() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'App Structure', show_cover: false, type: '', tag: 'New', sub_kits: getAppStructure(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Buttons', show_cover: false, type: '', sub_kits: getButtons(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Input & Selection', show_cover: false, type: '', sub_kits: getInputSelection(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Dialogs, Alerts & Panels', tag: 'New', show_cover: false, type: '', sub_kits: getDialogs(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Information Display', show_cover: false, type: '', tag: 'New', sub_kits: getInformationDisplay(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Layout', show_cover: false, type: '', sub_kits: getLayout(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'App Structure',
+      show_cover: false,
+      type: '',
+      tag: 'New',
+      sub_kits: getAppStructure(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Buttons',
+      show_cover: false,
+      type: '',
+      sub_kits: getButtons(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Input & Selection',
+      show_cover: false,
+      type: '',
+      sub_kits: getInputSelection(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Dialogs, Alerts & Panels',
+      tag: 'New',
+      show_cover: false,
+      type: '',
+      sub_kits: getDialogs(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Information Display',
+      show_cover: false,
+      type: '',
+      tag: 'New',
+      sub_kits: getInformationDisplay(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Layout',
+      show_cover: false,
+      type: '',
+      sub_kits: getLayout(),
+      darkThemeSupported: true,
+      isWebSupported: true));
 
   return list;
 }
@@ -1295,166 +3408,657 @@ List<ProTheme> getMaterialWidgets() {
 //region subMaterialWidgets
 List<ProTheme> getAppStructure() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'AppBar', show_cover: false, type: '', widget: MWAppBarScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Bottom Navigation Bar', show_cover: false, type: '', tag: 'New', sub_kits: getBottomNavigationBar(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Drawer', show_cover: false, type: '', sub_kits: getDrawer(), tag: 'New', darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'SliverAppBar', show_cover: false, type: '', sub_kits: getSliverAppBar(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'TabBar', show_cover: false, type: '', sub_kits: getTabBar(), tag: '', darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Navigation Rail Widget', show_cover: false, type: '', tag: 'New', sub_kits: getNavigationRailWidgetList(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'AppBar',
+      show_cover: false,
+      type: '',
+      widget: MWAppBarScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Bottom Navigation Bar',
+      show_cover: false,
+      type: '',
+      tag: 'New',
+      sub_kits: getBottomNavigationBar(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Drawer',
+      show_cover: false,
+      type: '',
+      sub_kits: getDrawer(),
+      tag: 'New',
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'SliverAppBar',
+      show_cover: false,
+      type: '',
+      sub_kits: getSliverAppBar(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'TabBar',
+      show_cover: false,
+      type: '',
+      sub_kits: getTabBar(),
+      tag: '',
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Navigation Rail Widget',
+      show_cover: false,
+      type: '',
+      tag: 'New',
+      sub_kits: getNavigationRailWidgetList(),
+      darkThemeSupported: true,
+      isWebSupported: true));
 
   return list;
 }
 
 List<ProTheme> getBottomNavigationBar() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'With Icon and Label', show_cover: false, type: '', widget: MWBottomNavigationScreen1(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'With Custom Image', show_cover: false, type: '', widget: MWBottomNavigationScreen2(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'With Shifting Label', show_cover: false, type: '', widget: MWBottomNavigationScreen3(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'BottomNavigation 4', show_cover: false, type: '', tag: 'New', widget: MWBottomNavigationScreen4(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'BottomNavigation 5', show_cover: false, type: '', tag: 'New', widget: MWBottomNavigationScreen5(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'BottomNavigation 6', show_cover: false, type: '', tag: 'New', widget: MWBottomNavigationScreen6(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'BottomNavigation 7', show_cover: false, type: '', tag: 'New', widget: MWBottomNavigationScreen7(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'With Icon and Label',
+      show_cover: false,
+      type: '',
+      widget: MWBottomNavigationScreen1(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'With Custom Image',
+      show_cover: false,
+      type: '',
+      widget: MWBottomNavigationScreen2(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'With Shifting Label',
+      show_cover: false,
+      type: '',
+      widget: MWBottomNavigationScreen3(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'BottomNavigation 4',
+      show_cover: false,
+      type: '',
+      tag: 'New',
+      widget: MWBottomNavigationScreen4(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'BottomNavigation 5',
+      show_cover: false,
+      type: '',
+      tag: 'New',
+      widget: MWBottomNavigationScreen5(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'BottomNavigation 6',
+      show_cover: false,
+      type: '',
+      tag: 'New',
+      widget: MWBottomNavigationScreen6(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'BottomNavigation 7',
+      show_cover: false,
+      type: '',
+      tag: 'New',
+      widget: MWBottomNavigationScreen7(),
+      darkThemeSupported: true,
+      isWebSupported: true));
 
   return list;
 }
 
 List<ProTheme> getDrawer() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'With Multiple Account Selection ', show_cover: false, type: '', widget: MWDrawerScreen1(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'With Custom Shape ', show_cover: false, type: '', widget: MWDrawerScreen2(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Drawer 3', show_cover: false, type: '', tag: 'New', widget: MWDrawerScreen3(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Drawer 4', show_cover: false, type: '', tag: 'New', widget: MWDrawerScreen4(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Drawer 5', show_cover: false, type: '', tag: 'New', widget: MWDrawerScreen5(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'With Multiple Account Selection ',
+      show_cover: false,
+      type: '',
+      widget: MWDrawerScreen1(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'With Custom Shape ',
+      show_cover: false,
+      type: '',
+      widget: MWDrawerScreen2(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Drawer 3',
+      show_cover: false,
+      type: '',
+      tag: 'New',
+      widget: MWDrawerScreen3(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Drawer 4',
+      show_cover: false,
+      type: '',
+      tag: 'New',
+      widget: MWDrawerScreen4(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Drawer 5',
+      show_cover: false,
+      type: '',
+      tag: 'New',
+      widget: MWDrawerScreen5(),
+      darkThemeSupported: true,
+      isWebSupported: true));
 
   return list;
 }
 
 List<ProTheme> getSliverAppBar() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Sliver AppBar with ListView', show_cover: false, type: '', widget: MWSliverAppBarScreen1(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Parallax Sliver AppBar', show_cover: false, type: '', widget: MWSliverAppBarScreen2(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Sliver AppBar with ListView',
+      show_cover: false,
+      type: '',
+      widget: MWSliverAppBarScreen1(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Parallax Sliver AppBar',
+      show_cover: false,
+      type: '',
+      widget: MWSliverAppBarScreen2(),
+      darkThemeSupported: true,
+      isWebSupported: true));
 
   return list;
 }
 
 List<ProTheme> getTabBar() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Simple TabBar', show_cover: false, type: '', widget: MWTabBarScreen1(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'TabBar with Title and Icon', show_cover: false, type: '', widget: MWTabBarScreen2(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'TabBar with Icon', show_cover: false, type: '', widget: MWTabBarScreen3(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Scrollable Tab', show_cover: false, type: '', widget: MWTabBarScreen4(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Simple TabBar',
+      show_cover: false,
+      type: '',
+      widget: MWTabBarScreen1(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'TabBar with Title and Icon',
+      show_cover: false,
+      type: '',
+      widget: MWTabBarScreen2(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'TabBar with Icon',
+      show_cover: false,
+      type: '',
+      widget: MWTabBarScreen3(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Scrollable Tab',
+      show_cover: false,
+      type: '',
+      widget: MWTabBarScreen4(),
+      darkThemeSupported: true,
+      isWebSupported: true));
 
   return list;
 }
 
 List<ProTheme> getButtons() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'DropDownButton', show_cover: false, type: '', widget: MWDropDownButtonScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'MaterialButton', show_cover: false, type: '', widget: MWMaterialButtonScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'FlatButton', show_cover: false, type: '', widget: MWFlatButtonScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'FloatingActionButton', show_cover: false, type: '', widget: MWFloatingActionButtonScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'IconButton', show_cover: false, type: '', widget: MWIconButtonScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'OutlineButton', show_cover: false, type: '', widget: MWOutlineButtonScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'PopupMenuButton', show_cover: false, type: '', widget: MWPopupMenuButtonScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'RaisedButton', show_cover: false, type: '', widget: MWRaisedButtonScreen(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'DropDownButton',
+      show_cover: false,
+      type: '',
+      widget: MWDropDownButtonScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'MaterialButton',
+      show_cover: false,
+      type: '',
+      widget: MWMaterialButtonScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'FlatButton',
+      show_cover: false,
+      type: '',
+      widget: MWFlatButtonScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'FloatingActionButton',
+      show_cover: false,
+      type: '',
+      widget: MWFloatingActionButtonScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'IconButton',
+      show_cover: false,
+      type: '',
+      widget: MWIconButtonScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'OutlineButton',
+      show_cover: false,
+      type: '',
+      widget: MWOutlineButtonScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'PopupMenuButton',
+      show_cover: false,
+      type: '',
+      widget: MWPopupMenuButtonScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'RaisedButton',
+      show_cover: false,
+      type: '',
+      widget: MWRaisedButtonScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
   return list;
 }
 
 List<ProTheme> getInputSelection() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Checkbox', show_cover: false, type: '', widget: MWCheckboxScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Datetime Picker', show_cover: false, type: '', widget: MWDatetimePickerScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Radio', show_cover: false, type: '', widget: MWRadioScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Slider', show_cover: false, type: '', widget: MWSliderScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Switch', show_cover: false, type: '', widget: MWSwitchScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'TextField', show_cover: false, type: '', sub_kits: getTextField(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'TextFormField', show_cover: false, type: '', widget: MWTextFormFieldScreen(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Checkbox',
+      show_cover: false,
+      type: '',
+      widget: MWCheckboxScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Datetime Picker',
+      show_cover: false,
+      type: '',
+      widget: MWDatetimePickerScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Radio',
+      show_cover: false,
+      type: '',
+      widget: MWRadioScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Slider',
+      show_cover: false,
+      type: '',
+      widget: MWSliderScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Switch',
+      show_cover: false,
+      type: '',
+      widget: MWSwitchScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'TextField',
+      show_cover: false,
+      type: '',
+      sub_kits: getTextField(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'TextFormField',
+      show_cover: false,
+      type: '',
+      widget: MWTextFormFieldScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
   return list;
 }
 
 List<ProTheme> getTextField() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Simple TextField ', show_cover: false, type: '', widget: MWTextFieldScreen1(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Rounded Border TextField ', show_cover: false, type: '', widget: MWTextFieldScreen2(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Simple TextField ',
+      show_cover: false,
+      type: '',
+      widget: MWTextFieldScreen1(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Rounded Border TextField ',
+      show_cover: false,
+      type: '',
+      widget: MWTextFieldScreen2(),
+      darkThemeSupported: true,
+      isWebSupported: true));
   return list;
 }
 
 List<ProTheme> getDialogs() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'AlertDialog', show_cover: false, type: '', widget: MWAlertDialogScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'BottomSheet', show_cover: false, type: '', tag: 'New', widget: MWBottomSheetScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'ExpansionPanel', show_cover: false, type: '', tag: 'New', sub_kits: getExpansionPanelList(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Simple Dialog', show_cover: false, type: '', widget: MWSimpleDialogScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'SnackBar', show_cover: false, type: '', widget: MWSnackBarScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Toast', show_cover: false, type: '', widget: MWToastScreen(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'AlertDialog',
+      show_cover: false,
+      type: '',
+      widget: MWAlertDialogScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'BottomSheet',
+      show_cover: false,
+      type: '',
+      tag: 'New',
+      widget: MWBottomSheetScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'ExpansionPanel',
+      show_cover: false,
+      type: '',
+      tag: 'New',
+      sub_kits: getExpansionPanelList(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Simple Dialog',
+      show_cover: false,
+      type: '',
+      widget: MWSimpleDialogScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'SnackBar',
+      show_cover: false,
+      type: '',
+      widget: MWSnackBarScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Toast',
+      show_cover: false,
+      type: '',
+      widget: MWToastScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
   return list;
 }
 
 List<ProTheme> getInformationDisplay() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Material Banner', show_cover: false, tag: 'New', widget: MWMaterialBanner(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Card', show_cover: false, type: '', tag: 'New', widget: MWCardScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Chip', show_cover: false, type: '', widget: MWChipScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Progress Bar', show_cover: false, type: '', widget: MWProgressBarScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Data Table', show_cover: false, type: '', widget: MWDataTableScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Grid View', show_cover: false, type: '', widget: MWGridViewScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'List View', show_cover: false, type: '', sub_kits: getListView(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Rich Text', show_cover: false, type: '', widget: MWRichTextScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Icon', show_cover: false, type: '', widget: MWIconScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Image (assets, Network, Placeholders)', show_cover: false, type: '', widget: MWImageScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Tooltip', show_cover: false, type: '', widget: MWTooltipScreen(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Material Banner',
+      show_cover: false,
+      tag: 'New',
+      widget: MWMaterialBanner(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Card',
+      show_cover: false,
+      type: '',
+      tag: 'New',
+      widget: MWCardScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Chip',
+      show_cover: false,
+      type: '',
+      widget: MWChipScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Progress Bar',
+      show_cover: false,
+      type: '',
+      widget: MWProgressBarScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Data Table',
+      show_cover: false,
+      type: '',
+      widget: MWDataTableScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Grid View',
+      show_cover: false,
+      type: '',
+      widget: MWGridViewScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'List View',
+      show_cover: false,
+      type: '',
+      sub_kits: getListView(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Rich Text',
+      show_cover: false,
+      type: '',
+      widget: MWRichTextScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Icon',
+      show_cover: false,
+      type: '',
+      widget: MWIconScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Image (assets, Network, Placeholders)',
+      show_cover: false,
+      type: '',
+      widget: MWImageScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Tooltip',
+      show_cover: false,
+      type: '',
+      widget: MWTooltipScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
   return list;
 }
 
 List<ProTheme> getListView() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Simple List View', show_cover: false, type: '', widget: MWListViewScreen1(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'List Wheel ScrollView', show_cover: false, type: '', widget: MWListViewScreen2(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Horizontal List View', show_cover: false, type: '', widget: MWListViewScreen3(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Bouncing Scroll List View', show_cover: false, type: '', widget: MWListViewScreen4(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Reorderable List View', show_cover: false, type: '', widget: MWListViewScreen5(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Simple List View',
+      show_cover: false,
+      type: '',
+      widget: MWListViewScreen1(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'List Wheel ScrollView',
+      show_cover: false,
+      type: '',
+      widget: MWListViewScreen2(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Horizontal List View',
+      show_cover: false,
+      type: '',
+      widget: MWListViewScreen3(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Bouncing Scroll List View',
+      show_cover: false,
+      type: '',
+      widget: MWListViewScreen4(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Reorderable List View',
+      show_cover: false,
+      type: '',
+      widget: MWListViewScreen5(),
+      darkThemeSupported: true,
+      isWebSupported: true));
   return list;
 }
 
 List<ProTheme> getLayout() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Divider', show_cover: false, type: '', widget: MWDividerScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'ListTile', show_cover: false, type: '', widget: MWListTileScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Stepper', show_cover: false, type: '', sub_kits: getStepper(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'User Accounts Drawer Header', show_cover: false, type: '', sub_kits: getUserAccountsDrawerHeader(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Divider',
+      show_cover: false,
+      type: '',
+      widget: MWDividerScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'ListTile',
+      show_cover: false,
+      type: '',
+      widget: MWListTileScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Stepper',
+      show_cover: false,
+      type: '',
+      sub_kits: getStepper(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'User Accounts Drawer Header',
+      show_cover: false,
+      type: '',
+      sub_kits: getUserAccountsDrawerHeader(),
+      darkThemeSupported: true,
+      isWebSupported: true));
   return list;
 }
 
 List<ProTheme> getNavigationRailWidgetList() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Navigation Rail 1', show_cover: false, tag: 'New', type: '', widget: MWNavigationRailScreen1(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Navigation Rail 2', show_cover: false, tag: 'New', type: '', widget: MWNavigationRailScreen2(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Navigation Rail 3', show_cover: false, tag: 'New', type: '', widget: MWNavigationRailScreen3(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Navigation Rail 1',
+      show_cover: false,
+      tag: 'New',
+      type: '',
+      widget: MWNavigationRailScreen1(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Navigation Rail 2',
+      show_cover: false,
+      tag: 'New',
+      type: '',
+      widget: MWNavigationRailScreen2(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Navigation Rail 3',
+      show_cover: false,
+      tag: 'New',
+      type: '',
+      widget: MWNavigationRailScreen3(),
+      darkThemeSupported: true,
+      isWebSupported: true));
   return list;
 }
 
 List<ProTheme> getStepper() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Horizontal Stepper with Form', show_cover: false, type: '', widget: MWStepperScreen1(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Vertical Stepper', show_cover: false, type: '', widget: MWStepperScreen2(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Vertical Stepper with Form', show_cover: false, type: '', widget: MWStepperScreen3(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Simple Horizontal Stepper', show_cover: false, type: '', widget: MWStepperScreen4(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Horizontal Stepper with Form',
+      show_cover: false,
+      type: '',
+      widget: MWStepperScreen1(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Vertical Stepper',
+      show_cover: false,
+      type: '',
+      widget: MWStepperScreen2(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Vertical Stepper with Form',
+      show_cover: false,
+      type: '',
+      widget: MWStepperScreen3(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Simple Horizontal Stepper',
+      show_cover: false,
+      type: '',
+      widget: MWStepperScreen4(),
+      darkThemeSupported: true,
+      isWebSupported: true));
   return list;
 }
 
 List<ProTheme> getUserAccountsDrawerHeader() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'With Custom UI', show_cover: false, type: '', widget: MWUserAccountDrawerHeaderScreen1(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Simple User Account Drawer Header', show_cover: false, type: '', widget: MWUserAccountDrawerHeaderScreen2(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'With Multiple Account Selection', show_cover: false, type: '', widget: MWUserAccountDrawerHeaderScreen3(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'With Custom Background', show_cover: false, type: '', widget: MWUserAccountDrawerHeaderScreen4(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'With Custom UI',
+      show_cover: false,
+      type: '',
+      widget: MWUserAccountDrawerHeaderScreen1(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Simple User Account Drawer Header',
+      show_cover: false,
+      type: '',
+      widget: MWUserAccountDrawerHeaderScreen2(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'With Multiple Account Selection',
+      show_cover: false,
+      type: '',
+      widget: MWUserAccountDrawerHeaderScreen3(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'With Custom Background',
+      show_cover: false,
+      type: '',
+      widget: MWUserAccountDrawerHeaderScreen4(),
+      darkThemeSupported: true,
+      isWebSupported: true));
   return list;
 }
 
 //endregion
 List<ProTheme> getExpansionPanelList() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Expansion Panel 1', show_cover: false, type: '', widget: MWExpansionPanelScreen(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Expansion Panel 1',
+      show_cover: false,
+      type: '',
+      widget: MWExpansionPanelScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
   list.add(ProTheme(
     name: 'Expansion Panel 2',
     show_cover: false,
@@ -1509,28 +4113,130 @@ List<ProTheme> getExpansionPanelList() {
 //region Cupertino
 List<ProTheme> getCupertinoWidgets() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Cupertino Action Sheet', show_cover: false, type: '', widget: CWActionSheetScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Cupertino Activity Indicator', show_cover: false, type: '', widget: CWActivityIndicatorScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Cupertino Alert Dialog', show_cover: false, type: '', widget: CWAlertDialogScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Cupertino Button', show_cover: false, type: '', widget: CWButtonScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Cupertino Context Menu', show_cover: false, type: '', widget: CWContextMenuScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Cupertino Dialog', show_cover: false, type: '', widget: CWDialogScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Cupertino Navigation Bar', show_cover: false, type: '', widget: CWNavigationBarScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Cupertino Picker', show_cover: false, type: '', widget: CWPickerScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Cupertino Segmented Control', show_cover: false, type: '', widget: CWSegmentedControlScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Cupertino Slider', show_cover: false, type: '', widget: CWSliderScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Cupertino Sliding Segmented Control', show_cover: false, type: '', widget: CWSlidingSegmentedControlScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Cupertino Switch', show_cover: false, type: '', widget: CWSwitchScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Cupertino TabBar', show_cover: false, type: '', sub_kits: getCupertinoTabBar(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Cupertino TextField', show_cover: false, type: '', widget: CWTextFieldScreen(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Cupertino Action Sheet',
+      show_cover: false,
+      type: '',
+      widget: CWActionSheetScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Cupertino Activity Indicator',
+      show_cover: false,
+      type: '',
+      widget: CWActivityIndicatorScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Cupertino Alert Dialog',
+      show_cover: false,
+      type: '',
+      widget: CWAlertDialogScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Cupertino Button',
+      show_cover: false,
+      type: '',
+      widget: CWButtonScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Cupertino Context Menu',
+      show_cover: false,
+      type: '',
+      widget: CWContextMenuScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Cupertino Dialog',
+      show_cover: false,
+      type: '',
+      widget: CWDialogScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Cupertino Navigation Bar',
+      show_cover: false,
+      type: '',
+      widget: CWNavigationBarScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Cupertino Picker',
+      show_cover: false,
+      type: '',
+      widget: CWPickerScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Cupertino Segmented Control',
+      show_cover: false,
+      type: '',
+      widget: CWSegmentedControlScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Cupertino Slider',
+      show_cover: false,
+      type: '',
+      widget: CWSliderScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Cupertino Sliding Segmented Control',
+      show_cover: false,
+      type: '',
+      widget: CWSlidingSegmentedControlScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Cupertino Switch',
+      show_cover: false,
+      type: '',
+      widget: CWSwitchScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Cupertino TabBar',
+      show_cover: false,
+      type: '',
+      sub_kits: getCupertinoTabBar(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Cupertino TextField',
+      show_cover: false,
+      type: '',
+      widget: CWTextFieldScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
   return list;
 }
 
 List<ProTheme> getCupertinoTabBar() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Tab Bar with Icon ', show_cover: false, type: '', widget: CWTabBarScreen1(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Tab Bar with Icon and Label ', show_cover: false, type: '', widget: CWTabBarScreen2(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Tab Bar with Custom Image ', show_cover: false, type: '', widget: CWTabBarScreen3(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Tab Bar with Icon ',
+      show_cover: false,
+      type: '',
+      widget: CWTabBarScreen1(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Tab Bar with Icon and Label ',
+      show_cover: false,
+      type: '',
+      widget: CWTabBarScreen2(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Tab Bar with Custom Image ',
+      show_cover: false,
+      type: '',
+      widget: CWTabBarScreen3(),
+      darkThemeSupported: true,
+      isWebSupported: true));
   return list;
 }
 
@@ -1538,11 +4244,41 @@ List<ProTheme> getCupertinoTabBar() {
 //region PaintingAndEffectWidgets
 List<ProTheme> getPaintingAndEffectWidgets() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Backdrop Filter', show_cover: false, type: '', widget: PEBackdropFilterScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Clip Widget Demo', show_cover: false, type: '', widget: PEClipOvalScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Opacity', show_cover: false, type: '', widget: PEOpacityScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Rotated Box', show_cover: false, type: '', widget: PERotatedBoxScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Transform', show_cover: false, type: '', widget: PETransformScreen(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Backdrop Filter',
+      show_cover: false,
+      type: '',
+      widget: PEBackdropFilterScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Clip Widget Demo',
+      show_cover: false,
+      type: '',
+      widget: PEClipOvalScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Opacity',
+      show_cover: false,
+      type: '',
+      widget: PEOpacityScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Rotated Box',
+      show_cover: false,
+      type: '',
+      widget: PERotatedBoxScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Transform',
+      show_cover: false,
+      type: '',
+      widget: PETransformScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
   return list;
 }
 
@@ -1550,15 +4286,69 @@ List<ProTheme> getPaintingAndEffectWidgets() {
 //region AnimationAndMotionWidgets
 List<ProTheme> getAnimationAndMotionWidgets() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Animated Builder', show_cover: false, type: '', widget: AMAnimatedBuilderScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Animated Container', show_cover: false, type: '', widget: AMAnimatedContainerScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Animated Cross Fade', show_cover: false, type: '', widget: AMAnimatedCrossFadeScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Animated Opacity', show_cover: false, type: '', widget: AMAnimatedOpacityScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Fade Transition', show_cover: false, type: '', widget: AMFadeTransitionScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Hero Transition', show_cover: false, type: '', widget: AMHeroScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Scale Transition', show_cover: false, type: '', widget: AMScaleTransitionScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Animated Size', show_cover: false, type: '', widget: AMAnimatedSizeScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Animated Positioned', show_cover: false, type: '', widget: AMAnimatedPositionedScreen(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Animated Builder',
+      show_cover: false,
+      type: '',
+      widget: AMAnimatedBuilderScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Animated Container',
+      show_cover: false,
+      type: '',
+      widget: AMAnimatedContainerScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Animated Cross Fade',
+      show_cover: false,
+      type: '',
+      widget: AMAnimatedCrossFadeScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Animated Opacity',
+      show_cover: false,
+      type: '',
+      widget: AMAnimatedOpacityScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Fade Transition',
+      show_cover: false,
+      type: '',
+      widget: AMFadeTransitionScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Hero Transition',
+      show_cover: false,
+      type: '',
+      widget: AMHeroScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Scale Transition',
+      show_cover: false,
+      type: '',
+      widget: AMScaleTransitionScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Animated Size',
+      show_cover: false,
+      type: '',
+      widget: AMAnimatedSizeScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Animated Positioned',
+      show_cover: false,
+      type: '',
+      widget: AMAnimatedPositionedScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
   return list;
 }
 
@@ -1566,31 +4356,91 @@ List<ProTheme> getAnimationAndMotionWidgets() {
 //region interaction
 List<ProTheme> getInteractionModelWidgets() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Dismissible', show_cover: false, type: '', sub_kits: getDismissible(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Gesture Detector', show_cover: false, type: '', widget: IMGestureDetectorScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Draggable', show_cover: false, type: '', sub_kits: getDraggable(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Long Press Draggable', show_cover: false, type: '', sub_kits: getLongPressDraggable(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Dismissible',
+      show_cover: false,
+      type: '',
+      sub_kits: getDismissible(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Gesture Detector',
+      show_cover: false,
+      type: '',
+      widget: IMGestureDetectorScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Draggable',
+      show_cover: false,
+      type: '',
+      sub_kits: getDraggable(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Long Press Draggable',
+      show_cover: false,
+      type: '',
+      sub_kits: getLongPressDraggable(),
+      darkThemeSupported: true,
+      isWebSupported: true));
   return list;
 }
 
 List<ProTheme> getDismissible() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Dismissible with Both Side ', show_cover: false, type: '', widget: IMDismissibleScreen1(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Dismissible with One Side', show_cover: false, type: '', widget: IMDismissibleScreen2(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Dismissible with Both Side ',
+      show_cover: false,
+      type: '',
+      widget: IMDismissibleScreen1(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Dismissible with One Side',
+      show_cover: false,
+      type: '',
+      widget: IMDismissibleScreen2(),
+      darkThemeSupported: true,
+      isWebSupported: true));
   return list;
 }
 
 List<ProTheme> getDraggable() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Simple Draggable', show_cover: false, type: '', widget: IMDraggableScreen1(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Draggable with Target', show_cover: false, type: '', widget: IMDraggableScreen2(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Simple Draggable',
+      show_cover: false,
+      type: '',
+      widget: IMDraggableScreen1(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Draggable with Target',
+      show_cover: false,
+      type: '',
+      widget: IMDraggableScreen2(),
+      darkThemeSupported: true,
+      isWebSupported: true));
   return list;
 }
 
 List<ProTheme> getLongPressDraggable() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Simple Long Press Draggable ', show_cover: false, type: '', widget: IMLongPressDraggableScreen1(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Long Press Draggable with Target', show_cover: false, type: '', widget: IMLongPressDraggableScreen2(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Simple Long Press Draggable ',
+      show_cover: false,
+      type: '',
+      widget: IMLongPressDraggableScreen1(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Long Press Draggable with Target',
+      show_cover: false,
+      type: '',
+      widget: IMLongPressDraggableScreen2(),
+      darkThemeSupported: true,
+      isWebSupported: true));
   return list;
 }
 
@@ -1599,8 +4449,20 @@ List<ProTheme> getLongPressDraggable() {
 //region Other Widgets
 List<ProTheme> getOtherWidgets() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Interactive Viewer', show_cover: false, type: '', widget: InteractiveViewerScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Open Container Transform Demo', show_cover: false, type: '', widget: OpenContainerTransformScreen(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Interactive Viewer',
+      show_cover: false,
+      type: '',
+      widget: InteractiveViewerScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Open Container Transform Demo',
+      show_cover: false,
+      type: '',
+      widget: OpenContainerTransformScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
   return list;
 }
 //endregion,isWebSupported: true
@@ -1609,7 +4471,13 @@ List<ProTheme> getOtherWidgets() {
 
 //region Default Theme
 ProTheme getDefaultTheme() {
-  return ProTheme(name: "Default Theme", title_name: 'Default Theme', type: '', show_cover: false, darkThemeSupported: true, isWebSupported: true);
+  return ProTheme(
+      name: "Default Theme",
+      title_name: 'Default Theme',
+      type: '',
+      show_cover: false,
+      darkThemeSupported: true,
+      isWebSupported: true);
 }
 //endregion
 
@@ -1617,36 +4485,186 @@ ProTheme getDefaultTheme() {
 ProTheme getIntegrations() {
   List<ProTheme> list = [];
 
-  list.add(ProTheme(name: 'Generate QR Code', title_name: 'Integrations', show_cover: false, widget: GenerateQRCodeScreen(), darkThemeSupported: true, tag: 'New'));
-  list.add(ProTheme(name: 'PDF Viewer', title_name: 'Integrations', show_cover: false, sub_kits: getPdfListScreen(), darkThemeSupported: true, tag: 'New'));
-  list.add(ProTheme(name: 'Firebase CRUD', title_name: 'Integrations', show_cover: false, widget: FUserListScreen(), darkThemeSupported: true, type: ''));
-  list.add(ProTheme(name: 'Chart', title_name: 'Integrations', show_cover: false, sub_kits: getChartList(), darkThemeSupported: true, type: ''));
-  list.add(ProTheme(name: 'Integration', title_name: 'Integrations', type: '', show_cover: false, sub_kits: getIntegration(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'UI Interactions', title_name: 'Integrations', type: '', show_cover: false, sub_kits: getUI(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Lists', title_name: 'Integrations', type: '', show_cover: false, sub_kits: getLists(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Maps', title_name: 'Integrations', type: '', show_cover: false, sub_kits: getMaps(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Payment Gateways', title_name: 'Integrations', type: '', show_cover: false, sub_kits: getPayment(), darkThemeSupported: true, tag: 'New'));
-  list.add(ProTheme(name: 'Rest API Integration', title_name: 'Integrations', type: '', show_cover: false, sub_kits: getRestAPi(), darkThemeSupported: true));
-  return ProTheme(name: 'Integrations', title_name: 'Integration', type: '', show_cover: false, sub_kits: list);
+  list.add(ProTheme(
+      name: 'Generate QR Code',
+      title_name: 'Integrations',
+      show_cover: false,
+      widget: GenerateQRCodeScreen(),
+      darkThemeSupported: true,
+      tag: 'New'));
+  list.add(ProTheme(
+      name: 'PDF Viewer',
+      title_name: 'Integrations',
+      show_cover: false,
+      sub_kits: getPdfListScreen(),
+      darkThemeSupported: true,
+      tag: 'New'));
+  list.add(ProTheme(
+      name: 'Firebase CRUD',
+      title_name: 'Integrations',
+      show_cover: false,
+      widget: FUserListScreen(),
+      darkThemeSupported: true,
+      type: ''));
+  list.add(ProTheme(
+      name: 'Chart',
+      title_name: 'Integrations',
+      show_cover: false,
+      sub_kits: getChartList(),
+      darkThemeSupported: true,
+      type: ''));
+  list.add(ProTheme(
+      name: 'Integration',
+      title_name: 'Integrations',
+      type: '',
+      show_cover: false,
+      sub_kits: getIntegration(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'UI Interactions',
+      title_name: 'Integrations',
+      type: '',
+      show_cover: false,
+      sub_kits: getUI(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Lists',
+      title_name: 'Integrations',
+      type: '',
+      show_cover: false,
+      sub_kits: getLists(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Maps',
+      title_name: 'Integrations',
+      type: '',
+      show_cover: false,
+      sub_kits: getMaps(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Payment Gateways',
+      title_name: 'Integrations',
+      type: '',
+      show_cover: false,
+      sub_kits: getPayment(),
+      darkThemeSupported: true,
+      tag: 'New'));
+  list.add(ProTheme(
+      name: 'Rest API Integration',
+      title_name: 'Integrations',
+      type: '',
+      show_cover: false,
+      sub_kits: getRestAPi(),
+      darkThemeSupported: true));
+  return ProTheme(
+      name: 'Integrations',
+      title_name: 'Integration',
+      type: '',
+      show_cover: false,
+      sub_kits: list);
 }
 
 List<ProTheme> getIntegration() {
   List<ProTheme> list = [];
 
-  list.add(ProTheme(name: 'File Picker', show_cover: false, type: '', widget: FilePickerScreen(), darkThemeSupported: true, isWebSupported: false));
-  list.add(ProTheme(name: 'Image Picker', show_cover: false, type: '', widget: ImagePickerScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Video Picker', show_cover: false, type: '', widget: VideoPickerScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Local Notification', show_cover: false, type: '', widget: LocalNotificationScreen(), darkThemeSupported: true, isWebSupported: false));
-  list.add(ProTheme(name: 'Fingerprint Authentication', show_cover: false, type: '', widget: FingerprintAuthentication(), darkThemeSupported: true, isWebSupported: false));
-  list.add(ProTheme(name: 'Before After Image', show_cover: false, type: '', widget: BeforeAfterImageScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Google Sign In', show_cover: false, type: '', widget: GoogleSignInScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Wave Widget', show_cover: false, type: '', widget: WaveScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Signature Pad', show_cover: false, type: '', widget: SignatureScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Liquid Swipe WalkThrough', show_cover: false, type: '', widget: LiquidSwipeScreen(), darkThemeSupported: true, isWebSupported: false));
-  list.add(ProTheme(name: 'Calender', show_cover: false, type: '', widget: CalenderHomePage(), darkThemeSupported: true, isWebSupported: false));
-  list.add(ProTheme(name: 'Confetti', show_cover: false, type: '', widget: CHomePage(), darkThemeSupported: true, isWebSupported: false));
-  list.add(ProTheme(name: 'TinderCard', show_cover: false, type: '', widget: TinderHomePage(), darkThemeSupported: true, isWebSupported: false));
-  list.add(ProTheme(name: 'Show Case View', show_cover: false, type: '', widget: SVCHomePage(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'File Picker',
+      show_cover: false,
+      type: '',
+      widget: FilePickerScreen(),
+      darkThemeSupported: true,
+      isWebSupported: false));
+  list.add(ProTheme(
+      name: 'Image Picker',
+      show_cover: false,
+      type: '',
+      widget: ImagePickerScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Video Picker',
+      show_cover: false,
+      type: '',
+      widget: VideoPickerScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Local Notification',
+      show_cover: false,
+      type: '',
+      widget: LocalNotificationScreen(),
+      darkThemeSupported: true,
+      isWebSupported: false));
+  list.add(ProTheme(
+      name: 'Fingerprint Authentication',
+      show_cover: false,
+      type: '',
+      widget: FingerprintAuthentication(),
+      darkThemeSupported: true,
+      isWebSupported: false));
+  list.add(ProTheme(
+      name: 'Before After Image',
+      show_cover: false,
+      type: '',
+      widget: BeforeAfterImageScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Google Sign In',
+      show_cover: false,
+      type: '',
+      widget: GoogleSignInScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Wave Widget',
+      show_cover: false,
+      type: '',
+      widget: WaveScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Signature Pad',
+      show_cover: false,
+      type: '',
+      widget: SignatureScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Liquid Swipe WalkThrough',
+      show_cover: false,
+      type: '',
+      widget: LiquidSwipeScreen(),
+      darkThemeSupported: true,
+      isWebSupported: false));
+  list.add(ProTheme(
+      name: 'Calender',
+      show_cover: false,
+      type: '',
+      widget: CalenderHomePage(),
+      darkThemeSupported: true,
+      isWebSupported: false));
+  list.add(ProTheme(
+      name: 'Confetti',
+      show_cover: false,
+      type: '',
+      widget: CHomePage(),
+      darkThemeSupported: true,
+      isWebSupported: false));
+  list.add(ProTheme(
+      name: 'TinderCard',
+      show_cover: false,
+      type: '',
+      widget: TinderHomePage(),
+      darkThemeSupported: true,
+      isWebSupported: false));
+  list.add(ProTheme(
+      name: 'Show Case View',
+      show_cover: false,
+      type: '',
+      widget: SVCHomePage(),
+      darkThemeSupported: true,
+      isWebSupported: true));
 
   return list;
 }
@@ -1654,12 +4672,48 @@ List<ProTheme> getIntegration() {
 List<ProTheme> getUI() {
   List<ProTheme> list = [];
 
-  list.add(ProTheme(name: 'Custom Buttons', type: '', show_cover: false, widget: ButtonScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Pickers', type: '', show_cover: false, widget: PickerScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Slider', type: '', show_cover: false, widget: FluidSliderScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'ShaderMask', type: '', show_cover: false, widget: ShaderMaskScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Marquee', type: '', show_cover: false, widget: MHomePage(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Like Button', type: '', show_cover: false, widget: LBHomePage(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Custom Buttons',
+      type: '',
+      show_cover: false,
+      widget: ButtonScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Pickers',
+      type: '',
+      show_cover: false,
+      widget: PickerScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Slider',
+      type: '',
+      show_cover: false,
+      widget: FluidSliderScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'ShaderMask',
+      type: '',
+      show_cover: false,
+      widget: ShaderMaskScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Marquee',
+      type: '',
+      show_cover: false,
+      widget: MHomePage(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Like Button',
+      type: '',
+      show_cover: false,
+      widget: LBHomePage(),
+      darkThemeSupported: true,
+      isWebSupported: true));
 
   return list;
 }
@@ -1667,10 +4721,34 @@ List<ProTheme> getUI() {
 List<ProTheme> getLists() {
   List<ProTheme> list = [];
 
-  list.add(ProTheme(name: 'Liquid Pull to Refresh', type: '', show_cover: false, widget: LiquidPullToRefreshScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Folding Cell in ListView', type: '', show_cover: false, widget: FoldingCellScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Shimmer', type: '', show_cover: false, widget: SHomePage(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Sticky Header', type: '', show_cover: false, sub_kits: getSubStickyHeader(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Liquid Pull to Refresh',
+      type: '',
+      show_cover: false,
+      widget: LiquidPullToRefreshScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Folding Cell in ListView',
+      type: '',
+      show_cover: false,
+      widget: FoldingCellScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Shimmer',
+      type: '',
+      show_cover: false,
+      widget: SHomePage(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Sticky Header',
+      type: '',
+      show_cover: false,
+      sub_kits: getSubStickyHeader(),
+      darkThemeSupported: true,
+      isWebSupported: true));
 
   return list;
 }
@@ -1678,9 +4756,27 @@ List<ProTheme> getLists() {
 List<ProTheme> getSubStickyHeader() {
   List<ProTheme> list = [];
 
-  list.add(ProTheme(name: 'Header and Content', type: '', show_cover: false, widget: SimpleHeaders(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Animated Headers with Content', type: '', show_cover: false, widget: AnimatedHeaders(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Headers overlapping the Content', type: '', show_cover: false, widget: OverLappingHeaders(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Header and Content',
+      type: '',
+      show_cover: false,
+      widget: SimpleHeaders(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Animated Headers with Content',
+      type: '',
+      show_cover: false,
+      widget: AnimatedHeaders(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Headers overlapping the Content',
+      type: '',
+      show_cover: false,
+      widget: OverLappingHeaders(),
+      darkThemeSupported: true,
+      isWebSupported: true));
 
   return list;
 }
@@ -1697,19 +4793,66 @@ List<ProTheme> getMaps() {
 List<ProTheme> getPayment() {
   List<ProTheme> list = [];
 
-  list.add(ProTheme(name: 'RazorPay Payment', type: '', show_cover: false, widget: RazorPayScreen(), darkThemeSupported: true, isWebSupported: false));
-  list.add(ProTheme(name: 'Stripe Payment', type: '', show_cover: false, widget: StripePaymentScreen(), darkThemeSupported: true, isWebSupported: false, tag: 'New'));
-  list.add(ProTheme(name: 'Flutter Wave', type: '', show_cover: false, widget: FlutterWaveScreen(), darkThemeSupported: true, isWebSupported: false, tag: "New"));
-  list.add(ProTheme(name: 'Pay Stack', type: '', show_cover: false, widget: PayStackScreen(), darkThemeSupported: true, isWebSupported: false, tag: "New"));
-  if (!isIos) list.add(ProTheme(name: 'Google pay', type: '', show_cover: false, widget: GoogleAndApplePayScreen(), darkThemeSupported: true, isWebSupported: false, tag: "New"));
+  list.add(ProTheme(
+      name: 'RazorPay Payment',
+      type: '',
+      show_cover: false,
+      widget: RazorPayScreen(),
+      darkThemeSupported: true,
+      isWebSupported: false));
+  list.add(ProTheme(
+      name: 'Stripe Payment',
+      type: '',
+      show_cover: false,
+      widget: StripePaymentScreen(),
+      darkThemeSupported: true,
+      isWebSupported: false,
+      tag: 'New'));
+  list.add(ProTheme(
+      name: 'Flutter Wave',
+      type: '',
+      show_cover: false,
+      widget: FlutterWaveScreen(),
+      darkThemeSupported: true,
+      isWebSupported: false,
+      tag: "New"));
+  list.add(ProTheme(
+      name: 'Pay Stack',
+      type: '',
+      show_cover: false,
+      widget: PayStackScreen(),
+      darkThemeSupported: true,
+      isWebSupported: false,
+      tag: "New"));
+  if (!isIos)
+    list.add(ProTheme(
+        name: 'Google pay',
+        type: '',
+        show_cover: false,
+        widget: GoogleAndApplePayScreen(),
+        darkThemeSupported: true,
+        isWebSupported: false,
+        tag: "New"));
   return list;
 }
 
 List<ProTheme> getRestAPi() {
   List<ProTheme> list = [];
 
-  list.add(ProTheme(name: 'Get example with FutureBuilder', type: '', show_cover: false, widget: GETMethodExampleScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Post example', type: '', show_cover: false, widget: PostMethodExampleScreen(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Get example with FutureBuilder',
+      type: '',
+      show_cover: false,
+      widget: GETMethodExampleScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Post example',
+      type: '',
+      show_cover: false,
+      widget: PostMethodExampleScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
 
   return list;
 }
@@ -1720,18 +4863,56 @@ List<ProTheme> getRestAPi() {
 ProTheme getWebApps() {
   List<ProTheme> list = [];
 
-  list.add(ProTheme(name: 'Portfolio', title_name: 'Single Page Websites', tag: 'New', show_cover: false, sub_kits: getPortfolioSites(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Dashboards', title_name: 'Multiple Useful Dashboard', tag: 'New', show_cover: false, sub_kits: getWebDashboard(), darkThemeSupported: false, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Portfolio',
+      title_name: 'Single Page Websites',
+      tag: 'New',
+      show_cover: false,
+      sub_kits: getPortfolioSites(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Dashboards',
+      title_name: 'Multiple Useful Dashboard',
+      tag: 'New',
+      show_cover: false,
+      sub_kits: getWebDashboard(),
+      darkThemeSupported: false,
+      isWebSupported: true));
 
-  return ProTheme(name: 'Web', title_name: 'Flutter Web Apps', type: '', show_cover: false, sub_kits: list, isWebSupported: true);
+  return ProTheme(
+      name: 'Web',
+      title_name: 'Flutter Web Apps',
+      type: '',
+      show_cover: false,
+      sub_kits: list,
+      isWebSupported: true);
 }
 
 List<ProTheme> getPortfolioSites() {
   List<ProTheme> list = [];
 
-  list.add(ProTheme(name: 'Portfolio 1', tag: 'New', show_cover: false, widget: Portfolio1Screen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Portfolio 2', tag: 'New', show_cover: false, widget: Portfolio2Screen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Portfolio 3', tag: 'New', show_cover: false, widget: Portfolio3Screen(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Portfolio 1',
+      tag: 'New',
+      show_cover: false,
+      widget: Portfolio1Screen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Portfolio 2',
+      tag: 'New',
+      show_cover: false,
+      widget: Portfolio2Screen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Portfolio 3',
+      tag: 'New',
+      show_cover: false,
+      widget: Portfolio3Screen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
 
   return list;
 }
@@ -1739,28 +4920,127 @@ List<ProTheme> getPortfolioSites() {
 List<ProTheme> getWebDashboard() {
   List<ProTheme> list = [];
 
-  list.add(ProTheme(name: 'Dashboard 1', tag: 'New', show_cover: false, widget: Dashboard1Screen(), darkThemeSupported: false, isWebSupported: true));
-  list.add(ProTheme(name: 'Dashboard 2', tag: 'New', show_cover: false, widget: Responsive(web: HomeScreen(), mobile: HomeScreenMobile(), tablet: HomeScreenTablet()), darkThemeSupported: false, isWebSupported: true));
-  list.add(ProTheme(name: 'Dashboard 3', tag: 'New', show_cover: false, widget: Dashboard3HomeScreen(), darkThemeSupported: false, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Dashboard 1',
+      tag: 'New',
+      show_cover: false,
+      widget: Dashboard1Screen(),
+      darkThemeSupported: false,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Dashboard 2',
+      tag: 'New',
+      show_cover: false,
+      widget: Responsive(
+          web: HomeScreen(),
+          mobile: HomeScreenMobile(),
+          tablet: HomeScreenTablet()),
+      darkThemeSupported: false,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Dashboard 3',
+      tag: 'New',
+      show_cover: false,
+      widget: Dashboard3HomeScreen(),
+      darkThemeSupported: false,
+      isWebSupported: true));
 
   return list;
 }
 
 List<ProTheme> getChartList() {
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Pie Chart', tag: 'New', show_cover: false, widget: PieChartScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Line Chart', tag: 'New', show_cover: false, widget: LineChartScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Monthly Sale Chart1', tag: 'New', show_cover: false, widget: MonthlySale1Screen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Monthly Sale Chart2', tag: 'New', show_cover: false, widget: MonthlySale2Screen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Bar Chart 1', tag: 'New', show_cover: false, widget: BarChart1Screen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Bar Chart 2', tag: 'New', show_cover: false, widget: BarChart2Screen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Transaction Chart', tag: 'New', show_cover: false, widget: TransactionScreen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Stacked Chart 1', tag: 'New', show_cover: false, widget: StackedChart1Screen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Stacked Chart 2', tag: 'New', show_cover: false, widget: StackedChart2Screen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Stacked Chart 3', tag: 'New', show_cover: false, widget: StackedChart3Screen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Stacked Chart 4', tag: 'New', show_cover: false, widget: StackedChart4Screen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Stacked Chart 5', tag: 'New', show_cover: false, widget: StackedChart5Screen(), darkThemeSupported: true, isWebSupported: true));
-  list.add(ProTheme(name: 'Stacked Chart 6', tag: 'New', show_cover: false, widget: StackedChart6Screen(), darkThemeSupported: true, isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Pie Chart',
+      tag: 'New',
+      show_cover: false,
+      widget: PieChartScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Line Chart',
+      tag: 'New',
+      show_cover: false,
+      widget: LineChartScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Monthly Sale Chart1',
+      tag: 'New',
+      show_cover: false,
+      widget: MonthlySale1Screen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Monthly Sale Chart2',
+      tag: 'New',
+      show_cover: false,
+      widget: MonthlySale2Screen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Bar Chart 1',
+      tag: 'New',
+      show_cover: false,
+      widget: BarChart1Screen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Bar Chart 2',
+      tag: 'New',
+      show_cover: false,
+      widget: BarChart2Screen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Transaction Chart',
+      tag: 'New',
+      show_cover: false,
+      widget: TransactionScreen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Stacked Chart 1',
+      tag: 'New',
+      show_cover: false,
+      widget: StackedChart1Screen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Stacked Chart 2',
+      tag: 'New',
+      show_cover: false,
+      widget: StackedChart2Screen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Stacked Chart 3',
+      tag: 'New',
+      show_cover: false,
+      widget: StackedChart3Screen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Stacked Chart 4',
+      tag: 'New',
+      show_cover: false,
+      widget: StackedChart4Screen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Stacked Chart 5',
+      tag: 'New',
+      show_cover: false,
+      widget: StackedChart5Screen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
+  list.add(ProTheme(
+      name: 'Stacked Chart 6',
+      tag: 'New',
+      show_cover: false,
+      widget: StackedChart6Screen(),
+      darkThemeSupported: true,
+      isWebSupported: true));
 
   return list;
 }
@@ -1768,8 +5048,16 @@ List<ProTheme> getChartList() {
 List<ProTheme> getPdfListScreen() {
   List<ProTheme> list = [];
 
-  list.add(ProTheme(name: 'Online PDF Viewer', tag: 'New', widget: OnlinePdfViewerScreen(), darkThemeSupported: true));
-  list.add(ProTheme(name: 'Local PDF Viewer', tag: 'New', widget: LocalPdfViewerScreen(), darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Online PDF Viewer',
+      tag: 'New',
+      widget: OnlinePdfViewerScreen(),
+      darkThemeSupported: true));
+  list.add(ProTheme(
+      name: 'Local PDF Viewer',
+      tag: 'New',
+      widget: LocalPdfViewerScreen(),
+      darkThemeSupported: true));
 
   return list;
 }

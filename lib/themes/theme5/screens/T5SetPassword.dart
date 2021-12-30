@@ -1,9 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/main/utils/AppConstant.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
-import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/themes/theme5/screens/T5SetFingerPrint.dart';
 import 'package:prokit_flutter/themes/theme5/utils/T5Colors.dart';
 import 'package:prokit_flutter/themes/theme5/utils/T5Images.dart';
@@ -36,13 +36,24 @@ class T5SetPasswordState extends State<T5SetPassword> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  CachedNetworkImage(placeholder: placeholderWidgetFn() as Widget Function(BuildContext, String)?, imageUrl: t5_ragistration, width: width / 2.5, height: width / 2.5),
+                  CachedNetworkImage(
+                      placeholder: placeholderWidgetFn() as Widget Function(
+                          BuildContext, String)?,
+                      imageUrl: t5_ragistration,
+                      width: width / 2.5,
+                      height: width / 2.5),
                   SizedBox(height: 30),
-                  text(t5_lbl_set_pawd, textColor: appStore.textPrimaryColor, fontFamily: fontBold, fontSize: 22.0),
+                  text(t5_lbl_set_pawd,
+                      textColor: appStore.textPrimaryColor,
+                      fontFamily: fontBold,
+                      fontSize: 22.0),
                   SizedBox(height: 30),
                   Container(
                     margin: EdgeInsets.all(24),
-                    decoration: boxDecoration(bgColor: context.scaffoldBackgroundColor, showShadow: true, radius: 4),
+                    decoration: boxDecoration(
+                        bgColor: context.scaffoldBackgroundColor,
+                        showShadow: true,
+                        radius: 4),
                     padding: EdgeInsets.all(20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
@@ -50,7 +61,8 @@ class T5SetPasswordState extends State<T5SetPassword> {
                         SizedBox(height: 10),
                         EditText(hint: t5_hint_password, isSecure: true),
                         SizedBox(height: 16),
-                        EditText(hint: t5_hint_confirm_password, isSecure: true),
+                        EditText(
+                            hint: t5_hint_confirm_password, isSecure: true),
                         SizedBox(height: 24),
                         GestureDetector(
                           onTap: () {
@@ -59,8 +71,10 @@ class T5SetPasswordState extends State<T5SetPassword> {
                           child: Container(
                             alignment: Alignment.center,
                             height: width / 8,
-                            child: text(t5_continue, textColor: t5White, isCentered: true),
-                            decoration: boxDecoration(bgColor: t5ColorPrimary, radius: 24),
+                            child: text(t5_continue,
+                                textColor: t5White, isCentered: true),
+                            decoration: boxDecoration(
+                                bgColor: t5ColorPrimary, radius: 24),
                           ),
                         )
                       ],

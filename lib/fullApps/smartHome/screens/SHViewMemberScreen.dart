@@ -53,8 +53,7 @@ class SHViewMemberScreenState extends State<SHViewMemberScreen> {
             Column(
               children: [
                 Stack(
-                  overflow: Overflow.visible,
-                  alignment: Alignment.topCenter,
+                  clipBehavior: Clip.none, alignment: Alignment.topCenter,
                   children: [
                     commonSHCachedNetworkImage(
                       widget.shModel!.img,

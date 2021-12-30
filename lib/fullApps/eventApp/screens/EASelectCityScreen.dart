@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/fullApps/eventApp/utils/EAColors.dart';
 import 'package:prokit_flutter/fullApps/eventApp/utils/EADataProvider.dart';
@@ -33,12 +31,17 @@ class _EASelectCityScreenState extends State<EASelectCityScreen> {
                   Container(
                     padding: EdgeInsets.all(8.0),
                     alignment: Alignment.center,
-                    decoration: boxDecorationWithShadow(backgroundColor: context.cardColor, shadowColor: grey.withOpacity(0.3)),
+                    decoration: boxDecorationWithShadow(
+                        backgroundColor: context.cardColor,
+                        shadowColor: grey.withOpacity(0.3)),
                     child: TextFormField(
                       style: primaryTextStyle(),
                       decoration: InputDecoration(
                         border: InputBorder.none,
-                        prefixIcon: Padding(padding: EdgeInsets.all(0.0), child: Icon(Icons.search, color: Colors.grey, size: 24)),
+                        prefixIcon: Padding(
+                            padding: EdgeInsets.all(0.0),
+                            child: Icon(Icons.search,
+                                color: Colors.grey, size: 24)),
                         hintText: 'Search city',
                         hintStyle: primaryTextStyle(),
                       ),
@@ -57,23 +60,41 @@ class _EASelectCityScreenState extends State<EASelectCityScreen> {
                               Stack(
                                 alignment: Alignment.center,
                                 children: [
-                                  Image.asset(cityList[index].image!, height: 250, width: context.width() * 0.43, fit: BoxFit.cover).cornerRadiusWithClipRRect(16),
+                                  Image.asset(cityList[index].image!,
+                                          height: 250,
+                                          width: context.width() * 0.43,
+                                          fit: BoxFit.cover)
+                                      .cornerRadiusWithClipRRect(16),
                                   Container(
                                     height: 250,
                                     width: context.width() * 0.43,
                                     decoration: boxDecorationWithRoundedCorners(
                                       borderRadius: radius(16),
                                       gradient: selectCity == index
-                                          ? LinearGradient(colors: [primaryColor1.withOpacity(0.4), primaryColor2.withOpacity(0.4)])
-                                          : LinearGradient(colors: [transparentColor, transparentColor]),
+                                          ? LinearGradient(colors: [
+                                              primaryColor1.withOpacity(0.4),
+                                              primaryColor2.withOpacity(0.4)
+                                            ])
+                                          : LinearGradient(colors: [
+                                              transparentColor,
+                                              transparentColor
+                                            ]),
                                     ),
                                   ),
-                                  Icon(Icons.check_circle_outline, size: 30, color: selectCity == index ? white : transparentColor)
+                                  Icon(Icons.check_circle_outline,
+                                      size: 30,
+                                      color: selectCity == index
+                                          ? white
+                                          : transparentColor)
                                 ],
                               ),
                               10.height,
-                              Text(cityList[index].name!, style: boldTextStyle()).paddingLeft(8),
-                              Text(cityList[index].subtitle!, style: secondaryTextStyle()).paddingLeft(8),
+                              Text(cityList[index].name!,
+                                      style: boldTextStyle())
+                                  .paddingLeft(8),
+                              Text(cityList[index].subtitle!,
+                                      style: secondaryTextStyle())
+                                  .paddingLeft(8),
                             ],
                           ),
                         ).onTap(() {
@@ -96,10 +117,15 @@ class _EASelectCityScreenState extends State<EASelectCityScreen> {
                 margin: EdgeInsets.all(20),
                 width: context.width(),
                 height: 50,
-                decoration: boxDecorationWithShadow(borderRadius: radius(24), gradient: LinearGradient(colors: [primaryColor1, primaryColor2])),
-                child: Text('Next'.toUpperCase(), style: boldTextStyle(color: white, size: 18)),
+                decoration: boxDecorationWithShadow(
+                    borderRadius: radius(24),
+                    gradient:
+                        LinearGradient(colors: [primaryColor1, primaryColor2])),
+                child: Text('Next'.toUpperCase(),
+                    style: boldTextStyle(color: white, size: 18)),
               ).onTap(() {
-                EASelectHashtagScreen(name: cityList[selectCity].name!).launch(context);
+                EASelectHashtagScreen(name: cityList[selectCity].name!)
+                    .launch(context);
               }),
             ),
           ],

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:prokit_flutter/main/utils/Lipsum.dart' as lipsum;
 import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/main/model/ListModels.dart';
 import 'package:prokit_flutter/main/utils/AppColors.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
+import 'package:prokit_flutter/main/utils/Lipsum.dart' as lipsum;
 
 class IMDismissibleScreen extends StatefulWidget {
   static String tag = '/IMDismissibleScreen';
@@ -43,7 +43,10 @@ class _IMDismissibleScreenState extends State<IMDismissibleScreen> {
               itemCount: example.length,
               itemBuilder: (BuildContext context, index) {
                 return ExampleItemWidget(example[index], onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => example[index].widget!));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => example[index].widget!));
                 });
               })),
     );
@@ -56,7 +59,11 @@ Widget mDismissibleList(UserModel mUserModel) {
     child: Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        CircleAvatar(radius: 20, backgroundColor: appColorPrimary, child: Text(mUserModel.tag!, style: primaryTextStyle(color: Colors.white))),
+        CircleAvatar(
+            radius: 20,
+            backgroundColor: appColorPrimary,
+            child: Text(mUserModel.tag!,
+                style: primaryTextStyle(color: Colors.white))),
         10.width,
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,

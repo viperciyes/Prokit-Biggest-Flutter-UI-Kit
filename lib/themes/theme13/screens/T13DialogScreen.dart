@@ -7,7 +7,6 @@ import 'package:prokit_flutter/themes/theme13/utils/T13Constant.dart';
 import 'package:prokit_flutter/themes/theme13/utils/T13Strings.dart';
 import 'package:prokit_flutter/themes/theme13/utils/T13Widget.dart';
 
-import '../../../main.dart';
 import 'T13SettingScreen.dart';
 
 class T13DialogScreen extends StatefulWidget {
@@ -64,7 +63,8 @@ dialogContent(BuildContext context) {
           Navigator.pop(context);
         },
         child: Container(
-          padding: EdgeInsets.fromLTRB(spacing_standard_new, spacing_standard_new, 0, spacing_standard_new),
+          padding: EdgeInsets.fromLTRB(spacing_standard_new,
+              spacing_standard_new, 0, spacing_standard_new),
           alignment: Alignment.centerRight,
           child: Icon(Icons.close, color: t13_textColorSecondary),
         ),

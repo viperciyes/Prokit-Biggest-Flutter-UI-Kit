@@ -2,14 +2,14 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:prokit_flutter/main/utils/AppConstant.dart';
-import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/fullApps/muvi/models/flix_response.dart';
 import 'package:prokit_flutter/fullApps/muvi/screens/flix_movie_detail_screen.dart';
 import 'package:prokit_flutter/fullApps/muvi/utils/flix_percent_indicator.dart';
 import 'package:prokit_flutter/fullApps/muvi/utils/resources/flix_colors.dart';
 import 'package:prokit_flutter/fullApps/muvi/utils/resources/flix_images.dart';
 import 'package:prokit_flutter/fullApps/muvi/utils/resources/flix_size.dart';
+import 'package:prokit_flutter/main/utils/AppConstant.dart';
+import 'package:prokit_flutter/main/utils/AppWidget.dart';
 
 import 'dots_indicator/dots_decorator.dart';
 import 'flix_constants.dart';
@@ -51,15 +51,30 @@ import 'flix_constants.dart';
 }*/
 
 Widget toolBarTitle(BuildContext context, String? title) {
-  return text(title, fontSize: ts_large, textColor: muvi_textColorPrimary, fontFamily: font_bold);
+  return text(title,
+      fontSize: ts_large,
+      textColor: muvi_textColorPrimary,
+      fontFamily: font_bold);
 }
 
-Widget itemTitle(BuildContext context, var titleText, {var fontfamily = font_medium}) {
-  return text(titleText, fontSize: ts_normal, fontFamily: fontfamily, textColor: muvi_textColorPrimary);
+Widget itemTitle(BuildContext context, var titleText,
+    {var fontfamily = font_medium}) {
+  return text(titleText,
+      fontSize: ts_normal,
+      fontFamily: fontfamily,
+      textColor: muvi_textColorPrimary);
 }
 
-Widget itemSubTitle(BuildContext context, var titleText, {var fontFamily = font_regular, var fontsize = ts_normal, var colorThird = false, isLongText = true}) {
-  return text(titleText, fontSize: fontsize, fontFamily: fontFamily, isLongText: isLongText, textColor: colorThird ? muvi_textColorThird : muvi_textColorSecondary);
+Widget itemSubTitle(BuildContext context, var titleText,
+    {var fontFamily = font_regular,
+    var fontsize = ts_normal,
+    var colorThird = false,
+    isLongText = true}) {
+  return text(titleText,
+      fontSize: fontsize,
+      fontFamily: fontFamily,
+      isLongText: isLongText,
+      textColor: colorThird ? muvi_textColorThird : muvi_textColorSecondary);
 }
 
 // ignore: must_be_immutable
@@ -69,7 +84,10 @@ class MoreLessText extends StatefulWidget {
   var fontsize = ts_normal;
   var colorThird = false;
 
-  MoreLessText(this.titleText, {this.fontFamily = font_regular, this.fontsize = ts_normal, this.colorThird = false});
+  MoreLessText(this.titleText,
+      {this.fontFamily = font_regular,
+      this.fontsize = ts_normal,
+      this.colorThird = false});
 
   @override
   MoreLessTextState createState() => MoreLessTextState();
@@ -89,7 +107,8 @@ class MoreLessTextState extends State<MoreLessText> {
           fontFamily: widget.fontFamily,
           isLongText: isExpanded,
           maxLine: 2,
-          textColor: widget.colorThird ? muvi_textColorThird : muvi_textColorSecondary,
+          textColor:
+              widget.colorThird ? muvi_textColorThird : muvi_textColorSecondary,
         ),
         text(
           isExpanded ? "Read less" : "Read more",
@@ -106,14 +125,23 @@ class MoreLessTextState extends State<MoreLessText> {
 }
 
 Widget headingText(BuildContext context, var titleText) {
-  return text(titleText, fontSize: ts_extra_normal, fontFamily: font_bold, textColor: muvi_textColorPrimary);
+  return text(titleText,
+      fontSize: ts_extra_normal,
+      fontFamily: font_bold,
+      textColor: muvi_textColorPrimary);
 }
 
 Widget headingWidViewAll(BuildContext context, var titleText, callback) {
   return Row(
     children: <Widget>[
       Expanded(child: headingText(context, titleText)),
-      InkWell(onTap: callback, child: itemSubTitle(context, "View More", fontsize: ts_medium, fontFamily: font_medium, colorThird: true).paddingAll(spacing_control_half))
+      InkWell(
+          onTap: callback,
+          child: itemSubTitle(context, "View More",
+                  fontsize: ts_medium,
+                  fontFamily: font_medium,
+                  colorThird: true)
+              .paddingAll(spacing_control_half))
     ],
   );
 }
@@ -123,13 +151,19 @@ AppBar appBarLayout(context, text, {darkBackground = true}) {
     elevation: 0,
     iconTheme: IconThemeData(color: muvi_colorPrimary),
     title: toolBarTitle(context, text),
-    backgroundColor: darkBackground ? muvi_navigationBackground : Colors.transparent,
+    backgroundColor:
+        darkBackground ? muvi_navigationBackground : Colors.transparent,
   );
 }
 
-Widget networkImage(String? image, {String aPlaceholder = "", double? aWidth, double? aHeight, BoxFit fit = BoxFit.fill}) {
+Widget networkImage(String? image,
+    {String aPlaceholder = "",
+    double? aWidth,
+    double? aHeight,
+    BoxFit fit = BoxFit.fill}) {
   return CachedNetworkImage(
-    placeholder: placeholderWidgetFn() as Widget Function(BuildContext, String)?,
+    placeholder:
+        placeholderWidgetFn() as Widget Function(BuildContext, String)?,
     imageUrl: '$BaseUrl/$image',
     width: aWidth,
     height: aHeight,
@@ -143,7 +177,8 @@ Widget button(BuildContext context, buttonText, VoidCallback callback) {
     color: muvi_colorPrimary,
     splashColor: Colors.grey.withOpacity(0.2),
     padding: EdgeInsets.only(top: 12, bottom: 12),
-    child: text(buttonText, fontSize: ts_normal, fontFamily: font_medium, textColor: Colors.black),
+    child: text(buttonText,
+        fontSize: ts_normal, fontFamily: font_medium, textColor: Colors.black),
     shape: RoundedRectangleBorder(
       borderRadius: new BorderRadius.circular(spacing_control),
       side: BorderSide(color: muvi_colorPrimary),
@@ -152,7 +187,12 @@ Widget button(BuildContext context, buttonText, VoidCallback callback) {
   );
 }
 
-Widget iconButton(context, buttonText, icon, callBack, {backgroundColor, borderColor, buttonTextColor, iconColor, padding = 12.0}) {
+Widget iconButton(context, buttonText, icon, callBack,
+    {backgroundColor,
+    borderColor,
+    buttonTextColor,
+    iconColor,
+    padding = 12.0}) {
   return MaterialButton(
     color: backgroundColor == null ? muvi_colorPrimary : backgroundColor,
     splashColor: Colors.grey.withOpacity(0.2),
@@ -161,17 +201,33 @@ Widget iconButton(context, buttonText, icon, callBack, {backgroundColor, borderC
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        iconColor == null ? Image.asset(icon, width: 16, height: 16) : Image.asset(icon, width: 16, height: 16, color: iconColor),
-        text(buttonText, fontSize: ts_normal, fontFamily: font_medium, textColor: buttonTextColor == null ? Colors.black : buttonTextColor).paddingLeft(spacing_standard),
+        iconColor == null
+            ? Image.asset(icon, width: 16, height: 16)
+            : Image.asset(icon, width: 16, height: 16, color: iconColor),
+        text(buttonText,
+                fontSize: ts_normal,
+                fontFamily: font_medium,
+                textColor:
+                    buttonTextColor == null ? Colors.black : buttonTextColor)
+            .paddingLeft(spacing_standard),
       ],
     ),
-    shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(spacing_control), side: BorderSide(width: 0.8, color: borderColor == null ? muvi_colorPrimary : borderColor)),
+    shape: RoundedRectangleBorder(
+        borderRadius: new BorderRadius.circular(spacing_control),
+        side: BorderSide(
+            width: 0.8,
+            color: borderColor == null ? muvi_colorPrimary : borderColor)),
     onPressed: callBack,
   );
 }
 
 DotsDecorator dotsDecorator(context) {
-  return DotsDecorator(color: Colors.grey.withOpacity(0.5), activeColor: muvi_colorPrimary, activeSize: Size.square(5.0), size: Size.square(5.0), spacing: EdgeInsets.all(spacing_control_half));
+  return DotsDecorator(
+      color: Colors.grey.withOpacity(0.5),
+      activeColor: muvi_colorPrimary,
+      activeSize: Size.square(5.0),
+      size: Size.square(5.0),
+      spacing: EdgeInsets.all(spacing_control_half));
 }
 
 Widget flixTitle(context) {
@@ -210,15 +266,18 @@ Widget notificationIcon(context, cartCount) {
           width: 30,
           height: 30,
           margin: EdgeInsets.only(right: 12.0),
-          child: Icon(Icons.notifications_none, color: muvi_textColorPrimary, size: 24),
+          child: Icon(Icons.notifications_none,
+              color: muvi_textColorPrimary, size: 24),
         ),
         Align(
           alignment: Alignment.topRight,
           child: Container(
             margin: EdgeInsets.only(top: spacing_standard),
             padding: EdgeInsets.all(4),
-            decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.red),
-            child: text(cartCount.toString(), fontSize: 12.0, textColor: muvi_white),
+            decoration:
+                BoxDecoration(shape: BoxShape.circle, color: Colors.red),
+            child: text(cartCount.toString(),
+                fontSize: 12.0, textColor: muvi_white),
           ).visible(cartCount != 0),
         )
       ],
@@ -245,7 +304,8 @@ class ItemHorizontalList extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: list.length,
               shrinkWrap: true,
-              padding: EdgeInsets.only(left: spacing_standard, right: spacing_standard_new),
+              padding: EdgeInsets.only(
+                  left: spacing_standard, right: spacing_standard_new),
               itemBuilder: (context, index) {
                 return Container(
                   margin: EdgeInsets.only(left: spacing_standard),
@@ -256,13 +316,23 @@ class ItemHorizontalList extends StatelessWidget {
                       child: Stack(
                         alignment: Alignment.bottomLeft,
                         children: <Widget>[
-                          networkImage(list[index].slideImage, aWidth: double.infinity, aHeight: double.infinity).cornerRadiusWithClipRRect(8),
-                          hdWidget(context).paddingRight(spacing_standard).visible(list[index].isHD!).paddingAll(spacing_standard),
+                          networkImage(list[index].slideImage,
+                                  aWidth: double.infinity,
+                                  aHeight: double.infinity)
+                              .cornerRadiusWithClipRRect(8),
+                          hdWidget(context)
+                              .paddingRight(spacing_standard)
+                              .visible(list[index].isHD!)
+                              .paddingAll(spacing_standard),
                         ],
                       ),
                     ),
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => MovieDetailScreen(title: "Action")));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  MovieDetailScreen(title: "Action")));
                     },
                     radius: spacing_control,
                   ),
@@ -275,7 +345,8 @@ class ItemHorizontalList extends StatelessWidget {
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: list.length,
-              padding: EdgeInsets.only(left: spacing_standard, right: spacing_standard_new),
+              padding: EdgeInsets.only(
+                  left: spacing_standard, right: spacing_standard_new),
               itemBuilder: (context, index) {
                 return Container(
                   margin: EdgeInsets.only(left: spacing_standard),
@@ -283,10 +354,16 @@ class ItemHorizontalList extends StatelessWidget {
                   child: InkWell(
                     child: AspectRatio(
                       aspectRatio: 4 / 2.5,
-                      child: networkImage(list[index].slideImage, aWidth: double.infinity, aHeight: double.infinity).cornerRadiusWithClipRRect(8),
+                      child: networkImage(list[index].slideImage,
+                              aWidth: double.infinity, aHeight: double.infinity)
+                          .cornerRadiusWithClipRRect(8),
                     ),
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => MovieDetailScreen(title: "Action")));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  MovieDetailScreen(title: "Action")));
                     },
                     radius: spacing_control,
                   ),
@@ -312,7 +389,8 @@ class ItemProgressHorizontalList extends StatelessWidget {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: list.length,
-        padding: EdgeInsets.only(left: spacing_standard, right: spacing_standard_new),
+        padding: EdgeInsets.only(
+            left: spacing_standard, right: spacing_standard_new),
         itemBuilder: (context, index) {
           return Container(
             margin: EdgeInsets.only(left: spacing_standard),
@@ -325,7 +403,9 @@ class ItemProgressHorizontalList extends StatelessWidget {
                 children: <Widget>[
                   AspectRatio(
                     aspectRatio: 4 / 2.5,
-                    child: networkImage(list[index].slideImage, aWidth: double.infinity, aHeight: double.infinity).cornerRadiusWithClipRRect(8),
+                    child: networkImage(list[index].slideImage,
+                            aWidth: double.infinity, aHeight: double.infinity)
+                        .cornerRadiusWithClipRRect(8),
                   ).paddingBottom(spacing_control),
                   Expanded(
                     child: LinearPercentIndicator(
@@ -340,7 +420,11 @@ class ItemProgressHorizontalList extends StatelessWidget {
                 ],
               ),
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => MovieDetailScreen(title: "Action")));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            MovieDetailScreen(title: "Action")));
               },
               radius: spacing_control,
             ),
@@ -366,21 +450,27 @@ class MovieGridList extends StatelessWidget {
         shrinkWrap: true,
         padding: EdgeInsets.only(left: 12, right: 12),
         physics: BouncingScrollPhysics(),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3, childAspectRatio: 9 / 13),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3, childAspectRatio: 9 / 13),
         scrollDirection: Axis.vertical,
         controller: ScrollController(keepScrollOffset: false),
         itemBuilder: (context, index) {
           Movie bookDetail = list[index];
           return InkWell(
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => MovieDetailScreen(title: "Action")));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          MovieDetailScreen(title: "Action")));
             },
             child: Card(
               semanticContainer: true,
               clipBehavior: Clip.antiAliasWithSaveLayer,
               elevation: spacing_control_half,
               margin: EdgeInsets.all(0),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(spacing_control)),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(spacing_control)),
               child: networkImage(bookDetail.slideImage),
             ),
           ).paddingAll(spacing_control);
@@ -403,9 +493,11 @@ class AllMovieGridList extends StatelessWidget {
       child: GridView.builder(
         itemCount: list.length,
         shrinkWrap: true,
-        padding: EdgeInsets.only(left: 11, right: 11, top: spacing_standard_new),
+        padding:
+            EdgeInsets.only(left: 11, right: 11, top: spacing_standard_new),
         physics: BouncingScrollPhysics(),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 9 / 15),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, childAspectRatio: 9 / 15),
         scrollDirection: Axis.vertical,
         controller: ScrollController(keepScrollOffset: false),
         itemBuilder: (context, index) {
@@ -413,16 +505,26 @@ class AllMovieGridList extends StatelessWidget {
 
           return InkWell(
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => MovieDetailScreen(title: "Action")));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          MovieDetailScreen(title: "Action")));
             },
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Expanded(
-                  child: networkImage(bookDetail.slideImage, aWidth: double.infinity, aHeight: double.infinity, fit: BoxFit.cover).cornerRadiusWithClipRRect(8),
+                  child: networkImage(bookDetail.slideImage,
+                          aWidth: double.infinity,
+                          aHeight: double.infinity,
+                          fit: BoxFit.cover)
+                      .cornerRadiusWithClipRRect(8),
                 ),
                 itemTitle(context, "Crank- High Voltage"),
-                itemSubTitle(context, "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", isLongText: false),
+                itemSubTitle(context,
+                    "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+                    isLongText: false),
               ],
             ),
           ).paddingOnly(left: 5, right: 5, bottom: spacing_standard_new);
@@ -448,14 +550,25 @@ Widget subType(context, key, VoidCallback callback, icon) {
       Expanded(child: itemTitle(context, key)),
       Icon(Icons.arrow_forward_ios, size: 16, color: muvi_textColorThird)
     ],
-  ).paddingOnly(left: spacing_standard_new, right: 12, top: spacing_standard_new, bottom: spacing_standard_new).onTap(callback);
+  )
+      .paddingOnly(
+          left: spacing_standard_new,
+          right: 12,
+          top: spacing_standard_new,
+          bottom: spacing_standard_new)
+      .onTap(callback);
 }
 
 Widget hdWidget(context) {
   return Container(
-    decoration: BoxDecoration(color: muvi_colorPrimary, shape: BoxShape.rectangle, borderRadius: BorderRadius.all(Radius.circular(spacing_control_half))),
-    padding: EdgeInsets.only(top: 0, bottom: 0, left: spacing_control, right: spacing_control),
-    child: text("HD", textColor: Colors.black, fontSize: ts_medium, fontFamily: font_bold),
+    decoration: BoxDecoration(
+        color: muvi_colorPrimary,
+        shape: BoxShape.rectangle,
+        borderRadius: BorderRadius.all(Radius.circular(spacing_control_half))),
+    padding: EdgeInsets.only(
+        top: 0, bottom: 0, left: spacing_control, right: spacing_control),
+    child: text("HD",
+        textColor: Colors.black, fontSize: ts_medium, fontFamily: font_bold),
   );
 }
 
@@ -493,15 +606,22 @@ Widget formField(
       }
     },
     decoration: InputDecoration(
-      focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: muvi_colorPrimary)),
-      enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: muvi_textColorPrimary)),
+      focusedBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: muvi_colorPrimary)),
+      enabledBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: muvi_textColorPrimary)),
       labelText: hint,
       labelStyle: TextStyle(fontSize: ts_normal, color: muvi_textColorPrimary),
       suffixIcon: isPassword && isPasswordVisible
-          ? GestureDetector(onTap: suffixIconSelector, child: Icon(suffixIcon, color: muvi_colorPrimary, size: 20))
+          ? GestureDetector(
+              onTap: suffixIconSelector,
+              child: Icon(suffixIcon, color: muvi_colorPrimary, size: 20))
           : Icon(suffixIcon, color: muvi_colorPrimary, size: 20),
       contentPadding: EdgeInsets.only(bottom: 2.0),
     ),
-    style: TextStyle(fontSize: ts_normal, color: isDummy ? Colors.transparent : muvi_textColorPrimary, fontFamily: font_regular),
+    style: TextStyle(
+        fontSize: ts_normal,
+        color: isDummy ? Colors.transparent : muvi_textColorPrimary,
+        fontFamily: font_regular),
   );
 }

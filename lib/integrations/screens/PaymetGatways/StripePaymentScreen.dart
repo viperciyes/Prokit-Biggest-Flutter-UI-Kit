@@ -123,7 +123,7 @@ class StripePaymentScreenState extends State<StripePaymentScreen> {
       try {
         var body = jsonDecode(response.body);
         throw parseHtmlString(body['message']);
-      } on Exception catch (e) {}
+      } on Exception {}
     }
   }
 }

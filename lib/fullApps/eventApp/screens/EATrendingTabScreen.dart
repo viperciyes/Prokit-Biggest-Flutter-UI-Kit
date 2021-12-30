@@ -38,8 +38,7 @@ class EATrendingTabScreenState extends State<EATrendingTabScreen> {
           return Column(
             children: [
               Stack(
-                overflow: Overflow.visible,
-                alignment: Alignment.bottomCenter,
+                clipBehavior: Clip.none, alignment: Alignment.bottomCenter,
                 children: [
                   Image.asset(forYouList[i].image!, height: 230, width: context.width(), fit: BoxFit.cover).cornerRadiusWithClipRRect(8),
                   Positioned(right: 16, top: 16, child: Icon(Icons.favorite_border, color: white, size: 22)),

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/themes/theme4/screens/T4SignIn.dart';
 import 'package:prokit_flutter/themes/theme4/utils/T4Constant.dart';
 import 'package:prokit_flutter/themes/theme4/utils/T4Strings.dart';
 import 'package:prokit_flutter/themes/theme4/utils/widgets/T4Button.dart';
-import 'package:nb_utils/nb_utils.dart';
 
 import '../../../main.dart';
 
@@ -62,7 +62,12 @@ dialogContent(BuildContext context) {
       child: Column(
         mainAxisSize: MainAxisSize.min, // To make the card compact
         children: <Widget>[
-          text("Would you like to get updates and notifications?", fontSize: textSizeLargeMedium, maxLine: 2, isCentered: true, textColor: appStore.textPrimaryColor, fontFamily: fontSemibold),
+          text("Would you like to get updates and notifications?",
+              fontSize: textSizeLargeMedium,
+              maxLine: 2,
+              isCentered: true,
+              textColor: appStore.textPrimaryColor,
+              fontFamily: fontSemibold),
           SizedBox(height: 30),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

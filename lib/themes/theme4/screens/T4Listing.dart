@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/themes/theme4/models/T4Models.dart';
 import 'package:prokit_flutter/themes/theme4/utils/T4Constant.dart';
@@ -8,7 +9,6 @@ import 'package:prokit_flutter/themes/theme4/utils/T4Strings.dart';
 import 'package:prokit_flutter/themes/theme4/utils/T4Widgets.dart';
 
 import '../../../main.dart';
-import 'package:nb_utils/nb_utils.dart';
 
 class T4Listing extends StatefulWidget {
   static var tag = "/T4Listing";
@@ -53,7 +53,8 @@ class T4ListingState extends State<T4Listing> {
                               children: <Widget>[
                                 ClipRRect(
                                   child: CachedNetworkImage(
-                                    placeholder: placeholderWidgetFn() as Widget Function(BuildContext, String)?,
+                                    placeholder: placeholderWidgetFn() as Widget
+                                        Function(BuildContext, String)?,
                                     imageUrl: mListings[index].image,
                                     width: width / 3,
                                     height: width / 3.2,
@@ -63,19 +64,30 @@ class T4ListingState extends State<T4Listing> {
                                 ),
                                 Expanded(
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: <Widget>[
                                       Padding(
                                         padding: EdgeInsets.only(left: 10.0),
                                         child: Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: <Widget>[
-                                            text(mListings[index].name, textColor: appStore.textPrimaryColor, fontSize: textSizeLargeMedium, fontFamily: fontBold),
-                                            text(mListings[index].info, fontSize: textSizeMedium, textColor: appStore.textPrimaryColor),
+                                            text(mListings[index].name,
+                                                textColor:
+                                                    appStore.textPrimaryColor,
+                                                fontSize: textSizeLargeMedium,
+                                                fontFamily: fontBold),
+                                            text(mListings[index].info,
+                                                fontSize: textSizeMedium,
+                                                textColor:
+                                                    appStore.textPrimaryColor),
                                             SizedBox(
                                               height: 4,
                                             ),
-                                            text(mListings[index].otherinfo, fontSize: textSizeSMedium, maxLine: 3),
+                                            text(mListings[index].otherinfo,
+                                                fontSize: textSizeSMedium,
+                                                maxLine: 3),
                                             SizedBox(
                                               height: 4,
                                             ),

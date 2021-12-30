@@ -1,13 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/themes/theme9/models/T9Models.dart';
 import 'package:prokit_flutter/themes/theme9/utils/T9Colors.dart';
 import 'package:prokit_flutter/themes/theme9/utils/T9Constant.dart';
 import 'package:prokit_flutter/themes/theme9/utils/T9DataGenerator.dart';
 import 'package:prokit_flutter/themes/theme9/utils/T9Strings.dart';
-import 'package:nb_utils/nb_utils.dart';
 
 import '../../../main.dart';
 
@@ -49,7 +49,10 @@ class T9ListState extends State<T9List> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         SizedBox(height: 16),
-                        text(t9_lbl_achievements, textColor: appStore.textPrimaryColor, fontSize: textSizeLarge, fontFamily: fontBold),
+                        text(t9_lbl_achievements,
+                            textColor: appStore.textPrimaryColor,
+                            fontSize: textSizeLarge,
+                            fontFamily: fontBold),
                         SizedBox(height: 10),
                         Container(
                           width: MediaQuery.of(context).size.width / 1.3,
@@ -67,14 +70,16 @@ class T9ListState extends State<T9List> {
                                 padding: EdgeInsets.all(8.0),
                                 child: Text(
                                   t9_lbl_badges,
-                                  style: TextStyle(fontSize: 18.0, fontFamily: fontBold),
+                                  style: TextStyle(
+                                      fontSize: 18.0, fontFamily: fontBold),
                                 ),
                               ),
                               Container(
                                 padding: EdgeInsets.all(8.0),
                                 child: Text(
                                   t9_lbl_leader_board,
-                                  style: TextStyle(fontSize: 18.0, fontFamily: fontBold),
+                                  style: TextStyle(
+                                      fontSize: 18.0, fontFamily: fontBold),
                                 ),
                               )
                             ],
@@ -131,11 +136,13 @@ class T9Badges extends StatelessWidget {
               margin: EdgeInsets.only(right: 10),
               width: MediaQuery.of(context).size.width / 7,
               height: MediaQuery.of(context).size.width / 7,
-              decoration: BoxDecoration(shape: BoxShape.circle, color: model.color),
+              decoration:
+                  BoxDecoration(shape: BoxShape.circle, color: model.color),
               child: Padding(
                 padding: EdgeInsets.all(10.0),
                 child: CachedNetworkImage(
-                  placeholder: placeholderWidgetFn() as Widget Function(BuildContext, String)?,
+                  placeholder: placeholderWidgetFn() as Widget Function(
+                      BuildContext, String)?,
                   imageUrl: model.img,
                 ),
               ),
@@ -145,9 +152,13 @@ class T9Badges extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  text(model.name, textColor: appStore.textPrimaryColor, fontFamily: fontMedium, fontSize: textSizeLargeMedium),
+                  text(model.name,
+                      textColor: appStore.textPrimaryColor,
+                      fontFamily: fontMedium,
+                      fontSize: textSizeLargeMedium),
                   SizedBox(width: 4),
-                  text(model.comment, textColor: appStore.textSecondaryColor,maxLine: 1),
+                  text(model.comment,
+                      textColor: appStore.textSecondaryColor, maxLine: 1),
                 ],
               ),
             )
@@ -164,7 +175,8 @@ class T9Badges extends StatelessWidget {
               margin: EdgeInsets.only(right: 10),
               width: MediaQuery.of(context).size.width / 7,
               height: MediaQuery.of(context).size.width / 7,
-              decoration: BoxDecoration(shape: BoxShape.circle, color: t9_met_grey),
+              decoration:
+                  BoxDecoration(shape: BoxShape.circle, color: t9_met_grey),
               child: Padding(
                 padding: EdgeInsets.all(10.0),
                 child: Icon(Icons.lock, color: t9_white),
@@ -174,9 +186,11 @@ class T9Badges extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                text(t9_lbl_locked_badge, fontFamily: fontMedium, fontSize: textSizeLargeMedium),
+                text(t9_lbl_locked_badge,
+                    fontFamily: fontMedium, fontSize: textSizeLargeMedium),
                 SizedBox(width: 4),
-                text(t9_lbl_unlock_to_see_details, textColor: t9_textColorSecondary),
+                text(t9_lbl_unlock_to_see_details,
+                    textColor: t9_textColorSecondary),
               ],
             )
           ],
@@ -214,7 +228,9 @@ class T9LeaderBoard extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  text(model.name, textColor: appStore.textPrimaryColor, fontFamily: fontMedium),
+                  text(model.name,
+                      textColor: appStore.textPrimaryColor,
+                      fontFamily: fontMedium),
                   SizedBox(width: 4),
                   text(model.points, textColor: appStore.textSecondaryColor),
                 ],
@@ -225,7 +241,8 @@ class T9LeaderBoard extends StatelessWidget {
             margin: EdgeInsets.only(right: 10),
             width: 35,
             height: 35,
-            decoration: BoxDecoration(shape: BoxShape.circle, color: appStore.appBarColor),
+            decoration: BoxDecoration(
+                shape: BoxShape.circle, color: appStore.appBarColor),
             child: Center(child: text((i + 1).toString())),
           )
         ],

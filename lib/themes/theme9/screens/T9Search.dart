@@ -1,13 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/themes/theme9/models/T9Models.dart';
 import 'package:prokit_flutter/themes/theme9/utils/T9Colors.dart';
 import 'package:prokit_flutter/themes/theme9/utils/T9Constant.dart';
 import 'package:prokit_flutter/themes/theme9/utils/T9DataGenerator.dart';
 import 'package:prokit_flutter/themes/theme9/utils/T9Strings.dart';
-import 'package:nb_utils/nb_utils.dart';
 
 import '../../../main.dart';
 
@@ -40,7 +40,8 @@ class T9SearchState extends State<T9Search> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
-              decoration: boxDecoration(showShadow: true, bgColor: appStore.appBarColor, radius: 0),
+              decoration: boxDecoration(
+                  showShadow: true, bgColor: appStore.appBarColor, radius: 0),
               padding: EdgeInsets.fromLTRB(12, 16, 16, 12),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,7 +61,11 @@ class T9SearchState extends State<T9Search> {
                             ),
                           ),
                         ),
-                        TextSpan(text: t9_hint_search, style: TextStyle(fontSize: textSizeMedium, color: t9_textColorSecondary)),
+                        TextSpan(
+                            text: t9_hint_search,
+                            style: TextStyle(
+                                fontSize: textSizeMedium,
+                                color: t9_textColorSecondary)),
                       ],
                     ),
                   ),
@@ -68,11 +73,16 @@ class T9SearchState extends State<T9Search> {
                     text: TextSpan(
                       style: Theme.of(context).textTheme.bodyText2,
                       children: [
-                        TextSpan(text: t9_lbl_filter, style: TextStyle(fontSize: textSizeMedium, color: t9_colorPrimary)),
+                        TextSpan(
+                            text: t9_lbl_filter,
+                            style: TextStyle(
+                                fontSize: textSizeMedium,
+                                color: t9_colorPrimary)),
                         WidgetSpan(
                           child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 8.0),
-                            child: Icon(Icons.close, color: appStore.iconColor, size: 20),
+                            child: Icon(Icons.close,
+                                color: appStore.iconColor, size: 20),
                           ),
                         ),
                       ],
@@ -86,7 +96,10 @@ class T9SearchState extends State<T9Search> {
             ),
             Container(
               margin: EdgeInsets.only(left: 16),
-              child: text(t9_lbl_top_instructors, textColor: appStore.textPrimaryColor, fontFamily: fontBold, fontSize: textSizeLargeMedium),
+              child: text(t9_lbl_top_instructors,
+                  textColor: appStore.textPrimaryColor,
+                  fontFamily: fontBold,
+                  fontSize: textSizeLargeMedium),
             ),
             SizedBox(height: 16),
             SizedBox(
@@ -101,7 +114,10 @@ class T9SearchState extends State<T9Search> {
             ),
             Container(
               margin: EdgeInsets.only(left: 16),
-              child: text(t9_lbl_recommended, textColor: appStore.textPrimaryColor, fontFamily: fontBold, fontSize: textSizeLargeMedium),
+              child: text(t9_lbl_recommended,
+                  textColor: appStore.textPrimaryColor,
+                  fontFamily: fontBold,
+                  fontSize: textSizeLargeMedium),
             ),
             SizedBox(height: 16),
             SizedBox(
@@ -146,7 +162,8 @@ class T9Instructor extends StatelessWidget {
             ],
           ),
           SizedBox(height: 8),
-          text(model.name, textColor: appStore.textPrimaryColor, fontFamily: fontMedium),
+          text(model.name,
+              textColor: appStore.textPrimaryColor, fontFamily: fontMedium),
           text(model.subject, textColor: appStore.textSecondaryColor),
         ],
       ),

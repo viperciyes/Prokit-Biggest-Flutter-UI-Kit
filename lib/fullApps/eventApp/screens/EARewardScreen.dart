@@ -81,8 +81,7 @@ class _RewardTextState extends State<RewardText> {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      overflow: Overflow.visible,
-      children: [
+      clipBehavior: Clip.none, children: [
         Container(
           height: context.height() * 0.37,
           decoration: boxDecorationWithShadow(

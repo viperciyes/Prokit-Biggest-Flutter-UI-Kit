@@ -198,8 +198,7 @@ class CustomTheme extends StatelessWidget {
     return Theme(
       data: appStore.isDarkModeOn
           ? ThemeData.dark().copyWith(
-              accentColor: appColorPrimary,
-              backgroundColor: context.scaffoldBackgroundColor,
+              backgroundColor: context.scaffoldBackgroundColor, colorScheme: ColorScheme.fromSwatch().copyWith(secondary: appColorPrimary),
             )
           : ThemeData.light(),
       child: child!,

@@ -1,8 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:prokit_flutter/main/utils/Lipsum.dart' as lipsum;
 import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
+import 'package:prokit_flutter/main/utils/Lipsum.dart' as lipsum;
 
 import '../../../main.dart';
 
@@ -40,11 +40,15 @@ class _MWRichTextScreenState extends State<MWRichTextScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Text With Link", style: boldTextStyle(size: 18)).paddingOnly(top: 16, bottom: 16),
+              Text("Text With Link", style: boldTextStyle(size: 18))
+                  .paddingOnly(top: 16, bottom: 16),
               RichText(
                 text: TextSpan(
                   children: <TextSpan>[
-                    TextSpan(text: "Don't have an account?", style: primaryTextStyle(color: appStore.textPrimaryColor)),
+                    TextSpan(
+                        text: "Don't have an account?",
+                        style:
+                            primaryTextStyle(color: appStore.textPrimaryColor)),
                     TextSpan(
                       text: ' Sign Up ',
                       recognizer: TapGestureRecognizer()
@@ -58,13 +62,20 @@ class _MWRichTextScreenState extends State<MWRichTextScreen> {
               ),
               16.height,
               Divider(thickness: 1),
-              Text("Text With Icon", style: boldTextStyle(size: 18)).paddingOnly(top: 16, bottom: 16),
+              Text("Text With Icon", style: boldTextStyle(size: 18))
+                  .paddingOnly(top: 16, bottom: 16),
               RichText(
                 text: TextSpan(
                   style: Theme.of(context).textTheme.bodyText2,
                   children: [
-                    WidgetSpan(child: Padding(padding: EdgeInsets.only(right: 10), child: Icon(Icons.settings, size: 18))),
-                    TextSpan(text: "Settings", style: primaryTextStyle(color: appStore.textPrimaryColor)),
+                    WidgetSpan(
+                        child: Padding(
+                            padding: EdgeInsets.only(right: 10),
+                            child: Icon(Icons.settings, size: 18))),
+                    TextSpan(
+                        text: "Settings",
+                        style:
+                            primaryTextStyle(color: appStore.textPrimaryColor)),
                   ],
                 ),
               ),
@@ -72,14 +83,21 @@ class _MWRichTextScreenState extends State<MWRichTextScreen> {
               RichText(
                 text: TextSpan(
                   children: [
-                    TextSpan(text: "Profile", style: primaryTextStyle(color: appStore.textPrimaryColor)),
-                    WidgetSpan(child: Padding(padding: EdgeInsets.only(left: 10), child: Icon(Icons.person, size: 18))),
+                    TextSpan(
+                        text: "Profile",
+                        style:
+                            primaryTextStyle(color: appStore.textPrimaryColor)),
+                    WidgetSpan(
+                        child: Padding(
+                            padding: EdgeInsets.only(left: 10),
+                            child: Icon(Icons.person, size: 18))),
                   ],
                 ),
               ),
               16.height,
               Divider(thickness: 1),
-              Text("Text With style", style: boldTextStyle(size: 18)).paddingOnly(top: 16, bottom: 16),
+              Text("Text With style", style: boldTextStyle(size: 18))
+                  .paddingOnly(top: 16, bottom: 16),
               RichText(
                 text: TextSpan(
                   children: <TextSpan>[
@@ -89,7 +107,11 @@ class _MWRichTextScreenState extends State<MWRichTextScreen> {
                         ..onTap = () {
                           toasty(context, "Click");
                         },
-                      style: TextStyle(fontWeight: FontWeight.normal, fontSize: 16, decoration: TextDecoration.underline, color: Colors.blue),
+                      style: TextStyle(
+                          fontWeight: FontWeight.normal,
+                          fontSize: 16,
+                          decoration: TextDecoration.underline,
+                          color: Colors.blue),
                     ),
                     TextSpan(text: " here", style: primaryTextStyle())
                   ],
@@ -98,7 +120,13 @@ class _MWRichTextScreenState extends State<MWRichTextScreen> {
               10.height,
               RichText(
                 text: TextSpan(
-                  children: <TextSpan>[TextSpan(text: 'Bold', recognizer: TapGestureRecognizer()..onTap = () {}, style: boldTextStyle(size: 18)), TextSpan(text: " Style", style: primaryTextStyle())],
+                  children: <TextSpan>[
+                    TextSpan(
+                        text: 'Bold',
+                        recognizer: TapGestureRecognizer()..onTap = () {},
+                        style: boldTextStyle(size: 18)),
+                    TextSpan(text: " Style", style: primaryTextStyle())
+                  ],
                 ),
               ),
               10.height,
@@ -107,7 +135,9 @@ class _MWRichTextScreenState extends State<MWRichTextScreen> {
                   text: lipsum.createWord(numWords: 2),
                   style: primaryTextStyle(color: Colors.red, size: 18),
                   children: <TextSpan>[
-                    TextSpan(text: lipsum.createParagraph(numSentences: 1), style: primaryTextStyle(color: Colors.blueGrey)),
+                    TextSpan(
+                        text: lipsum.createParagraph(numSentences: 1),
+                        style: primaryTextStyle(color: Colors.blueGrey)),
                   ],
                 ),
               )

@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/fullApps/muvi/screens/flix_home_screen.dart';
 import 'package:prokit_flutter/fullApps/muvi/utils/flix_app_widgets.dart';
-
 import 'package:prokit_flutter/fullApps/muvi/utils/resources/flix_colors.dart';
 import 'package:prokit_flutter/fullApps/muvi/utils/resources/flix_size.dart';
-import 'package:nb_utils/nb_utils.dart';
 
 class ChangePasswordScreen extends StatefulWidget {
   static String tag = '/ChangePasswordScreen';
@@ -58,7 +57,8 @@ class ChangePasswordScreenState extends State<ChangePasswordScreen> {
                 passwordVisible = !passwordVisible;
               });
             },
-            suffixIcon: passwordVisible ? Icons.visibility : Icons.visibility_off,
+            suffixIcon:
+                passwordVisible ? Icons.visibility : Icons.visibility_off,
           ).paddingBottom(spacing_standard_new),
           formField(
             context,
@@ -79,7 +79,8 @@ class ChangePasswordScreenState extends State<ChangePasswordScreen> {
                 passwordVisible = !passwordVisible;
               });
             },
-            suffixIcon: passwordVisible ? Icons.visibility : Icons.visibility_off,
+            suffixIcon:
+                passwordVisible ? Icons.visibility : Icons.visibility_off,
           ).paddingBottom(spacing_standard_new),
           formField(
             context,
@@ -99,7 +100,8 @@ class ChangePasswordScreenState extends State<ChangePasswordScreen> {
                 passwordVisible = !passwordVisible;
               });
             },
-            suffixIcon: passwordVisible ? Icons.visibility : Icons.visibility_off,
+            suffixIcon:
+                passwordVisible ? Icons.visibility : Icons.visibility_off,
           ).paddingBottom(spacing_standard_new),
         ],
       ),
@@ -128,8 +130,14 @@ class ChangePasswordScreenState extends State<ChangePasswordScreen> {
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: <Widget>[
-                form.paddingOnly(left: spacing_standard_new, right: spacing_standard_new, top: spacing_large).paddingBottom(spacing_standard_new),
-                signinButton.paddingOnly(left: spacing_standard_new, right: spacing_standard_new),
+                form
+                    .paddingOnly(
+                        left: spacing_standard_new,
+                        right: spacing_standard_new,
+                        top: spacing_large)
+                    .paddingBottom(spacing_standard_new),
+                signinButton.paddingOnly(
+                    left: spacing_standard_new, right: spacing_standard_new),
               ],
             ),
           ),

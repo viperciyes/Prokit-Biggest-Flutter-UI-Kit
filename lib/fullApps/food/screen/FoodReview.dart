@@ -6,7 +6,6 @@ import 'package:prokit_flutter/fullApps/food/utils/FoodDataGenerator.dart';
 import 'package:prokit_flutter/fullApps/food/utils/FoodString.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
 
-import '../utils/FoodColors.dart';
 import 'FoodRestaurantsDescription.dart';
 
 class FoodReview extends StatefulWidget {

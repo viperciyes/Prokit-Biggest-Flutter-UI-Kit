@@ -1,5 +1,6 @@
 import 'package:google_maps_flutter/google_maps_flutter.dart' show LatLngBounds;
 import 'package:sqflite/sqflite.dart';
+
 import 'aggregated_points.dart';
 
 class DBHelper {
@@ -30,9 +31,12 @@ class DBHelper {
         dbLongColumn,
       );
 
-      whereClause = whereClause.isEmpty ? "WHERE $boundingBoxClause" : "$whereClause AND $boundingBoxClause";
+      whereClause = whereClause.isEmpty
+          ? "WHERE $boundingBoxClause"
+          : "$whereClause AND $boundingBoxClause";
 
-      final query = 'SELECT COUNT(*) as n_marker, AVG($dbLatColumn) as lat, AVG($dbLongColumn) as long '
+      final query =
+          'SELECT COUNT(*) as n_marker, AVG($dbLatColumn) as lat, AVG($dbLongColumn) as long '
           'FROM $dbTable $whereClause GROUP BY substr($dbGeohashColumn,1,$level);';
       assert(() {
         print(query);
@@ -64,8 +68,9 @@ class DBHelper {
       return <AggregatedPoints>[];
     }
   }
+
   // TODO Without NullSafety Geo coder
- /* static Future<List<LatLngAndGeohash>> getPoints({required Database database, required String dbTable, required String dbLatColumn, required String dbLongColumn, String whereClause = ""}) async {
+  /* static Future<List<LatLngAndGeohash>> getPoints({required Database database, required String dbTable, required String dbLatColumn, required String dbLongColumn, String whereClause = ""}) async {
     try {
       var result = await database.rawQuery('SELECT $dbLatColumn as lat, $dbLongColumn as long '
           'FROM $dbTable $whereClause;');
@@ -89,7 +94,8 @@ class DBHelper {
     }
   }
 */
-  static String buildBoundingBoxClause(LatLngBounds latLngBounds, String dbTable, String dbLat, String dbLong) {
+  static String buildBoundingBoxClause(
+      LatLngBounds latLngBounds, String dbTable, String dbLat, String dbLong) {
     assert(() {
       print(latLngBounds.toString());
       return true;
@@ -99,10 +105,13 @@ class DBHelper {
     final double rightBottomLatitude = latLngBounds.southwest.latitude;
     final double rightBottomLongitude = latLngBounds.northeast.longitude;
 
-    final latQuery = (leftTopLatitude > rightBottomLatitude) ? "($dbLat <= $leftTopLatitude AND $dbLat >= $rightBottomLatitude)" : "($dbLat <= $leftTopLatitude OR $dbLat >= $rightBottomLatitude)";
+    final latQuery = (leftTopLatitude > rightBottomLatitude)
+        ? "($dbLat <= $leftTopLatitude AND $dbLat >= $rightBottomLatitude)"
+        : "($dbLat <= $leftTopLatitude OR $dbLat >= $rightBottomLatitude)";
 
-    final longQuery =
-        (leftTopLongitude < rightBottomLongitude) ? "($dbLong >= $leftTopLongitude AND $dbLong <= $rightBottomLongitude)" : "($dbLong >= $leftTopLongitude OR $dbLong <= $rightBottomLongitude)";
+    final longQuery = (leftTopLongitude < rightBottomLongitude)
+        ? "($dbLong >= $leftTopLongitude AND $dbLong <= $rightBottomLongitude)"
+        : "($dbLong >= $leftTopLongitude OR $dbLong <= $rightBottomLongitude)";
 
     return "$latQuery AND $longQuery";
   }

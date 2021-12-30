@@ -7,7 +7,6 @@ import 'package:prokit_flutter/fullApps/food/utils/FoodColors.dart';
 import 'package:prokit_flutter/fullApps/food/utils/FoodDataGenerator.dart';
 import 'package:prokit_flutter/fullApps/food/utils/FoodString.dart';
 import 'package:prokit_flutter/fullApps/food/utils/FoodWidget.dart';
-import 'package:prokit_flutter/main.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
 
 class FoodFavourite extends StatefulWidget {
@@ -38,7 +37,11 @@ class FoodFavouriteState extends State<FoodFavourite> {
               margin: EdgeInsets.all(16),
               child: GridView.builder(
                 scrollDirection: Axis.vertical,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, crossAxisSpacing: 16, mainAxisSpacing: 16, childAspectRatio: 0.75),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 16,
+                    mainAxisSpacing: 16,
+                    childAspectRatio: 0.75),
                 itemCount: mList1.length,
                 itemBuilder: (context, index) {
                   return Favourite(mList1[index], index);
@@ -64,7 +67,8 @@ class Favourite extends StatelessWidget {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     return Container(
-      decoration: BoxDecoration(boxShadow: defaultBoxShadow(), color: context.cardColor),
+      decoration: BoxDecoration(
+          boxShadow: defaultBoxShadow(), color: context.cardColor),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -74,7 +78,8 @@ class Favourite extends StatelessWidget {
               topLeft: Radius.circular(10),
             ),
             child: CachedNetworkImage(
-              placeholder: placeholderWidgetFn() as Widget Function(BuildContext, String)?,
+              placeholder: placeholderWidgetFn() as Widget Function(
+                  BuildContext, String)?,
               imageUrl: model.image,
               height: width * 0.3,
               width: width,
@@ -87,7 +92,8 @@ class Favourite extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(model.name, style: primaryTextStyle(), maxLines: 1),
-                Text(model.type, style: primaryTextStyle(color: food_textColorSecondary)),
+                Text(model.type,
+                    style: primaryTextStyle(color: food_textColorSecondary)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[Text(model.price), Quantitybtn()],

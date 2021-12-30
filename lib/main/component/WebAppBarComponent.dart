@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:prokit_flutter/main.dart';
 import 'package:prokit_flutter/main/component/SoicalMediaWidgetComponent.dart';
 import 'package:prokit_flutter/main/screens/WebSettingScreen.dart';
 import 'package:prokit_flutter/main/utils/AppColors.dart';

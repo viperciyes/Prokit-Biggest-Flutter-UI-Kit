@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter/services.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/fullApps/walletApp/screen/WAEditProfileScreen.dart';
 import 'package:prokit_flutter/fullApps/walletApp/utils/WAWidgets.dart';
@@ -42,8 +43,7 @@ class WAMyProfileScreenState extends State<WAMyProfileScreen> {
           title: Text('My Profile', style: boldTextStyle(color: Colors.black, size: 20)),
           centerTitle: true,
           automaticallyImplyLeading: false,
-          elevation: 0.0,
-          brightness: Brightness.dark,
+          elevation: 0.0, systemOverlayStyle: SystemUiOverlayStyle.light,
         ),
         body: Container(
           height: context.height(),

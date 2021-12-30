@@ -1,6 +1,7 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter/services.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/fullApps/walletApp/component/WACardComponent.dart';
 import 'package:prokit_flutter/fullApps/walletApp/component/WATransactionComponent.dart';
@@ -56,7 +57,6 @@ class WAWalletScreenState extends State<WAWalletScreen> {
           centerTitle: true,
           automaticallyImplyLeading: false,
           elevation: 0.0,
-          brightness: Brightness.dark,
           actions: [
             Container(
               height: 35,
@@ -66,7 +66,7 @@ class WAWalletScreenState extends State<WAWalletScreen> {
               decoration: boxDecorationRoundedWithShadow(8, backgroundColor: context.cardColor),
               child: waCommonCachedNetworkImage('images/walletApp/wa_add_icon.png', fit: BoxFit.cover),
             ),
-          ],
+          ], systemOverlayStyle: SystemUiOverlayStyle.light,
         ),
         body: Container(
           height: context.height(),

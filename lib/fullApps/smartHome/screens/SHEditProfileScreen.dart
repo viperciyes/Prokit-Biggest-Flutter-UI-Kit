@@ -83,8 +83,7 @@ class SHEditProfileScreenState extends State<SHEditProfileScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Stack(
-                overflow: Overflow.visible,
-                alignment: Alignment.topCenter,
+                clipBehavior: Clip.none, alignment: Alignment.topCenter,
                 children: [
                   FittedBox(
                     fit: BoxFit.fill,

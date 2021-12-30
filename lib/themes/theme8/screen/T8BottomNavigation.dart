@@ -1,14 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/themes/theme8/utils/T8Colors.dart';
 import 'package:prokit_flutter/themes/theme8/utils/T8Images.dart';
 import 'package:prokit_flutter/themes/theme8/utils/T8Strings.dart';
 import 'package:prokit_flutter/themes/theme8/utils/T8Widget.dart';
-import 'package:nb_utils/nb_utils.dart';
-
-import '../../../main.dart';
 
 class T8BottomNavigation extends StatefulWidget {
   static String tag = '/T8BottomNavigation';
@@ -57,7 +55,9 @@ class T8BottomNavigationState extends State<T8BottomNavigation> {
       body: SafeArea(
         child: Stack(
           children: <Widget>[
-            Align(alignment: Alignment.topCenter, child: t8HeaderText(t8_title_bottom_navigation)),
+            Align(
+                alignment: Alignment.topCenter,
+                child: t8HeaderText(t8_title_bottom_navigation)),
           ],
         ),
       ),
@@ -66,9 +66,14 @@ class T8BottomNavigationState extends State<T8BottomNavigation> {
         margin: EdgeInsets.only(top: 30),
         decoration: BoxDecoration(
           color: context.scaffoldBackgroundColor,
-          borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)),
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20), topRight: Radius.circular(20)),
           boxShadow: [
-            BoxShadow(color: t8_ShadowColor, blurRadius: 10, spreadRadius: 2, offset: Offset(0, 3.0)),
+            BoxShadow(
+                color: t8_ShadowColor,
+                blurRadius: 10,
+                spreadRadius: 2,
+                offset: Offset(0, 3.0)),
           ],
         ),
         child: Padding(

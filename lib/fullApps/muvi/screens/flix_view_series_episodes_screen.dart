@@ -1,14 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/fullApps/muvi/models/flix_response.dart';
 import 'package:prokit_flutter/fullApps/muvi/utils/flix_app_widgets.dart';
 import 'package:prokit_flutter/fullApps/muvi/utils/flix_constants.dart';
 import 'package:prokit_flutter/fullApps/muvi/utils/flix_data_generator.dart';
-
-import 'package:nb_utils/nb_utils.dart';
-import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/fullApps/muvi/utils/resources/flix_colors.dart';
 import 'package:prokit_flutter/fullApps/muvi/utils/resources/flix_size.dart';
+import 'package:prokit_flutter/main/utils/AppWidget.dart';
 
 // ignore: must_be_immutable
 class ViewSeriesEpisodeScreen extends StatefulWidget {
@@ -39,7 +38,10 @@ class ViewSeriesEpisodeScreenState extends State<ViewSeriesEpisodeScreen> {
         scrollDirection: Axis.vertical,
         itemCount: episodes.length,
         physics: BouncingScrollPhysics(),
-        padding: EdgeInsets.only(left: spacing_standard_new, right: spacing_standard_new, top: spacing_standard_new),
+        padding: EdgeInsets.only(
+            left: spacing_standard_new,
+            right: spacing_standard_new,
+            top: spacing_standard_new),
         itemBuilder: (context, index) {
           return Container(
             margin: EdgeInsets.only(bottom: spacing_standard_new),
@@ -58,11 +60,18 @@ class ViewSeriesEpisodeScreenState extends State<ViewSeriesEpisodeScreen> {
                     child: Stack(
                       alignment: Alignment.bottomLeft,
                       children: <Widget>[
-                        networkImage(episodes[index].slideImage, aWidth: (width / 2) - 36, aHeight: ((width / 2) - 36) * (2.5 / 4)),
+                        networkImage(episodes[index].slideImage,
+                            aWidth: (width / 2) - 36,
+                            aHeight: ((width / 2) - 36) * (2.5 / 4)),
                         Container(
-                          decoration: boxDecoration(bgColor: Colors.white.withOpacity(0.8)),
-                          padding: EdgeInsets.only(left: spacing_control, right: spacing_control),
-                          child: text("EPISODE " + (index + 1).toString(), fontSize: 10, textColor: Colors.black, fontFamily: font_bold),
+                          decoration: boxDecoration(
+                              bgColor: Colors.white.withOpacity(0.8)),
+                          padding: EdgeInsets.only(
+                              left: spacing_control, right: spacing_control),
+                          child: text("EPISODE " + (index + 1).toString(),
+                              fontSize: 10,
+                              textColor: Colors.black,
+                              fontFamily: font_bold),
                         ).paddingAll(spacing_control)
                       ],
                     ),
@@ -71,8 +80,12 @@ class ViewSeriesEpisodeScreenState extends State<ViewSeriesEpisodeScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        text("Episode " + (index + 1).toString(), textColor: muvi_textColorPrimary, fontSize: ts_normal),
-                        itemSubTitle(context, "S1 E" + (index + 1).toString() + ", 06 Mar 2020", fontsize: ts_medium),
+                        text("Episode " + (index + 1).toString(),
+                            textColor: muvi_textColorPrimary,
+                            fontSize: ts_normal),
+                        itemSubTitle(context,
+                            "S1 E" + (index + 1).toString() + ", 06 Mar 2020",
+                            fontsize: ts_medium),
                       ],
                     ),
                   ),

@@ -4,7 +4,6 @@ import 'package:prokit_flutter/fullApps/quiz/Screens/QuizDashboard.dart';
 import 'package:prokit_flutter/fullApps/quiz/Screens/QuizSignUp.dart';
 import 'package:prokit_flutter/fullApps/quiz/utils/QuizColors.dart';
 import 'package:prokit_flutter/fullApps/quiz/utils/QuizConstant.dart';
-
 import 'package:prokit_flutter/fullApps/quiz/utils/QuizStrings.dart';
 import 'package:prokit_flutter/fullApps/quiz/utils/QuizWidget.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
@@ -31,14 +30,24 @@ class _QuizSignInState extends State<QuizSignIn> {
             child: Column(
               children: <Widget>[
                 SizedBox(height: 16),
-                text(quiz_title_login, fontSize: textSizeNormal, fontFamily: fontBold),
-                text(quiz_info_login, textColor: quiz_textColorSecondary, isLongText: true, isCentered: true).center(),
+                text(quiz_title_login,
+                    fontSize: textSizeNormal, fontFamily: fontBold),
+                text(quiz_info_login,
+                        textColor: quiz_textColorSecondary,
+                        isLongText: true,
+                        isCentered: true)
+                    .center(),
                 Container(
                   margin: EdgeInsets.all(24.0),
-                  decoration: boxDecoration(bgColor: quiz_white, color: quiz_white, showShadow: true, radius: 10),
+                  decoration: boxDecoration(
+                      bgColor: quiz_white,
+                      color: quiz_white,
+                      showShadow: true,
+                      radius: 10),
                   child: Column(
                     children: <Widget>[
-                      quizEditTextStyle(quiz_hint_your_email, isPassword: false),
+                      quizEditTextStyle(quiz_hint_your_email,
+                          isPassword: false),
                       quizDivider(),
                       quizEditTextStyle(quiz_hint_your_password),
                     ],
@@ -49,7 +58,9 @@ class _QuizSignInState extends State<QuizSignIn> {
                   child: Column(
                     children: <Widget>[
                       text(quiz_lbl_don_t_have_an_account),
-                      text(quiz_lbl_create_account, textColor: quiz_colorPrimary, fontFamily: fontSemibold),
+                      text(quiz_lbl_create_account,
+                          textColor: quiz_colorPrimary,
+                          fontFamily: fontSemibold),
                     ],
                   ),
                 ).onTap(() {

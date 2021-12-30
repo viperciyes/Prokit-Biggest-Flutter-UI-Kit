@@ -228,8 +228,7 @@ class _EAEventDetailScreenState extends State<EAEventDetailScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Stack(
-                        overflow: Overflow.visible,
-                        alignment: Alignment.bottomCenter,
+                        clipBehavior: Clip.none, alignment: Alignment.bottomCenter,
                         children: [
                           Image.asset(forYouList[i].image!, height: 180, width: context.width() * 0.7, fit: BoxFit.cover).cornerRadiusWithClipRRect(8),
                           Positioned(right: 16, top: 16, child: Icon(Icons.favorite_border, color: white, size: 22)),

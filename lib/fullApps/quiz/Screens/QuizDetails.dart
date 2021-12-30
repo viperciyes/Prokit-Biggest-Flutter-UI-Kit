@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/fullApps/quiz/Screens/QuizCard.dart';
 import 'package:prokit_flutter/fullApps/quiz/model/QuizModels.dart';
 import 'package:prokit_flutter/fullApps/quiz/utils/QuizColors.dart';
@@ -8,6 +7,7 @@ import 'package:prokit_flutter/fullApps/quiz/utils/QuizConstant.dart';
 import 'package:prokit_flutter/fullApps/quiz/utils/QuizDataGenerator.dart';
 import 'package:prokit_flutter/fullApps/quiz/utils/QuizStrings.dart';
 import 'package:prokit_flutter/fullApps/quiz/utils/QuizWidget.dart';
+import 'package:prokit_flutter/main/utils/AppWidget.dart';
 
 class QuizDetails extends StatefulWidget {
   static String tag = '/QuizDetails';
@@ -40,8 +40,13 @@ class _QuizDetailsState extends State<QuizDetails> {
                   SizedBox(
                     height: 20,
                   ),
-                  text(quiz_lbl_biology_amp_scientific_method, isLongText: true, fontFamily: fontBold, isCentered: true, fontSize: textSizeXLarge),
-                  text(quiz_text_4_to_8_lesson, textColor: quiz_textColorSecondary),
+                  text(quiz_lbl_biology_amp_scientific_method,
+                      isLongText: true,
+                      fontFamily: fontBold,
+                      isCentered: true,
+                      fontSize: textSizeXLarge),
+                  text(quiz_text_4_to_8_lesson,
+                      textColor: quiz_textColorSecondary),
                   SizedBox(
                     height: 10,
                   ),
@@ -77,7 +82,8 @@ class quizList extends StatelessWidget {
     width = MediaQuery.of(context).size.width;
     return Container(
       margin: EdgeInsets.only(left: 16, bottom: 16, right: 16),
-      decoration: boxDecoration(radius: 10, showShadow: true, bgColor: quiz_white),
+      decoration:
+          boxDecoration(radius: 10, showShadow: true, bgColor: quiz_white),
       padding: EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -85,7 +91,8 @@ class quizList extends StatelessWidget {
           Row(
             children: <Widget>[
               Container(
-                decoration: BoxDecoration(shape: BoxShape.circle, color: quiz_color_setting),
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle, color: quiz_color_setting),
                 width: width / 6.5,
                 height: width / 6.5,
                 padding: EdgeInsets.all(10),
@@ -99,7 +106,9 @@ class quizList extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  text(model.type, textColor: quiz_textColorSecondary, fontSize: textSizeSMedium),
+                  text(model.type,
+                      textColor: quiz_textColorSecondary,
+                      fontSize: textSizeSMedium),
                   text(
                     model.heading,
                     fontFamily: fontMedium,

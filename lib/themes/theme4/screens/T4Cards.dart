@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/themes/theme4/models/T4Models.dart';
 import 'package:prokit_flutter/themes/theme4/utils/T4Colors.dart';
@@ -9,7 +10,6 @@ import 'package:prokit_flutter/themes/theme4/utils/T4DataGenerator.dart';
 import 'package:prokit_flutter/themes/theme4/utils/T4Images.dart';
 import 'package:prokit_flutter/themes/theme4/utils/T4Strings.dart';
 import 'package:prokit_flutter/themes/theme4/utils/T4Widgets.dart';
-import 'package:nb_utils/nb_utils.dart';
 
 import '../../../main.dart';
 
@@ -58,7 +58,8 @@ class T4CardsState extends State<T4Cards> {
                           child: Stack(
                             children: <Widget>[
                               CachedNetworkImage(
-                                placeholder: placeholderWidgetFn() as Widget Function(BuildContext, String)?,
+                                placeholder: placeholderWidgetFn() as Widget
+                                    Function(BuildContext, String)?,
                                 imageUrl: mCardss[index].image,
                                 width: width - 32,
                                 height: width * 0.5,
@@ -72,7 +73,8 @@ class T4CardsState extends State<T4Cards> {
                                   color: t4_colorPrimary,
                                   size: 30,
                                 ),
-                                decoration: BoxDecoration(shape: BoxShape.circle, color: t4_white),
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle, color: t4_white),
                               )
                             ],
                             alignment: Alignment.center,
@@ -86,8 +88,13 @@ class T4CardsState extends State<T4Cards> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
-                                  text(mCardss[index].name, textColor: appStore.textPrimaryColor, fontSize: textSizeLargeMedium, fontFamily: fontBold),
-                                  text(mCardss[index].info, fontSize: textSizeMedium, textColor: appStore.textPrimaryColor),
+                                  text(mCardss[index].name,
+                                      textColor: appStore.textPrimaryColor,
+                                      fontSize: textSizeLargeMedium,
+                                      fontFamily: fontBold),
+                                  text(mCardss[index].info,
+                                      fontSize: textSizeMedium,
+                                      textColor: appStore.textPrimaryColor),
                                 ],
                               ),
                             ),
@@ -95,9 +102,15 @@ class T4CardsState extends State<T4Cards> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
-                                SvgPicture.asset(t4_heart, width: 22, height: 22, color: appStore.iconColor),
+                                SvgPicture.asset(t4_heart,
+                                    width: 22,
+                                    height: 22,
+                                    color: appStore.iconColor),
                                 SizedBox(width: 16),
-                                SvgPicture.asset(t4_share, width: 22, height: 22, color: appStore.iconSecondaryColor),
+                                SvgPicture.asset(t4_share,
+                                    width: 22,
+                                    height: 22,
+                                    color: appStore.iconSecondaryColor),
                               ],
                             )
                           ],

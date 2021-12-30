@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/fullApps/walletApp/screen/WAAddCreditionalScreen.dart';
@@ -68,8 +69,7 @@ class WAEditProfileScreenState extends State<WAEditProfileScreen> {
             finish(context);
           }),
           centerTitle: true,
-          elevation: 0.0,
-          brightness: Brightness.dark,
+          elevation: 0.0, systemOverlayStyle: SystemUiOverlayStyle.light,
         ),
         body: Container(
           height: context.height(),

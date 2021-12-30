@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:nb_utils/nb_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/main.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/themes/theme1/utils/T1Colors.dart';
@@ -17,7 +17,10 @@ class T1Profile extends StatelessWidget {
     return Column(
       children: <Widget>[
         profile(counter),
-        text(counterName, textColor: appStore.textPrimaryColor, fontSize: textSizeMedium, fontFamily: fontMedium),
+        text(counterName,
+            textColor: appStore.textPrimaryColor,
+            fontSize: textSizeMedium,
+            fontFamily: fontMedium),
       ],
     );
   }
@@ -35,14 +38,23 @@ class T1Profile extends StatelessWidget {
     );
     final profileContent = Container(
       margin: EdgeInsets.only(top: 55.0),
-      decoration: boxDecoration(bgColor: context.scaffoldBackgroundColor, radius: 10, showShadow: true),
+      decoration: boxDecoration(
+          bgColor: context.scaffoldBackgroundColor,
+          radius: 10,
+          showShadow: true),
       child: Padding(
         padding: EdgeInsets.all(8.0),
         child: Column(
           children: <Widget>[
             SizedBox(height: 50),
-            text(t1_user_name, textColor: appStore.textPrimaryColor, fontSize: textSizeNormal, fontFamily: fontMedium),
-            text(t1_user_email, textColor: t1_colorPrimary, fontSize: textSizeMedium, fontFamily: fontMedium),
+            text(t1_user_name,
+                textColor: appStore.textPrimaryColor,
+                fontSize: textSizeNormal,
+                fontFamily: fontMedium),
+            text(t1_user_email,
+                textColor: t1_colorPrimary,
+                fontSize: textSizeMedium,
+                fontFamily: fontMedium),
             Padding(
               padding: EdgeInsets.all(16),
               child: Divider(color: t1_view_color, height: 0.5),
@@ -80,7 +92,10 @@ class T1Profile extends StatelessWidget {
                 SizedBox(height: 8),
                 Container(
                   margin: EdgeInsets.fromLTRB(16, 8, 16, 8),
-                  decoration: boxDecoration(bgColor: context.scaffoldBackgroundColor, radius: 10, showShadow: true),
+                  decoration: boxDecoration(
+                      bgColor: context.scaffoldBackgroundColor,
+                      radius: 10,
+                      showShadow: true),
                   child: Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Column(
@@ -109,7 +124,10 @@ class T1Profile extends StatelessWidget {
                 SizedBox(height: 8),
                 Container(
                   margin: EdgeInsets.fromLTRB(16, 8, 16, 8),
-                  decoration: boxDecoration(bgColor: context.scaffoldBackgroundColor, radius: 10, showShadow: true),
+                  decoration: boxDecoration(
+                      bgColor: context.scaffoldBackgroundColor,
+                      radius: 10,
+                      showShadow: true),
                   child: Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Column(

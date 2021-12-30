@@ -68,8 +68,7 @@ class EANewsDetailScreenState extends State<EANewsDetailScreen> {
               Text(EAFashionsSubtitle1, style: primaryTextStyle()),
               16.height,
               Stack(
-                overflow: Overflow.visible,
-                alignment: Alignment.bottomCenter,
+                clipBehavior: Clip.none, alignment: Alignment.bottomCenter,
                 children: [
                   Image.asset(event_ic_tokyo, height: 230, width: context.width(), fit: BoxFit.cover).cornerRadiusWithClipRRect(8),
                   Positioned(

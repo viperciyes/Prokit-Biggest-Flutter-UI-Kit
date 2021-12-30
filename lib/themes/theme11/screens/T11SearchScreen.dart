@@ -1,17 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:prokit_flutter/main/utils/AppColors.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/themes/theme11/model/T11Model.dart';
-import 'package:prokit_flutter/themes/theme11/utils/T11Colors.dart';
 import 'package:prokit_flutter/themes/theme11/utils/T11DataGenerator.dart';
 import 'package:prokit_flutter/themes/theme11/utils/T11Images.dart';
 import 'package:prokit_flutter/themes/theme11/utils/T11Strings.dart';
-
 import 'package:prokit_flutter/themes/theme11/utils/T11Widget.dart';
 
 import '../../../main.dart';
-import 'package:prokit_flutter/main/utils/AppColors.dart';
 
 class T11SearchScreen extends StatefulWidget {
   static String tag = '/T11SearchScreen';
@@ -41,15 +39,19 @@ class T11SearchScreenState extends State<T11SearchScreen> {
               child: Column(
                 children: <Widget>[
                   64.height,
-                  Text(t11_lbl_search_result, style: boldTextStyle(color: appColorPrimary, size: 18)),
+                  Text(t11_lbl_search_result,
+                      style: boldTextStyle(color: appColorPrimary, size: 18)),
                   32.height,
                   Stack(
                     children: [
-                      commonCacheImageWidget(t11_ic_singer2, 180, width: 180, fit: BoxFit.cover).cornerRadiusWithClipRRect(12),
+                      commonCacheImageWidget(t11_ic_singer2, 180,
+                              width: 180, fit: BoxFit.cover)
+                          .cornerRadiusWithClipRRect(12),
                       Positioned(
                         right: 8,
                         top: 8,
-                        child: Icon(Icons.favorite_border, color: white, size: 18),
+                        child:
+                            Icon(Icons.favorite_border, color: white, size: 18),
                       ),
                       Positioned(
                         bottom: 8,
@@ -60,9 +62,22 @@ class T11SearchScreenState extends State<T11SearchScreen> {
                               width: 54,
                               child: Stack(
                                 children: [
-                                  commonCacheImageWidget(t11_ic_singer1, 24, width: 24, fit: BoxFit.cover).cornerRadiusWithClipRRect(50).paddingSymmetric(horizontal: 16),
-                                  Positioned(right: 0, child: commonCacheImageWidget(t11_ic_singer3, 24, width: 24, fit: BoxFit.cover).cornerRadiusWithClipRRect(12)),
-                                  Positioned(left: 0, child: commonCacheImageWidget(t11_ic_singer4, 24, width: 24, fit: BoxFit.cover).cornerRadiusWithClipRRect(12)),
+                                  commonCacheImageWidget(t11_ic_singer1, 24,
+                                          width: 24, fit: BoxFit.cover)
+                                      .cornerRadiusWithClipRRect(50)
+                                      .paddingSymmetric(horizontal: 16),
+                                  Positioned(
+                                      right: 0,
+                                      child: commonCacheImageWidget(
+                                              t11_ic_singer3, 24,
+                                              width: 24, fit: BoxFit.cover)
+                                          .cornerRadiusWithClipRRect(12)),
+                                  Positioned(
+                                      left: 0,
+                                      child: commonCacheImageWidget(
+                                              t11_ic_singer4, 24,
+                                              width: 24, fit: BoxFit.cover)
+                                          .cornerRadiusWithClipRRect(12)),
                                 ],
                               ),
                             ),
@@ -70,8 +85,15 @@ class T11SearchScreenState extends State<T11SearchScreen> {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(t11_lbl_singer_name + ' ' + t11_lbl_singer_name, style: boldTextStyle(size: 12, color: Colors.white)),
-                                Text(t11_lbl_album_name, style: boldTextStyle(size: 12, color: Colors.white)),
+                                Text(
+                                    t11_lbl_singer_name +
+                                        ' ' +
+                                        t11_lbl_singer_name,
+                                    style: boldTextStyle(
+                                        size: 12, color: Colors.white)),
+                                Text(t11_lbl_album_name,
+                                    style: boldTextStyle(
+                                        size: 12, color: Colors.white)),
                               ],
                             )
                           ],
@@ -86,7 +108,8 @@ class T11SearchScreenState extends State<T11SearchScreen> {
                   16.height,
                   Align(
                     alignment: Alignment.centerLeft,
-                    child: Text(t11_lbl_accompanied_by, style: boldTextStyle(color: Colors.grey)),
+                    child: Text(t11_lbl_accompanied_by,
+                        style: boldTextStyle(color: Colors.grey)),
                   ).paddingLeft(16),
                   16.height,
                   musicAlbumList(musicList),

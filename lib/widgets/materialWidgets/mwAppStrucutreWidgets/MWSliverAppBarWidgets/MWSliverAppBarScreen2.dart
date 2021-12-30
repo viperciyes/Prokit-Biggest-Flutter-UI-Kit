@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:prokit_flutter/main/utils/Lipsum.dart' as lipsum;
 import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/main.dart';
+import 'package:prokit_flutter/main/utils/Lipsum.dart' as lipsum;
 
 class MWSliverAppBarScreen2 extends StatefulWidget {
   static String tag = '/MWSliverAppBarScreen2';
@@ -37,7 +37,8 @@ class _MWSliverAppBarScreen2State extends State<MWSliverAppBarScreen2> {
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
                 background: CachedNetworkImage(
-                  imageUrl: "https://images.pexels.com/photos/443356/pexels-photo-443356.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                  imageUrl:
+                      "https://images.pexels.com/photos/443356/pexels-photo-443356.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
                   fit: BoxFit.cover,
                 ),
                 collapseMode: CollapseMode.parallax,
@@ -50,7 +51,9 @@ class _MWSliverAppBarScreen2State extends State<MWSliverAppBarScreen2> {
               ),
               backgroundColor: appStore.appBarColor,
               leading: BackButton(
-                color: innerBoxIsScrolled ? appStore.iconColor : appStore.iconSecondaryColor,
+                color: innerBoxIsScrolled
+                    ? appStore.iconColor
+                    : appStore.iconSecondaryColor,
                 onPressed: () async {
                   finish(context);
                 },
@@ -63,7 +66,8 @@ class _MWSliverAppBarScreen2State extends State<MWSliverAppBarScreen2> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Text(text, textAlign: TextAlign.justify, style: primaryTextStyle()),
+                Text(text,
+                    textAlign: TextAlign.justify, style: primaryTextStyle()),
               ],
             ),
           ),

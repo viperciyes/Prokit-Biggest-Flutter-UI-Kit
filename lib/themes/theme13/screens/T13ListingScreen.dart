@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:prokit_flutter/themes/theme13/utils/T13Colors.dart';
-import 'package:prokit_flutter/themes/theme13/utils/T13Strings.dart';
-import 'package:prokit_flutter/themes/theme13/utils/T13Constant.dart';
-import 'package:prokit_flutter/themes/theme13/model/T13Model.dart';
-import 'package:prokit_flutter/themes/theme13/utils/T13DataGenerator.dart';
-import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:prokit_flutter/main/utils/AppWidget.dart';
+import 'package:prokit_flutter/themes/theme13/model/T13Model.dart';
+import 'package:prokit_flutter/themes/theme13/utils/T13Colors.dart';
+import 'package:prokit_flutter/themes/theme13/utils/T13Constant.dart';
+import 'package:prokit_flutter/themes/theme13/utils/T13DataGenerator.dart';
+import 'package:prokit_flutter/themes/theme13/utils/T13Strings.dart';
 
 import '../../../main.dart';
 
@@ -63,18 +63,22 @@ class ListInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     return Container(
-      margin: EdgeInsets.only(left: spacing_standard_new, right: spacing_standard_new),
+      margin: EdgeInsets.only(
+          left: spacing_standard_new, right: spacing_standard_new),
       child: Column(
         children: <Widget>[
           Row(
             children: <Widget>[
-              SvgPicture.asset(model.image, width: width * 0.08, height: width * 0.08),
+              SvgPicture.asset(model.image,
+                  width: width * 0.08, height: width * 0.08),
               SizedBox(width: spacing_standard_new),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  text(model.name.toString().toUpperCase(), textColor: appStore.textPrimaryColor),
-                  text(model.cur, textColor: appStore.textSecondaryColor, fontSize: 14.0),
+                  text(model.name.toString().toUpperCase(),
+                      textColor: appStore.textPrimaryColor),
+                  text(model.cur,
+                      textColor: appStore.textSecondaryColor, fontSize: 14.0),
                 ],
               )
             ],

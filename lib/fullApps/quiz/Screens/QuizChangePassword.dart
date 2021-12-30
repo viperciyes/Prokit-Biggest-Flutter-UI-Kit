@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/fullApps/quiz/utils/QuizColors.dart';
 import 'package:prokit_flutter/fullApps/quiz/utils/QuizConstant.dart';
 import 'package:prokit_flutter/fullApps/quiz/utils/QuizStrings.dart';
 import 'package:prokit_flutter/fullApps/quiz/utils/QuizWidget.dart';
+import 'package:prokit_flutter/main/utils/AppWidget.dart';
 
 class QuizChangePassword extends StatefulWidget {
   static String tag = '/QuizChangePassword';
@@ -22,7 +22,8 @@ class _QuizChangePasswordState extends State<QuizChangePassword> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: text(quiz_lbl_Change_password, fontSize: textSizeNormal, fontFamily: fontMedium),
+        title: text(quiz_lbl_Change_password,
+            fontSize: textSizeNormal, fontFamily: fontMedium),
         leading: Icon(
           Icons.arrow_back,
           color: quiz_colorPrimary,
@@ -44,21 +45,35 @@ class _QuizChangePasswordState extends State<QuizChangePassword> {
                 SizedBox(
                   height: 20,
                 ),
-                text('Enter your new password below\n the old password', textColor: quiz_textColorSecondary, isLongText: true, isCentered: true).center(),
+                text('Enter your new password below\n the old password',
+                        textColor: quiz_textColorSecondary,
+                        isLongText: true,
+                        isCentered: true)
+                    .center(),
                 Container(
                   margin: EdgeInsets.all(24.0),
-                  decoration: boxDecoration(bgColor: quiz_white, color: quiz_white, showShadow: true, radius: 10),
+                  decoration: boxDecoration(
+                      bgColor: quiz_white,
+                      color: quiz_white,
+                      showShadow: true,
+                      radius: 10),
                   child: Column(
                     children: <Widget>[
                       TextFormField(
-                        style: TextStyle(fontSize: textSizeMedium, fontFamily: fontRegular),
+                        style: TextStyle(
+                            fontSize: textSizeMedium, fontFamily: fontRegular),
                         obscureText: oldObscureText,
                         decoration: InputDecoration(
                           contentPadding: EdgeInsets.fromLTRB(16, 22, 16, 22),
                           border: InputBorder.none,
                           hintText: quiz_hint_Old_Password,
-                          labelStyle: primaryTextStyle(size: 20, color: quiz_textColorPrimary),
-                          suffix: text(oldObscureText ? "Show" : "Hide", textColor: quiz_textColorSecondary, fontSize: textSizeMedium, fontFamily: fontMedium).onTap(() {
+                          labelStyle: primaryTextStyle(
+                              size: 20, color: quiz_textColorPrimary),
+                          suffix: text(oldObscureText ? "Show" : "Hide",
+                                  textColor: quiz_textColorSecondary,
+                                  fontSize: textSizeMedium,
+                                  fontFamily: fontMedium)
+                              .onTap(() {
                             setState(() {
                               oldObscureText = !oldObscureText;
                             });
@@ -68,14 +83,20 @@ class _QuizChangePasswordState extends State<QuizChangePassword> {
                       ),
                       quizDivider(),
                       TextFormField(
-                        style: TextStyle(fontSize: textSizeMedium, fontFamily: fontRegular),
+                        style: TextStyle(
+                            fontSize: textSizeMedium, fontFamily: fontRegular),
                         obscureText: newObscureText,
                         decoration: InputDecoration(
                           contentPadding: EdgeInsets.fromLTRB(16, 22, 16, 22),
                           border: InputBorder.none,
                           hintText: quiz_hint_new_Password,
-                          labelStyle: primaryTextStyle(size: 20, color: quiz_textColorPrimary),
-                          suffix: text(newObscureText ? "Show" : "Hide", textColor: quiz_textColorSecondary, fontSize: textSizeMedium, fontFamily: fontMedium).onTap(() {
+                          labelStyle: primaryTextStyle(
+                              size: 20, color: quiz_textColorPrimary),
+                          suffix: text(newObscureText ? "Show" : "Hide",
+                                  textColor: quiz_textColorSecondary,
+                                  fontSize: textSizeMedium,
+                                  fontFamily: fontMedium)
+                              .onTap(() {
                             setState(() {
                               newObscureText = !newObscureText;
                             });
@@ -85,14 +106,20 @@ class _QuizChangePasswordState extends State<QuizChangePassword> {
                       ),
                       quizDivider(),
                       TextFormField(
-                        style: TextStyle(fontSize: textSizeMedium, fontFamily: fontRegular),
+                        style: TextStyle(
+                            fontSize: textSizeMedium, fontFamily: fontRegular),
                         obscureText: confirmObscureText,
                         decoration: InputDecoration(
                           contentPadding: EdgeInsets.fromLTRB(16, 22, 16, 22),
                           border: InputBorder.none,
                           hintText: quiz_hint_confirm_password,
-                          labelStyle: primaryTextStyle(size: 20, color: quiz_textColorPrimary),
-                          suffix: text(confirmObscureText ? "Show" : "Hide", textColor: quiz_textColorSecondary, fontSize: textSizeMedium, fontFamily: fontMedium).onTap(() {
+                          labelStyle: primaryTextStyle(
+                              size: 20, color: quiz_textColorPrimary),
+                          suffix: text(confirmObscureText ? "Show" : "Hide",
+                                  textColor: quiz_textColorSecondary,
+                                  fontSize: textSizeMedium,
+                                  fontFamily: fontMedium)
+                              .onTap(() {
                             setState(() {
                               confirmObscureText = !confirmObscureText;
                             });

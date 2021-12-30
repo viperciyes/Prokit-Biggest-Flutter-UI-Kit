@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/main.dart';
 import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/themes/theme1/utils/T1Colors.dart';
@@ -10,7 +11,6 @@ import 'package:prokit_flutter/themes/theme1/utils/T1Constant.dart';
 import 'package:prokit_flutter/themes/theme1/utils/T1Images.dart';
 import 'package:prokit_flutter/themes/theme1/utils/T1Strings.dart';
 import 'package:prokit_flutter/themes/theme1/utils/T1Widget.dart';
-import 'package:nb_utils/nb_utils.dart';
 
 class T1Dashboard extends StatefulWidget {
   static var tag = "/T1Dashboard";
@@ -62,32 +62,48 @@ class T1DashboardState extends State<T1Dashboard> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
-                          text(t1_lbl_media, textColor: appStore.textPrimaryColor, fontSize: textSizeNormal, fontFamily: fontBold),
+                          text(t1_lbl_media,
+                              textColor: appStore.textPrimaryColor,
+                              fontSize: textSizeNormal,
+                              fontFamily: fontBold),
                           SizedBox(height: 10),
                           Padding(
                             padding: EdgeInsets.only(left: 10.0, right: 10),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: <Widget>[mediaButton(t1_lbl_document, t1_file), mediaButton(t1_lbl_video, t1_video), mediaButton(t1_lbl_photos, t1_images)],
+                              children: <Widget>[
+                                mediaButton(t1_lbl_document, t1_file),
+                                mediaButton(t1_lbl_video, t1_video),
+                                mediaButton(t1_lbl_photos, t1_images)
+                              ],
                             ),
                           ),
                           SizedBox(height: 24),
-                          text(t1_lbl_send_file, textColor: appStore.textPrimaryColor, fontSize: textSizeNormal, fontFamily: fontBold),
+                          text(t1_lbl_send_file,
+                              textColor: appStore.textPrimaryColor,
+                              fontSize: textSizeNormal,
+                              fontFamily: fontBold),
                           SizedBox(height: 16),
                           Container(
                             alignment: Alignment.center,
                             color: context.scaffoldBackgroundColor,
                             child: Stack(
                               children: <Widget>[
-                                Image.asset(t1_ic_home_image, width: width / 2, height: width / 2.7),
+                                Image.asset(t1_ic_home_image,
+                                    width: width / 2, height: width / 2.7),
                                 Container(
-                                  decoration: BoxDecoration(shape: BoxShape.circle, color: t1_color_primary_light),
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: t1_color_primary_light),
                                   width: width / 3.5,
                                   height: width / 3.5,
                                   alignment: Alignment.center,
                                   margin: EdgeInsets.only(left: width / 30),
                                   padding: EdgeInsets.all(width / 18),
-                                  child: text(t1_lbl_send_files, textColor: t1_colorPrimary, fontSize: textSizeNormal, maxLine: 2),
+                                  child: text(t1_lbl_send_files,
+                                      textColor: t1_colorPrimary,
+                                      fontSize: textSizeNormal,
+                                      maxLine: 2),
                                 )
                               ],
                             ),
@@ -134,7 +150,13 @@ class T1DashboardState extends State<T1Dashboard> {
                     height: 60,
                     decoration: BoxDecoration(
                       color: context.scaffoldBackgroundColor,
-                      boxShadow: [BoxShadow(color: shadowColorGlobal, blurRadius: 10, spreadRadius: 2, offset: Offset(0, 3.0))],
+                      boxShadow: [
+                        BoxShadow(
+                            color: shadowColorGlobal,
+                            blurRadius: 10,
+                            spreadRadius: 2,
+                            offset: Offset(0, 3.0))
+                      ],
                     ),
                     child: Padding(
                       padding: EdgeInsets.only(left: 16.0, right: 16),
@@ -185,12 +207,16 @@ class T1DashboardState extends State<T1Dashboard> {
         width: 45,
         height: 45,
         alignment: Alignment.center,
-        decoration: isSelected == pos ? BoxDecoration(shape: BoxShape.circle, color: t1_colorPrimary_light) : BoxDecoration(),
+        decoration: isSelected == pos
+            ? BoxDecoration(
+                shape: BoxShape.circle, color: t1_colorPrimary_light)
+            : BoxDecoration(),
         child: SvgPicture.asset(
           icon,
           width: 20,
           height: 20,
-          color: isSelected == pos ? t1_colorPrimary : appStore.textSecondaryColor,
+          color:
+              isSelected == pos ? t1_colorPrimary : appStore.textSecondaryColor,
         ),
       ),
     );
@@ -200,7 +226,8 @@ class T1DashboardState extends State<T1Dashboard> {
     return Column(
       children: <Widget>[
         Container(
-          decoration: BoxDecoration(shape: BoxShape.circle, color: t1_color_primary_light),
+          decoration: BoxDecoration(
+              shape: BoxShape.circle, color: t1_color_primary_light),
           width: width / 5.5,
           height: width / 5.5,
           padding: EdgeInsets.all(width / 18),
@@ -212,7 +239,10 @@ class T1DashboardState extends State<T1Dashboard> {
         SizedBox(
           height: 2,
         ),
-        text(buttonText, textColor: appStore.textPrimaryColor, fontSize: textSizeMedium, fontFamily: fontMedium)
+        text(buttonText,
+            textColor: appStore.textPrimaryColor,
+            fontSize: textSizeMedium,
+            fontFamily: fontMedium)
       ],
       mainAxisAlignment: MainAxisAlignment.center,
     );
@@ -237,7 +267,8 @@ class Slider extends StatelessWidget {
           borderRadius: BorderRadius.circular(10.0),
         ),
         child: CachedNetworkImage(
-          placeholder: placeholderWidgetFn() as Widget Function(BuildContext, String)?,
+          placeholder:
+              placeholderWidgetFn() as Widget Function(BuildContext, String)?,
           imageUrl: file,
           fit: BoxFit.fill,
         ), /*Image.asset(file, fit: BoxFit.fill),*/

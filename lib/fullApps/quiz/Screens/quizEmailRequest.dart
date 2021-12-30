@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:prokit_flutter/fullApps/quiz/utils/QuizColors.dart';
 import 'package:prokit_flutter/fullApps/quiz/utils/QuizConstant.dart';
 import 'package:prokit_flutter/fullApps/quiz/utils/QuizStrings.dart';
 import 'package:prokit_flutter/fullApps/quiz/utils/QuizWidget.dart';
+import 'package:prokit_flutter/main/utils/AppWidget.dart';
 
 class QuizEmailRequest extends StatefulWidget {
   static String tag = '/QuizEmailRequest';
@@ -20,7 +20,8 @@ class _QuizEmailRequestState extends State<QuizEmailRequest> {
     return Scaffold(
         backgroundColor: quiz_app_background,
         appBar: AppBar(
-          title: text(quiz_lbl_email, fontSize: textSizeNormal, fontFamily: fontMedium),
+          title: text(quiz_lbl_email,
+              fontSize: textSizeNormal, fontFamily: fontMedium),
           leading: Icon(
             Icons.arrow_back,
             color: quiz_colorPrimary,
@@ -44,16 +45,23 @@ class _QuizEmailRequestState extends State<QuizEmailRequest> {
                   ),
                   Container(
                     margin: EdgeInsets.all(24.0),
-                    decoration: boxDecoration(bgColor: quiz_white, color: quiz_white, showShadow: true, radius: 10),
+                    decoration: boxDecoration(
+                        bgColor: quiz_white,
+                        color: quiz_white,
+                        showShadow: true,
+                        radius: 10),
                     child: Column(
                       children: <Widget>[
                         TextFormField(
-                          style: TextStyle(fontSize: textSizeMedium, fontFamily: fontRegular),
+                          style: TextStyle(
+                              fontSize: textSizeMedium,
+                              fontFamily: fontRegular),
                           decoration: InputDecoration(
                             contentPadding: EdgeInsets.fromLTRB(16, 22, 16, 22),
                             hintText: "antonio@gmail.com",
                             border: InputBorder.none,
-                            hintStyle: TextStyle(color: quiz_textColorSecondary),
+                            hintStyle:
+                                TextStyle(color: quiz_textColorSecondary),
                           ),
                         ),
                         quizDivider(),

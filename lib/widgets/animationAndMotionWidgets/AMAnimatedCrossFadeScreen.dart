@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:prokit_flutter/main/utils/AppWidget.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:prokit_flutter/main/utils/AppWidget.dart';
 
 class AMAnimatedCrossFadeScreen extends StatefulWidget {
   static String tag = '/AMAnimatedCrossFadeScreen';
 
   @override
-  AMAnimatedCrossFadeScreenState createState() => AMAnimatedCrossFadeScreenState();
+  AMAnimatedCrossFadeScreenState createState() =>
+      AMAnimatedCrossFadeScreenState();
 }
 
 class AMAnimatedCrossFadeScreenState extends State<AMAnimatedCrossFadeScreen> {
@@ -49,7 +50,8 @@ class AMAnimatedCrossFadeScreenState extends State<AMAnimatedCrossFadeScreen> {
           body: Center(
             child: AnimatedCrossFade(
               duration: Duration(seconds: 3),
-              firstChild: FlutterLogo(style: FlutterLogoStyle.horizontal, size: 150.0),
+              firstChild:
+                  FlutterLogo(style: FlutterLogoStyle.horizontal, size: 150.0),
               secondChild: FlutterLogo(size: 150.0),
               crossFadeState: _crossFadeState,
             ),

@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_flutter/themes/theme2/models/models.dart';
+
 import 'T2DataGenerator.dart';
 import 'T2SliderWidget.dart';
 
@@ -56,9 +57,12 @@ class T2SliderWidgetState extends State<T2SliderWidget> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            Text(slider.title, style: boldTextStyle(color: white, size: 20)),
+                            Text(slider.title,
+                                style: boldTextStyle(color: white, size: 20)),
                             SizedBox(height: 16),
-                            Text(slider.subTitle, style: primaryTextStyle(color: white, size: 16), textAlign: TextAlign.center),
+                            Text(slider.subTitle,
+                                style: primaryTextStyle(color: white, size: 16),
+                                textAlign: TextAlign.center),
                           ],
                         ),
                       )

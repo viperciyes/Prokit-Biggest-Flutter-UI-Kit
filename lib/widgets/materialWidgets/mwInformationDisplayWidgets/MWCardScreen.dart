@@ -74,8 +74,7 @@ class MWCardScreenState extends State<MWCardScreen> {
 
   Widget getCard1() {
     return Stack(
-      alignment: Alignment.center,
-      overflow: Overflow.visible,
+      clipBehavior: Clip.none, alignment: Alignment.center,
       children: [
         Container(
           width: context.width(),
@@ -287,8 +286,7 @@ class MWCardScreenState extends State<MWCardScreen> {
 
   Widget getCard5() {
     return Stack(
-      alignment: Alignment.bottomRight,
-      overflow: Overflow.visible,
+      clipBehavior: Clip.none, alignment: Alignment.bottomRight,
       children: [
         Container(
           height: 150,
@@ -436,8 +434,7 @@ class MWCardScreenState extends State<MWCardScreen> {
 
   Widget getCard7() {
     return Stack(
-      alignment: Alignment.center,
-      overflow: Overflow.visible,
+      clipBehavior: Clip.none, alignment: Alignment.center,
       children: [
         Container(
           width: context.width(),

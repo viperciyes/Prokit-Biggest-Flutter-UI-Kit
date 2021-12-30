@@ -8,8 +8,6 @@ import 'package:prokit_flutter/themes/theme12/utils/t12_constant.dart';
 import 'package:prokit_flutter/themes/theme12/utils/t12_data_generator.dart';
 import 'package:prokit_flutter/themes/theme12/utils/t12_widget.dart';
 
-import '../../../main.dart';
-
 class T12TransactionList extends StatefulWidget {
   static String tag = '/T12TransactionList';
 
@@ -35,7 +33,8 @@ class T12TransactionListState extends State<T12TransactionList> {
     var allList = ListView.builder(
       scrollDirection: Axis.vertical,
       itemCount: list.length,
-      padding: EdgeInsets.only(left: spacing_standard_new, right: spacing_standard_new),
+      padding: EdgeInsets.only(
+          left: spacing_standard_new, right: spacing_standard_new),
       shrinkWrap: true,
       itemBuilder: (context, index) {
         return Column(
@@ -46,7 +45,9 @@ class T12TransactionListState extends State<T12TransactionList> {
               fontSize: textSizeMedium,
               textColor: t12_text_secondary,
               fontFamily: fontMedium,
-            ).paddingOnly(top: 12, bottom: spacing_standard_new).visible(list[index].transactionDate.toString().isNotEmpty),
+            )
+                .paddingOnly(top: 12, bottom: spacing_standard_new)
+                .visible(list[index].transactionDate.toString().isNotEmpty),
             transactionWidget(list[index], categoryWidth),
           ],
         );
@@ -62,13 +63,25 @@ class T12TransactionListState extends State<T12TransactionList> {
               Container(
                 alignment: Alignment.center,
                 margin: EdgeInsets.all(spacing_standard),
-                decoration: boxDecoration(showShadow: true, bgColor: selectedTab == 0 ? t12_primary_color : context.scaffoldBackgroundColor, radius: spacing_large),
+                decoration: boxDecoration(
+                    showShadow: true,
+                    bgColor: selectedTab == 0
+                        ? t12_primary_color
+                        : context.scaffoldBackgroundColor,
+                    radius: spacing_large),
                 child: text(
                   "All",
-                  textColor: selectedTab == 0 ? Colors.white : t12_text_secondary,
+                  textColor:
+                      selectedTab == 0 ? Colors.white : t12_text_secondary,
                   fontFamily: fontMedium,
                   fontSize: textSizeMedium,
-                ).paddingOnly(top: spacing_standard, bottom: spacing_standard, left: spacing_large, right: spacing_large).onTap(() {
+                )
+                    .paddingOnly(
+                        top: spacing_standard,
+                        bottom: spacing_standard,
+                        left: spacing_large,
+                        right: spacing_large)
+                    .onTap(() {
                   setState(() {
                     selectedTab = 0;
                   });
@@ -78,13 +91,25 @@ class T12TransactionListState extends State<T12TransactionList> {
                 child: Container(
                   margin: EdgeInsets.all(spacing_standard),
                   alignment: Alignment.center,
-                  decoration: boxDecoration(showShadow: true, bgColor: selectedTab == 1 ? t12_primary_color : context.scaffoldBackgroundColor, radius: spacing_large),
+                  decoration: boxDecoration(
+                      showShadow: true,
+                      bgColor: selectedTab == 1
+                          ? t12_primary_color
+                          : context.scaffoldBackgroundColor,
+                      radius: spacing_large),
                   child: text(
                     "Received",
-                    textColor: selectedTab == 1 ? Colors.white : t12_text_secondary,
+                    textColor:
+                        selectedTab == 1 ? Colors.white : t12_text_secondary,
                     fontFamily: fontMedium,
                     fontSize: textSizeMedium,
-                  ).paddingOnly(top: spacing_standard, bottom: spacing_standard, left: spacing_large, right: spacing_large).onTap(() {
+                  )
+                      .paddingOnly(
+                          top: spacing_standard,
+                          bottom: spacing_standard,
+                          left: spacing_large,
+                          right: spacing_large)
+                      .onTap(() {
                     setState(() {
                       selectedTab = 1;
                     });
@@ -95,13 +120,25 @@ class T12TransactionListState extends State<T12TransactionList> {
                 child: Container(
                   alignment: Alignment.center,
                   margin: EdgeInsets.all(spacing_standard),
-                  decoration: boxDecoration(showShadow: true, bgColor: selectedTab == 2 ? t12_primary_color : context.scaffoldBackgroundColor, radius: spacing_large),
+                  decoration: boxDecoration(
+                      showShadow: true,
+                      bgColor: selectedTab == 2
+                          ? t12_primary_color
+                          : context.scaffoldBackgroundColor,
+                      radius: spacing_large),
                   child: text(
                     "Spend",
-                    textColor: selectedTab == 2 ? Colors.white : t12_text_secondary,
+                    textColor:
+                        selectedTab == 2 ? Colors.white : t12_text_secondary,
                     fontFamily: fontMedium,
                     fontSize: textSizeMedium,
-                  ).paddingOnly(top: spacing_standard, bottom: spacing_standard, left: spacing_large, right: spacing_large).onTap(() {
+                  )
+                      .paddingOnly(
+                          top: spacing_standard,
+                          bottom: spacing_standard,
+                          left: spacing_large,
+                          right: spacing_large)
+                      .onTap(() {
                     setState(() {
                       selectedTab = 2;
                     });
@@ -109,7 +146,10 @@ class T12TransactionListState extends State<T12TransactionList> {
                 ),
               )
             ],
-          ).paddingOnly(left: spacing_standard, right: spacing_standard, top: spacing_standard_new),
+          ).paddingOnly(
+              left: spacing_standard,
+              right: spacing_standard,
+              top: spacing_standard_new),
           Expanded(child: allList)
         ],
       ),

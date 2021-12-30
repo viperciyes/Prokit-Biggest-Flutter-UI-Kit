@@ -9,8 +9,6 @@ import 'package:prokit_flutter/themes/theme9/utils/T9Images.dart';
 import 'package:prokit_flutter/themes/theme9/utils/T9Strings.dart';
 import 'package:prokit_flutter/themes/theme9/utils/T9Widget.dart';
 
-import '../../../main.dart';
-
 class T9SignUp extends StatefulWidget {
   static String tag = '/T9SignUp';
 
@@ -55,8 +53,13 @@ class T9SignUpState extends State<T9SignUp> {
                       ),
                       Container(
                         alignment: Alignment.center,
-                        decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(color: t9_white, width: 4)),
-                        child: CircleAvatar(backgroundImage: CachedNetworkImageProvider(t9_ic_profile), radius: width / 8.5),
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(color: t9_white, width: 4)),
+                        child: CircleAvatar(
+                            backgroundImage:
+                                CachedNetworkImageProvider(t9_ic_profile),
+                            radius: width / 8.5),
                       ),
                       SizedBox(height: 30),
                       T9EditTextStyle(t9_hint_full_name, isPassword: false),
